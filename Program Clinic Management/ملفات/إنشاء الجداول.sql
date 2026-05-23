@@ -118,3 +118,50 @@ CREATE TABLE Patients (
         FOREIGN KEY (PersonId) REFERENCES Persons(PersonId)
 );
 
+
+
+
+
+
+-- الاختصاصات
+CREATE TABLE Specializations (
+    SpecializationId INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(200)
+);
+
+
+-- الاطباء
+CREATE TABLE Doctors (
+    DoctorId INT IDENTITY(1,1) PRIMARY KEY,
+    PersonId INT NOT NULL,
+    SpecializationId INT NOT NULL,
+    Notes NVARCHAR(500),
+
+    CONSTRAINT FK_Doctors_Persons
+        FOREIGN KEY (PersonId) REFERENCES Persons(PersonId),
+
+    CONSTRAINT FK_Doctors_Specializations
+        FOREIGN KEY (SpecializationId) REFERENCES Specializations(SpecializationId)
+);
+
+
+-- ربط المواعيد مع الطبيب
+ALTER TABLE Appointments
+ADD DoctorId INT;
+
+ALTER TABLE Appointments
+ADD CONSTRAINT FK_Appointments_Doctors
+FOREIGN KEY (DoctorId) REFERENCES Doctors(DoctorId);
+
+
+
+
+-- ربط الزيارات مع الطبيب
+ALTER TABLE Visits
+ADD DoctorId INT;
+
+ALTER TABLE Visits
+ADD CONSTRAINT FK_Visits_Doctors
+FOREIGN KEY (DoctorId) REFERENCES Doctors(DoctorId);
+
+
