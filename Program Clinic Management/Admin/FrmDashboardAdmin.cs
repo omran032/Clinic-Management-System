@@ -7,16 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BusinessLogic;
 
-namespace Program_Clinic_Management
+namespace Program_Clinic_Management.Admin
 {
-    public partial class Form1 : Form
+    public partial class FrmDashboardAdmin : Form
     {
-        public Form1()
+        public FrmDashboardAdmin()
         {
             InitializeComponent();
-
         }
     }
 }

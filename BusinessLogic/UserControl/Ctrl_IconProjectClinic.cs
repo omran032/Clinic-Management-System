@@ -7,16 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BusinessLogic;
 
-namespace Program_Clinic_Management
+namespace BusinessLogic
 {
-    public partial class Form1 : Form
+    public partial class Ctrl_IconProjectClinic : UserControl
     {
-        public Form1()
+        public Ctrl_IconProjectClinic()
         {
             InitializeComponent();
-
         }
     }
 }

@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="BusinessLogic/BusinessLogic.csproj" Id="edebb9b3-3ed0-4ea9-9009-58fbf6a380b3" />
   <Project Path="Program Clinic Management/Program Clinic Management.csproj" Id="169ae0e6-7a9c-4eae-9279-1ebf32039000" />
 </Solution>
