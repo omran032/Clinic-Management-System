@@ -18,7 +18,8 @@ namespace BusinessLogic
             Update,
             Delete,
             ForgotPassword,
-            ChangeStatus
+            ChangeStatus,
+            DatabaseBackup
         }
 
 
@@ -55,6 +56,42 @@ namespace BusinessLogic
                 cmd.ExecuteNonQuery();
             }
         }
+
+
+
+
+        /// <summary>
+        ///Logs ارجاع اخر عملية نسخ احتياطي للقاعدة من جدول 
+        /// </summary>
+        /// <returns></returns>
+        public static string GetLastBackupDate()
+        {
+            string query = @"
+        SELECT TOP 1 Timestamp 
+        FROM Logs
+        WHERE Action = 'DatabaseBackup'
+        ORDER BY Timestamp DESC";
+
+            using (SqlConnection con = new SqlConnection(ClsConnectionDB.connectionString))
+            using (SqlCommand cmd = new SqlCommand(query, con))
+            {
+                con.Open();
+                var result = cmd.ExecuteScalar();
+
+                if (result == null)
+                    return "لا يوجد نسخة مسجلة";
+
+                DateTime lastBackup = Convert.ToDateTime(result);
+                TimeSpan diff = DateTime.Now - lastBackup;
+
+                return $"{diff.Days} يوم / {diff.Hours} ساعة / {diff.Minutes} دقيقة";
+            }
+        }
+
+
+
+
+
 
 
     }

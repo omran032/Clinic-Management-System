@@ -234,12 +234,13 @@
             // 
             // ctrl_IconProjectClinic1
             // 
-            this.ctrl_IconProjectClinic1.BackColor = System.Drawing.Color.Silver;
-            this.ctrl_IconProjectClinic1.Location = new System.Drawing.Point(15, 14);
-            this.ctrl_IconProjectClinic1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.ctrl_IconProjectClinic1.BackColor = System.Drawing.Color.Transparent;
+            this.ctrl_IconProjectClinic1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrl_IconProjectClinic1.Location = new System.Drawing.Point(-21, 5);
+            this.ctrl_IconProjectClinic1.Margin = new System.Windows.Forms.Padding(5);
             this.ctrl_IconProjectClinic1.Name = "ctrl_IconProjectClinic1";
-            this.ctrl_IconProjectClinic1.Size = new System.Drawing.Size(239, 54);
-            this.ctrl_IconProjectClinic1.TabIndex = 2;
+            this.ctrl_IconProjectClinic1.Size = new System.Drawing.Size(246, 57);
+            this.ctrl_IconProjectClinic1.TabIndex = 14;
             // 
             // FrmLogin
             // 

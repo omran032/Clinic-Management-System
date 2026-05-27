@@ -165,3 +165,54 @@ ADD CONSTRAINT FK_Visits_Doctors
 FOREIGN KEY (DoctorId) REFERENCES Doctors(DoctorId);
 
 
+
+
+
+-- جدول المدفوعات
+CREATE TABLE Payments (
+    PaymentId INT IDENTITY(1,1) PRIMARY KEY,          -- رقم الدفع  مفتاح أساسي 
+
+    PersonId INT NOT NULL,                            -- المريض الذي قام بالدفع
+    VisitId INT NULL,                                 -- الزيارة المرتبطة بالدفع (اختياري)
+    AppointmentId INT NULL,                           -- الموعد المرتبط بالدفع (اختياري)
+
+    Amount DECIMAL(10,2) NOT NULL,                    -- مبلغ الدفع
+    Discount DECIMAL(10,2) DEFAULT 0,                 -- الخصم إن وجد
+    TotalAmount AS (Amount - Discount) PERSISTED,     -- المبلغ النهائي بعد الخصم (عمود محسوب)
+
+    PaymentMethod NVARCHAR(100),                      -- طريقة الدفع (كاش، بطاقة، تحويل...)
+    PaymentDate DATETIME NOT NULL DEFAULT GETDATE(),  -- تاريخ ووقت الدفع
+
+    CreatedBy INT NULL,                               -- المستخدم الذي سجل الدفع
+    Notes NVARCHAR(500),                              -- ملاحظات إضافية
+
+    CONSTRAINT FK_Payments_Persons
+        FOREIGN KEY (PersonId) REFERENCES Persons(PersonId),
+
+    CONSTRAINT FK_Payments_Visits
+        FOREIGN KEY (VisitId) REFERENCES Visits(VisitId),
+
+    CONSTRAINT FK_Payments_Appointments
+        FOREIGN KEY (AppointmentId) REFERENCES Appointments(AppointmentId),
+
+    CONSTRAINT FK_Payments_Users
+        FOREIGN KEY (CreatedBy) REFERENCES Users(UserId)
+);
+
+
+
+
+
+-- الرواتب
+CREATE TABLE Salaries (
+    SalaryId INT IDENTITY(1,1) PRIMARY KEY,  --  مفتاح أساسي 
+    UserId INT NOT NULL, -- الموظف الذي ينتمي له هذا الراتب
+    Amount DECIMAL(10,2) NOT NULL,-- قيمة الراتب
+    StartDate DATE NOT NULL,-- تاريخ بدء العمل بهذا الراتب
+    EndDate DATE NULL,-- تاريخ انتهاء هذا الراتب (NULL يعني الراتب الحالي)
+    Notes NVARCHAR(500),-- ملاحظات إضافية (اختياري)
+    
+
+    CONSTRAINT FK_Salaries_Users
+        FOREIGN KEY (UserId) REFERENCES Users(UserId)
+);

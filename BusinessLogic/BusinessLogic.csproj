@@ -35,6 +35,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,12 +46,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassLogs.cs" />
+    <Compile Include="CMD_DB\ClsClsCMD_TablePayments.cs" />
+    <Compile Include="CMD_DB\ClsCMD_TableAppointments.cs" />
+    <Compile Include="CMD_DB\ClsCMD_TablePersons.cs" />
+    <Compile Include="CMD_DB\ClsCMD_TableVisits.cs" />
     <Compile Include="DB\ClassCommands.cs" />
     <Compile Include="DB\ClassLoginUser.cs" />
     <Compile Include="InfoTable\ClassDoctor.cs" />
     <Compile Include="InfoTable\ClassPerson.cs" />
     <Compile Include="InfoTable\ClassUser.cs" />
     <Compile Include="MyTools.cs" />
+    <Compile Include="ToolChart\ClsCreateChartColumn.cs" />
     <Compile Include="UserControl\Ctrl_IconProjectClinic.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -72,6 +79,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon_Clinic-.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

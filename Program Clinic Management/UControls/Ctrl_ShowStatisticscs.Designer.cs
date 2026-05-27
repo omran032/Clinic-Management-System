@@ -60,9 +60,10 @@
             this.Picture.BackColor = System.Drawing.Color.Transparent;
             this.Picture.FillColor = System.Drawing.Color.Transparent;
             this.Picture.ImageRotate = 0F;
-            this.Picture.Location = new System.Drawing.Point(239, 14);
+            this.Picture.Location = new System.Drawing.Point(239, 18);
             this.Picture.Name = "Picture";
             this.Picture.Size = new System.Drawing.Size(53, 45);
+            this.Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Picture.TabIndex = 2;
             this.Picture.TabStop = false;
             // 

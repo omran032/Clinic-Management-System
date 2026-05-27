@@ -317,6 +317,20 @@ using System.Windows.Forms;
 
 
 
-
-
+    /// <summary>
+    /// Version احضار رقم نسخة البرنامج
+    /// </summary>
+    public static string GetAppVersion()
+    {
+        return System.Reflection.Assembly
+            .GetExecutingAssembly()
+            .GetName()
+            .Version
+            .ToString();
     }
+
+
+
+
+
+}

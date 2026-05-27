@@ -41,14 +41,13 @@ namespace Program_Clinic_Management.UControls
         }
 
 
-        private PictureBox Pic = new PictureBox();
-
+ 
         public Image PicImage
         {
-            get { return Pic.Image; }
+            get { return Picture.Image; }
             set
             {
-                Pic.Image = value;
+                Picture.Image = value;
             }
         }
 

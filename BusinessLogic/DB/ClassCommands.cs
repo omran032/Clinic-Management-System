@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace BusinessLogic
 {
-    class ClassCommands
+   public  class ClassCommands
     {
-    
 
+        
 
 
         ////-----////-----////-----////////-----////////-----////////-----////////-----////

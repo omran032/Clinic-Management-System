@@ -58,6 +58,7 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -87,8 +88,25 @@
     <Compile Include="Login\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Persons\FrmManagePersons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Persons\FrmManagePersons.Designer.cs">
+      <DependentUpon>FrmManagePersons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Persons\UControls\Ctrl_PersonInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Persons\UControls\Ctrl_PersonInfo.Designer.cs">
+      <DependentUpon>Ctrl_PersonInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UControls\Ctrl_ShowStatisticscs.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -104,15 +122,17 @@
     <EmbeddedResource Include="Login\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Persons\FrmManagePersons.resx">
+      <DependentUpon>FrmManagePersons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Persons\UControls\Ctrl_PersonInfo.resx">
+      <DependentUpon>Ctrl_PersonInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="UControls\Ctrl_ShowStatisticscs.resx">
       <DependentUpon>Ctrl_ShowStatisticscs.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +159,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>ClinicSystemDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Technical Support.png" />
+    <None Include="Resources\Database.png" />
+    <None Include="Resources\reports.png" />
+    <None Include="Resources\log.png" />
+    <None Include="Resources\view_detail_.png" />
+    <None Include="Resources\Control Panel.png" />
+    <None Include="Resources\People.png" />
+    <None Include="Resources\Appointment.png" />
+    <None Include="Resources\Date.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -152,7 +181,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Persons\UI\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
       <Project>{edebb9b3-3ed0-4ea9-9009-58fbf6a380b3}</Project>
