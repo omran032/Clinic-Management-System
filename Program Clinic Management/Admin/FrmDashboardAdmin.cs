@@ -2,6 +2,7 @@
 using BusinessLogic.CMD_DB;
 using BusinessLogic.InfoTable;
 using BusinessLogic.ToolChart;
+using Program_Clinic_Management.Persons;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -91,6 +92,11 @@ namespace Program_Clinic_Management.Admin
 
         }
 
-       
+        // زر عرض واجهة إدارة الأشخاص
+        private void btnPersons_Click(object sender, EventArgs e)
+        {
+            FrmManagePersons managePersons = new FrmManagePersons();
+            MyTools.ShowForm(managePersons);
+        }
     }
 }

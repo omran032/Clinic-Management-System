@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="guna2GradientButton11.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_Support.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAADIZJREFUeF7t
         XXuMVFcZr3/5jNZnTNRofNVHGpto9D9bH/fOLufM7mx7zuyLZbe0ZbsFFiqER7GFlMQtmBawpqaSsFRT
@@ -177,7 +177,7 @@
         NQjlgjTNIy0rQ4YMGTJkmI34P+tO/i4qzNeVAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="guna2GradientButton10.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnSettings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAADftJREFUeF7t
         3QlwU3UeB3B2HR1dFQVhD8Bj19lRd0ddR2eWndnD3dXV3XUddxVFAXWhFFooNG2Tpk3S/pO893K895Lm
@@ -242,7 +242,7 @@
         5IxJk1JSlLsDGE000UQTTTTRRBNNNNFEE0000fRz/g8QEGlvwtzJ3wAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="guna2GradientButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnPatients.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
         dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAABb1SURBVHhe7Zx5XNTl9sfJTE3NLFu0xaXNzEqLNK0s
@@ -385,18 +385,6 @@
   <metadata name="ElipseChartAppointment.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>859, 26</value>
   </metadata>
-  <metadata name="Elipse_PnlDisplay.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>387, 17</value>
-  </metadata>
-  <metadata name="ElipseChartVisits.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>545, 19</value>
-  </metadata>
-  <metadata name="ElipseChartPayments.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>682, 23</value>
-  </metadata>
-  <metadata name="ElipsePnlBackup.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1043, 26</value>
-  </metadata>
   <data name="ctrl_ShowStatisticscs_DelayedPayments.PicImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAABGdBTUEAALGPC/xhBQAAB5ZJREFUeF7t
@@ -473,6 +461,18 @@
         yMSTzK3I9IGMkMUOAv8D9xietxaiG34AAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="Elipse_PnlDisplay.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>387, 17</value>
+  </metadata>
+  <metadata name="ElipseChartVisits.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>545, 19</value>
+  </metadata>
+  <metadata name="ElipseChartPayments.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>682, 23</value>
+  </metadata>
+  <metadata name="ElipsePnlBackup.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1043, 26</value>
+  </metadata>
   <metadata name="Elipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

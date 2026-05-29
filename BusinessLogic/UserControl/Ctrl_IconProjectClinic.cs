@@ -16,5 +16,15 @@ namespace BusinessLogic
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// تغيير لون خط الليبل الرئيسي في الفورم.
+        /// </summary>
+        public Color TitleNameColor
+        {
+            get { return lbl_TitleName.ForeColor; }
+            set { lbl_TitleName.ForeColor = value; }
+        }
+
     }
 }

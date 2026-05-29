@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Program_Clinic_Management.Admin;
 using Program_Clinic_Management.Login;
+using Program_Clinic_Management.Persons.UI;
 
 namespace Program_Clinic_Management
 {
@@ -22,6 +23,8 @@ namespace Program_Clinic_Management
 
 
             Application.Run(new FrmDashboardAdmin());
+            //Application.Run(new FrmAdd_UpdatePerson(FrmAdd_UpdatePerson.Mode.Add));
+            // Application.Run(new FrmDisplayInfoPerson());
         }
     }
 }

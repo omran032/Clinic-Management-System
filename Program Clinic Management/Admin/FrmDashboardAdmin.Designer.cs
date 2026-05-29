@@ -30,32 +30,32 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDashboardAdmin));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title10 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title11 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title12 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.PnlList = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2GradientButton10 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GradientButton5 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GradientButton8 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GradientButton4 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GradientButton7 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GradientButton9 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GradientButton3 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GradientButton6 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btn_Support = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnSettings = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btn_Visits = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btn = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btn_Appointments = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btn_Logs = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btn_Backup = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnPersons = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnPatients = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btn_Payments = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btn_Doctors = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.ctrl_IconProjectClinic1 = new BusinessLogic.Ctrl_IconProjectClinic();
-            this.guna2GradientButton11 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.pnlTopBar = new Guna.UI2.WinForms.Guna2Panel();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblNameUser = new System.Windows.Forms.Label();
@@ -70,15 +70,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.chartPayments = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartVisits = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.ctrl_ShowStatisticscs_DelayedPayments = new Program_Clinic_Management.UControls.Ctrl_ShowStatisticscs();
+            this.ctrl_ShowStatisticscsAbsences = new Program_Clinic_Management.UControls.Ctrl_ShowStatisticscs();
+            this.ctrl_ShowStatisticscsAppointment = new Program_Clinic_Management.UControls.Ctrl_ShowStatisticscs();
+            this.ctrl_ShowStatisticscs_Visits = new Program_Clinic_Management.UControls.Ctrl_ShowStatisticscs();
             this.label3 = new System.Windows.Forms.Label();
             this.Elipse_PnlDisplay = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.ElipseChartVisits = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.ElipseChartPayments = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.ElipsePnlBackup = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.ctrl_ShowStatisticscs_DelayedPayments = new Program_Clinic_Management.UControls.Ctrl_ShowStatisticscs();
-            this.ctrl_ShowStatisticscsAbsences = new Program_Clinic_Management.UControls.Ctrl_ShowStatisticscs();
-            this.ctrl_ShowStatisticscsAppointment = new Program_Clinic_Management.UControls.Ctrl_ShowStatisticscs();
-            this.ctrl_ShowStatisticscs_Visits = new Program_Clinic_Management.UControls.Ctrl_ShowStatisticscs();
             this.Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -96,17 +96,17 @@
             // PnlList
             // 
             this.PnlList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
-            this.PnlList.Controls.Add(this.guna2GradientButton11);
-            this.PnlList.Controls.Add(this.guna2GradientButton10);
-            this.PnlList.Controls.Add(this.guna2GradientButton5);
-            this.PnlList.Controls.Add(this.guna2GradientButton8);
-            this.PnlList.Controls.Add(this.guna2GradientButton4);
-            this.PnlList.Controls.Add(this.guna2GradientButton7);
-            this.PnlList.Controls.Add(this.guna2GradientButton9);
-            this.PnlList.Controls.Add(this.guna2GradientButton3);
-            this.PnlList.Controls.Add(this.guna2GradientButton2);
-            this.PnlList.Controls.Add(this.guna2GradientButton6);
-            this.PnlList.Controls.Add(this.guna2GradientButton1);
+            this.PnlList.Controls.Add(this.btn_Support);
+            this.PnlList.Controls.Add(this.btnSettings);
+            this.PnlList.Controls.Add(this.btn_Visits);
+            this.PnlList.Controls.Add(this.btn);
+            this.PnlList.Controls.Add(this.btn_Appointments);
+            this.PnlList.Controls.Add(this.btn_Logs);
+            this.PnlList.Controls.Add(this.btn_Backup);
+            this.PnlList.Controls.Add(this.btnPersons);
+            this.PnlList.Controls.Add(this.btnPatients);
+            this.PnlList.Controls.Add(this.btn_Payments);
+            this.PnlList.Controls.Add(this.btn_Doctors);
             this.PnlList.Controls.Add(this.guna2Panel3);
             this.PnlList.Controls.Add(this.ctrl_IconProjectClinic1);
             this.PnlList.Dock = System.Windows.Forms.DockStyle.Left;
@@ -115,246 +115,271 @@
             this.PnlList.Size = new System.Drawing.Size(240, 906);
             this.PnlList.TabIndex = 0;
             // 
-            // guna2GradientButton10
+            // btn_Support
             // 
-            this.guna2GradientButton10.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton10.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton10.BorderRadius = 5;
-            this.guna2GradientButton10.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton10.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton10.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton10.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton10.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton10.FillColor = System.Drawing.Color.RoyalBlue;
-            this.guna2GradientButton10.FillColor2 = System.Drawing.Color.Cyan;
-            this.guna2GradientButton10.FocusedColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton10.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton10.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton10.Image")));
-            this.guna2GradientButton10.ImageOffset = new System.Drawing.Point(-12, 0);
-            this.guna2GradientButton10.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton10.Location = new System.Drawing.Point(17, 760);
-            this.guna2GradientButton10.Name = "guna2GradientButton10";
-            this.guna2GradientButton10.Size = new System.Drawing.Size(210, 47);
-            this.guna2GradientButton10.TabIndex = 27;
-            this.guna2GradientButton10.Text = "Sittings";
+            this.btn_Support.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Support.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_Support.BorderRadius = 5;
+            this.btn_Support.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Support.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Support.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Support.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Support.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Support.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btn_Support.FillColor2 = System.Drawing.Color.Cyan;
+            this.btn_Support.FocusedColor = System.Drawing.Color.Transparent;
+            this.btn_Support.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Support.ForeColor = System.Drawing.Color.White;
+            this.btn_Support.Image = ((System.Drawing.Image)(resources.GetObject("btn_Support.Image")));
+            this.btn_Support.ImageOffset = new System.Drawing.Point(-8, 0);
+            this.btn_Support.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_Support.Location = new System.Drawing.Point(17, 834);
+            this.btn_Support.Name = "btn_Support";
+            this.btn_Support.Size = new System.Drawing.Size(210, 47);
+            this.btn_Support.TabIndex = 29;
+            this.btn_Support.Text = "الدعم الفني";
             // 
-            // guna2GradientButton5
+            // btnSettings
             // 
-            this.guna2GradientButton5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton5.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton5.BorderRadius = 5;
-            this.guna2GradientButton5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton5.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton5.FillColor = System.Drawing.Color.RoyalBlue;
-            this.guna2GradientButton5.FillColor2 = System.Drawing.Color.Cyan;
-            this.guna2GradientButton5.FocusedColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton5.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton5.Image = global::Program_Clinic_Management.Properties.Resources.Date;
-            this.guna2GradientButton5.ImageOffset = new System.Drawing.Point(-15, 0);
-            this.guna2GradientButton5.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton5.Location = new System.Drawing.Point(17, 390);
-            this.guna2GradientButton5.Name = "guna2GradientButton5";
-            this.guna2GradientButton5.Size = new System.Drawing.Size(210, 47);
-            this.guna2GradientButton5.TabIndex = 17;
-            this.guna2GradientButton5.Text = "الزيارات";
+            this.btnSettings.BackColor = System.Drawing.Color.Transparent;
+            this.btnSettings.BorderColor = System.Drawing.Color.Transparent;
+            this.btnSettings.BorderRadius = 5;
+            this.btnSettings.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSettings.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSettings.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSettings.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSettings.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSettings.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btnSettings.FillColor2 = System.Drawing.Color.Cyan;
+            this.btnSettings.FocusedColor = System.Drawing.Color.Transparent;
+            this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSettings.ForeColor = System.Drawing.Color.White;
+            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
+            this.btnSettings.ImageOffset = new System.Drawing.Point(-12, 0);
+            this.btnSettings.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnSettings.Location = new System.Drawing.Point(17, 760);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(210, 47);
+            this.btnSettings.TabIndex = 27;
+            this.btnSettings.Text = "Sittings";
             // 
-            // guna2GradientButton8
+            // btn_Visits
             // 
-            this.guna2GradientButton8.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton8.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton8.BorderRadius = 5;
-            this.guna2GradientButton8.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton8.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton8.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton8.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton8.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton8.FillColor = System.Drawing.Color.RoyalBlue;
-            this.guna2GradientButton8.FillColor2 = System.Drawing.Color.Cyan;
-            this.guna2GradientButton8.FocusedColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton8.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton8.Image = global::Program_Clinic_Management.Properties.Resources.reports;
-            this.guna2GradientButton8.ImageOffset = new System.Drawing.Point(-15, 0);
-            this.guna2GradientButton8.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton8.Location = new System.Drawing.Point(17, 686);
-            this.guna2GradientButton8.Name = "guna2GradientButton8";
-            this.guna2GradientButton8.Size = new System.Drawing.Size(210, 47);
-            this.guna2GradientButton8.TabIndex = 23;
-            this.guna2GradientButton8.Text = "التقارير";
+            this.btn_Visits.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Visits.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_Visits.BorderRadius = 5;
+            this.btn_Visits.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Visits.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Visits.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Visits.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Visits.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Visits.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btn_Visits.FillColor2 = System.Drawing.Color.Cyan;
+            this.btn_Visits.FocusedColor = System.Drawing.Color.Transparent;
+            this.btn_Visits.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Visits.ForeColor = System.Drawing.Color.White;
+            this.btn_Visits.Image = global::Program_Clinic_Management.Properties.Resources.Date;
+            this.btn_Visits.ImageOffset = new System.Drawing.Point(-15, 0);
+            this.btn_Visits.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_Visits.Location = new System.Drawing.Point(17, 390);
+            this.btn_Visits.Name = "btn_Visits";
+            this.btn_Visits.Size = new System.Drawing.Size(210, 47);
+            this.btn_Visits.TabIndex = 17;
+            this.btn_Visits.Text = "الزيارات";
             // 
-            // guna2GradientButton4
+            // btn
             // 
-            this.guna2GradientButton4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton4.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton4.BorderRadius = 5;
-            this.guna2GradientButton4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton4.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton4.FillColor = System.Drawing.Color.RoyalBlue;
-            this.guna2GradientButton4.FillColor2 = System.Drawing.Color.Cyan;
-            this.guna2GradientButton4.FocusedColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton4.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton4.Image = global::Program_Clinic_Management.Properties.Resources.Appointment;
-            this.guna2GradientButton4.ImageOffset = new System.Drawing.Point(-15, 0);
-            this.guna2GradientButton4.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton4.Location = new System.Drawing.Point(17, 316);
-            this.guna2GradientButton4.Name = "guna2GradientButton4";
-            this.guna2GradientButton4.Size = new System.Drawing.Size(210, 47);
-            this.guna2GradientButton4.TabIndex = 15;
-            this.guna2GradientButton4.Text = "المواعيد";
+            this.btn.BackColor = System.Drawing.Color.Transparent;
+            this.btn.BorderColor = System.Drawing.Color.Transparent;
+            this.btn.BorderRadius = 5;
+            this.btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btn.FillColor2 = System.Drawing.Color.Cyan;
+            this.btn.FocusedColor = System.Drawing.Color.Transparent;
+            this.btn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn.ForeColor = System.Drawing.Color.White;
+            this.btn.Image = global::Program_Clinic_Management.Properties.Resources.reports;
+            this.btn.ImageOffset = new System.Drawing.Point(-15, 0);
+            this.btn.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn.Location = new System.Drawing.Point(17, 686);
+            this.btn.Name = "btn";
+            this.btn.Size = new System.Drawing.Size(210, 47);
+            this.btn.TabIndex = 23;
+            this.btn.Text = "التقارير";
             // 
-            // guna2GradientButton7
+            // btn_Appointments
             // 
-            this.guna2GradientButton7.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton7.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton7.BorderRadius = 5;
-            this.guna2GradientButton7.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton7.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton7.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton7.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton7.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton7.FillColor = System.Drawing.Color.RoyalBlue;
-            this.guna2GradientButton7.FillColor2 = System.Drawing.Color.Cyan;
-            this.guna2GradientButton7.FocusedColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton7.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton7.Image = global::Program_Clinic_Management.Properties.Resources.log;
-            this.guna2GradientButton7.ImageOffset = new System.Drawing.Point(-4, 0);
-            this.guna2GradientButton7.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton7.Location = new System.Drawing.Point(17, 538);
-            this.guna2GradientButton7.Name = "guna2GradientButton7";
-            this.guna2GradientButton7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.guna2GradientButton7.Size = new System.Drawing.Size(210, 47);
-            this.guna2GradientButton7.TabIndex = 21;
-            this.guna2GradientButton7.Text = "السجلات Logs";
+            this.btn_Appointments.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Appointments.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_Appointments.BorderRadius = 5;
+            this.btn_Appointments.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Appointments.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Appointments.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Appointments.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Appointments.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Appointments.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btn_Appointments.FillColor2 = System.Drawing.Color.Cyan;
+            this.btn_Appointments.FocusedColor = System.Drawing.Color.Transparent;
+            this.btn_Appointments.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Appointments.ForeColor = System.Drawing.Color.White;
+            this.btn_Appointments.Image = global::Program_Clinic_Management.Properties.Resources.Appointment;
+            this.btn_Appointments.ImageOffset = new System.Drawing.Point(-15, 0);
+            this.btn_Appointments.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_Appointments.Location = new System.Drawing.Point(17, 316);
+            this.btn_Appointments.Name = "btn_Appointments";
+            this.btn_Appointments.Size = new System.Drawing.Size(210, 47);
+            this.btn_Appointments.TabIndex = 15;
+            this.btn_Appointments.Text = "المواعيد";
             // 
-            // guna2GradientButton9
+            // btn_Logs
             // 
-            this.guna2GradientButton9.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton9.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton9.BorderRadius = 5;
-            this.guna2GradientButton9.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton9.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton9.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton9.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton9.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton9.FillColor = System.Drawing.Color.RoyalBlue;
-            this.guna2GradientButton9.FillColor2 = System.Drawing.Color.Cyan;
-            this.guna2GradientButton9.FocusedColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton9.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton9.Image = global::Program_Clinic_Management.Properties.Resources.Database;
-            this.guna2GradientButton9.ImageOffset = new System.Drawing.Point(-1, 0);
-            this.guna2GradientButton9.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton9.Location = new System.Drawing.Point(17, 612);
-            this.guna2GradientButton9.Name = "guna2GradientButton9";
-            this.guna2GradientButton9.Size = new System.Drawing.Size(210, 47);
-            this.guna2GradientButton9.TabIndex = 25;
-            this.guna2GradientButton9.Text = "النسخ الاحتياطي";
+            this.btn_Logs.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Logs.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_Logs.BorderRadius = 5;
+            this.btn_Logs.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Logs.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Logs.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Logs.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Logs.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Logs.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btn_Logs.FillColor2 = System.Drawing.Color.Cyan;
+            this.btn_Logs.FocusedColor = System.Drawing.Color.Transparent;
+            this.btn_Logs.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Logs.ForeColor = System.Drawing.Color.White;
+            this.btn_Logs.Image = global::Program_Clinic_Management.Properties.Resources.log;
+            this.btn_Logs.ImageOffset = new System.Drawing.Point(-4, 0);
+            this.btn_Logs.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_Logs.Location = new System.Drawing.Point(17, 538);
+            this.btn_Logs.Name = "btn_Logs";
+            this.btn_Logs.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btn_Logs.Size = new System.Drawing.Size(210, 47);
+            this.btn_Logs.TabIndex = 21;
+            this.btn_Logs.Text = "السجلات Logs";
             // 
-            // guna2GradientButton3
+            // btn_Backup
             // 
-            this.guna2GradientButton3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton3.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton3.BorderRadius = 5;
-            this.guna2GradientButton3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton3.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton3.FillColor = System.Drawing.Color.RoyalBlue;
-            this.guna2GradientButton3.FillColor2 = System.Drawing.Color.Cyan;
-            this.guna2GradientButton3.FocusedColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton3.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton3.Image = global::Program_Clinic_Management.Properties.Resources.People;
-            this.guna2GradientButton3.ImageOffset = new System.Drawing.Point(-15, 0);
-            this.guna2GradientButton3.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton3.Location = new System.Drawing.Point(17, 168);
-            this.guna2GradientButton3.Name = "guna2GradientButton3";
-            this.guna2GradientButton3.Size = new System.Drawing.Size(210, 47);
-            this.guna2GradientButton3.TabIndex = 13;
-            this.guna2GradientButton3.Text = "الأشخاص";
+            this.btn_Backup.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Backup.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_Backup.BorderRadius = 5;
+            this.btn_Backup.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Backup.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Backup.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Backup.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Backup.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Backup.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btn_Backup.FillColor2 = System.Drawing.Color.Cyan;
+            this.btn_Backup.FocusedColor = System.Drawing.Color.Transparent;
+            this.btn_Backup.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Backup.ForeColor = System.Drawing.Color.White;
+            this.btn_Backup.Image = global::Program_Clinic_Management.Properties.Resources.Database;
+            this.btn_Backup.ImageOffset = new System.Drawing.Point(-1, 0);
+            this.btn_Backup.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_Backup.Location = new System.Drawing.Point(17, 612);
+            this.btn_Backup.Name = "btn_Backup";
+            this.btn_Backup.Size = new System.Drawing.Size(210, 47);
+            this.btn_Backup.TabIndex = 25;
+            this.btn_Backup.Text = "النسخ الاحتياطي";
             // 
-            // guna2GradientButton2
+            // btnPersons
             // 
-            this.guna2GradientButton2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton2.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton2.BorderRadius = 5;
-            this.guna2GradientButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton2.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton2.FillColor = System.Drawing.Color.RoyalBlue;
-            this.guna2GradientButton2.FillColor2 = System.Drawing.Color.Cyan;
-            this.guna2GradientButton2.FocusedColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton2.Image")));
-            this.guna2GradientButton2.ImageOffset = new System.Drawing.Point(-19, 0);
-            this.guna2GradientButton2.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton2.Location = new System.Drawing.Point(17, 94);
-            this.guna2GradientButton2.Name = "guna2GradientButton2";
-            this.guna2GradientButton2.Size = new System.Drawing.Size(210, 47);
-            this.guna2GradientButton2.TabIndex = 11;
-            this.guna2GradientButton2.Text = "المرضى";
+            this.btnPersons.BackColor = System.Drawing.Color.Transparent;
+            this.btnPersons.BorderColor = System.Drawing.Color.Transparent;
+            this.btnPersons.BorderRadius = 5;
+            this.btnPersons.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPersons.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPersons.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPersons.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPersons.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPersons.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btnPersons.FillColor2 = System.Drawing.Color.Cyan;
+            this.btnPersons.FocusedColor = System.Drawing.Color.Transparent;
+            this.btnPersons.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPersons.ForeColor = System.Drawing.Color.White;
+            this.btnPersons.Image = global::Program_Clinic_Management.Properties.Resources.People;
+            this.btnPersons.ImageOffset = new System.Drawing.Point(-15, 0);
+            this.btnPersons.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnPersons.Location = new System.Drawing.Point(17, 168);
+            this.btnPersons.Name = "btnPersons";
+            this.btnPersons.Size = new System.Drawing.Size(210, 47);
+            this.btnPersons.TabIndex = 13;
+            this.btnPersons.Text = "الأشخاص";
+            this.btnPersons.Click += new System.EventHandler(this.btnPersons_Click);
             // 
-            // guna2GradientButton6
+            // btnPatients
             // 
-            this.guna2GradientButton6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton6.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton6.BorderRadius = 5;
-            this.guna2GradientButton6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton6.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton6.FillColor = System.Drawing.Color.RoyalBlue;
-            this.guna2GradientButton6.FillColor2 = System.Drawing.Color.Cyan;
-            this.guna2GradientButton6.FocusedColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton6.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton6.Image = global::Program_Clinic_Management.Properties.Resources.view_detail_;
-            this.guna2GradientButton6.ImageOffset = new System.Drawing.Point(-9, 0);
-            this.guna2GradientButton6.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton6.Location = new System.Drawing.Point(17, 464);
-            this.guna2GradientButton6.Name = "guna2GradientButton6";
-            this.guna2GradientButton6.Size = new System.Drawing.Size(210, 47);
-            this.guna2GradientButton6.TabIndex = 19;
-            this.guna2GradientButton6.Text = "المدفوعات";
+            this.btnPatients.BackColor = System.Drawing.Color.Transparent;
+            this.btnPatients.BorderColor = System.Drawing.Color.Transparent;
+            this.btnPatients.BorderRadius = 5;
+            this.btnPatients.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPatients.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPatients.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPatients.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPatients.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPatients.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btnPatients.FillColor2 = System.Drawing.Color.Cyan;
+            this.btnPatients.FocusedColor = System.Drawing.Color.Transparent;
+            this.btnPatients.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPatients.ForeColor = System.Drawing.Color.White;
+            this.btnPatients.Image = ((System.Drawing.Image)(resources.GetObject("btnPatients.Image")));
+            this.btnPatients.ImageOffset = new System.Drawing.Point(-19, 0);
+            this.btnPatients.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnPatients.Location = new System.Drawing.Point(17, 94);
+            this.btnPatients.Name = "btnPatients";
+            this.btnPatients.Size = new System.Drawing.Size(210, 47);
+            this.btnPatients.TabIndex = 11;
+            this.btnPatients.Text = "المرضى";
             // 
-            // guna2GradientButton1
+            // btn_Payments
             // 
-            this.guna2GradientButton1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton1.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton1.BorderRadius = 5;
-            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton1.FillColor = System.Drawing.Color.RoyalBlue;
-            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.Cyan;
-            this.guna2GradientButton1.FocusedColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton1.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton1.Image = global::Program_Clinic_Management.Properties.Resources.Control_Panel;
-            this.guna2GradientButton1.ImageOffset = new System.Drawing.Point(-18, 0);
-            this.guna2GradientButton1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton1.Location = new System.Drawing.Point(17, 242);
-            this.guna2GradientButton1.Name = "guna2GradientButton1";
-            this.guna2GradientButton1.Size = new System.Drawing.Size(210, 47);
-            this.guna2GradientButton1.TabIndex = 9;
-            this.guna2GradientButton1.Text = "الأطباء";
+            this.btn_Payments.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Payments.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_Payments.BorderRadius = 5;
+            this.btn_Payments.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Payments.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Payments.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Payments.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Payments.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Payments.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btn_Payments.FillColor2 = System.Drawing.Color.Cyan;
+            this.btn_Payments.FocusedColor = System.Drawing.Color.Transparent;
+            this.btn_Payments.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Payments.ForeColor = System.Drawing.Color.White;
+            this.btn_Payments.Image = global::Program_Clinic_Management.Properties.Resources.view_detail_;
+            this.btn_Payments.ImageOffset = new System.Drawing.Point(-9, 0);
+            this.btn_Payments.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_Payments.Location = new System.Drawing.Point(17, 464);
+            this.btn_Payments.Name = "btn_Payments";
+            this.btn_Payments.Size = new System.Drawing.Size(210, 47);
+            this.btn_Payments.TabIndex = 19;
+            this.btn_Payments.Text = "المدفوعات";
+            // 
+            // btn_Doctors
+            // 
+            this.btn_Doctors.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Doctors.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_Doctors.BorderRadius = 5;
+            this.btn_Doctors.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Doctors.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Doctors.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Doctors.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Doctors.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Doctors.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btn_Doctors.FillColor2 = System.Drawing.Color.Cyan;
+            this.btn_Doctors.FocusedColor = System.Drawing.Color.Transparent;
+            this.btn_Doctors.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Doctors.ForeColor = System.Drawing.Color.White;
+            this.btn_Doctors.Image = global::Program_Clinic_Management.Properties.Resources.Control_Panel;
+            this.btn_Doctors.ImageOffset = new System.Drawing.Point(-18, 0);
+            this.btn_Doctors.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_Doctors.Location = new System.Drawing.Point(17, 242);
+            this.btn_Doctors.Name = "btn_Doctors";
+            this.btn_Doctors.Size = new System.Drawing.Size(210, 47);
+            this.btn_Doctors.TabIndex = 9;
+            this.btn_Doctors.Text = "الأطباء";
             // 
             // guna2Panel3
             // 
@@ -375,30 +400,7 @@
             this.ctrl_IconProjectClinic1.Name = "ctrl_IconProjectClinic1";
             this.ctrl_IconProjectClinic1.Size = new System.Drawing.Size(240, 65);
             this.ctrl_IconProjectClinic1.TabIndex = 2;
-            // 
-            // guna2GradientButton11
-            // 
-            this.guna2GradientButton11.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton11.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton11.BorderRadius = 5;
-            this.guna2GradientButton11.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton11.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton11.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton11.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton11.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton11.FillColor = System.Drawing.Color.RoyalBlue;
-            this.guna2GradientButton11.FillColor2 = System.Drawing.Color.Cyan;
-            this.guna2GradientButton11.FocusedColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton11.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton11.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientButton11.Image")));
-            this.guna2GradientButton11.ImageOffset = new System.Drawing.Point(-8, 0);
-            this.guna2GradientButton11.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2GradientButton11.Location = new System.Drawing.Point(17, 834);
-            this.guna2GradientButton11.Name = "guna2GradientButton11";
-            this.guna2GradientButton11.Size = new System.Drawing.Size(210, 47);
-            this.guna2GradientButton11.TabIndex = 29;
-            this.guna2GradientButton11.Text = "الدعم الفني";
+            this.ctrl_IconProjectClinic1.TitleNameColor = System.Drawing.Color.White;
             // 
             // pnlTopBar
             // 
@@ -454,24 +456,24 @@
             // 
             // ChartAppointment
             // 
-            chartArea10.Name = "ChartArea1";
-            this.ChartAppointment.ChartAreas.Add(chartArea10);
-            legend10.Name = "Legend1";
-            this.ChartAppointment.Legends.Add(legend10);
+            chartArea1.Name = "ChartArea1";
+            this.ChartAppointment.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.ChartAppointment.Legends.Add(legend1);
             this.ChartAppointment.Location = new System.Drawing.Point(558, 281);
             this.ChartAppointment.Name = "ChartAppointment";
             this.ChartAppointment.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series10.ChartArea = "ChartArea1";
-            series10.Legend = "Legend1";
-            series10.Name = "Series1";
-            this.ChartAppointment.Series.Add(series10);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.ChartAppointment.Series.Add(series1);
             this.ChartAppointment.Size = new System.Drawing.Size(438, 306);
             this.ChartAppointment.TabIndex = 17;
             this.ChartAppointment.Text = "chart2";
-            title10.Name = "sdddsd";
-            title10.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
-            title10.TextStyle = System.Windows.Forms.DataVisualization.Charting.TextStyle.Frame;
-            this.ChartAppointment.Titles.Add(title10);
+            title1.Name = "sdddsd";
+            title1.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            title1.TextStyle = System.Windows.Forms.DataVisualization.Charting.TextStyle.Frame;
+            this.ChartAppointment.Titles.Add(title1);
             // 
             // PnlDisplay
             // 
@@ -547,76 +549,45 @@
             // 
             // chartPayments
             // 
-            chartArea11.Name = "ChartArea1";
-            this.chartPayments.ChartAreas.Add(chartArea11);
-            legend11.Name = "Legend1";
-            this.chartPayments.Legends.Add(legend11);
+            chartArea2.Name = "ChartArea1";
+            this.chartPayments.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartPayments.Legends.Add(legend2);
             this.chartPayments.Location = new System.Drawing.Point(1059, 281);
             this.chartPayments.Name = "chartPayments";
             this.chartPayments.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series11.ChartArea = "ChartArea1";
-            series11.Legend = "Legend1";
-            series11.Name = "Series1";
-            this.chartPayments.Series.Add(series11);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartPayments.Series.Add(series2);
             this.chartPayments.Size = new System.Drawing.Size(438, 306);
             this.chartPayments.TabIndex = 16;
             this.chartPayments.Text = "chart1";
-            title11.Name = "sdddsd";
-            title11.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
-            title11.TextStyle = System.Windows.Forms.DataVisualization.Charting.TextStyle.Frame;
-            this.chartPayments.Titles.Add(title11);
+            title2.Name = "sdddsd";
+            title2.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            title2.TextStyle = System.Windows.Forms.DataVisualization.Charting.TextStyle.Frame;
+            this.chartPayments.Titles.Add(title2);
             // 
             // chartVisits
             // 
-            chartArea12.Name = "ChartArea1";
-            this.chartVisits.ChartAreas.Add(chartArea12);
-            legend12.Name = "Legend1";
-            this.chartVisits.Legends.Add(legend12);
+            chartArea3.Name = "ChartArea1";
+            this.chartVisits.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartVisits.Legends.Add(legend3);
             this.chartVisits.Location = new System.Drawing.Point(57, 281);
             this.chartVisits.Name = "chartVisits";
             this.chartVisits.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series12.ChartArea = "ChartArea1";
-            series12.Legend = "Legend1";
-            series12.Name = "Series1";
-            this.chartVisits.Series.Add(series12);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartVisits.Series.Add(series3);
             this.chartVisits.Size = new System.Drawing.Size(438, 306);
             this.chartVisits.TabIndex = 15;
             this.chartVisits.Text = "chart1";
-            title12.Name = "sdddsd";
-            title12.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
-            title12.TextStyle = System.Windows.Forms.DataVisualization.Charting.TextStyle.Frame;
-            this.chartVisits.Titles.Add(title12);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Maroon;
-            this.label3.Location = new System.Drawing.Point(1384, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(150, 29);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "لوحة التحكم";
-            // 
-            // Elipse_PnlDisplay
-            // 
-            this.Elipse_PnlDisplay.BorderRadius = 20;
-            // 
-            // ElipseChartVisits
-            // 
-            this.ElipseChartVisits.BorderRadius = 50;
-            this.ElipseChartVisits.TargetControl = this.chartVisits;
-            // 
-            // ElipseChartPayments
-            // 
-            this.ElipseChartPayments.BorderRadius = 50;
-            this.ElipseChartPayments.TargetControl = this.chartPayments;
-            // 
-            // ElipsePnlBackup
-            // 
-            this.ElipsePnlBackup.BorderRadius = 50;
-            this.ElipsePnlBackup.TargetControl = this.PnlBackup;
+            title3.Name = "sdddsd";
+            title3.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            title3.TextStyle = System.Windows.Forms.DataVisualization.Charting.TextStyle.Frame;
+            this.chartVisits.Titles.Add(title3);
             // 
             // ctrl_ShowStatisticscs_DelayedPayments
             // 
@@ -669,6 +640,37 @@
             this.ctrl_ShowStatisticscs_Visits.TabIndex = 10;
             this.ctrl_ShowStatisticscs_Visits.TextLableInfo = ".";
             this.ctrl_ShowStatisticscs_Visits.TextLableTitle = "زيارات اليوم";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Maroon;
+            this.label3.Location = new System.Drawing.Point(1384, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(150, 29);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "لوحة التحكم";
+            // 
+            // Elipse_PnlDisplay
+            // 
+            this.Elipse_PnlDisplay.BorderRadius = 20;
+            // 
+            // ElipseChartVisits
+            // 
+            this.ElipseChartVisits.BorderRadius = 50;
+            this.ElipseChartVisits.TargetControl = this.chartVisits;
+            // 
+            // ElipseChartPayments
+            // 
+            this.ElipseChartPayments.BorderRadius = 50;
+            this.ElipseChartPayments.TargetControl = this.chartPayments;
+            // 
+            // ElipsePnlBackup
+            // 
+            this.ElipsePnlBackup.BorderRadius = 50;
+            this.ElipsePnlBackup.TargetControl = this.PnlBackup;
             // 
             // Elipse1
             // 
@@ -733,18 +735,18 @@
         private Guna.UI2.WinForms.Guna2Elipse Elipse2;
         private Guna.UI2.WinForms.Guna2Elipse Elipse3;
         private Guna.UI2.WinForms.Guna2Elipse ElipseChartAppointment;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
+        private Guna.UI2.WinForms.Guna2GradientButton btn_Doctors;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton8;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton7;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton6;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton5;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton4;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton3;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton11;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton10;
-        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton9;
+        private Guna.UI2.WinForms.Guna2GradientButton btn;
+        private Guna.UI2.WinForms.Guna2GradientButton btn_Logs;
+        private Guna.UI2.WinForms.Guna2GradientButton btn_Payments;
+        private Guna.UI2.WinForms.Guna2GradientButton btn_Visits;
+        private Guna.UI2.WinForms.Guna2GradientButton btn_Appointments;
+        private Guna.UI2.WinForms.Guna2GradientButton btnPersons;
+        private Guna.UI2.WinForms.Guna2GradientButton btnPatients;
+        private Guna.UI2.WinForms.Guna2GradientButton btn_Support;
+        private Guna.UI2.WinForms.Guna2GradientButton btnSettings;
+        private Guna.UI2.WinForms.Guna2GradientButton btn_Backup;
         private UControls.Ctrl_ShowStatisticscs ctrl_ShowStatisticscs_Visits;
         private UControls.Ctrl_ShowStatisticscs ctrl_ShowStatisticscsAppointment;
         private UControls.Ctrl_ShowStatisticscs ctrl_ShowStatisticscsAbsences;

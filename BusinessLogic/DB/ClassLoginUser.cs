@@ -67,7 +67,7 @@ namespace BusinessLogic.DB
                             PersonID = Convert.ToInt32(dr["PersonId"]),
                             FullName = dr["FullName"].ToString(),
                             Gender = dr["Gender"].ToString(),
-                            BirthDate = dr["BirthDate"].ToString(),
+                            BirthDate = Convert.ToDateTime( dr["BirthDate"] ),
                             Phone = dr["Phone"].ToString(),
                             Address = dr["Address"].ToString(),
                             CreatedAt = dr["CreatedAt"].ToString(),

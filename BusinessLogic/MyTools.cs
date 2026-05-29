@@ -14,8 +14,8 @@ using System.Windows.Forms;
     ///  كلاس فيه ادوات تساعد على التحكم  بالعناصر وضبط شكلها 
     ///  وخواص ثانية مفيدة
     /// </summary>
-   public class MyTools
-    {
+ public class MyTools
+  {
 
         /// <summary>
         /// استدعاء الأيقونة من الموارد وتعيينها للفورم
@@ -330,7 +330,77 @@ using System.Windows.Forms;
     }
 
 
+     
+
+
+    /// <summary>
+    /// تفعيل تحديد الصف عند الضغط بزر اليمين على الـ DataGridView
+    /// مع إظهار قائمة السياق وإرجاع رقم الصف المختار.
+    /// </summary>
+    public static void EnableRightClickSelection(DataGridView dgv, ContextMenuStrip menu, Action<int> onRowRightClick = null)
+    {
+        dgv.CellMouseDown += (s, e) =>
+        {
+            if (e.Button == MouseButtons.Right && e.RowIndex >= 0)
+            {
+                dgv.ClearSelection();
+                dgv.Rows[e.RowIndex].Selected = true;
+                //  dgv.CurrentCell = dgv.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                dgv.CurrentCell = dgv.Rows[e.RowIndex].Cells[0];
+
+                dgv.ContextMenuStrip = menu;
+
+                onRowRightClick?.Invoke(e.RowIndex);
+            }
+            else
+            {
+                dgv.ContextMenuStrip = null;
+            }
+        };
+    }
+
+
+    /// <summary>
+    /// التحقق من إدخال العنصر
+    /// </summary>
+    public static bool IsNullTextBox(Control textBox, ErrorProvider provider, string Message = "يرجى تعبئة هذا الحقل")
+    {
+        if (string.IsNullOrEmpty(textBox.Text))
+        {
+            provider.SetError(textBox, Message);
+            return true;  // إنه فارغ
+        }
+        else
+        {
+            provider.SetError(textBox, null);
+            return false; // ليس فارغ
+        }
+    }
 
 
 
-}
+
+    /// <summary>
+    /// تفعيل أو تعطيل إدخال الأحرف داخل TextBox.
+    /// إذا كانت allowAll = false يسمح فقط بالأرقام، 
+    /// وإذا كانت allowAll = true يسمح بإدخال أي شيء.
+    /// </summary>
+    public static void SetTextBoxInputMode(Control txt, bool allowAll = true)
+    {
+        txt.KeyPress -= Txt_KeyPress_Filter;
+
+        if (!allowAll)
+            txt.KeyPress += Txt_KeyPress_Filter;
+    }
+
+    // فلتر داخلي لمنع إدخال الأحرف عندما يكون allowAll = false
+    private static void Txt_KeyPress_Filter(object sender, KeyPressEventArgs e)
+    {
+        // السماح بالأرقام فقط + Backspace
+        if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            e.Handled = true;
+    }
+
+
+
+ }

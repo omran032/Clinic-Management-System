@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassLogs.cs" />
+    <Compile Include="ClassStyleAndColor.cs" />
     <Compile Include="CMD_DB\ClsClsCMD_TablePayments.cs" />
     <Compile Include="CMD_DB\ClsCMD_TableAppointments.cs" />
     <Compile Include="CMD_DB\ClsCMD_TablePersons.cs" />
