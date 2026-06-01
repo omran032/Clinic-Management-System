@@ -35,7 +35,7 @@ namespace BusinessLogic.CMD_DB
                 return null;
 
             // نقل البيانات من الجدول ل الأوبجكت
-            ClassPerson person = ClassPerson.SaveDataInObj(dt); 
+            ClassPerson person = ClassPerson.SaveDataInObj(dt);
 
             return person;
         }
@@ -198,23 +198,27 @@ namespace BusinessLogic.CMD_DB
                 { "@Phone", person.Phone },
                 { "@Address", person.Address }
             };
+ 
+            if (  ClassCommands.ExecuteQuery(query, parameters))
+                      MessageBox.Show("تم تعديل بيانات الشخص بنجاح.", "نجاح العملية", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("لم يتم تعديل بيانات الشخص.", "فشل العملية", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-            ClassCommands.ExecuteQuery(query, parameters);
-
-            MessageBox.Show("تم تعديل بيانات الشخص بنجاح.", "نجاح العملية", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         /// <summary>
         /// Persons إضافة شخص جديد إلى جدول 
         /// </summary>
-        public static void AddPerson(ClassPerson person)
+        public static int AddPerson(ClassPerson person)
         {
-            string query = @"
-        INSERT INTO Persons
-        (FirstName,LastName,Gender,BirthDate, Phone,Address,CreatedAt,UpdatedAt)
-        VALUES
-        (  @FirstName,@LastName,@Gender,@BirthDate,@Phone,@Address,GETDATE(),GETDATE()  )";
-            
+            string query = @"INSERT INTO Persons
+                (FirstName, LastName, Gender, BirthDate, Phone, Address, CreatedAt, UpdatedAt)
+                VALUES
+                    (@FirstName, @LastName, @Gender, @BirthDate, @Phone, @Address, GETDATE(), GETDATE());
+
+                    SELECT SCOPE_IDENTITY();";
+    
+
             Dictionary<string, object> parameters = new Dictionary<string, object>()
             {
                 { "@FirstName", person.FirstName },
@@ -225,10 +229,16 @@ namespace BusinessLogic.CMD_DB
                 { "@Address",   person.Address }
             };
 
-            ClassCommands.ExecuteQuery(query, parameters);
+            int newID = ClassCommands.ExecuteScalar(query, parameters);
 
-            MessageBox.Show("تمت إضافة الشخص بنجاح.", "نجاح العملية", MessageBoxButtons.OK,MessageBoxIcon.Information);
+            if (newID > 0)
+                MessageBox.Show("تمت إضافة الشخص بنجاح.", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("فشل إضافة الشخص.", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            return newID;
         }
+
 
 
 

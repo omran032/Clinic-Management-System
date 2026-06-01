@@ -196,28 +196,33 @@ namespace BusinessLogic
         }
 
 
-
         /// <summary>
         /// مثود عام للتعديل و الحذف و الإضافة
+        /// يرجع true إذا تم تنفيذ العملية (تأثر صف واحد أو أكثر)
+        /// ويرجع false إذا لم يتم أي تغيير
         /// </summary>
-        /// <param name="query"> الكويري </param>
-        /// <param name="parameters"> المعاملات بالقاموس </param>
-        public static void ExecuteQuery(string query, Dictionary<string, object> parameters)
+        public static bool ExecuteQuery(string query, Dictionary<string, object> parameters)
         {
-            if (string.IsNullOrWhiteSpace(ClsConnectionDB.connectionString)) throw new InvalidOperationException("ClsConnectionDB.connectionString غير مهيّأة. نادِ TypeConnetion قبل ShowData.");
-            using (SqlConnection conn = new SqlConnection ( ClsConnectionDB.connectionString) )
-            using (SqlCommand cmd = new SqlCommand(query, conn) )
+            if (string.IsNullOrWhiteSpace(ClsConnectionDB.connectionString))
+                throw new InvalidOperationException("ClsConnectionDB.connectionString غير مهيّأة.");
+
+            using (SqlConnection conn = new SqlConnection(ClsConnectionDB.connectionString))
+            using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                // SqlCommand  مع  Dictionary   ربط كل المعاملات الموجودة بالـ 
+                // ربط الباراميترات
                 foreach (var param in parameters)
                 {
                     cmd.Parameters.AddWithValue(param.Key, param.Value ?? DBNull.Value);
                 }
 
                 conn.Open();
-                cmd.ExecuteNonQuery();
+                int rowsAffected = cmd.ExecuteNonQuery();
+
+                // إذا تم تعديل أو إضافة أو حذف صف واحد على الأقل
+                return rowsAffected > 0;
             }
         }
+
 
 
 
@@ -261,7 +266,34 @@ namespace BusinessLogic
             }
         }
 
+        /// <summary>
+        /// وارجاع معرف الصف المضاف   Insert تنفيذ اوامر الاضافة 
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="parameters"></param>
+        /// <returns> ارجاع معرف الصف المضاف </returns>
+        /// <exception cref="InvalidOperationException"></exception>
+        public static int ExecuteScalar(string query, Dictionary<string, object> parameters)
+        {
+            if (string.IsNullOrWhiteSpace(ClsConnectionDB.connectionString))
+                throw new InvalidOperationException("ClsConnectionDB.connectionString غير مهيّأة.");
 
+            using (SqlConnection conn = new SqlConnection(ClsConnectionDB.connectionString))
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                foreach (var param in parameters)
+                {
+                    cmd.Parameters.AddWithValue(param.Key, param.Value ?? DBNull.Value);
+                }
+
+                conn.Open();
+                object result = cmd.ExecuteScalar();
+
+                return (result != null && result != DBNull.Value)
+                    ? Convert.ToInt32(result)
+                    : 0;
+            }
+        }
 
 
         /// <summary>

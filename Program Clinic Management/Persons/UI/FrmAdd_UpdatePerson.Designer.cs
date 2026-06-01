@@ -49,6 +49,7 @@
             this.RdoMale = new Guna.UI2.WinForms.Guna2RadioButton();
             this.RdoFemale = new Guna.UI2.WinForms.Guna2RadioButton();
             this.ElipseForm = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.lblID = new System.Windows.Forms.Label();
             this.pnl_TopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picTitle)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -74,7 +75,7 @@
             this.picTitle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picTitle.Image = global::Program_Clinic_Management.Properties.Resources.user;
             this.picTitle.ImageRotate = 0F;
-            this.picTitle.Location = new System.Drawing.Point(301, 9);
+            this.picTitle.Location = new System.Drawing.Point(275, 4);
             this.picTitle.Name = "picTitle";
             this.picTitle.Size = new System.Drawing.Size(45, 45);
             this.picTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -87,7 +88,7 @@
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTitle.Location = new System.Drawing.Point(352, 12);
+            this.lblTitle.Location = new System.Drawing.Point(326, 7);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(74, 36);
             this.lblTitle.TabIndex = 5;
@@ -136,7 +137,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(152, 109);
+            this.label1.Location = new System.Drawing.Point(153, 167);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 22);
             this.label1.TabIndex = 3;
@@ -146,7 +147,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(151, 185);
+            this.label2.Location = new System.Drawing.Point(152, 243);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 22);
             this.label2.TabIndex = 4;
@@ -156,7 +157,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(108, 328);
+            this.label3.Location = new System.Drawing.Point(109, 386);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 22);
             this.label3.TabIndex = 5;
@@ -166,7 +167,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(118, 396);
+            this.label4.Location = new System.Drawing.Point(119, 454);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 22);
             this.label4.TabIndex = 6;
@@ -176,7 +177,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(141, 463);
+            this.label5.Location = new System.Drawing.Point(142, 521);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 22);
             this.label5.TabIndex = 7;
@@ -199,7 +200,7 @@
             this.btnSave.Image = global::Program_Clinic_Management.Properties.Resources.user;
             this.btnSave.ImageOffset = new System.Drawing.Point(-6, 0);
             this.btnSave.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnSave.Location = new System.Drawing.Point(188, 540);
+            this.btnSave.Location = new System.Drawing.Point(189, 598);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(349, 50);
             this.btnSave.TabIndex = 13;
@@ -216,7 +217,7 @@
             this.DateTimeP_BirthDate.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateTimeP_BirthDate.ForeColor = System.Drawing.SystemColors.ControlText;
             this.DateTimeP_BirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DateTimeP_BirthDate.Location = new System.Drawing.Point(239, 318);
+            this.DateTimeP_BirthDate.Location = new System.Drawing.Point(240, 376);
             this.DateTimeP_BirthDate.MaxDate = new System.DateTime(9998, 12, 3, 0, 0, 0, 0);
             this.DateTimeP_BirthDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DateTimeP_BirthDate.Name = "DateTimeP_BirthDate";
@@ -237,7 +238,7 @@
             this.txtFirstName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFirstName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtFirstName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFirstName.Location = new System.Drawing.Point(239, 102);
+            this.txtFirstName.Location = new System.Drawing.Point(240, 160);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.PlaceholderText = "";
             this.txtFirstName.SelectedText = "";
@@ -257,7 +258,7 @@
             this.txtLastName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtLastName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtLastName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtLastName.Location = new System.Drawing.Point(239, 176);
+            this.txtLastName.Location = new System.Drawing.Point(240, 234);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.PlaceholderText = "";
             this.txtLastName.SelectedText = "";
@@ -277,7 +278,7 @@
             this.txtPhone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPhone.Location = new System.Drawing.Point(239, 388);
+            this.txtPhone.Location = new System.Drawing.Point(240, 446);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.PlaceholderText = "";
             this.txtPhone.SelectedText = "";
@@ -297,7 +298,7 @@
             this.txtAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAddress.Location = new System.Drawing.Point(239, 455);
+            this.txtAddress.Location = new System.Drawing.Point(240, 513);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.PlaceholderText = "";
             this.txtAddress.SelectedText = "";
@@ -314,7 +315,7 @@
             this.RdoMale.CheckedState.InnerColor = System.Drawing.Color.White;
             this.RdoMale.CheckedState.InnerOffset = -4;
             this.RdoMale.ForeColor = System.Drawing.Color.Navy;
-            this.RdoMale.Location = new System.Drawing.Point(239, 253);
+            this.RdoMale.Location = new System.Drawing.Point(240, 311);
             this.RdoMale.Name = "RdoMale";
             this.RdoMale.Size = new System.Drawing.Size(50, 26);
             this.RdoMale.TabIndex = 19;
@@ -336,7 +337,7 @@
             this.RdoFemale.CheckedState.InnerColor = System.Drawing.Color.White;
             this.RdoFemale.CheckedState.InnerOffset = -4;
             this.RdoFemale.ForeColor = System.Drawing.Color.Navy;
-            this.RdoFemale.Location = new System.Drawing.Point(442, 253);
+            this.RdoFemale.Location = new System.Drawing.Point(443, 311);
             this.RdoFemale.Name = "RdoFemale";
             this.RdoFemale.Size = new System.Drawing.Size(53, 26);
             this.RdoFemale.TabIndex = 20;
@@ -353,11 +354,24 @@
             this.ElipseForm.BorderRadius = 20;
             this.ElipseForm.TargetControl = this;
             // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.BackColor = System.Drawing.Color.Transparent;
+            this.lblID.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.ForeColor = System.Drawing.Color.Maroon;
+            this.lblID.Location = new System.Drawing.Point(311, 83);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(49, 24);
+            this.lblID.TabIndex = 21;
+            this.lblID.Text = "ID : ";
+            // 
             // FrmAdd_UpdatePerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(715, 611);
+            this.ClientSize = new System.Drawing.Size(715, 686);
+            this.Controls.Add(this.lblID);
             this.Controls.Add(this.RdoFemale);
             this.Controls.Add(this.RdoMale);
             this.Controls.Add(this.txtAddress);
@@ -411,5 +425,6 @@
         private Guna.UI2.WinForms.Guna2RadioButton RdoMale;
         private Guna.UI2.WinForms.Guna2RadioButton RdoFemale;
         private Guna.UI2.WinForms.Guna2Elipse ElipseForm;
+        private System.Windows.Forms.Label lblID;
     }
 }

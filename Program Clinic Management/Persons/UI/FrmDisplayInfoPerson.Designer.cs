@@ -112,7 +112,7 @@
             this.ctrl_PersonInfo.Name = "ctrl_PersonInfo";
             this.ctrl_PersonInfo.PersonID = 0;
             this.ctrl_PersonInfo.PersonInfo = null;
-            this.ctrl_PersonInfo.Size = new System.Drawing.Size(576, 405);
+            this.ctrl_PersonInfo.Size = new System.Drawing.Size(576, 434);
             this.ctrl_PersonInfo.TabIndex = 2;
             // 
             // ElipseForm
@@ -125,7 +125,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(759, 482);
+            this.ClientSize = new System.Drawing.Size(759, 518);
             this.Controls.Add(this.ctrl_PersonInfo);
             this.Controls.Add(this.pnl_TopBar);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

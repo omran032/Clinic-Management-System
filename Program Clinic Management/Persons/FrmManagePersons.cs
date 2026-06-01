@@ -69,7 +69,6 @@ namespace Program_Clinic_Management.Persons
             GetPersonID(); // GetID
             GetInfoPerson(); // Get Info
 
-
         ///////////////////////////////////
             // تحريك الفورم
             MyTools.MoveControl(pnl_TopBar, this); 
@@ -112,11 +111,14 @@ namespace Program_Clinic_Management.Persons
         // زر الحذف
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            SettingsControls();
             Delete();
         }
         // زر التعديل
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            SettingsControls();
+
             if (PersonInfo == null)
             {
                 MessageBox.Show("حدد الشخص أولاً", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -138,7 +140,9 @@ namespace Program_Clinic_Management.Persons
         // زر عرض المعلومات
         private void ToolStripMenu_btnShowInfo_Click(object sender, EventArgs e)
         {
-            FrmDisplayInfoPerson displayInfoPerson = new FrmDisplayInfoPerson(   );
+            SettingsControls();
+
+            FrmDisplayInfoPerson displayInfoPerson = new FrmDisplayInfoPerson(PersonInfo);
             MyTools.ShowForm(displayInfoPerson);
         }
 

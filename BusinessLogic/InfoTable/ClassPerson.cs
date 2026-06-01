@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BusinessLogic.InfoTable
 {
@@ -12,13 +13,13 @@ namespace BusinessLogic.InfoTable
         public int PersonID { get; set; }
 
 
-        string FullName_;
+       
         public string FullName
         { 
-        get { return FullName_; }
+        get { return FirstName + " " + LastName; ; }
             set
             {
-                FullName_ = FirstName + " " + LastName;
+                FullName = FirstName + " " + LastName;
             }
         }
 
@@ -63,7 +64,7 @@ namespace BusinessLogic.InfoTable
 
             ClassPerson person = new ClassPerson()
             {
-                PersonID  = Convert.ToInt32(row["PersonID"]),
+                PersonID  = int.Parse(row["PersonID"].ToString() ),
                 FirstName = row["FirstName"]?.ToString(),
                 LastName  = row["LastName"]?.ToString(),
                 Gender    = row["Gender"]?.ToString(),
@@ -73,7 +74,7 @@ namespace BusinessLogic.InfoTable
                 CreatedAt = row["CreatedAt"]?.ToString(),
                 UpdatedAt = row["UpdatedAt"]?.ToString()
             };
-
+            MessageBox.Show("Address : " + person.Address);
             return person;
         }
 

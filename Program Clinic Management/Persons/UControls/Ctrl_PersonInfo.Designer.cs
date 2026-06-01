@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ctrl_PersonInfo));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ElipseCtrl = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lbl_ID = new System.Windows.Forms.Label();
@@ -41,28 +40,11 @@
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblCtratedAt = new System.Windows.Forms.Label();
             this.lblUpdatedAt = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.lblAge = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.lblUpdatedAt);
-            this.groupBox1.Controls.Add(this.lblCtratedAt);
-            this.groupBox1.Controls.Add(this.lblAddress);
-            this.groupBox1.Controls.Add(this.lblPhone);
-            this.groupBox1.Controls.Add(this.lblBirthDate);
-            this.groupBox1.Controls.Add(this.lblGender);
-            this.groupBox1.Controls.Add(this.lblFullName);
-            this.groupBox1.Controls.Add(this.lbl_ID);
-            this.groupBox1.Controls.Add(this.guna2PictureBox1);
-            this.groupBox1.ForeColor = System.Drawing.Color.Gray;
-            this.groupBox1.Location = new System.Drawing.Point(10, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(557, 392);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "معلومات الشخص";
             // 
             // ElipseCtrl
             // 
@@ -116,11 +98,11 @@
             // 
             this.lblBirthDate.AutoSize = true;
             this.lblBirthDate.ForeColor = System.Drawing.Color.Black;
-            this.lblBirthDate.Location = new System.Drawing.Point(37, 276);
+            this.lblBirthDate.Location = new System.Drawing.Point(37, 272);
             this.lblBirthDate.Name = "lblBirthDate";
-            this.lblBirthDate.Size = new System.Drawing.Size(85, 19);
+            this.lblBirthDate.Size = new System.Drawing.Size(93, 19);
             this.lblBirthDate.TabIndex = 4;
-            this.lblBirthDate.Text = "BirthDate :";
+            this.lblBirthDate.Text = "BirthDate :  ";
             // 
             // lblPhone
             // 
@@ -146,21 +128,51 @@
             // 
             this.lblCtratedAt.AutoSize = true;
             this.lblCtratedAt.ForeColor = System.Drawing.Color.Black;
-            this.lblCtratedAt.Location = new System.Drawing.Point(412, 276);
+            this.lblCtratedAt.Location = new System.Drawing.Point(147, 322);
             this.lblCtratedAt.Name = "lblCtratedAt";
-            this.lblCtratedAt.Size = new System.Drawing.Size(91, 19);
+            this.lblCtratedAt.Size = new System.Drawing.Size(99, 19);
             this.lblCtratedAt.TabIndex = 7;
-            this.lblCtratedAt.Text = "Created At :";
+            this.lblCtratedAt.Text = "Created At :  ";
             // 
             // lblUpdatedAt
             // 
             this.lblUpdatedAt.AutoSize = true;
             this.lblUpdatedAt.ForeColor = System.Drawing.Color.Black;
-            this.lblUpdatedAt.Location = new System.Drawing.Point(221, 336);
+            this.lblUpdatedAt.Location = new System.Drawing.Point(145, 374);
             this.lblUpdatedAt.Name = "lblUpdatedAt";
-            this.lblUpdatedAt.Size = new System.Drawing.Size(93, 19);
+            this.lblUpdatedAt.Size = new System.Drawing.Size(101, 19);
             this.lblUpdatedAt.TabIndex = 8;
-            this.lblUpdatedAt.Text = "Updated At :";
+            this.lblUpdatedAt.Text = "Updated At :  ";
+            // 
+            // lblAge
+            // 
+            this.lblAge.AutoSize = true;
+            this.lblAge.ForeColor = System.Drawing.Color.Black;
+            this.lblAge.Location = new System.Drawing.Point(418, 272);
+            this.lblAge.Name = "lblAge";
+            this.lblAge.Size = new System.Drawing.Size(53, 19);
+            this.lblAge.TabIndex = 9;
+            this.lblAge.Text = "Age :  ";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lblAge);
+            this.groupBox1.Controls.Add(this.lblUpdatedAt);
+            this.groupBox1.Controls.Add(this.lblCtratedAt);
+            this.groupBox1.Controls.Add(this.lblAddress);
+            this.groupBox1.Controls.Add(this.lblPhone);
+            this.groupBox1.Controls.Add(this.lblBirthDate);
+            this.groupBox1.Controls.Add(this.lblGender);
+            this.groupBox1.Controls.Add(this.lblFullName);
+            this.groupBox1.Controls.Add(this.lbl_ID);
+            this.groupBox1.Controls.Add(this.guna2PictureBox1);
+            this.groupBox1.ForeColor = System.Drawing.Color.Gray;
+            this.groupBox1.Location = new System.Drawing.Point(10, 4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(557, 420);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "معلومات الشخص";
             // 
             // Ctrl_PersonInfo
             // 
@@ -168,28 +180,28 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Ctrl_PersonInfo";
-            this.Size = new System.Drawing.Size(576, 405);
+            this.Size = new System.Drawing.Size(576, 427);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
         private Guna.UI2.WinForms.Guna2Elipse ElipseCtrl;
-        private System.Windows.Forms.Label lbl_ID;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lblAge;
+        private System.Windows.Forms.Label lblUpdatedAt;
+        private System.Windows.Forms.Label lblCtratedAt;
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblBirthDate;
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.Label lblFullName;
-        private System.Windows.Forms.Label lblUpdatedAt;
-        private System.Windows.Forms.Label lblCtratedAt;
+        private System.Windows.Forms.Label lbl_ID;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }
 }

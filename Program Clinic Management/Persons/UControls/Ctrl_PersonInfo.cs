@@ -56,7 +56,8 @@ namespace Program_Clinic_Management.Persons.UControls
             lbl_ID.Text       += PersonInfo.PersonID;
             lblFullName.Text  += PersonInfo.FullName;
             lblGender.Text    += PersonInfo.Gender;
-            lblBirthDate.Text += PersonInfo.BirthDate;
+            lblBirthDate.Text += PersonInfo.BirthDate.ToString("yyyy / MM / dd");
+            lblAge.Text       += PersonInfo.Age;
             lblPhone.Text     += PersonInfo.Phone;
             lblAddress.Text   += PersonInfo.Address;
             lblCtratedAt.Text += PersonInfo.CreatedAt;

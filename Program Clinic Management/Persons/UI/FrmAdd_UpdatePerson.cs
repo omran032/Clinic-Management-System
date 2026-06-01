@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Program_Clinic_Management.Persons.UI
 {
@@ -20,6 +21,7 @@ namespace Program_Clinic_Management.Persons.UI
             InitializeComponent();
 
             SettingsControls();
+
 
             mode = mode_;
 
@@ -45,6 +47,7 @@ namespace Program_Clinic_Management.Persons.UI
                 lblTitle.Text = "Add";
                 picTitle.Image = Properties.Resources.user;
                 btnSave.Image  = Properties.Resources.user;
+                btnSave.Text  = "إضافة";
 
             }
             else if (mode == Mode.Update)
@@ -52,6 +55,8 @@ namespace Program_Clinic_Management.Persons.UI
                 lblTitle.Text = "Update";
                 picTitle.Image = Properties.Resources.Synchronize;
                 btnSave.Image = Properties.Resources.Synchronize;
+                btnSave.Text = "تعديل";
+
                 LoadInfoPerson();
             }
         }
@@ -61,10 +66,11 @@ namespace Program_Clinic_Management.Persons.UI
         {
             if (PersonInfo == null) return;
 
+            lblID.Text       += PersonInfo.PersonID.ToString();
             txtFirstName.Text = PersonInfo.FirstName;
-            txtLastName.Text = PersonInfo.LastName;
+            txtLastName.Text  = PersonInfo.LastName;
             DateTimeP_BirthDate.Value =   PersonInfo.BirthDate  ;
-            txtPhone.Text = PersonInfo.Phone;
+            txtPhone.Text   = PersonInfo.Phone;
             txtAddress.Text = PersonInfo.Address;
             RdoMale.Checked = PersonInfo.Gender == "ذكر";
         }
@@ -73,11 +79,16 @@ namespace Program_Clinic_Management.Persons.UI
        void SaveInfoPerson_InObj()
         {
             PersonInfo = new ClassPerson();
+          //  if(mode == Mode.Update)
+            int.TryParse(lblID.Text.Replace("ID :", "").Trim() ,out int ID  );
+            PersonInfo.PersonID = ID;
+
             PersonInfo.FirstName = txtFirstName.Text.Trim();
-            PersonInfo.LastName = txtLastName.Text.Trim();
+            PersonInfo.LastName  = txtLastName.Text.Trim();
             PersonInfo.BirthDate = DateTimeP_BirthDate.Value;
-            PersonInfo.Phone = txtPhone.Text.Trim();
-            PersonInfo.Gender = RdoMale.Checked ? "ذكر" : "أنثى";
+            PersonInfo.Phone    = txtPhone.Text.Trim();
+            PersonInfo.Address  = txtAddress.Text.Trim();
+            PersonInfo.Gender   = RdoMale.Checked ? "ذكر" : "أنثى";
 
         }
 
@@ -144,7 +155,7 @@ namespace Program_Clinic_Management.Persons.UI
 
             if (mode == Mode.Add)
             {
-                ClsCMD_TablePersons.AddPerson(PersonInfo);
+                PersonInfo.PersonID = ClsCMD_TablePersons.AddPerson(PersonInfo);
 
                 //  تغيير الوضع
                 mode = Mode.Update;
