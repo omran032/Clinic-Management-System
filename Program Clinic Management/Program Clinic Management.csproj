@@ -88,6 +88,36 @@
     <Compile Include="Login\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Patients\FrmManagePatients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patients\FrmManagePatients.Designer.cs">
+      <DependentUpon>FrmManagePatients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patients\UControls\Ctrl_FeltterDataPatients.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Patients\UControls\Ctrl_FeltterDataPatients.Designer.cs">
+      <DependentUpon>Ctrl_FeltterDataPatients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patients\UControls\Ctrl_PatientInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Patients\UControls\Ctrl_PatientInfo.Designer.cs">
+      <DependentUpon>Ctrl_PatientInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patients\UI\FrmAdd_UpdatePatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patients\UI\FrmAdd_UpdatePatient.Designer.cs">
+      <DependentUpon>FrmAdd_UpdatePatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patients\UI\Frm_InfoPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patients\UI\Frm_InfoPatient.Designer.cs">
+      <DependentUpon>Frm_InfoPatient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Persons\FrmManagePersons.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +155,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="UControls\CtrlNotes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UControls\CtrlNotes.Designer.cs">
+      <DependentUpon>CtrlNotes.cs</DependentUpon>
+    </Compile>
     <Compile Include="UControls\Ctrl_ShowStatisticscs.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -139,6 +175,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patients\FrmManagePatients.resx">
+      <DependentUpon>FrmManagePatients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patients\UControls\Ctrl_FeltterDataPatients.resx">
+      <DependentUpon>Ctrl_FeltterDataPatients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patients\UControls\Ctrl_PatientInfo.resx">
+      <DependentUpon>Ctrl_PatientInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patients\UI\FrmAdd_UpdatePatient.resx">
+      <DependentUpon>FrmAdd_UpdatePatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patients\UI\Frm_InfoPatient.resx">
+      <DependentUpon>Frm_InfoPatient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Persons\FrmManagePersons.resx">
       <DependentUpon>FrmManagePersons.cs</DependentUpon>
@@ -159,6 +210,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UControls\CtrlNotes.resx">
+      <DependentUpon>CtrlNotes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UControls\Ctrl_ShowStatisticscs.resx">
       <DependentUpon>Ctrl_ShowStatisticscs.cs</DependentUpon>
@@ -186,6 +240,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>ClinicSystemDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\NextPage.png" />
     <None Include="Resources\X.png" />
     <None Include="Resources\Minimize.png" />
     <None Include="Resources\user.png" />

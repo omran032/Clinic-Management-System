@@ -58,9 +58,10 @@ namespace BusinessLogic.InfoTable
         /// </summary>
         /// <param name="dt">جدول البيانات</param>
         /// <returns></returns>
-        public static ClassPerson SaveDataInObj(DataTable dt)
+        public static ClassPerson SaveDataInObj(DataTable dt , int RowIndex = 0)
         {
-            DataRow row = dt.Rows[0]; // Top 1
+                                // الصف المراد
+            DataRow row = dt.Rows[RowIndex]; // Top 1
 
             ClassPerson person = new ClassPerson()
             {
@@ -74,8 +75,7 @@ namespace BusinessLogic.InfoTable
                 CreatedAt = row["CreatedAt"]?.ToString(),
                 UpdatedAt = row["UpdatedAt"]?.ToString()
             };
-            MessageBox.Show("Address : " + person.Address);
-            return person;
+             return person;
         }
 
 

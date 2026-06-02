@@ -22,7 +22,9 @@ namespace Program_Clinic_Management
            // Application.Run(new FrmLogin());
 
 
-            Application.Run(new FrmDashboardAdmin());
+           // Application.Run(new Form1());
+              Application.Run(new FrmDashboardAdmin());
+
             //Application.Run(new FrmAdd_UpdatePerson(FrmAdd_UpdatePerson.Mode.Add));
             // Application.Run(new FrmDisplayInfoPerson());
         }

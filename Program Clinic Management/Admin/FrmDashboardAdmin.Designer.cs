@@ -332,6 +332,7 @@
             this.btnPatients.Size = new System.Drawing.Size(210, 47);
             this.btnPatients.TabIndex = 11;
             this.btnPatients.Text = "المرضى";
+            this.btnPatients.Click += new System.EventHandler(this.btnPatients_Click);
             // 
             // btn_Payments
             // 

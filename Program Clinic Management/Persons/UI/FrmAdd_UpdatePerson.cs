@@ -29,8 +29,12 @@ namespace Program_Clinic_Management.Persons.UI
             Load();
         }
 
+        // ينفذ عند إضافة شخص جديد وارسال بياناته عبر الأوبجكت
+        public event Action<ClassPerson> EventShowDataPerson;
+
+
         // وضع التشغيل
-       public Mode mode;
+        public Mode mode;
         public enum Mode
         {
             Add,
@@ -78,8 +82,9 @@ namespace Program_Clinic_Management.Persons.UI
         // 
        void SaveInfoPerson_InObj()
         {
+            if(PersonInfo == null)
             PersonInfo = new ClassPerson();
-          //  if(mode == Mode.Update)
+
             int.TryParse(lblID.Text.Replace("ID :", "").Trim() ,out int ID  );
             PersonInfo.PersonID = ID;
 
@@ -90,6 +95,10 @@ namespace Program_Clinic_Management.Persons.UI
             PersonInfo.Address  = txtAddress.Text.Trim();
             PersonInfo.Gender   = RdoMale.Checked ? "ذكر" : "أنثى";
 
+            if (mode == Mode.Add)
+                PersonInfo.CreatedAt = DateTime.Now.ToString();
+            
+                PersonInfo.UpdatedAt = DateTime.Now.ToString();
         }
 
 
@@ -157,6 +166,7 @@ namespace Program_Clinic_Management.Persons.UI
             {
                 PersonInfo.PersonID = ClsCMD_TablePersons.AddPerson(PersonInfo);
 
+                EventShowDataPerson?.Invoke(PersonInfo); // ارجاع بيانات الشخص المضاف
                 //  تغيير الوضع
                 mode = Mode.Update;
                 Load();
@@ -165,6 +175,7 @@ namespace Program_Clinic_Management.Persons.UI
             else if(mode == Mode.Update)
             {
                 ClsCMD_TablePersons.UpdatePerson(PersonInfo);
+                EventShowDataPerson?.Invoke(PersonInfo); // ارجاع بيانات الشخص المضاف
             }
         }
     }

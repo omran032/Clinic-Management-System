@@ -270,50 +270,58 @@ using System.Windows.Forms;
 
 
 
-        /// <summary>
-        /// يرسم تدرج لوني على العنصر المحدد بشكل آمن
-        /// </summary>
-        /// <param name="control">العنصر (Form, Panel, Label ...)</param>
-        /// <param name="color1">اللون الأول</param>
-        /// <param name="color2">اللون الثاني</param>
-        /// <param name="isBackground">True للخلفية، False للنص</param>
-        public static void ColorControl(Control control, Color color1, Color color2, bool isBackground = true)
+    /// <summary>
+    /// يرسم تدرجًا لونيًا على العنصر المحدد (خلفية أو نص) بشكل آمن ومرن.
+    /// </summary>
+    /// <param name="control">العنصر المراد تطبيق التدرج عليه (Form, Panel, Label ...).</param>
+    /// <param name="color1">اللون الأول في التدرج.</param>
+    /// <param name="color2">اللون الثاني في التدرج.</param>
+    /// <param name="isBackground">
+    /// إذا كانت True يتم رسم التدرج على الخلفية،  
+    /// وإذا كانت False يتم تطبيق التدرج على نص العنصر.
+    /// </param>
+    /// <param name="isVertical">
+    /// يحدد اتجاه التدرج:  
+    /// True = عمودي (من الأعلى إلى الأسفل) ← الوضع الافتراضي  
+    /// False = أفقي (من اليمين إلى اليسار)
+    /// </param>
+    public static void ColorControl(Control control, Color color1, Color color2, bool isBackground = true, bool isVertical = true)
+    {
+        control.Paint += (s, e) =>
         {
-            control.Paint += (s, e) =>
+            Rectangle rect = control.ClientRectangle;
+
+            // تحقق من أن الحجم صالح قبل الرسم
+            if (rect.Width <= 0 || rect.Height <= 0)
+                return;
+
+            // تحديد اتجاه التدرج
+            LinearGradientMode mode = isVertical
+                ? LinearGradientMode.Vertical
+                : LinearGradientMode.Horizontal;
+
+            using (LinearGradientBrush brush = new LinearGradientBrush(rect, color1, color2, mode))
             {
-                Rectangle rect = control.ClientRectangle;
-
-                // تحقق من أن الحجم صالح قبل الرسم
-                if (rect.Width <= 0 || rect.Height <= 0)
-                    return;
-
-                using (LinearGradientBrush brush = new LinearGradientBrush(
-                    rect, color1, color2, LinearGradientMode.Vertical))
+                if (isBackground)
                 {
-                    if (isBackground)
-                    {
-                        e.Graphics.FillRectangle(brush, rect);
-                    }
-                    else
-                    {
-                        Font font = control.Font;
-                        SizeF textSize = e.Graphics.MeasureString(control.Text, font);
-                        PointF location = new PointF(
-                            (control.Width - textSize.Width) / 2,
-                            (control.Height - textSize.Height) / 2);
-
-                        e.Graphics.DrawString(control.Text, font, brush, location);
-                    }
+                    e.Graphics.FillRectangle(brush, rect);
                 }
-            };
+                else
+                {
+                    Font font = control.Font;
+                    SizeF textSize = e.Graphics.MeasureString(control.Text, font);
+                    PointF location = new PointF(
+                        (control.Width - textSize.Width) / 2,
+                        (control.Height - textSize.Height) / 2);
 
-            // إخفاء النص الأصلي إذا كنا نرسمه يدويًا
-            if (!isBackground)
-                control.ForeColor = Color.Transparent;
+                    e.Graphics.DrawString(control.Text, font, brush, location);
+                }
+            }
+        };
+    }
 
-            // إعادة رسم العنصر بعد التعديل
-            control.Invalidate();
-        }
+
+
 
 
 
@@ -330,7 +338,7 @@ using System.Windows.Forms;
     }
 
 
-     
+
 
 
     /// <summary>
@@ -341,11 +349,12 @@ using System.Windows.Forms;
     {
         dgv.CellMouseDown += (s, e) =>
         {
-            if (e.Button == MouseButtons.Right && e.RowIndex >= 0)
+            if ((e.Button == MouseButtons.Left || e.Button == MouseButtons.Right)
+                && e.RowIndex >= 0)
             {
                 dgv.ClearSelection();
                 dgv.Rows[e.RowIndex].Selected = true;
-                //  dgv.CurrentCell = dgv.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
                 dgv.CurrentCell = dgv.Rows[e.RowIndex].Cells[0];
 
                 dgv.ContextMenuStrip = menu;
@@ -358,6 +367,7 @@ using System.Windows.Forms;
             }
         };
     }
+
 
 
     /// <summary>

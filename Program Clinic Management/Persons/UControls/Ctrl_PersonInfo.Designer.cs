@@ -57,9 +57,9 @@
             this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(225, 11);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(17, 25);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(86, 73);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(76, 63);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
@@ -68,7 +68,7 @@
             // 
             this.lbl_ID.AutoSize = true;
             this.lbl_ID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lbl_ID.Location = new System.Drawing.Point(221, 97);
+            this.lbl_ID.Location = new System.Drawing.Point(221, 107);
             this.lbl_ID.Name = "lbl_ID";
             this.lbl_ID.Size = new System.Drawing.Size(40, 19);
             this.lbl_ID.TabIndex = 1;
@@ -156,6 +156,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.lblAge);
             this.groupBox1.Controls.Add(this.lblUpdatedAt);
             this.groupBox1.Controls.Add(this.lblCtratedAt);
@@ -169,7 +171,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.Gray;
             this.groupBox1.Location = new System.Drawing.Point(10, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(557, 420);
+            this.groupBox1.Size = new System.Drawing.Size(609, 420);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "معلومات الشخص";
@@ -182,7 +184,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Ctrl_PersonInfo";
-            this.Size = new System.Drawing.Size(576, 427);
+            this.Size = new System.Drawing.Size(628, 427);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -51,17 +51,32 @@ namespace Program_Clinic_Management.Persons.UControls
             }
         }
 
+
+        // عنوان الغروب بوكس
+        private string _groupTitle;
+        public string GroupTitle
+        {
+            get => _groupTitle;
+            set
+            {
+                if (value == null) return;
+
+                _groupTitle = value;
+                groupBox1.Text = value;   // تغيير عنوان الغروب بوكس
+            }
+        }
+
         void LoadData()
         {
-            lbl_ID.Text       += PersonInfo.PersonID;
-            lblFullName.Text  += PersonInfo.FullName;
-            lblGender.Text    += PersonInfo.Gender;
-            lblBirthDate.Text += PersonInfo.BirthDate.ToString("yyyy / MM / dd");
-            lblAge.Text       += PersonInfo.Age;
-            lblPhone.Text     += PersonInfo.Phone;
-            lblAddress.Text   += PersonInfo.Address;
-            lblCtratedAt.Text += PersonInfo.CreatedAt;
-            lblUpdatedAt.Text += PersonInfo.UpdatedAt;
+            lbl_ID.Text       = "ID : " + PersonInfo.PersonID;
+            lblFullName.Text  = "Full Name : " + PersonInfo.FullName;
+            lblGender.Text    = "Gender : " + PersonInfo.Gender;
+            lblBirthDate.Text = "BirthDate : " + PersonInfo.BirthDate.ToString("yyyy / MM / dd");
+            lblAge.Text       = "Age : "   + PersonInfo.Age;
+            lblPhone.Text     = "Phone : " + PersonInfo.Phone;
+            lblAddress.Text   = "Address : " + PersonInfo.Address;
+            lblCtratedAt.Text = "Ctreated At : " + PersonInfo.CreatedAt;
+            lblUpdatedAt.Text = "Updated At : "  + PersonInfo.UpdatedAt;
         }
 
 
