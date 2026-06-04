@@ -76,6 +76,24 @@
     <Compile Include="Admin\FrmDashboardAdmin.Designer.cs">
       <DependentUpon>FrmDashboardAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Doctors\FrmManageDoctors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctors\FrmManageDoctors.Designer.cs">
+      <DependentUpon>FrmManageDoctors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctors\UControls\CtrlCountVisits_AppointmentsDoctor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doctors\UControls\CtrlCountVisits_AppointmentsDoctor.Designer.cs">
+      <DependentUpon>CtrlCountVisits_AppointmentsDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctors\UI\Frm_InfoDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctors\UI\Frm_InfoDoctor.Designer.cs">
+      <DependentUpon>Frm_InfoDoctor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +187,15 @@
     </Compile>
     <EmbeddedResource Include="Admin\FrmDashboardAdmin.resx">
       <DependentUpon>FrmDashboardAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctors\FrmManageDoctors.resx">
+      <DependentUpon>FrmManageDoctors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctors\UControls\CtrlCountVisits_AppointmentsDoctor.resx">
+      <DependentUpon>CtrlCountVisits_AppointmentsDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctors\UI\Frm_InfoDoctor.resx">
+      <DependentUpon>Frm_InfoDoctor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

@@ -43,6 +43,9 @@ namespace Program_Clinic_Management.Patients
             FormatPatientsGrid();
         }
 
+        /// <summary>
+        /// إحضار البيانات بعد الفلترة وعرضها بالجدول
+        /// </summary>
         void GetDataFeltter(DataTable DataFeltter)
         {
             // تحميل بيانات الفلترة بالجدول
@@ -137,6 +140,9 @@ namespace Program_Clinic_Management.Patients
          }
 
 
+
+
+
         void Delete()
         {
             if (PatientID <= 0)
@@ -152,7 +158,7 @@ namespace Program_Clinic_Management.Patients
          int result =   ClsClsCMD_TablePatients.DeletePatientByID(PatientID);
             if(result == 1 )
             {     // حفظ العملية بالسجل
-                ClassLogs.AddLog(ClassUser.UserInfo.UserID, LogAction.Update.ToString(), "Patients", PatientID, "حذف المريض");
+                ClassLogs.AddLog(ClassUser.UserInfo.UserID, LogAction.Delete.ToString(), "Patients", PatientID, "حذف المريض");
 
                 LoadData();
             }

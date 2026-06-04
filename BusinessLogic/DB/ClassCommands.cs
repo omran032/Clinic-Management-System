@@ -140,6 +140,39 @@ namespace BusinessLogic
             }
         }
 
+        /// <summary>
+        /// Scalar تنفيذ استعلام  .
+        /// (Dictionary) مع دعم الباراميترات .
+        /// ترجع قيمة واحدة فقط.
+        /// </summary>
+        public static dynamic ShowValue(string query, Dictionary<string, object> parameters)
+        {
+            if (string.IsNullOrWhiteSpace(ClsConnectionDB.connectionString))
+                throw new InvalidOperationException("ClsConnectionDB.connectionString غير مهيّأة. نادِ TypeConnetion قبل ShowValue.");
+
+            using (SqlConnection connection = new SqlConnection(ClsConnectionDB.connectionString))
+            {
+                connection.Open();
+
+                SqlCommand command = new SqlCommand(query, connection);
+
+                // إضافة الباراميترات
+                if (parameters != null)
+                {
+                    foreach (var param in parameters)
+                    {
+                        command.Parameters.AddWithValue(param.Key, param.Value ?? DBNull.Value);
+                    }
+                }
+
+                object result = command.ExecuteScalar();
+
+                if (result == null || result == DBNull.Value)
+                    return 0;
+
+                return result;
+            }
+        }
 
 
         /// <summary>

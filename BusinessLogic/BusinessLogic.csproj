@@ -50,6 +50,7 @@
     <Compile Include="CMD_DB\ClsClsCMD_TablePatients.cs" />
     <Compile Include="CMD_DB\ClsClsCMD_TablePayments.cs" />
     <Compile Include="CMD_DB\ClsCMD_TableAppointments.cs" />
+    <Compile Include="CMD_DB\ClsCMD_TableDoctors.cs" />
     <Compile Include="CMD_DB\ClsCMD_TablePersons.cs" />
     <Compile Include="CMD_DB\ClsCMD_TableVisits.cs" />
     <Compile Include="DB\ClassCommands.cs" />
