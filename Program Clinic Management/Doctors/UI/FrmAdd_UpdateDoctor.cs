@@ -1,7 +1,6 @@
 ﻿using BusinessLogic;
 using BusinessLogic.CMD_DB;
 using BusinessLogic.InfoTable;
-using Program_Clinic_Management.Persons.UControls;
 using Program_Clinic_Management.Persons.UI;
 using System;
 using System.Collections.Generic;
@@ -13,33 +12,38 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static BusinessLogic.ClassLogs;
-using static Program_Clinic_Management.Patients.UI.FrmAdd_UpdatePatient;
-using static Program_Clinic_Management.Persons.UI.FrmAdd_UpdatePerson;
 
-namespace Program_Clinic_Management.Patients.UI
+namespace Program_Clinic_Management.Doctors.UI
 {
-    public partial class FrmAdd_UpdatePatient : Form
+    public partial class FrmAdd_UpdateDoctor : Form
     {
-        public FrmAdd_UpdatePatient(  Mode mode_ ,  ClassPatients PatientsInfo_ = null )
+        public FrmAdd_UpdateDoctor(Mode mode_, ClassDoctor DoctorInfo_ = null)
         {
             InitializeComponent();
 
             SettingsControls();
 
             mode = mode_;
-            PatientsInfo = PatientsInfo_;
+            DoctorInfo = DoctorInfo_;
 
             Load();
 
         }
 
-        // بقا  ضيف حدث مشان الرفرش
-        //
-        //
+
+        //   حدث مشان الرفرش عند استععمال احد الواجهات لواجهة التعديل
         public event Action EventShowRefrechData;
 
-        ClassPatients PatientsInfo = new ClassPatients();
-        ClassPerson   InfoPersonSearch;
+        ClassDoctor DoctorInfo ;
+
+
+        // وضع التشغيل
+        public Mode mode;
+        public enum Mode
+        {
+            Add,
+            Update
+        }
 
         /// <summary>
         /// ضبط العناصر على الشاشة 
@@ -57,16 +61,9 @@ namespace Program_Clinic_Management.Patients.UI
             // تحريك الفورم
             MyTools.MoveControl(pnl_TopBar, this);
 
-        }
+            // Combox تحميل الاختصاصات داخل عنصر 
+            ClsCMD_TableDoctors.LoadSpecializations(Combx_Specialization);
 
-
-
-        // وضع التشغيل
-        public Mode mode;
-        public enum Mode
-        {
-            Add,
-            Update
         }
 
         // تحديد وضع عرض الواجهة ... تعديل _ حذف
@@ -79,44 +76,42 @@ namespace Program_Clinic_Management.Patients.UI
                 btnSave.Image = Properties.Resources.user;
                 btnSave.Text = "إضافة";
 
-                btn_Next.Enabled = false;
                 btnSave.Enabled = false;
-                PnlInfoPatient.Enabled = false;
 
-                PnlStatusPatient.Visible = false;
             }
             else if (mode == Mode.Update)
             {
+                if (DoctorInfo == null || DoctorInfo.PersonInfo == null)
+                    return;
+
                 lblTitle.Text = "Update";
                 picTitle.Image = Properties.Resources.Synchronize;
                 btnSave.Image = Properties.Resources.Synchronize;
                 btnSave.Text = "تعديل";
                 // ارسال بيانات الشخص لعرضها بالعنصر
-                ctrl_PersonInfo.PersonInfo = PatientsInfo.PersonInfo;
+                ctrl_PersonInfo.PersonInfo = DoctorInfo.PersonInfo;
+                // حفظ معرف الشخص حتى نتمكن من معرفة المعرف القديم عند التعديل
+                OldPersonID = DoctorInfo.PersonInfo.PersonID;
 
-                btn_Next.Enabled = true;
+                lblID_Doctor.Text = "ID Doctor : " + DoctorInfo.DoctorID;
+
                 btnSave.Enabled = true;
-                PnlInfoPatient.Enabled = true;
-
-                PnlStatusPatient.Visible = true;
 
                 LoadInfoPatient();
             }
         }
 
 
+
         void LoadInfoPatient()
         {
-            lblID_Patient.Text       = "ID Patient : " + PatientsInfo.PatientID;
-            Txt_MedicalNotes.Text    = PatientsInfo.MedicalNotes;
-            Txt_ChronicDiseases.Text = PatientsInfo.ChronicDiseases;
-            Txt_Allergies.Text       = PatientsInfo.Allergies;
-            Txt_Notes.Text           = PatientsInfo.Notes;
+            txtNotes.Text = DoctorInfo.Notes;
+            Combx_Specialization.SelectedValue = DoctorInfo.SprcializationID;
 
-            lblFirstVisitDate.Text         = "Date of the first visit : " + PatientsInfo.FirstVisitDate;
-            lbl_StatusComplianceScore.Text = "Commitment Status : "       + PatientsInfo.StatusComplianceScore;
-            lbl_ComplianceScore.Text       = "Degree of commitment : "    + PatientsInfo.ComplianceScore;
         }
+
+
+        int OldPersonID; // معرف الشخص القديم
 
         bool PersonIsFind = false;
 
@@ -126,58 +121,49 @@ namespace Program_Clinic_Management.Patients.UI
         /// </summary>
         void GetPersonInfo(ClassPerson PersonInfo)
         {
-            bool personUsed = ClsClsCMD_TablePatients.IsPersonAlreadyPatient(PersonInfo.PersonID);
+            bool personUsed = ClsCMD_TableDoctors.IsPersonDoctor(PersonInfo.PersonID);
 
             if (mode == Mode.Add)
             {
                 if (personUsed)
                 {
-                    MessageBox.Show("هذا الشخص مسجّل مسبقاً كمريض.", "تنبيه",
+                    MessageBox.Show("هذا الشخص مسجّل مسبقاً كطبيب.", "تنبيه",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
             }
             else if (mode == Mode.Update)
             {
-                if (personUsed && PatientsInfo.PersonInfo.PersonID != PersonInfo.PersonID)
+                if (personUsed && DoctorInfo.PersonInfo.PersonID != PersonInfo.PersonID)
                 {
-                    MessageBox.Show("هذا الشخص مرتبط بمريض آخر.", "تنبيه",
+                    MessageBox.Show("هذا الشخص مرتبط بطبيب آخر.", "تنبيه",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
             }
 
             // الشخص صالح للاستخدام
-            PersonIsFind = false;
-
-            // تفعيل عناصر الواجهة
-            btn_Next.Enabled = true;
+            PersonIsFind = false;//؟؟
             btnSave.Enabled = true;
-            PnlInfoPatient.Enabled = true;
-            tabControl1.Enabled = true;
 
             // عرض بيانات الشخص
             ctrl_PersonInfo.PersonInfo = PersonInfo;
 
-            if (PatientsInfo == null)
-                PatientsInfo = new ClassPatients();
+            if (DoctorInfo == null)
+                DoctorInfo = new ClassDoctor();
 
-            PatientsInfo.PersonInfo = PersonInfo;
+            DoctorInfo.PersonInfo = PersonInfo;
         }
-
-
 
 
         // التحقق من ادخال كامل المعلومات
         bool IsPatentInfoValid()
         {
-            if (PatientsInfo.PersonInfo == null || PatientsInfo.PersonInfo.PersonID == 0)
+            if (DoctorInfo.PersonInfo == null || DoctorInfo.PersonInfo.PersonID == 0)
                 return false;
 
-            if (string.IsNullOrWhiteSpace(Txt_MedicalNotes.Text)) return false;
-            if (string.IsNullOrWhiteSpace(Txt_ChronicDiseases.Text)) return false;
-            if (string.IsNullOrWhiteSpace(Txt_Allergies.Text)) return false;
-            if (string.IsNullOrWhiteSpace(Txt_Notes.Text)) return false;
+            if (string.IsNullOrWhiteSpace(txtNotes.Text)) return false;
+            if (Combx_Specialization.SelectedValue == null) return false;
 
             return true;
         }
@@ -188,38 +174,28 @@ namespace Program_Clinic_Management.Patients.UI
         /// </summary>
         void SaveInfoPatient_InObj()
         {
-            PatientsInfo.MedicalNotes = Txt_MedicalNotes.Text.Trim();
-            PatientsInfo.ChronicDiseases = Txt_ChronicDiseases.Text.Trim();
-            PatientsInfo.Allergies = Txt_Allergies.Text.Trim();
-            PatientsInfo.Notes = Txt_Notes.Text.Trim();
+            DoctorInfo.Notes = txtNotes.Text.Trim();
+            DoctorInfo.SprcializationName = Combx_Specialization.Text.Trim();
+            DoctorInfo.SprcializationID = Convert.ToInt32(Combx_Specialization.SelectedValue);
 
             // تاريخ الزيارة الأولى لا يتغير في التعديل
-            if (mode == Mode.Add)
-                PatientsInfo.FirstVisitDate = DateTime.Now.ToString("yyyy-MM-dd");
+            //if (mode == Mode.Add)
+            //    PatientsInfo.FirstVisitDate = DateTime.Now.ToString("yyyy-MM-dd"); ??????????????????
         }
 
         // عرض بيانات الشخص على العنصر اذا تم اضافته
+        // عند البحث بالفلتر
         void ShowInfoNePerson(ClassPerson PersonInfo)
         {
             ctrl_PersonInfo.PersonInfo = PersonInfo;
 
-            if (PatientsInfo == null)
-                PatientsInfo = new ClassPatients();
+            if (PersonInfo == null)
+                DoctorInfo = new ClassDoctor();
 
-            PatientsInfo.PersonInfo = PersonInfo;
+            DoctorInfo.PersonInfo = PersonInfo;
             GetPersonInfo(PersonInfo);
         }
 
-
-        // Next زر   
-        private void btn_Next_Click(object sender, EventArgs e)
-        {
-            if (!PersonIsFind)
-            {
-                tabControl1.Enabled = true;
-                tabControl1.SelectedIndex = 1;   // التاب الثاني
-            }
-        }
 
         // زر الحفظ
         private void btnSave_Click(object sender, EventArgs e)
@@ -236,20 +212,21 @@ namespace Program_Clinic_Management.Patients.UI
 
             // معرف المستخدم الحالي
             int currentUserID = 1;
-               if (ClassUser.UserInfo != null)
-                     currentUserID =   ClassUser.UserInfo.UserID ;
+            if (ClassUser.UserInfo != null)
+                currentUserID = ClassUser.UserInfo.UserID;
 
             if (mode == Mode.Add)
             {
-                int newID = ClsClsCMD_TablePatients.AddPatientOnly(PatientsInfo);
+                int newID = ClsCMD_TableDoctors.AddDoctor(DoctorInfo);
 
                 if (newID > 0)
                 {
                     // حفظ رقم المريض الجديد داخل الأوبجكت
-                    PatientsInfo.PatientID = newID;
+                    DoctorInfo.DoctorID = newID;
+                    lblID_Doctor.Text = "ID Doctor : " + newID;
 
                     // تسجيل العملية
-                    ClassLogs.AddLog(currentUserID, LogAction.Add.ToString(),"Patients", newID, "إضافة مريض جديد");
+                    ClassLogs.AddLog(currentUserID, LogAction.Add.ToString(), "Doctors", newID, "إضافة طبيب جديد");
 
                     // التحويل لوضع التعديل
                     mode = Mode.Update;
@@ -260,12 +237,13 @@ namespace Program_Clinic_Management.Patients.UI
             }
             else if (mode == Mode.Update)
             {
-                bool ok = ClsClsCMD_TablePatients.UpdatePatient(PatientsInfo);
+                // تنفيذ التعديل .... و التحقق اذا تم تنفيذه ؟
+                bool ok = ClsCMD_TableDoctors.UpdateDoctor(DoctorInfo  , OldPersonID) == 1 ;
 
                 if (ok)
                 {
-                    // تسجيل عملية التعديل
-                    ClassLogs.AddLog(currentUserID, LogAction.Update.ToString(), "Patients", PatientsInfo.PatientID, "تعديل بيانات المريض");
+                    // تسجيل عملية التعديل بالسجل
+                    ClassLogs.AddLog(currentUserID, LogAction.Update.ToString(), "Doctors", DoctorInfo.DoctorID, "تعديل بيانات الطبيب");
 
                     LoadInfoPatient(); // تحديث العرض
                     EventShowRefrechData?.Invoke(); // تحديث البيانات
@@ -273,27 +251,25 @@ namespace Program_Clinic_Management.Patients.UI
             }
         }
 
-        // إغلاق
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        // إخفاء الفورم
-        private void btnMinimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
         // Person زر إضافة شخص
         private void btn_AddPerson_Click(object sender, EventArgs e)
         {
             FrmAdd_UpdatePerson add_UpdatePerson = new FrmAdd_UpdatePerson(FrmAdd_UpdatePerson.Mode.Add);
             // تسجيل الحدث   // عند  إضفة الشخص يتم عرض معلوماته فورا
-            add_UpdatePerson.EventShowDataPerson += ShowInfoNePerson; 
+            add_UpdatePerson.EventShowDataPerson += ShowInfoNePerson;
             MyTools.ShowForm(add_UpdatePerson);
         }
 
+        // زر إغلاق
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
+        // زر الاخفاء
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

@@ -32,6 +32,9 @@ namespace Program_Clinic_Management.Doctors
             ClassStyleAndColor.Style_DataGridView(DataGV);
             // تحريك الفورم
             MyTools.MoveControl(pnl_TopBar, this);
+
+            ctrl_FeltterDataDoctors.EventShowDataPDoctorsInDataTable += LoadDataFeltter;
+
         }
 
         #region   **** مثود  مساعدة ****
@@ -47,6 +50,13 @@ namespace Program_Clinic_Management.Doctors
 
             // اخفاء الاعمدة الغير مرادة
               FormatPatientsGrid();
+        }
+
+        void LoadDataFeltter(DataTable DT_Info)
+        {
+            DataGV.DataSource = DT_Info;
+            // اخفاء الاعمدة الغير مرادة
+            FormatPatientsGrid();
         }
 
         /// <summary>
@@ -170,17 +180,17 @@ namespace Program_Clinic_Management.Doctors
                 return;
             }
 
-            //FrmAdd_UpdateDoctor add_UpdateDoctor = new FrmAdd_UpdateDoctor(FrmAdd_UpdatePatient.Mode.Update, DoctorInfo);
-            //add_UpdatePatient.EventShowRefrechData += LoadData; // حدث التحديث عند التغيير
-            //MyTools.ShowForm(add_UpdateDoctor);
+            FrmAdd_UpdateDoctor add_UpdateDoctor = new FrmAdd_UpdateDoctor(FrmAdd_UpdateDoctor.Mode.Update , DoctorInfo);
+            add_UpdateDoctor.EventShowRefrechData += LoadData; // حدث التحديث عند التغيير
+            MyTools.ShowForm(add_UpdateDoctor);
         }
 
         // زر الإضافة
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //FrmAdd_UpdateDoctor add_UpdatePatient = new FrmAdd_UpdateDoctor(FrmAdd_UpdatePatient.Mode.Add);
-            //add_UpdatePatient.EventShowRefrechData += LoadData; // حدث التحديث عند التغيير
-            //MyTools.ShowForm(add_UpdatePatient);
+            FrmAdd_UpdateDoctor add_UpdateDoctor = new FrmAdd_UpdateDoctor(FrmAdd_UpdateDoctor.Mode.Add);
+            add_UpdateDoctor.EventShowRefrechData += LoadData; // حدث التحديث عند التغيير
+            MyTools.ShowForm(add_UpdateDoctor);
         }
 
         // زر عرض معلومات الطبيب

@@ -17,19 +17,20 @@ namespace BusinessLogic.CMD_DB
             All,
             DoctorId,
             PersonId,
-            Name,
-            Specialization
+            Phone,
+            Specialization,
+            Name
         }
 
         /// <summary>
         /// فلترة الأطباء حسب النوع المطلوب:
-        /// All - DoctorId - PersonId - Name (Contains) - Specialization
+        /// All - DoctorId - PersonId - Phone - Specialization - Name (Contains)
         /// </summary>
-        public static DataTable DesplayAnd_FilterDoctors(DoctorFilterType filterType, string value ="")
+        public static DataTable DesplayAnd_FilterDoctors(DoctorFilterType filterType, string value = "")
         {
             string query = @"
         SELECT 
-            d.DoctorId as [Doctor ID], 
+            d.DoctorId AS [Doctor ID], 
             d.Notes AS DoctorNotes,
 
             s.SpecializationId,
@@ -56,7 +57,6 @@ namespace BusinessLogic.CMD_DB
             switch (filterType)
             {
                 case DoctorFilterType.All:
-                    // لا نضيف أي شرط
                     break;
 
                 case DoctorFilterType.DoctorId:
@@ -69,13 +69,18 @@ namespace BusinessLogic.CMD_DB
                     parameters.Add("@Value", Convert.ToInt32(value));
                     break;
 
-                case DoctorFilterType.Name:
-                    query += " AND (p.FirstName + ' ' + p.LastName) LIKE '%' + @Value + '%'";
+                case DoctorFilterType.Phone:
+                    query += " AND p.Phone LIKE '%' + @Value + '%'";
                     parameters.Add("@Value", value);
                     break;
 
                 case DoctorFilterType.Specialization:
                     query += " AND s.Name LIKE '%' + @Value + '%'";
+                    parameters.Add("@Value", value);
+                    break;
+
+                case DoctorFilterType.Name:
+                    query += " AND (p.FirstName + ' ' + p.LastName) LIKE '%' + @Value + '%'";
                     parameters.Add("@Value", value);
                     break;
             }
@@ -84,6 +89,7 @@ namespace BusinessLogic.CMD_DB
 
             return ClassCommands.ShowData(query, parameters);
         }
+
 
 
         /// <summary>
@@ -300,6 +306,23 @@ namespace BusinessLogic.CMD_DB
             return result;
         }
 
+
+        /// <summary>
+        /// تحميل قائمة الاختصاصات من جدول Specializations
+        /// وعرضها داخل ComboBox
+        /// مع تحديد اسم العرض والـ ID.
+        /// </summary>
+        public static void LoadSpecializations(ComboBox combo)
+        {
+            string query = "SELECT SpecializationId, Name FROM Specializations ORDER BY Name";
+
+            ClassCommands.LoadItem_InComboBox(
+                query,
+                combo,
+                "Name",             // النص الظاهر للمستخدم
+                "SpecializationId"  // القيمة المخزّنة (ID)
+            );
+        }
 
 
 

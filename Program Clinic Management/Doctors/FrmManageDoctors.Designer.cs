@@ -50,6 +50,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnAdd = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.ctrl_FeltterDataDoctors = new Program_Clinic_Management.Ctrl_FeltterDataDoctors();
             this.MyContextMS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGV)).BeginInit();
             this.pnl_TopBar.SuspendLayout();
@@ -90,6 +91,7 @@
             this.ToolStripMenu_btnUpdate.Name = "ToolStripMenu_btnUpdate";
             this.ToolStripMenu_btnUpdate.Size = new System.Drawing.Size(204, 38);
             this.ToolStripMenu_btnUpdate.Text = "تعديل";
+            this.ToolStripMenu_btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // ToolStripMenu_btnDelete
             // 
@@ -290,11 +292,23 @@
             this.btnUpdate.Text = "تعديل";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // ctrl_FeltterDataDoctors
+            // 
+            this.ctrl_FeltterDataDoctors.BackColor = System.Drawing.Color.Transparent;
+            this.ctrl_FeltterDataDoctors.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrl_FeltterDataDoctors.Location = new System.Drawing.Point(42, 124);
+            this.ctrl_FeltterDataDoctors.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.ctrl_FeltterDataDoctors.Name = "ctrl_FeltterDataDoctors";
+            this.ctrl_FeltterDataDoctors.Size = new System.Drawing.Size(778, 55);
+            this.ctrl_FeltterDataDoctors.TabIndex = 14;
+            this.ctrl_FeltterDataDoctors.TrueSearchAll = false;
+            // 
             // FrmManageDoctors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1398, 736);
+            this.Controls.Add(this.ctrl_FeltterDataDoctors);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.DataGV);
@@ -335,5 +349,6 @@
         private Guna.UI2.WinForms.Guna2DataGridView DataGV;
         private Guna.UI2.WinForms.Guna2GradientButton btnAdd;
         private Guna.UI2.WinForms.Guna2GradientButton btnUpdate;
+        private Ctrl_FeltterDataDoctors ctrl_FeltterDataDoctors;
     }
 }

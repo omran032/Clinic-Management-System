@@ -76,6 +76,12 @@
     <Compile Include="Admin\FrmDashboardAdmin.Designer.cs">
       <DependentUpon>FrmDashboardAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Doctors\UControls\Ctrl_FeltterDataDoctors.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doctors\UControls\Ctrl_FeltterDataDoctors.Designer.cs">
+      <DependentUpon>Ctrl_FeltterDataDoctors.cs</DependentUpon>
+    </Compile>
     <Compile Include="Doctors\FrmManageDoctors.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,12 @@
     </Compile>
     <Compile Include="Doctors\UControls\Ctrl_InfoVisits_AppointmentsDoctor.Designer.cs">
       <DependentUpon>Ctrl_InfoVisits_AppointmentsDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctors\UI\FrmAdd_UpdateDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctors\UI\FrmAdd_UpdateDoctor.Designer.cs">
+      <DependentUpon>FrmAdd_UpdateDoctor.cs</DependentUpon>
     </Compile>
     <Compile Include="Doctors\UI\Frm_InfoDoctor.cs">
       <SubType>Form</SubType>
@@ -200,6 +212,9 @@
     <EmbeddedResource Include="Admin\FrmDashboardAdmin.resx">
       <DependentUpon>FrmDashboardAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Doctors\UControls\Ctrl_FeltterDataDoctors.resx">
+      <DependentUpon>Ctrl_FeltterDataDoctors.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Doctors\FrmManageDoctors.resx">
       <DependentUpon>FrmManageDoctors.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Doctors\UControls\Ctrl_InfoVisits_AppointmentsDoctor.resx">
       <DependentUpon>Ctrl_InfoVisits_AppointmentsDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctors\UI\FrmAdd_UpdateDoctor.resx">
+      <DependentUpon>FrmAdd_UpdateDoctor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Doctors\UI\Frm_InfoDoctor.resx">
       <DependentUpon>Frm_InfoDoctor.cs</DependentUpon>
