@@ -29,7 +29,7 @@ namespace BusinessLogic.InfoTable
             {
                 DoctorID           = Convert.ToInt32(row["Doctor ID"]),
                 SprcializationID   = Convert.ToInt32(row["SpecializationId"]),
-                SprcializationName = row["Sprcialization Name"]?.ToString(),
+                SprcializationName = row["Specialization Name"]?.ToString(),
                 Notes              = row["DoctorNotes"]?.ToString(),
 
                 PersonInfo         = ClassPerson.SaveDataInObj(dt , RowIndex)

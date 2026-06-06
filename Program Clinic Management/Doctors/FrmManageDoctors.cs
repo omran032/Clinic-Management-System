@@ -30,7 +30,8 @@ namespace Program_Clinic_Management.Doctors
             // ضبط شكل العناصر و الفورم
             ClassStyleAndColor.Style_TopBar_And_HiderForm(pnl_TopBar, this);
             ClassStyleAndColor.Style_DataGridView(DataGV);
-
+            // تحريك الفورم
+            MyTools.MoveControl(pnl_TopBar, this);
         }
 
         #region   **** مثود  مساعدة ****
@@ -103,9 +104,6 @@ namespace Program_Clinic_Management.Doctors
             GetPatientID(); // GetID
             GetInfoPatient(); // Get Info
 
-            ///////////////////////////////////
-            // تحريك الفورم
-            MyTools.MoveControl(pnl_TopBar, this);
         }
 
         void GetPatientID()
@@ -196,6 +194,18 @@ namespace Program_Clinic_Management.Doctors
             }
             Frm_InfoDoctor ForminfoPatient = new Frm_InfoDoctor(DoctorInfo);
             MyTools.ShowForm(ForminfoPatient);
+        }
+
+        // زر إغلاق
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        // زر الاخفاء
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

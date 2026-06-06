@@ -381,6 +381,7 @@
             this.btn_Doctors.Size = new System.Drawing.Size(210, 47);
             this.btn_Doctors.TabIndex = 9;
             this.btn_Doctors.Text = "الأطباء";
+            this.btn_Doctors.Click += new System.EventHandler(this.btn_Doctors_Click);
             // 
             // guna2Panel3
             // 

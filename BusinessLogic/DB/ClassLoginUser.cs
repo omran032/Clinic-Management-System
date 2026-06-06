@@ -104,7 +104,7 @@ namespace BusinessLogic.DB
                         ClassUser.UserInfo.DoctorInfo = new ClassDoctor
                         {
                             DoctorID = Convert.ToInt32(dr2["DoctorId"]),
-                            Sprcialization = dr2["Specialization"].ToString()
+                            SprcializationName = dr2["Specialization"].ToString()
                         };
                     }
                     else

@@ -88,6 +88,12 @@
     <Compile Include="Doctors\UControls\CtrlCountVisits_AppointmentsDoctor.Designer.cs">
       <DependentUpon>CtrlCountVisits_AppointmentsDoctor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Doctors\UControls\Ctrl_InfoVisits_AppointmentsDoctor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Doctors\UControls\Ctrl_InfoVisits_AppointmentsDoctor.Designer.cs">
+      <DependentUpon>Ctrl_InfoVisits_AppointmentsDoctor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Doctors\UI\Frm_InfoDoctor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctors\UI\FrmInfoApplication_Visit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctors\UI\FrmInfoApplication_Visit.Designer.cs">
+      <DependentUpon>FrmInfoApplication_Visit.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\FrmLogin.cs">
       <SubType>Form</SubType>
@@ -194,11 +206,17 @@
     <EmbeddedResource Include="Doctors\UControls\CtrlCountVisits_AppointmentsDoctor.resx">
       <DependentUpon>CtrlCountVisits_AppointmentsDoctor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Doctors\UControls\Ctrl_InfoVisits_AppointmentsDoctor.resx">
+      <DependentUpon>Ctrl_InfoVisits_AppointmentsDoctor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Doctors\UI\Frm_InfoDoctor.resx">
       <DependentUpon>Frm_InfoDoctor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctors\UI\FrmInfoApplication_Visit.resx">
+      <DependentUpon>FrmInfoApplication_Visit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
@@ -296,7 +314,10 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Visits\UControls\" />
+    <Folder Include="Visits\UI\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
       <Project>{edebb9b3-3ed0-4ea9-9009-58fbf6a380b3}</Project>

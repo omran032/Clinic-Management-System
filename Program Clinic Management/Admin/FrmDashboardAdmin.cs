@@ -2,6 +2,7 @@
 using BusinessLogic.CMD_DB;
 using BusinessLogic.InfoTable;
 using BusinessLogic.ToolChart;
+using Program_Clinic_Management.Doctors;
 using Program_Clinic_Management.Patients;
 using Program_Clinic_Management.Persons;
 using System;
@@ -105,6 +106,14 @@ namespace Program_Clinic_Management.Admin
         {
             FrmManagePatients managePatients = new FrmManagePatients();
             MyTools.ShowForm(managePatients);
+
+        }
+
+        // زر عرض واجهة إدارة الأطباء
+        private void btn_Doctors_Click(object sender, EventArgs e)
+        {
+            FrmManageDoctors manageDoctors = new FrmManageDoctors();
+            MyTools.ShowForm(manageDoctors);
 
         }
     }

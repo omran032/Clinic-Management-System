@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnl_TopBar = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnClose = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnMinimize = new Guna.UI2.WinForms.Guna2PictureBox();
             this.ctrl_IconProjectClinic1 = new BusinessLogic.Ctrl_IconProjectClinic();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblSpecialization = new System.Windows.Forms.Label();
+            this.lbl_WorkPeriod = new System.Windows.Forms.Label();
+            this.ctrlCountVisits_AppointmentsDoctor1 = new Program_Clinic_Management.Doctors.UControls.CtrlCountVisits_AppointmentsDoctor();
             this.ctrl_PersonInfo1 = new Program_Clinic_Management.Persons.UControls.Ctrl_PersonInfo();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.ElipseForm = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pnl_TopBar.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -78,6 +81,7 @@
             this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnClose.TabIndex = 4;
             this.btnClose.TabStop = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnMinimize
             // 
@@ -91,6 +95,7 @@
             this.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMinimize.TabIndex = 5;
             this.btnMinimize.TabStop = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // ctrl_IconProjectClinic1
             // 
@@ -115,11 +120,44 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "معلومات الطبيب";
             // 
+            // lblSpecialization
+            // 
+            this.lblSpecialization.AutoSize = true;
+            this.lblSpecialization.BackColor = System.Drawing.Color.Transparent;
+            this.lblSpecialization.Location = new System.Drawing.Point(72, 567);
+            this.lblSpecialization.Name = "lblSpecialization";
+            this.lblSpecialization.Size = new System.Drawing.Size(133, 22);
+            this.lblSpecialization.TabIndex = 5;
+            this.lblSpecialization.Text = "Specialization :";
+            // 
+            // lbl_WorkPeriod
+            // 
+            this.lbl_WorkPeriod.AutoSize = true;
+            this.lbl_WorkPeriod.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_WorkPeriod.Location = new System.Drawing.Point(74, 633);
+            this.lbl_WorkPeriod.Name = "lbl_WorkPeriod";
+            this.lbl_WorkPeriod.Size = new System.Drawing.Size(129, 22);
+            this.lbl_WorkPeriod.TabIndex = 6;
+            this.lbl_WorkPeriod.Text = "Work period : ";
+            // 
+            // ctrlCountVisits_AppointmentsDoctor1
+            // 
+            this.ctrlCountVisits_AppointmentsDoctor1.BackColor = System.Drawing.Color.Transparent;
+            this.ctrlCountVisits_AppointmentsDoctor1.DoctorID = 0;
+            this.ctrlCountVisits_AppointmentsDoctor1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrlCountVisits_AppointmentsDoctor1.GroupBoxBackColor = System.Drawing.Color.Azure;
+            this.ctrlCountVisits_AppointmentsDoctor1.Location = new System.Drawing.Point(59, 671);
+            this.ctrlCountVisits_AppointmentsDoctor1.Margin = new System.Windows.Forms.Padding(4);
+            this.ctrlCountVisits_AppointmentsDoctor1.Name = "ctrlCountVisits_AppointmentsDoctor1";
+            this.ctrlCountVisits_AppointmentsDoctor1.Size = new System.Drawing.Size(713, 327);
+            this.ctrlCountVisits_AppointmentsDoctor1.TabIndex = 7;
+            // 
             // ctrl_PersonInfo1
             // 
+            this.ctrl_PersonInfo1.BackColor = System.Drawing.Color.Transparent;
             this.ctrl_PersonInfo1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ctrl_PersonInfo1.GroupTitle = "المعلومات الشخصية للطبيب";
-            this.ctrl_PersonInfo1.Location = new System.Drawing.Point(33, 74);
+            this.ctrl_PersonInfo1.Location = new System.Drawing.Point(33, 63);
             this.ctrl_PersonInfo1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.ctrl_PersonInfo1.Name = "ctrl_PersonInfo1";
             this.ctrl_PersonInfo1.PersonID = 0;
@@ -127,31 +165,19 @@
             this.ctrl_PersonInfo1.Size = new System.Drawing.Size(768, 494);
             this.ctrl_PersonInfo1.TabIndex = 4;
             // 
-            // label2
+            // ElipseForm
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(72, 586);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 22);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Specialization :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(74, 652);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 22);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Work period : ";
+            this.ElipseForm.BorderRadius = 20;
+            this.ElipseForm.TargetControl = this;
             // 
             // Frm_InfoDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 896);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(824, 998);
+            this.Controls.Add(this.ctrlCountVisits_AppointmentsDoctor1);
+            this.Controls.Add(this.lbl_WorkPeriod);
+            this.Controls.Add(this.lblSpecialization);
             this.Controls.Add(this.ctrl_PersonInfo1);
             this.Controls.Add(this.pnl_TopBar);
             this.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -179,7 +205,9 @@
         private BusinessLogic.Ctrl_IconProjectClinic ctrl_IconProjectClinic1;
         private System.Windows.Forms.Label label1;
         private Persons.UControls.Ctrl_PersonInfo ctrl_PersonInfo1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblSpecialization;
+        private System.Windows.Forms.Label lbl_WorkPeriod;
+        private UControls.CtrlCountVisits_AppointmentsDoctor ctrlCountVisits_AppointmentsDoctor1;
+        private Guna.UI2.WinForms.Guna2Elipse ElipseForm;
     }
 }

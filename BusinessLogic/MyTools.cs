@@ -413,4 +413,38 @@ using System.Windows.Forms;
 
 
 
- }
+
+
+
+    /// <summary>
+    /// ترجع الفرق بين التاريخ الحالي والتاريخ المرسل (سنين - أشهر - أيام)
+    /// </summary>
+    public static string GetDateDifferenceText(DateTime fromDate)
+    {
+        DateTime toDate = DateTime.Now;
+
+        if (toDate < fromDate)
+            return "التاريخ الحالي أصغر من التاريخ المرسل";
+
+        int years = toDate.Year - fromDate.Year;
+        int months = toDate.Month - fromDate.Month;
+        int days = toDate.Day - fromDate.Day;
+
+        // تعديل الأيام إذا كانت سالبة
+        if (days < 0)
+        {
+            months--;
+            days += DateTime.DaysInMonth(fromDate.Year, fromDate.Month);
+        }
+
+        // تعديل الأشهر إذا كانت سالبة
+        if (months < 0)
+        {
+            years--;
+            months += 12;
+        }
+
+        return $"{years} سنة - {months} شهر - {days} يوم";
+    }
+
+}

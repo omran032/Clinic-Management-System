@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static BusinessLogic.CMD_DB.ClsCMD_TableAppointments;
 using static BusinessLogic.CMD_DB.ClsCMD_TableVisits;
+using static Program_Clinic_Management.FrmInfoApplication_Visit;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace Program_Clinic_Management.Doctors.UControls
 {
@@ -21,12 +23,67 @@ namespace Program_Clinic_Management.Doctors.UControls
 
             // Panals لون  
             MyTools.ColorControl(Pnl1, Color.FromArgb(253, 253, 253), Color.FromArgb(212, 222, 224), true, false);
-            MyTools.ColorControl(Pnl1, Color.FromArgb(253, 253, 253), Color.FromArgb(212, 222, 224), true, false);
+            MyTools.ColorControl(pnl2, Color.FromArgb(253, 253, 253), Color.FromArgb(212, 222, 224), true, false);
 
+            if (DesignMode || LicenseManager.UsageMode == LicenseUsageMode.Designtime)
+                return;
+
+
+            ComboxTypeAppointment.Text = "المواعيد المتبقية";
+            Combox_RangAppointment.Text = "اليوم";
+
+            Combox_RangVisit.Text = "اليوم";
+            ComboxTypeVisit.Text = "زيارة طارئه";
+        }
+
+        // عرض الواجهة لعرض التفاصيل والمعلومات 
+        void ShowForm(DataTable DT , PositionType positionType)
+        {
+            FrmInfoApplication_Visit infoApplication_Visit = new FrmInfoApplication_Visit(DT, positionType);
+            MyTools.ShowForm(infoApplication_Visit);
+        }
+
+      public void LoadData(int DoctorID_)
+        {
+            DoctorID = DoctorID_;
+
+            AppRange = AppointmentRange.Today;
+            VisitRange = Range.Today;
+
+            // ِAppointment // المواعيد
+            // بيانات المواعيد المتبقية
+            lblCountAppointments.Text = "عدد المواعيد : " + ClsCMD_TableAppointments.GetRemainingAppointmentsByDoctor(DoctorID, AppRange); 
+            DT_Appointment = ClsCMD_TableAppointments.GetRemainingAppointmentsWithPatientDetails(DoctorID, AppRange);
+
+
+            // Visit  // الزيارات
+            // بيانات الزيارة طارئه 
+            lblCountVisits.Text = "عدد الزيارات : " + ClsCMD_TableVisits.GetEmergencyVisitsCount(DoctorID, VisitRange);
+            DT_Visit = ClsCMD_TableVisits.GetEmergencyVisitsFullDetails(DoctorID, VisitRange);
 
         }
 
+
+        DataTable DT_Appointment = new DataTable();
+        DataTable DT_Visit = new DataTable();
+
         public int DoctorID { get; set; }
+
+        /// <summary>
+        /// تغيير لون خلفية الـ GroupBox
+        /// </summary>
+        public Color GroupBoxBackColor
+        {
+            get => GroupBox_Info.BackColor;
+            set
+            {
+                GroupBox_Info.BackColor = value;
+                GroupBox_Info.FillColor = value;
+                //   GroupBox_Info.Invalidate(); // تحديث الشكل
+            }
+        }
+
+
 
 
         #region  **** Appointment عناصر المواعيد ****
@@ -64,36 +121,41 @@ namespace Program_Clinic_Management.Doctors.UControls
             }
         }
 
+
         // زر عرض التفاصيل
         // زر عرض تفاصيل المواعيد حسب النوع و الفترة المختارة
         private void btnShowInfoAppointments_Click(object sender, EventArgs e)
         {
             string TypeAppointment = ComboxTypeAppointment.Text.Trim();
 
-            // ************************************
-            // هون لازم تعرض الواجهة حسب النوع يلي خترته
-            // بس حطيت المثود يلي بجيب البيانات مشان ما تتلبك وقت بدك تستدعيه هنيك
-            // ************************************
-
+ 
             switch (TypeAppointment)
             {
                 case "المواعيد المتبقية":
-                     ClsCMD_TableAppointments.GetRemainingAppointmentsWithPatientDetails(DoctorID, AppRange);
+                    DT_Appointment = ClsCMD_TableAppointments.GetRemainingAppointmentsWithPatientDetails(DoctorID, AppRange);
                     break;
 
                 case "المواعيد المنتهية":
-                      ClsCMD_TableAppointments.GetCompletedAppointmentsFullDetails(DoctorID, AppRange);
+                    DT_Appointment = ClsCMD_TableAppointments.GetCompletedAppointmentsFullDetails(DoctorID, AppRange);
                     break;
 
                 case "لم يتم حضورها":
-                      ClsCMD_TableAppointments.GetAbsentAppointmentsFullDetails(DoctorID, AppRange);
+                    DT_Appointment = ClsCMD_TableAppointments.GetAbsentAppointmentsFullDetails(DoctorID, AppRange);
                     break;
             }
+
+            if(DT_Appointment != null)
+                // عرض واجهة تفاصيل المواعيد ...حسب الاختيار اعلاه
+                ShowForm(DT_Appointment, PositionType.Appointment);
+
+            else
+                MessageBox.Show("إختر تفاصيل الموعد أولاً", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
 
         #endregion
 
+                                  ///////////////////////////////////////////////////////////
 
         #region **** Visits  عناصر الزيارات  ****
 
@@ -137,25 +199,28 @@ namespace Program_Clinic_Management.Doctors.UControls
         {
             string TypeVisit = ComboxTypeVisit.Text.Trim();
 
-            // ************************************
-            // هون لازم تعرض الواجهة حسب النوع يلي خترته
-            // بس حطيت المثود يلي بجيب البيانات مشان ما تتلبك وقت بدك تستدعيه هنيك
-            // ************************************
-
+ 
             switch (TypeVisit)
             {
                 case "زيارة طارئه":
-                    ClsCMD_TableVisits.GetEmergencyVisitsFullDetails(DoctorID, VisitRange);
+                    DT_Visit = ClsCMD_TableVisits.GetEmergencyVisitsFullDetails(DoctorID, VisitRange);
                     break;
 
                 case "زيارة للمتابعة":
-                    ClsCMD_TableVisits.GetFollowUpVisitsFullDetails(DoctorID, VisitRange);
+                    DT_Visit = ClsCMD_TableVisits.GetFollowUpVisitsFullDetails(DoctorID, VisitRange);
                     break;
 
                 case "زيارة استشارية":
-                    ClsCMD_TableVisits.GetConsultationVisitsFullDetails(DoctorID, VisitRange);
+                    DT_Visit = ClsCMD_TableVisits.GetConsultationVisitsFullDetails(DoctorID, VisitRange);
                     break;
             }
+
+            if (DT_Visit != null)
+                // عرض واجهة تفاصيل الزيارات ...حسب الاختيار اعلاه
+                ShowForm(DT_Visit, PositionType.Visit);
+
+            else
+                MessageBox.Show("إختر تفاصيل الزيارة أولاً", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         #endregion

@@ -259,10 +259,11 @@ namespace BusinessLogic.CMD_DB
             pa.Notes 
 
 
-        FROM Appointments a
-        LEFT JOIN Patients pa ON p.PersonId = pa.PersonId
-        INNER JOIN Persons p ON a.PersonId = p.PersonId
-        INNER JOIN VisitTypes vt ON a.VisitTypeId = vt.VisitTypeId
+FROM Appointments a
+INNER JOIN Persons p ON a.PersonId = p.PersonId
+LEFT JOIN Patients pa ON p.PersonId = pa.PersonId
+INNER JOIN VisitTypes vt ON a.VisitTypeId = vt.VisitTypeId
+
 
         WHERE a.DoctorId = @DoctorId
         AND a.AppointmentDate > GETDATE()
@@ -374,7 +375,7 @@ namespace BusinessLogic.CMD_DB
             p.UpdatedAt,
 
             -- تفاصيل المريض من Patients
-            pa.PatientId 
+            pa.PatientId ,
             pa.MedicalNotes,
             pa.FirstVisitDate,
             pa.ChronicDiseases,

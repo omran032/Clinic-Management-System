@@ -45,7 +45,7 @@
             this.ComboxTypeVisit = new Guna.UI2.WinForms.Guna2ComboBox();
             this.Combox_RangVisit = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblCountVisits = new System.Windows.Forms.Label();
-            this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.GroupBox_Info = new Guna.UI2.WinForms.Guna2GroupBox();
             this.ElipseGroup = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.ElipsePnl1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.ElipsePnl2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -54,7 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).BeginInit();
             this.pnl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
-            this.guna2GroupBox1.SuspendLayout();
+            this.GroupBox_Info.SuspendLayout();
             this.SuspendLayout();
             // 
             // ElipseCtrl
@@ -77,6 +77,7 @@
             // 
             // btnShowInfoAppointments
             // 
+            this.btnShowInfoAppointments.BackColor = System.Drawing.Color.Transparent;
             this.btnShowInfoAppointments.BorderRadius = 25;
             this.btnShowInfoAppointments.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnShowInfoAppointments.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -100,6 +101,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(371, 25);
             this.label4.Name = "label4";
@@ -151,6 +153,8 @@
             // 
             // guna2PictureBox7
             // 
+            this.guna2PictureBox7.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox7.FillColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox7.Image = global::Program_Clinic_Management.Properties.Resources.Appointment;
             this.guna2PictureBox7.ImageRotate = 0F;
             this.guna2PictureBox7.Location = new System.Drawing.Point(17, 11);
@@ -163,6 +167,7 @@
             // lblCountAppointments
             // 
             this.lblCountAppointments.AutoSize = true;
+            this.lblCountAppointments.BackColor = System.Drawing.Color.Transparent;
             this.lblCountAppointments.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCountAppointments.ForeColor = System.Drawing.Color.Navy;
             this.lblCountAppointments.Location = new System.Drawing.Point(81, 24);
@@ -187,6 +192,7 @@
             // 
             // btnShowInfoVisits
             // 
+            this.btnShowInfoVisits.BackColor = System.Drawing.Color.Transparent;
             this.btnShowInfoVisits.BorderRadius = 25;
             this.btnShowInfoVisits.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnShowInfoVisits.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -210,6 +216,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(371, 29);
             this.label5.Name = "label5";
@@ -219,6 +226,8 @@
             // 
             // guna2PictureBox4
             // 
+            this.guna2PictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox4.FillColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox4.Image = global::Program_Clinic_Management.Properties.Resources.Date;
             this.guna2PictureBox4.ImageRotate = 0F;
             this.guna2PictureBox4.Location = new System.Drawing.Point(17, 12);
@@ -273,30 +282,31 @@
             // lblCountVisits
             // 
             this.lblCountVisits.AutoSize = true;
+            this.lblCountVisits.BackColor = System.Drawing.Color.Transparent;
             this.lblCountVisits.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCountVisits.ForeColor = System.Drawing.Color.Navy;
             this.lblCountVisits.Location = new System.Drawing.Point(81, 25);
             this.lblCountVisits.Name = "lblCountVisits";
             this.lblCountVisits.Size = new System.Drawing.Size(158, 22);
             this.lblCountVisits.TabIndex = 3;
-            this.lblCountVisits.Text = "عدد الزبارات : 99999";
+            this.lblCountVisits.Text = "عدد الزيارات : 99999";
             // 
-            // guna2GroupBox1
+            // GroupBox_Info
             // 
-            this.guna2GroupBox1.Controls.Add(this.pnl2);
-            this.guna2GroupBox1.Controls.Add(this.Pnl1);
-            this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox1.Location = new System.Drawing.Point(3, 11);
-            this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(707, 309);
-            this.guna2GroupBox1.TabIndex = 3;
-            this.guna2GroupBox1.Text = "مرضى الطبيب";
+            this.GroupBox_Info.Controls.Add(this.pnl2);
+            this.GroupBox_Info.Controls.Add(this.Pnl1);
+            this.GroupBox_Info.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GroupBox_Info.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.GroupBox_Info.Location = new System.Drawing.Point(3, 11);
+            this.GroupBox_Info.Name = "GroupBox_Info";
+            this.GroupBox_Info.Size = new System.Drawing.Size(707, 309);
+            this.GroupBox_Info.TabIndex = 3;
+            this.GroupBox_Info.Text = "مرضى الطبيب";
             // 
             // ElipseGroup
             // 
             this.ElipseGroup.BorderRadius = 15;
-            this.ElipseGroup.TargetControl = this.guna2GroupBox1;
+            this.ElipseGroup.TargetControl = this.GroupBox_Info;
             // 
             // ElipsePnl1
             // 
@@ -312,7 +322,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.guna2GroupBox1);
+            this.Controls.Add(this.GroupBox_Info);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CtrlCountVisits_AppointmentsDoctor";
@@ -323,7 +333,7 @@
             this.pnl2.ResumeLayout(false);
             this.pnl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
-            this.guna2GroupBox1.ResumeLayout(false);
+            this.GroupBox_Info.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -332,7 +342,7 @@
 
         private Guna.UI2.WinForms.Guna2Elipse ElipseCtrl;
         private Guna.UI2.WinForms.Guna2Panel Pnl1;
-        private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
+        private Guna.UI2.WinForms.Guna2GroupBox GroupBox_Info;
         private Guna.UI2.WinForms.Guna2Panel pnl2;
         private System.Windows.Forms.Label lblCountAppointments;
         private Guna.UI2.WinForms.Guna2Elipse ElipseGroup;

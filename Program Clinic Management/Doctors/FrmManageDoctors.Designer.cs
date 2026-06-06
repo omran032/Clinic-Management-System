@@ -74,7 +74,7 @@
             this.حجزموعدToolStripMenuItem,
             this.تسجيلزيارةToolStripMenuItem});
             this.MyContextMS.Name = "MyContextMS";
-            this.MyContextMS.Size = new System.Drawing.Size(205, 216);
+            this.MyContextMS.Size = new System.Drawing.Size(205, 194);
             // 
             // ToolStripMenu_btnShowInfo
             // 
@@ -201,6 +201,7 @@
             this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnClose.TabIndex = 4;
             this.btnClose.TabStop = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnMinimize
             // 
@@ -214,6 +215,7 @@
             this.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMinimize.TabIndex = 5;
             this.btnMinimize.TabStop = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // ctrl_IconProjectClinic1
             // 
@@ -302,7 +304,7 @@
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "FrmManageDoctors";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmManageDoctors";
+            this.Text = "+++++++";
             this.MyContextMS.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGV)).EndInit();
             this.pnl_TopBar.ResumeLayout(false);

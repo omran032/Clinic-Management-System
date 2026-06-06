@@ -55,10 +55,13 @@
     <Compile Include="CMD_DB\ClsCMD_TableVisits.cs" />
     <Compile Include="DB\ClassCommands.cs" />
     <Compile Include="DB\ClassLoginUser.cs" />
+    <Compile Include="InfoTable\ClassAppointment.cs" />
     <Compile Include="InfoTable\ClassDoctor.cs" />
     <Compile Include="InfoTable\ClassPatients.cs" />
     <Compile Include="InfoTable\ClassPerson.cs" />
     <Compile Include="InfoTable\ClassUser.cs" />
+    <Compile Include="InfoTable\ClassVisit.cs" />
+    <Compile Include="InfoTable\ClassVisitType.cs" />
     <Compile Include="MyTools.cs" />
     <Compile Include="ToolChart\ClsCreateChartColumn.cs" />
     <Compile Include="UserControl\Ctrl_IconProjectClinic.cs">

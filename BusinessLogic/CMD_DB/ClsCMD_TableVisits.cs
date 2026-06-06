@@ -204,6 +204,7 @@ namespace BusinessLogic.CMD_DB
         INNER JOIN VisitTypes vt ON v.VisitTypeId = vt.VisitTypeId
 
         WHERE v.DoctorId = @DoctorId
+                                       --  AND v.VisitTypeID = 3 -- طوارئ
         AND vt.TypeName = N'Emergency' -- طوارئ
         AND {dateFilter}
 
