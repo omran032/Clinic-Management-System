@@ -31,15 +31,19 @@
             this.components = new System.ComponentModel.Container();
             this.ElipseCtrl = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.GroupInfo_V_A = new System.Windows.Forms.GroupBox();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblStatusAppointment = new System.Windows.Forms.Label();
             this.lblDate_V_A = new System.Windows.Forms.Label();
             this.lbl_ID_V_A = new System.Windows.Forms.Label();
             this.lbl_TypeVisit = new System.Windows.Forms.Label();
+            this.PnlInfoDoctor = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblSpecialization = new System.Windows.Forms.Label();
+            this.ctrl_PersonInfoDoctor = new Program_Clinic_Management.Persons.UControls.Ctrl_PersonInfo();
             this.ctrlNotes = new Program_Clinic_Management.UControls.CtrlNotes();
             this.ctrl_PatientInfo1 = new Program_Clinic_Management.Patients.UControls.Ctrl_PatientInfo();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.GroupInfo_V_A.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
+            this.PnlInfoDoctor.SuspendLayout();
             this.SuspendLayout();
             // 
             // ElipseCtrl
@@ -61,6 +65,15 @@
             this.GroupInfo_V_A.TabIndex = 1;
             this.GroupInfo_V_A.TabStop = false;
             this.GroupInfo_V_A.Text = "معلومات الزيارة";
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.AutoScroll = true;
+            this.guna2Panel1.Controls.Add(this.ctrlNotes);
+            this.guna2Panel1.Location = new System.Drawing.Point(6, 173);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(831, 155);
+            this.guna2Panel1.TabIndex = 5;
             // 
             // lblStatusAppointment
             // 
@@ -109,6 +122,39 @@
             this.lbl_TypeVisit.TabIndex = 0;
             this.lbl_TypeVisit.Text = "نوع الزيارة :";
             // 
+            // PnlInfoDoctor
+            // 
+            this.PnlInfoDoctor.BackColor = System.Drawing.Color.Transparent;
+            this.PnlInfoDoctor.Controls.Add(this.lblSpecialization);
+            this.PnlInfoDoctor.Controls.Add(this.ctrl_PersonInfoDoctor);
+            this.PnlInfoDoctor.Location = new System.Drawing.Point(9, 9);
+            this.PnlInfoDoctor.Name = "PnlInfoDoctor";
+            this.PnlInfoDoctor.Size = new System.Drawing.Size(848, 524);
+            this.PnlInfoDoctor.TabIndex = 10;
+            // 
+            // lblSpecialization
+            // 
+            this.lblSpecialization.AutoSize = true;
+            this.lblSpecialization.BackColor = System.Drawing.Color.Transparent;
+            this.lblSpecialization.Location = new System.Drawing.Point(39, 464);
+            this.lblSpecialization.Name = "lblSpecialization";
+            this.lblSpecialization.Size = new System.Drawing.Size(109, 19);
+            this.lblSpecialization.TabIndex = 11;
+            this.lblSpecialization.Text = "Specialization :";
+            // 
+            // ctrl_PersonInfoDoctor
+            // 
+            this.ctrl_PersonInfoDoctor.BackColor = System.Drawing.Color.Transparent;
+            this.ctrl_PersonInfoDoctor.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrl_PersonInfoDoctor.GroupTitle = "المعلومات الشخصية للطبيب";
+            this.ctrl_PersonInfoDoctor.Location = new System.Drawing.Point(0, -1);
+            this.ctrl_PersonInfoDoctor.Margin = new System.Windows.Forms.Padding(4);
+            this.ctrl_PersonInfoDoctor.Name = "ctrl_PersonInfoDoctor";
+            this.ctrl_PersonInfoDoctor.PersonID = 0;
+            this.ctrl_PersonInfoDoctor.PersonInfo = null;
+            this.ctrl_PersonInfoDoctor.Size = new System.Drawing.Size(848, 427);
+            this.ctrl_PersonInfoDoctor.TabIndex = 10;
+            // 
             // ctrlNotes
             // 
             this.ctrlNotes.Dock = System.Windows.Forms.DockStyle.Top;
@@ -135,19 +181,11 @@
             this.ctrl_PatientInfo1.Size = new System.Drawing.Size(878, 893);
             this.ctrl_PatientInfo1.TabIndex = 0;
             // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.AutoScroll = true;
-            this.guna2Panel1.Controls.Add(this.ctrlNotes);
-            this.guna2Panel1.Location = new System.Drawing.Point(6, 173);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(831, 155);
-            this.guna2Panel1.TabIndex = 5;
-            // 
             // Ctrl_InfoVisits_AppointmentsDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.PnlInfoDoctor);
             this.Controls.Add(this.GroupInfo_V_A);
             this.Controls.Add(this.ctrl_PatientInfo1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -157,6 +195,8 @@
             this.GroupInfo_V_A.ResumeLayout(false);
             this.GroupInfo_V_A.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
+            this.PnlInfoDoctor.ResumeLayout(false);
+            this.PnlInfoDoctor.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -172,5 +212,8 @@
         private Program_Clinic_Management.UControls.CtrlNotes ctrlNotes;
         private System.Windows.Forms.Label lbl_TypeVisit;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Panel PnlInfoDoctor;
+        private System.Windows.Forms.Label lblSpecialization;
+        private Persons.UControls.Ctrl_PersonInfo ctrl_PersonInfoDoctor;
     }
 }

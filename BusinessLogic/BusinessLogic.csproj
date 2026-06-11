@@ -45,16 +45,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppointmentSmartEngine\DayLoad.cs" />
+    <Compile Include="AppointmentSmartEngine\SuggestedAppointment.cs" />
     <Compile Include="ClassLogs.cs" />
     <Compile Include="ClassStyleAndColor.cs" />
-    <Compile Include="CMD_DB\ClsClsCMD_TablePatients.cs" />
-    <Compile Include="CMD_DB\ClsClsCMD_TablePayments.cs" />
+    <Compile Include="AppointmentSmartEngine\ClsAppointmentSmartEngine.cs" />
+    <Compile Include="CMD_DB\ClsCMD_Backup.cs" />
+    <Compile Include="CMD_DB\ClsCMD_TablePatients.cs" />
+    <Compile Include="CMD_DB\ClsCMD_TablePayments.cs" />
     <Compile Include="CMD_DB\ClsCMD_TableAppointments.cs" />
     <Compile Include="CMD_DB\ClsCMD_TableDoctors.cs" />
     <Compile Include="CMD_DB\ClsCMD_TablePersons.cs" />
+    <Compile Include="CMD_DB\ClsCMD_TableTypeVisits.cs" />
     <Compile Include="CMD_DB\ClsCMD_TableVisits.cs" />
     <Compile Include="DB\ClassCommands.cs" />
     <Compile Include="DB\ClassLoginUser.cs" />
+    <Compile Include="AppointmentSmartEngine\AppointmentInfo.cs" />
     <Compile Include="InfoTable\ClassAppointment.cs" />
     <Compile Include="InfoTable\ClassDoctor.cs" />
     <Compile Include="InfoTable\ClassPatients.cs" />
@@ -62,6 +68,7 @@
     <Compile Include="InfoTable\ClassUser.cs" />
     <Compile Include="InfoTable\ClassVisit.cs" />
     <Compile Include="InfoTable\ClassVisitType.cs" />
+    <Compile Include="InfoTable\TimeRange.cs" />
     <Compile Include="MyTools.cs" />
     <Compile Include="ToolChart\ClsCreateChartColumn.cs" />
     <Compile Include="UserControl\Ctrl_IconProjectClinic.cs">

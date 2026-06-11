@@ -81,10 +81,18 @@ CREATE TABLE Appointments (
         FOREIGN KEY (VisitTypeId) REFERENCES VisitTypes(VisitTypeId)
 );
 
+-- إضافة المدة المتوقعة للموعد
+
+ALTER TABLE Appointments
+ADD EstimatedDurationMinutes INT NULL;
 
 
 
---
+
+
+
+
+-- الزيارات
 CREATE TABLE Visits (
     VisitId INT  IDENTITY(1,1) PRIMARY KEY,
     PersonId INT,
@@ -99,11 +107,18 @@ CREATE TABLE Visits (
         FOREIGN KEY (VisitTypeId) REFERENCES VisitTypes(VisitTypeId)
 );
 
+-- إضافة المدة الحقيقية للزيارة
+
+ALTER TABLE Visits
+ADD ActualDurationMinutes INT NULL;
 
 
 
 
---
+
+
+
+-- المرضى
 CREATE TABLE Patients (
     PatientId INT IDENTITY(1,1) PRIMARY KEY,
     PersonId INT,

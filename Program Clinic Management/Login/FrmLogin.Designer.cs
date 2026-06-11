@@ -241,6 +241,7 @@
             this.ctrl_IconProjectClinic1.Name = "ctrl_IconProjectClinic1";
             this.ctrl_IconProjectClinic1.Size = new System.Drawing.Size(246, 57);
             this.ctrl_IconProjectClinic1.TabIndex = 14;
+            this.ctrl_IconProjectClinic1.TitleNameColor = System.Drawing.Color.SteelBlue;
             // 
             // FrmLogin
             // 

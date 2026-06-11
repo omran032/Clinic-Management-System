@@ -8,6 +8,7 @@ namespace BusinessLogic
 {
     public class ClsConnectionDB
     {
+        public static string DatabaseName = "ClinicSystemDB";
 
         #region  مسار القاعدة(  بجانب )) ملف exe
 
@@ -15,7 +16,7 @@ namespace BusinessLogic
       @"Data Source=(LocalDB)\MSSQLLocalDB;
       AttachDbFilename=" +
         AppDomain.CurrentDomain.BaseDirectory +
-        @"ClinicSystemDB.mdf;
+        $@"{DatabaseName}.mdf;
       Integrated Security=True;
       Connect Timeout=30;";
 

@@ -101,8 +101,6 @@ namespace Program_Clinic_Management.Doctors
         // ضبط العناصر
         void SettingsControls()
         {
-            // ارسال حدث للكونترول الخاص بالفلتر ..حتى يتم ارجاع النتيجة بعد كل فلترة
-        //    ctrl_FeltterDataPatients1.EventShowDataPatientsInDataTable += GetDataFeltter;
 
             // ارجاع الصف المختار
             MyTools.EnableRightClickSelection(DataGV, MyContextMS, (rowIndex) =>

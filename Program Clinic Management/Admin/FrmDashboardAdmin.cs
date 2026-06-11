@@ -2,9 +2,11 @@
 using BusinessLogic.CMD_DB;
 using BusinessLogic.InfoTable;
 using BusinessLogic.ToolChart;
+using Program_Clinic_Management.Appointment;
 using Program_Clinic_Management.Doctors;
 using Program_Clinic_Management.Patients;
 using Program_Clinic_Management.Persons;
+using Program_Clinic_Management.Settings.Backup;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -64,13 +66,13 @@ namespace Program_Clinic_Management.Admin
             // عرض عدد غيابات المرضى اليوم   // Appointments اعتمادا على جدول 
             ctrl_ShowStatisticscsAbsences.TextLableInfo    = ClsCMD_TableAppointments.GetAbsencesCount(Range.Today).ToString();
             // عرص المرضى الذين لم يسددو الدفع اليوم
-            ctrl_ShowStatisticscs_DelayedPayments.TextLableInfo = ClsClsCMD_TablePayments.GetUnpaidFinishedAppointments(Range.Today).ToString();
+            ctrl_ShowStatisticscs_DelayedPayments.TextLableInfo = ClsCMD_TablePayments.GetUnpaidFinishedAppointments(Range.Today).ToString();
 
 
             ////////////////////////     المخططات البيانية    //////////////////////////
             ClsCMD_TableVisits.LoadWeeklyVisitsChart(chartVisits); // مخطط الزيارات
             ClsCMD_TableAppointments.LoadWeeklyAppointmentsDayByDay(ChartAppointment); // عرض مخطط مواعيد الاسبوع
-            ClsClsCMD_TablePayments.LoadWeeklyRevenueDayByDay(chartPayments); // مخطط احصائيات مدفوعات الاسبوع
+            ClsCMD_TablePayments.LoadWeeklyRevenueDayByDay(chartPayments); // مخطط احصائيات مدفوعات الاسبوع
 
             //  PnlBackup تعبئة بيانات 
             LoadSystemInfo();
@@ -115,6 +117,21 @@ namespace Program_Clinic_Management.Admin
             FrmManageDoctors manageDoctors = new FrmManageDoctors();
             MyTools.ShowForm(manageDoctors);
 
+        }
+
+        // زر النسخ الاحتياطي
+        private void btn_Backup_Click(object sender, EventArgs e)
+        {
+            FrmBackupDB frmBackup = new FrmBackupDB();
+            MyTools.ShowForm(frmBackup);
+
+        }
+
+        // زر إدارة المواعيد
+        private void btn_Appointments_Click(object sender, EventArgs e)
+        {
+            FrmAppointments frmAppointments = new FrmAppointments();
+            MyTools.ShowForm(frmAppointments);
         }
     }
 }

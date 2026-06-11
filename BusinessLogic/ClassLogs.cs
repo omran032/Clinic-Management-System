@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -21,10 +22,7 @@ namespace BusinessLogic
             ChangeStatus,
             DatabaseBackup
         }
-
-
-
-
+         
 
 
 
@@ -88,11 +86,157 @@ namespace BusinessLogic
             }
         }
 
+                 /////////////////////////////////////////////////////////////////////
+                 /////////////////////////////////////////////////////////////////////
+
+        /// <summary>
+        /// إرجاع جميع سجلات الـ Logs مع معلومات المستخدم والشخص
+        /// مرتبة من الأقدم إلى الأحدث
+        /// </summary>
+        public static DataTable GetAllLogsWithUserInfo()
+        {
+            string query = @"
+        SELECT 
+            L.LogID,
+            L.UserID,
+            L.Action,
+            L.TableName,
+            L.RecordID,
+            L.Description,
+            L.Timestamp,
+
+            U.UserName AS UserLoginName,
+            U.IDPerson AS PersonID,
+
+            P.FirstName + ' ' + P.LastName AS PersonFullName
+
+        FROM Logs L
+        LEFT JOIN Users U ON L.UserID = U.UserID
+        LEFT JOIN Persons P ON U.IDPerson = P.PersonID
+
+        ORDER BY L.Timestamp ASC ";
+
+            return ClassCommands.ShowData(query);
+        }
+
+
+        /// <summary>
+        /// إرجاع سجلات الـ Logs الخاصة بمستخدم معيّن فقط
+        /// مع معلومات المستخدم والشخص
+        /// مرتبة من الأقدم إلى الأحدث
+        /// </summary>
+        public static DataTable GetLogsByUser(int userId)
+        {
+            string query = @"
+        SELECT 
+            L.LogID,
+            L.UserID,
+            L.Action,
+            L.TableName,
+            L.RecordID,
+            L.Description,
+            L.Timestamp,
+
+            U.UserName AS UserLoginName,
+            U.IDPerson AS PersonID,
+
+            P.FirstName + ' ' + P.LastName AS PersonFullName
+
+        FROM Logs L
+        LEFT JOIN Users U ON L.UserID = U.UserID
+        LEFT JOIN Persons P ON U.IDPerson = P.PersonID
+
+        WHERE L.UserID = @UserID
+
+        ORDER BY L.Timestamp ASC ";
+
+            Dictionary<string, object> parameters = new Dictionary<string, object>()
+            {
+                { "@UserID", userId }
+            };
+
+            return ClassCommands.ShowData(query, parameters);
+        }
 
 
 
+        /// <summary>
+        /// إرجاع سجلات الـ Logs الخاصة بعملية معيّنة فقط
+        /// مع معلومات المستخدم والشخص
+        /// مرتبة من الأقدم إلى الأحدث
+        /// </summary>
+        public static DataTable GetLogsByAction(LogAction action)
+        {
+            string query = @"
+        SELECT 
+            L.LogID,
+            L.UserID,
+            L.Action,
+            L.TableName,
+            L.RecordID,
+            L.Description,
+            L.Timestamp,
+
+            U.UserName AS UserLoginName,
+            U.IDPerson AS PersonID,
+
+            P.FirstName + ' ' + P.LastName AS PersonFullName
+
+        FROM Logs L
+        LEFT JOIN Users U ON L.UserID = U.UserID
+        LEFT JOIN Persons P ON U.IDPerson = P.PersonID
+
+        WHERE L.Action = @Action
+
+        ORDER BY L.Timestamp ASC
+    ";
+
+            Dictionary<string, object> parameters = new Dictionary<string, object>()
+    {
+        { "@Action", action.ToString() }
+    };
+
+            return ClassCommands.ShowData(query, parameters);
+        }
 
 
+        /// <summary>
+        /// إرجاع سجلات الـ Logs بتاريخ معيّن فقط (بدون مقارنة الوقت)
+        /// مع معلومات المستخدم والشخص
+        /// مرتبة من الأقدم إلى الأحدث
+        /// </summary>
+        public static DataTable GetLogsByDate(DateTime date)
+        {
+            string query = @"
+        SELECT 
+            L.LogID,
+            L.UserID,
+            L.Action,
+            L.TableName,
+            L.RecordID,
+            L.Description,
+            L.Timestamp,
+
+            U.UserName AS UserLoginName,
+            U.IDPerson AS PersonID,
+
+            P.FirstName + ' ' + P.LastName AS PersonFullName
+
+        FROM Logs L
+        LEFT JOIN Users U ON L.UserID = U.UserID
+        LEFT JOIN Persons P ON U.IDPerson = P.PersonID
+
+        WHERE CAST(L.Timestamp AS DATE) = @Date
+
+        ORDER BY L.Timestamp ASC";
+
+            Dictionary<string, object> parameters = new Dictionary<string, object>()
+            {
+                { "@Date", date.Date }
+            };
+
+            return ClassCommands.ShowData(query, parameters);
+        }
 
     }
 }

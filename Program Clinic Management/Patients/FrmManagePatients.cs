@@ -29,13 +29,14 @@ namespace Program_Clinic_Management.Patients
             // ضبط شكل العناصر و الفورم
             ClassStyleAndColor.Style_TopBar_And_HiderForm(pnl_TopBar, this);
             ClassStyleAndColor.Style_DataGridView(DataGV);
+            // تحريك الفورم
+            MyTools.MoveControl(pnl_TopBar, this);
 
-           
         }
 
         void LoadData()
         {
-            DT_InfoPatients = ClsClsCMD_TablePatients.GetAllPatientsWithPersonInfo();
+            DT_InfoPatients = ClsCMD_TablePatients.GetAllPatientsWithPersonInfo();
             // تحميل البيانات بالجدول
             DataGV.DataSource = DT_InfoPatients;
 
@@ -115,8 +116,7 @@ namespace Program_Clinic_Management.Patients
             GetInfoPatient(); // Get Info
 
             ///////////////////////////////////
-            // تحريك الفورم
-            MyTools.MoveControl(pnl_TopBar, this);
+
         }
 
 
@@ -155,7 +155,7 @@ namespace Program_Clinic_Management.Patients
             if (OptionMessage == DialogResult.No) return;
 
             // حذف
-         int result =   ClsClsCMD_TablePatients.DeletePatientByID(PatientID);
+         int result =   ClsCMD_TablePatients.DeletePatientByID(PatientID);
             if(result == 1 )
             {     // حفظ العملية بالسجل
                 ClassLogs.AddLog(ClassUser.UserInfo.UserID, LogAction.Delete.ToString(), "Patients", PatientID, "حذف المريض");

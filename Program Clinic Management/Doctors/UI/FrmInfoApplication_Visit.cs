@@ -131,12 +131,12 @@ namespace Program_Clinic_Management
         /// </summary>
         void LoadDataAppointment()
         {
-            ClassAppointment AppointMentInfo = new ClassAppointment();
-            AppointMentInfo = ClassAppointment.GetInfoVisitInObj(DataTableInfo, IndexRowSelected);
+            ClassAppointment AppointmentInfo = new ClassAppointment();
+            AppointmentInfo = ClassAppointment.GetInfoAppointmentInObj(DataTableInfo, IndexRowSelected);
 
-            if (AppointMentInfo == null) return;
+            if (AppointmentInfo == null) return;
 
-            ctrl_InfoVisits_AppointmentsDoctor1.LoadDataِAppointment(AppointMentInfo);
+            ctrl_InfoVisits_AppointmentsDoctor1.LoadDataِAppointment(AppointmentInfo);
         }
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace Program_Clinic_Management
 
             if (VisitInfo == null) return;
 
-            ctrl_InfoVisits_AppointmentsDoctor1.LoadDataِVisit(VisitInfo);
+            ctrl_InfoVisits_AppointmentsDoctor1.LoadDataVisit(VisitInfo);
 
         }
 

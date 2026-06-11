@@ -257,6 +257,28 @@ namespace BusinessLogic
         }
 
 
+        /// <summary>
+        /// تنفيذ استعلام (إضافة – تعديل – حذف – نسخ احتياطي)
+        /// يرجع true إذا نجحت العملية، false إذا فشلت
+        /// </summary>
+        public static bool ExecuteNonQuery_Command(string query)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ClsConnectionDB.connectionString))
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    int rows = cmd.ExecuteNonQuery();
+
+                    return rows >= 0; // أي تنفيذ ناجح
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
 
         /// <summary>

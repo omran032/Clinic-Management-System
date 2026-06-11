@@ -76,6 +76,30 @@
     <Compile Include="Admin\FrmDashboardAdmin.Designer.cs">
       <DependentUpon>FrmDashboardAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Appointment\FrmAppointments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Appointment\FrmAppointments.Designer.cs">
+      <DependentUpon>FrmAppointments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Appointment\UControls\Ctrl_FeltterDataAppointment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Appointment\UControls\Ctrl_FeltterDataAppointment.Designer.cs">
+      <DependentUpon>Ctrl_FeltterDataAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Appointment\UI\FrmInfoAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Appointment\UI\FrmInfoAppointment.Designer.cs">
+      <DependentUpon>FrmInfoAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Appointment\UI\FrmShowAppointments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Appointment\UI\FrmShowAppointments.Designer.cs">
+      <DependentUpon>FrmShowAppointments.cs</DependentUpon>
+    </Compile>
     <Compile Include="Doctors\UControls\Ctrl_FeltterDataDoctors.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -88,17 +112,23 @@
     <Compile Include="Doctors\FrmManageDoctors.Designer.cs">
       <DependentUpon>FrmManageDoctors.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doctors\UControls\CtrlCountVisits_AppointmentsDoctor.cs">
+    <Compile Include="Appointment\UControls\CtrlCountVisits_AppointmentsDoctor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Doctors\UControls\CtrlCountVisits_AppointmentsDoctor.Designer.cs">
+    <Compile Include="Appointment\UControls\CtrlCountVisits_AppointmentsDoctor.Designer.cs">
       <DependentUpon>CtrlCountVisits_AppointmentsDoctor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Doctors\UControls\Ctrl_InfoVisits_AppointmentsDoctor.cs">
+    <Compile Include="Appointment\UControls\Ctrl_InfoVisits_AppointmentsDoctor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Doctors\UControls\Ctrl_InfoVisits_AppointmentsDoctor.Designer.cs">
+    <Compile Include="Appointment\UControls\Ctrl_InfoVisits_AppointmentsDoctor.Designer.cs">
       <DependentUpon>Ctrl_InfoVisits_AppointmentsDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Appointment\UI\FrmAdd_UpdateAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Appointment\UI\FrmAdd_UpdateAppointment.Designer.cs">
+      <DependentUpon>FrmAdd_UpdateAppointment.cs</DependentUpon>
     </Compile>
     <Compile Include="Doctors\UI\FrmAdd_UpdateDoctor.cs">
       <SubType>Form</SubType>
@@ -197,6 +227,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Settings\Backup\FrmBackupDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\Backup\FrmBackupDB.Designer.cs">
+      <DependentUpon>FrmBackupDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Logs\FrmLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\Logs\FrmLogs.Designer.cs">
+      <DependentUpon>FrmLogs.cs</DependentUpon>
+    </Compile>
     <Compile Include="UControls\CtrlNotes.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -212,17 +254,32 @@
     <EmbeddedResource Include="Admin\FrmDashboardAdmin.resx">
       <DependentUpon>FrmDashboardAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Appointment\FrmAppointments.resx">
+      <DependentUpon>FrmAppointments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Appointment\UControls\Ctrl_FeltterDataAppointment.resx">
+      <DependentUpon>Ctrl_FeltterDataAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Appointment\UI\FrmInfoAppointment.resx">
+      <DependentUpon>FrmInfoAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Appointment\UI\FrmShowAppointments.resx">
+      <DependentUpon>FrmShowAppointments.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Doctors\UControls\Ctrl_FeltterDataDoctors.resx">
       <DependentUpon>Ctrl_FeltterDataDoctors.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Doctors\FrmManageDoctors.resx">
       <DependentUpon>FrmManageDoctors.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doctors\UControls\CtrlCountVisits_AppointmentsDoctor.resx">
+    <EmbeddedResource Include="Appointment\UControls\CtrlCountVisits_AppointmentsDoctor.resx">
       <DependentUpon>CtrlCountVisits_AppointmentsDoctor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doctors\UControls\Ctrl_InfoVisits_AppointmentsDoctor.resx">
+    <EmbeddedResource Include="Appointment\UControls\Ctrl_InfoVisits_AppointmentsDoctor.resx">
       <DependentUpon>Ctrl_InfoVisits_AppointmentsDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Appointment\UI\FrmAdd_UpdateAppointment.resx">
+      <DependentUpon>FrmAdd_UpdateAppointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Doctors\UI\FrmAdd_UpdateDoctor.resx">
       <DependentUpon>FrmAdd_UpdateDoctor.cs</DependentUpon>
@@ -274,6 +331,12 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Settings\Backup\FrmBackupDB.resx">
+      <DependentUpon>FrmBackupDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\Logs\FrmLogs.resx">
+      <DependentUpon>FrmLogs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UControls\CtrlNotes.resx">
       <DependentUpon>CtrlNotes.cs</DependentUpon>
     </EmbeddedResource>
@@ -303,6 +366,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>ClinicSystemDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Add.png" />
+    <None Include="Resources\Patient.png" />
+    <None Include="Resources\Doctor.png" />
+    <None Include="Resources\AI.png" />
     <None Include="Resources\NextPage.png" />
     <None Include="Resources\X.png" />
     <None Include="Resources\Minimize.png" />

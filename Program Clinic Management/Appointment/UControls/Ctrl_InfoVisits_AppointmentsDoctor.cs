@@ -1,4 +1,5 @@
 ﻿using BusinessLogic.InfoTable;
+using Program_Clinic_Management.Patients.UControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,7 +28,7 @@ namespace Program_Clinic_Management.Doctors.UControls
         /// <summary>
         /// تحميل معلومات موعد المريض
         /// </summary>
-        public void LoadDataِAppointment(ClassAppointment AppointmentInfo_)
+        public void LoadDataِAppointment(ClassAppointment AppointmentInfo_ , bool ShowInfoDoctor = false)
         {
             if (AppointmentInfo_ == null) return;
 
@@ -36,10 +37,11 @@ namespace Program_Clinic_Management.Doctors.UControls
             // حماية قبل Load()
             //if (AppointmentInfo.VisitTypeInfo == null)
             //    lbl_TypeVisit.Text = "نوع الزيارة : غير محدد";
+
             //else
                 lbl_TypeVisit.Text = "Visit Type : " + AppointmentInfo.VisitTypeInfo.VisitName;
 
-
+             
            lbl_ID_V_A.Text = "ID Appointment : " + AppointmentInfo.AppointmentID;
            GroupInfo_V_A.Text = "معلومات الموعد";
 
@@ -50,13 +52,21 @@ namespace Program_Clinic_Management.Doctors.UControls
             lblStatusAppointment.Text = "حالة الموعد : " + AppointmentInfo.Status;
 
             lblDate_V_A.Text = "تاريخ الموعد : " + AppointmentInfo.AppointmentDate;
+
+            // عرض معلومات الطبيب 
+            if(ShowInfoDoctor)
+            {
+                ctrl_PersonInfoDoctor.PersonInfo = AppointmentInfo_.DoctorInfo.PersonInfo;
+                lblSpecialization.Text = "Specialization : " + AppointmentInfo_.DoctorInfo.SprcializationName;
+            }
+
         }
 
 
         /// <summary>
         /// تحميل بيانات زيارة المريض
         /// </summary>
-        public void LoadDataِVisit(ClassVisit VisitInfo_)
+        public void LoadDataVisit(ClassVisit VisitInfo_)
         {
             if (VisitInfo_ == null) return;
 
@@ -73,11 +83,17 @@ namespace Program_Clinic_Management.Doctors.UControls
             lbl_ID_V_A.Text  = "ID Visit : " + VisitInfo_.VisitID;
             lbl_TypeVisit.Text = "Visit Type : " + VisitInfo_.VisitTypeInfo.VisitName;
 
-            ctrl_PatientInfo1.PatientsInfo = VisitInfo.PatientsInfo;
-
+            LoadInfoPatient(VisitInfo.PatientsInfo);
         }
 
-
+        /// <summary>
+        /// تحميل معلومات المريض
+        /// </summary>
+        /// <param name="PatientInfo"></param>
+        public void LoadInfoPatient(ClassPatients PatientInfo)
+        {
+            ctrl_PatientInfo1.PatientsInfo = PatientInfo;
+        }
 
 
     }

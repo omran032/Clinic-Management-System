@@ -142,7 +142,6 @@ namespace Program_Clinic_Management.Login
             MessageBox.Show("لإنشاء حساب جديد، يرجى مراجعة إدارة العيادة.", "إنشاء حساب", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-
-
+       
     }
 }

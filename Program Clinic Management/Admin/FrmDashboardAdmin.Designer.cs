@@ -234,6 +234,7 @@
             this.btn_Appointments.Size = new System.Drawing.Size(210, 47);
             this.btn_Appointments.TabIndex = 15;
             this.btn_Appointments.Text = "المواعيد";
+            this.btn_Appointments.Click += new System.EventHandler(this.btn_Appointments_Click);
             // 
             // btn_Logs
             // 
@@ -283,6 +284,7 @@
             this.btn_Backup.Size = new System.Drawing.Size(210, 47);
             this.btn_Backup.TabIndex = 25;
             this.btn_Backup.Text = "النسخ الاحتياطي";
+            this.btn_Backup.Click += new System.EventHandler(this.btn_Backup_Click);
             // 
             // btnPersons
             // 

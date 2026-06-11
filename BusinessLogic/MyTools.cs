@@ -447,4 +447,35 @@ using System.Windows.Forms;
         return $"{years} سنة - {months} شهر - {days} يوم";
     }
 
+
+
+    /// <summary>
+    /// إرجاع فورم إذا كانت مفتوحة، أو فتح واحدة جديدة إذا لم تكن موجودة
+    /// </summary>
+    public static Form GetOrOpenForm<T>() where T : Form, new()
+    {
+        // البحث عن الفورم ضمن النوافذ المفتوحة
+        foreach (Form frm in Application.OpenForms)
+        {
+            if (frm is T)
+            {
+                frm.WindowState = FormWindowState.Normal;
+                frm.BringToFront();
+                frm.Activate();
+                return frm;
+            }
+        }
+
+        // إذا غير موجودة → افتح واحدة جديدة
+        T newForm = new T();
+        newForm.Show();
+        return newForm;
+
+
+        //طريقة الاستدعاء
+        //   NameForm frm = (NameForm)MyTools.GetOrOpenForm<NameForm>();
+
+    }
+
+
 }

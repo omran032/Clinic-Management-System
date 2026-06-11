@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -529,6 +530,394 @@ INNER JOIN VisitTypes vt ON a.VisitTypeId = vt.VisitTypeId
 
 
 
+                ////////////////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        
+        /// <summary>
+        /// يتحقق إذا كان المريض لديه موعد غير مكتمل (Pending أو Scheduled)
+        /// بشرط أن يكون الموعد في المستقبل أو لم يحن وقته بعد.
+        /// يرجع True إذا يوجد موعد، False إذا لا يوجد.
+        /// </summary>
+        public static bool HasFuturePendingAppointment(int personId)
+        {
+            string query = @"
+        SELECT COUNT(*) 
+        FROM Appointments
+        WHERE PersonId = @PersonId
+        AND Status IN ('Pending', 'Scheduled')
+        AND AppointmentDate >= GETDATE()
+    ";
+
+            var parameters = new Dictionary<string, object>()
+            {
+            { "@PersonId", personId }
+            };
+
+            int count = Convert.ToInt32(ClassCommands.ExecuteScalar(query, parameters));
+
+            return count > 0;
+        }
+
+
+
+
+        /// <summary>
+        /// إضافة موعد جديد مع التحقق من عدم وجود موعد متداخل.
+
+        /// 0 ء  // اذا كان هناك تداخل ترجع
+        /// ID ء  // اذا لم يكن هناك تداخل ترجع
+        /// -1 ء  // اذا لم تنجح العملية ترجع      
+
+        /// </summary>
+        public static int AddAppointmentWithCheck(int doctorId, int personId, int visitTypeId, DateTime appointmentDate, int durationMinutes, string status, string notes)
+        {
+            // حساب وقت نهاية الموعد الجديد
+            DateTime startTime = appointmentDate;
+            DateTime endTime = appointmentDate.AddMinutes(durationMinutes);
+
+            // 1) التحقق من وجود موعد متداخل
+            string checkQuery = @"
+        SELECT COUNT(*)
+        FROM Appointments
+        WHERE DoctorId = @DoctorId
+        AND (
+                (@StartTime < DATEADD(MINUTE, EstimatedDurationMinutes, AppointmentDate)
+                 AND @EndTime > AppointmentDate)
+            )";
+
+            var checkParams = new Dictionary<string, object>()
+            {
+                { "@DoctorId", doctorId },
+                { "@StartTime", startTime },
+                { "@EndTime", endTime }
+            };
+
+            int conflictCount = Convert.ToInt32(ClassCommands.ExecuteScalar(checkQuery, checkParams));
+
+            if (conflictCount > 0)
+            {
+                // يوجد موعد متداخل
+                return 0;
+            }
+
+            // 2) إضافة الموعد الجديد
+            string insertQuery = @"
+        INSERT INTO Appointments 
+        (PersonId, VisitTypeId, AppointmentDate, Status, Notes, EstimatedDurationMinutes, DoctorId)
+        VALUES 
+        (@PersonId, @VisitTypeId, @AppointmentDate, @Status, @Notes, @Duration, @DoctorId);
+
+        SELECT SCOPE_IDENTITY(); ";
+
+            var insertParams = new Dictionary<string, object>()
+            {
+                { "@PersonId", personId },
+                { "@VisitTypeId", visitTypeId },
+                { "@AppointmentDate", appointmentDate },
+                { "@Status", status },
+                { "@Notes", notes },
+                { "@Duration", durationMinutes },
+                { "@DoctorId", doctorId }
+            };
+
+            object result = ClassCommands.ExecuteScalar(insertQuery, insertParams);
+
+            if (result != null && int.TryParse(result.ToString(), out int newId))
+            {
+                return newId; // ID الموعد الجديد
+            }
+
+            return -1; // خطأ غير متوقع
+        }
+
+
+        /// <summary>
+        /// تعديل موعد مع التحقق من عدم وجود موعد متداخل.
+        /// 0  → يوجد تداخل
+        /// ID → تم التعديل بنجاح
+        /// -1 → خطأ غير متوقع
+        /// </summary>
+        public static int UpdateAppointmentWithCheck(int appointmentId, int doctorId, int personId, int visitTypeId, DateTime appointmentDate, int durationMinutes, string status, string notes)
+        {
+            DateTime startTime = appointmentDate;
+            DateTime endTime = appointmentDate.AddMinutes(durationMinutes);
+
+            // 1) التحقق من وجود موعد متداخل (مع استثناء نفس الموعد)
+            string checkQuery = @"
+        SELECT COUNT(*)
+        FROM Appointments
+        WHERE DoctorId = @DoctorId
+        AND AppointmentId <> @AppointmentId
+        AND (
+                (@StartTime < DATEADD(MINUTE, EstimatedDurationMinutes, AppointmentDate)
+                 AND @EndTime > AppointmentDate)
+            )";
+
+            var checkParams = new Dictionary<string, object>()
+            {
+                { "@DoctorId", doctorId },
+                { "@AppointmentId", appointmentId },
+                { "@StartTime", startTime },
+                { "@EndTime", endTime }
+            };
+
+            int conflictCount = Convert.ToInt32(ClassCommands.ExecuteScalar(checkQuery, checkParams));
+
+            if (conflictCount > 0)
+            {
+                return 0; // يوجد تداخل
+            }
+
+            // 2) تنفيذ عملية التعديل
+            string updateQuery = @"
+        UPDATE Appointments
+        SET 
+            PersonId = @PersonId,
+            VisitTypeId = @VisitTypeId,
+            AppointmentDate = @AppointmentDate,
+            Status = @Status,
+            Notes = @Notes,
+            EstimatedDurationMinutes = @Duration,
+            DoctorId = @DoctorId
+        WHERE AppointmentId = @AppointmentId;
+
+        SELECT @AppointmentId;  ";
+
+            var updateParams = new Dictionary<string, object>()
+            {
+                { "@AppointmentId", appointmentId },
+                { "@PersonId", personId },
+                { "@VisitTypeId", visitTypeId },
+                { "@AppointmentDate", appointmentDate },
+                { "@Status", status },
+                { "@Notes", notes },
+                { "@Duration", durationMinutes },
+                { "@DoctorId", doctorId }
+            };
+
+            object result = ClassCommands.ExecuteScalar(updateQuery, updateParams);
+
+            if (result != null && int.TryParse(result.ToString(), out int updatedId))
+            {
+                return updatedId; // تم التعديل بنجاح
+            }
+
+            return -1; // خطأ غير متوقع
+        }
+
+
+        /// <summary>
+        /// حذف موعد عبر رقم الموعد AppointmentId.
+        /// ترجع:
+        ///  1  = تم الحذف بنجاح
+        ///  0  = الموعد غير موجود
+        /// -1  = الموعد مرتبط بمدفوعات أو زيارات (FK Conflict)
+        /// </summary>
+        public static int DeleteAppointmentById(int appointmentId)
+        {
+            string query = @"
+        DELETE FROM Appointments
+        WHERE AppointmentId = @AppointmentId ";
+
+            var parameters = new Dictionary<string, object>()
+            {
+                { "@AppointmentId", appointmentId }
+            };
+
+            try
+            {
+                bool deleted = ClassCommands.ExecuteQuery(query, parameters);
+
+                if (deleted)
+                    return 1;   // تم الحذف
+
+                return 0;       // لم يتم العثور على الموعد
+            }
+            catch (SqlException ex)
+            {
+                // FK Conflict
+                if (ex.Message.Contains("REFERENCE") || ex.Message.Contains("FK_"))
+                    return -1;
+
+                // أي خطأ آخر
+                throw;
+            }
+        }
+
+
+
+
+        /// <summary>
+        /// إرجاع المواعيد مع معلومات الطبيب والمريض ونوع الزيارة.
+        /// إذا wasUpcoming = true → يرجع المواعيد المتبقية فقط.
+        /// إذا wasUpcoming = false → يرجع كل المواعيد.
+        /// </summary>
+        public static DataTable GetAppointments(bool wasUpcoming)
+        {
+            string condition = wasUpcoming
+                ? "WHERE A.AppointmentDate >= GETDATE()"
+                : "";
+
+            string query = $@" SELECT 
+                         -- معلومات الموعد
+    A.AppointmentId,
+    A.AppointmentDate,
+    A.Status,
+
+                        -- معلومات المريض (Persons)
+     P.PersonId,
+     P.Phone As PatientPhone,
+    (P.FirstName + ' ' + P.LastName) AS PatientName,
+
+                        -- معلومات المريض (Patients)
+    PT.PatientId AS [ID Patiient],
+
+                        -- معلومات الطبيب
+    D.DoctorId,
+    (DP.FirstName + ' ' + DP.LastName) AS DoctorName,
+    DP.Phone AS DoctorPhone,
+    S.Name AS SpecializationName,
+
+                        -- نوع الزيارة
+    VT.VisitTypeId,
+    VT.TypeName AS VisitTypeName
+ 
+FROM Appointments A
+INNER JOIN Persons P ON A.PersonId = P.PersonId
+INNER JOIN Patients PT ON P.PersonId = PT.PersonId
+INNER JOIN Doctors D ON A.DoctorId = D.DoctorId
+INNER JOIN Persons DP ON D.PersonId = DP.PersonId
+INNER JOIN Specializations S ON D.SpecializationId = S.SpecializationId
+INNER JOIN VisitTypes VT ON A.VisitTypeId = VT.VisitTypeId
+
+{condition}
+
+ORDER BY A.AppointmentDate ASC";
+
+
+            return ClassCommands.ShowData(query);
+        }
+
+
+
+
+        public enum AppointmentFilter
+        {
+            All,
+            Today,
+            ThisWeek,
+            ThisMonth,
+            DoctorId,
+            DoctorName,
+            PatientName,
+            AppointmentStatus,
+            PatientPhone
+        }
+
+        /// <summary>
+        /// إرجاع المواعيد حسب نوع الفلترة المطلوبة.
+        /// تعتمد على Enum واحد فقط + قيمة الفلترة عند الحاجة.
+        /// </summary>
+        public static DataTable GetAppointmentsByFilter(AppointmentFilter filter, string value = "")
+        {
+            string condition = "";
+            var parameters = new Dictionary<string, object>();
+
+            switch (filter)
+            {
+                case AppointmentFilter.Today:
+                    condition = "WHERE CAST(A.AppointmentDate AS DATE) = CAST(GETDATE() AS DATE)";
+                    break;
+
+                case AppointmentFilter.ThisWeek:
+                    condition = @"
+                WHERE A.AppointmentDate >= DATEADD(DAY, 1 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE))
+                AND   A.AppointmentDate <  DATEADD(DAY, 8 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE))
+            ";
+                    break;
+
+                case AppointmentFilter.ThisMonth:
+                    condition = @"
+                WHERE MONTH(A.AppointmentDate) = MONTH(GETDATE())
+                AND   YEAR(A.AppointmentDate) = YEAR(GETDATE())
+            ";
+                    break;
+
+                case AppointmentFilter.DoctorId:
+                    condition = "WHERE D.DoctorId = @DoctorId";
+                    parameters.Add("@DoctorId", Convert.ToInt32(value));
+                    break;
+
+                case AppointmentFilter.DoctorName:
+                    condition = "WHERE (DP.FirstName + ' ' + DP.LastName) LIKE '%' + @DoctorName + '%'";
+                    parameters.Add("@DoctorName", value);
+                    break;
+
+                case AppointmentFilter.PatientName:
+                    condition = "WHERE (P.FirstName + ' ' + P.LastName) LIKE '%' + @PatientName + '%'";
+                    parameters.Add("@PatientName", value);
+                    break;
+
+                case AppointmentFilter.AppointmentStatus:
+                    condition = "WHERE A.Status LIKE '%' + @Status + '%'";
+                    parameters.Add("@Status", value);
+                    break;
+
+                case AppointmentFilter.PatientPhone:
+                    condition = "WHERE P.Phone LIKE '%' + @Phone + '%'";
+                    parameters.Add("@Phone", value);
+                    break;
+
+                case AppointmentFilter.All:
+                default:
+                    condition = "";
+                    break;
+            }
+
+            string query = $@"
+        SELECT 
+            -- معلومات الموعد
+            A.AppointmentId,
+            A.AppointmentDate,
+            A.Status,
+
+            -- معلومات المريض (Persons)
+            P.PersonId,
+            P.Phone AS PatientPhone,
+            (P.FirstName + ' ' + P.LastName) AS PatientName,
+
+            -- معلومات المريض (Patients)
+            PT.PatientId AS [ID Patiient],
+
+            -- معلومات الطبيب
+            D.DoctorId,
+            (DP.FirstName + ' ' + DP.LastName) AS DoctorName,
+            DP.Phone AS DoctorPhone,
+            S.Name AS SpecializationName,
+
+            -- نوع الزيارة
+            VT.VisitTypeId,
+            VT.TypeName AS VisitTypeName
+
+        FROM Appointments A
+        INNER JOIN Persons P ON A.PersonId = P.PersonId
+        INNER JOIN Patients PT ON P.PersonId = PT.PersonId
+        INNER JOIN Doctors D ON A.DoctorId = D.DoctorId
+        INNER JOIN Persons DP ON D.PersonId = DP.PersonId
+        INNER JOIN Specializations S ON D.SpecializationId = S.SpecializationId
+        INNER JOIN VisitTypes VT ON A.VisitTypeId = VT.VisitTypeId
+
+        {condition}
+
+        ORDER BY A.AppointmentDate ASC
+    ";
+
+            return ClassCommands.ShowData(query, parameters);
+        }
+
+
 
     }
 }
+

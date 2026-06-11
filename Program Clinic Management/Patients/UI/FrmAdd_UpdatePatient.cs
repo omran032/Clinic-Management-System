@@ -126,7 +126,7 @@ namespace Program_Clinic_Management.Patients.UI
         /// </summary>
         void GetPersonInfo(ClassPerson PersonInfo)
         {
-            bool personUsed = ClsClsCMD_TablePatients.IsPersonAlreadyPatient(PersonInfo.PersonID);
+            bool personUsed = ClsCMD_TablePatients.IsPersonAlreadyPatient(PersonInfo.PersonID);
 
             if (mode == Mode.Add)
             {
@@ -241,7 +241,7 @@ namespace Program_Clinic_Management.Patients.UI
 
             if (mode == Mode.Add)
             {
-                int newID = ClsClsCMD_TablePatients.AddPatientOnly(PatientsInfo);
+                int newID = ClsCMD_TablePatients.AddPatientOnly(PatientsInfo);
 
                 if (newID > 0)
                 {
@@ -260,7 +260,7 @@ namespace Program_Clinic_Management.Patients.UI
             }
             else if (mode == Mode.Update)
             {
-                bool ok = ClsClsCMD_TablePatients.UpdatePatient(PatientsInfo);
+                bool ok = ClsCMD_TablePatients.UpdatePatient(PatientsInfo);
 
                 if (ok)
                 {

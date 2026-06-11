@@ -40,6 +40,48 @@ namespace BusinessLogic.InfoTable
         }
 
 
+        /// <summary>
+        /// جلب معلومات دكتور كامل ضمن Object من نوع ClassDoctor
+        /// </summary>
+        public static ClassDoctor GetDoctorInfo(int doctorId)
+        {
+            string query = @"
+        SELECT 
+            d.DoctorID        AS [Doctor ID],
+            d.SpecializationId,
+            s.Name            AS [Specialization Name],
+            d.Notes           AS DoctorNotes,
+
+            p.PersonID,
+            p.FirstName,
+            p.LastName,
+            p.Gender,
+            p.BirthDate,
+            p.Phone,
+            p.Address,
+            p.CreatedAt,
+            p.UpdatedAt
+
+        FROM Doctors d
+        INNER JOIN Persons p 
+            ON d.PersonID = p.PersonID
+        INNER JOIN Specializations s
+            ON d.SpecializationId = s.SpecializationId
+
+        WHERE d.DoctorID = @DoctorID ";
+
+            var parameters = new Dictionary<string, object>()
+            {
+                { "@DoctorID", doctorId }
+            };
+
+            DataTable dt = ClassCommands.ShowData(query, parameters);
+
+            if (dt.Rows.Count == 0)
+                return null;
+
+            return ClassDoctor.GetInfoDoctorInObj(dt);
+        }
 
 
     }

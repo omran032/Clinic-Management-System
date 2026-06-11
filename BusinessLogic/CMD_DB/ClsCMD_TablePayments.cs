@@ -11,7 +11,7 @@ using static BusinessLogic.CMD_DB.ClsCMD_TableVisits;
 
 namespace BusinessLogic.CMD_DB
 {
-    public class ClsClsCMD_TablePayments
+    public class ClsCMD_TablePayments
     {
 
         ///////////////////////////////////////////////////////////////////////////////////////////

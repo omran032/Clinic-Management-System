@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblInfo = new System.Windows.Forms.Label();
             this.Picture = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.ElipseCtrl = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Picture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,6 +69,11 @@
             this.Picture.TabIndex = 2;
             this.Picture.TabStop = false;
             // 
+            // ElipseCtrl
+            // 
+            this.ElipseCtrl.BorderRadius = 20;
+            this.ElipseCtrl.TargetControl = this;
+            // 
             // Ctrl_ShowStatisticscs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
@@ -89,5 +96,6 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblInfo;
         private Guna.UI2.WinForms.Guna2PictureBox Picture;
+        private Guna.UI2.WinForms.Guna2Elipse ElipseCtrl;
     }
 }

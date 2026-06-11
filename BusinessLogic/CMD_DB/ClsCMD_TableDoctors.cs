@@ -329,10 +329,31 @@ namespace BusinessLogic.CMD_DB
 
 
 
+        /// <summary>
+        /// تعبئة ComboBox بأسماء الدكاترة مع تخزين DoctorID
+        /// </summary>
+        public static void FillDoctorsComboBox(ComboBox combo)
+        {
+            string query = @"
+        SELECT 
+            D.DoctorID,
+            P.FirstName + ' ' + P.LastName AS DoctorName
+        FROM Doctors D
+        INNER JOIN Persons P ON D.PersonID = P.PersonID
+        ORDER BY P.FirstName, P.LastName
+    ";
+
+            DataTable dt = ClassCommands.ShowData(query);
+
+            combo.DataSource = dt;
+            combo.DisplayMember = "DoctorName";   // الاسم الظاهر
+            combo.ValueMember = "DoctorID";       // القيمة المخزنة
+            combo.SelectedIndex = -1;             // بدون اختيار افتراضي
+        }
 
 
 
-
+       
 
 
 

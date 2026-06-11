@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace BusinessLogic.CMD_DB
 {
-    public class ClsClsCMD_TablePatients
+    public class ClsCMD_TablePatients
     {
 
         /// <summary>

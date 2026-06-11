@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static BusinessLogic.CMD_DB.ClsClsCMD_TablePatients;
+using static BusinessLogic.CMD_DB.ClsCMD_TablePatients;
 using static BusinessLogic.CMD_DB.ClsCMD_TableDoctors;
 
 namespace Program_Clinic_Management

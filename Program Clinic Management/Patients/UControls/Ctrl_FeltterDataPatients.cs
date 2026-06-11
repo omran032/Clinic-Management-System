@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static BusinessLogic.CMD_DB.ClsClsCMD_TablePatients;
+using static BusinessLogic.CMD_DB.ClsCMD_TablePatients;
 using static BusinessLogic.CMD_DB.ClsCMD_TablePersons;
 
 namespace Program_Clinic_Management.Patients.UControls
@@ -91,7 +91,7 @@ namespace Program_Clinic_Management.Patients.UControls
                 case "عرض الكل":
                     btn_Search.Enabled = false;
                     Txt_TextSearch.Enabled = false;
-                    DataPatients = ClsClsCMD_TablePatients.FeltterPatient(PatientFilterType.All); // بدلها بالامر عرض كل المرضى
+                    DataPatients = ClsCMD_TablePatients.FeltterPatient(PatientFilterType.All); // بدلها بالامر عرض كل المرضى
 
                     EventShowDataPatientsInDataTable?.Invoke(DataPatients); // تنفيذ حدث عرض البيانات في الجدول
                     break;
@@ -146,7 +146,7 @@ namespace Program_Clinic_Management.Patients.UControls
 
             }
             // إظهار البيانات
-            DataPatients = ClsClsCMD_TablePatients.FeltterPatient(PatientFilterType, SearchValue);
+            DataPatients = ClsCMD_TablePatients.FeltterPatient(PatientFilterType, SearchValue);
 
             EventShowDataPatientsInDataTable?.Invoke(DataPatients); // تنفيذ حدث عرض البيانات في الجدول
 

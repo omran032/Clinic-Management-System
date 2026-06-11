@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Program_Clinic_Management.Admin;
 using Program_Clinic_Management.Login;
 using Program_Clinic_Management.Persons.UI;
+using Program_Clinic_Management.Settings.Backup;
 
 namespace Program_Clinic_Management
 {
@@ -23,7 +24,8 @@ namespace Program_Clinic_Management
 
 
            // Application.Run(new Form1());
-              Application.Run(new FrmDashboardAdmin());
+             Application.Run(new FrmDashboardAdmin());
+            //   Application.Run(new FrmBackupDB());
 
             //Application.Run(new FrmAdd_UpdatePerson(FrmAdd_UpdatePerson.Mode.Add));
             // Application.Run(new FrmDisplayInfoPerson());
