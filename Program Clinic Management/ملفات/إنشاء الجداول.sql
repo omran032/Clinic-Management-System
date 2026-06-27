@@ -86,9 +86,11 @@ CREATE TABLE Appointments (
 ALTER TABLE Appointments
 ADD EstimatedDurationMinutes INT NULL;
 
-
-
-
+-- حالات المواعيد
+  -- Absent      غائب             -- inprogress   قيد الزيارة
+  -- Pending     قيد الانتظار      -- Cancelled  تم الالغاء
+  -- Completed    مكتملة          -- Delayed  تأخر
+  
 
 
 
@@ -112,7 +114,10 @@ CREATE TABLE Visits (
 ALTER TABLE Visits
 ADD ActualDurationMinutes INT NULL;
 
-
+-- حالات الزيارة 
+-- Emergency  طواريء
+-- Follow_UP  متابعة
+-- Consultion استشارة
 
 
 
