@@ -186,6 +186,7 @@
             this.btn_Visits.Size = new System.Drawing.Size(210, 47);
             this.btn_Visits.TabIndex = 17;
             this.btn_Visits.Text = "الزيارات";
+            this.btn_Visits.Click += new System.EventHandler(this.btn_Visits_Click);
             // 
             // btn
             // 

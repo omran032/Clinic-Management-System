@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -97,6 +98,95 @@ namespace BusinessLogic.InfoTable
             // تعبئة معلومات الشخص
             patient.PersonInfo = new ClassPerson();
             patient.PersonInfo = ClassPerson.SaveDataInObj(dt, RowIndex);
+
+            return patient;
+        }
+
+
+        /// <summary>
+        /// تجلب معلومات الشخص والمريض بكويري واحدة فقط، 
+        /// وتعيد كائن ClassPatients جاهز للاستخدام حتى لو لم يكن الشخص مريضاً بعد.
+        /// </summary>
+        public static ClassPatients GetPatientByPersonId(int personId)
+        {
+            ClassPatients patient = new ClassPatients();
+
+            string query = @"
+        SELECT 
+            p.PersonId,
+            p.FirstName,
+            p.LastName,
+            p.Gender,
+            p.BirthDate,
+            p.Phone,
+            p.Address,
+            p.CreatedAt,
+            p.UpdatedAt,
+
+            pa.PatientId,
+            pa.MedicalNotes,
+            pa.FirstVisitDate,
+            pa.ChronicDiseases,
+            pa.Allergies,
+            pa.Notes,
+            pa.ComplianceScore
+
+        FROM Persons p
+        LEFT JOIN Patients pa ON p.PersonId = pa.PersonId
+        WHERE p.PersonId = @PersonId
+    ";
+
+            var parameters = new Dictionary<string, object>
+    {
+        { "@PersonId", personId }
+    };
+
+            DataTable dt = ClassCommands.ShowData(query, parameters);
+
+            if (dt.Rows.Count == 0)
+                return null; // الشخص غير موجود نهائياً
+
+            DataRow row = dt.Rows[0];
+
+            // تعبئة معلومات الشخص داخل ClassPerson
+            patient.PersonInfo = new ClassPerson
+            {
+                PersonID = Convert.ToInt32(row["PersonId"]),
+                FirstName = row["FirstName"].ToString(),
+                LastName = row["LastName"].ToString(),
+                Gender = row["Gender"].ToString(),
+                BirthDate = row["BirthDate"] == DBNull.Value ? DateTime.MinValue : Convert.ToDateTime(row["BirthDate"]),
+                Phone = row["Phone"].ToString(),
+                Address = row["Address"].ToString(),
+                CreatedAt = row["CreatedAt"] == DBNull.Value ? "" : row["CreatedAt"].ToString(),
+                UpdatedAt = row["UpdatedAt"] == DBNull.Value ? "" : row["UpdatedAt"].ToString()
+            };
+
+            // إذا الشخص ليس مريضاً بعد (PatientId = NULL)
+            if (row["PatientId"] == DBNull.Value)
+            {
+                patient.PatientID = 0; // يعني ليس مريضاً بعد
+                patient.MedicalNotes = "";
+                patient.FirstVisitDate = "";
+                patient.ChronicDiseases = "";
+                patient.Allergies = "";
+                patient.Notes = "";
+                patient.ComplianceScore = 50; // المريض الجديد يبدأ بـ 50
+
+                return patient;
+            }
+
+            // تعبئة معلومات المريض
+            patient.PatientID = Convert.ToInt32(row["PatientId"]);
+            patient.MedicalNotes = row["MedicalNotes"].ToString();
+            patient.FirstVisitDate = row["FirstVisitDate"].ToString();
+            patient.ChronicDiseases = row["ChronicDiseases"].ToString();
+            patient.Allergies = row["Allergies"].ToString();
+            patient.Notes = row["Notes"].ToString();
+
+            patient.ComplianceScore = row["ComplianceScore"] == DBNull.Value
+                                      ? 50
+                                      : Convert.ToInt32(row["ComplianceScore"]);
 
             return patient;
         }

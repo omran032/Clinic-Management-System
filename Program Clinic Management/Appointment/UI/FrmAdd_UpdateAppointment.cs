@@ -41,7 +41,7 @@ namespace Program_Clinic_Management.Doctors.UI
             }
 
         }
-
+      
 
         public enum Mode { Add , Update}
 

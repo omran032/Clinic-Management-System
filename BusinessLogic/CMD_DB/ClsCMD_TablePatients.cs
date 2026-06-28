@@ -376,13 +376,68 @@ namespace BusinessLogic.CMD_DB
                 MessageBox.Show("مشكلة في عملية الفلترة ....أعد المحاولة", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
-           
+
         }
 
 
 
 
         // //////////////////////////////////////////     ////////////////////////////////////////////
+
+
+        /// <summary>
+        /// تحديث درجة التزام المريض بناءً على حالة الموعد
+        /// بكويري واحدة فقط مع ضبط الحد الأعلى والأدنى.
+        /// </summary>
+        public static void UpdateComplianceByAppointmentStatus(int personId, string appointmentStatus)
+        {
+            int scoreChange = 0;
+
+            switch (appointmentStatus)
+            {
+                case "Completed": scoreChange = +10; break;
+                case "Absent": scoreChange = -15; break;
+                case "FollowUp": scoreChange = +5; break;
+                case "Delayed": scoreChange = -5; break;
+                default: scoreChange = 0; break;
+            }
+
+            string query = @"
+        UPDATE Patients
+        SET ComplianceScore =
+            CASE 
+                WHEN ComplianceScore IS NULL 
+                    THEN 
+                        CASE 
+                            WHEN 50 + @ScoreChange > 100 THEN 100
+                            WHEN 50 + @ScoreChange < 0 THEN 0
+                            ELSE 50 + @ScoreChange
+                        END
+
+                ELSE 
+                    CASE 
+                        WHEN ComplianceScore + @ScoreChange > 100 THEN 100
+                        WHEN ComplianceScore + @ScoreChange < 0 THEN 0
+                        ELSE ComplianceScore + @ScoreChange
+                    END
+            END
+        WHERE PersonId = @PersonId;
+    ";
+
+            var parameters = new Dictionary<string, object>
+            {
+                { "@ScoreChange", scoreChange },
+                { "@PersonId", personId }
+            };
+
+            ClassCommands.ExecuteQuery(query, parameters);
+        }
+
+
+
+
+
+
 
 
     }

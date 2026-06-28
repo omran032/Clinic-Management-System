@@ -251,6 +251,18 @@
     <Compile Include="UControls\Ctrl_ShowStatisticscs.Designer.cs">
       <DependentUpon>Ctrl_ShowStatisticscs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Visits\FrmAddVisit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visits\FrmAddVisit.Designer.cs">
+      <DependentUpon>FrmAddVisit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visits\FrmManageVisits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visits\FrmManageVisits.Designer.cs">
+      <DependentUpon>FrmManageVisits.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin\FrmDashboardAdmin.resx">
       <DependentUpon>FrmDashboardAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -343,6 +355,12 @@
     <EmbeddedResource Include="UControls\Ctrl_ShowStatisticscs.resx">
       <DependentUpon>Ctrl_ShowStatisticscs.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Visits\FrmAddVisit.resx">
+      <DependentUpon>FrmAddVisit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visits\FrmManageVisits.resx">
+      <DependentUpon>FrmManageVisits.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -359,11 +377,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ClinicSystemDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="ClinicSystemDB.mdf" />
     <Content Include="ClinicSystemDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>ClinicSystemDB.mdf</DependentUpon>
     </Content>
     <None Include="Resources\Add.png" />
@@ -401,7 +416,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Visits\UControls\" />
-    <Folder Include="Visits\UI\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">

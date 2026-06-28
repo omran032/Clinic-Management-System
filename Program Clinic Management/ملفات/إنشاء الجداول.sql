@@ -114,10 +114,38 @@ CREATE TABLE Visits (
 ALTER TABLE Visits
 ADD ActualDurationMinutes INT NULL;
 
--- حالات الزيارة 
+-- جديد
+ALTER TABLE Visits ADD StartTime DATETIME NULL; -- وقت بداية الزيارة
+ALTER TABLE Visits ADD EndTime DATETIME NULL;   -- وقت الانتهاء
+ALTER TABLE Visits ADD VisitStatus NVARCHAR(50) NULL; -- حالة الزيارة 
+
+-- عمود الموعد
+ALTER TABLE Visits
+ADD AppointmentId INT NULL;
+
+ALTER TABLE Visits
+ADD CONSTRAINT FK_Visits_Appointments
+FOREIGN KEY (AppointmentId) REFERENCES Appointments(AppointmentId);
+
+
+
+-- حالات الزيارة
+-- NoStarted    عند انشاء زيارة جديدة قبل البدء 
+-- In Progress   عند بدء الزيارة
+-- Completed     عند انتهاء الزيارة
+-- No Show         عند غياب المريض
+
+-- نوع الزيارة 
 -- Emergency  طواريء
 -- Follow_UP  متابعة
 -- Consultion استشارة
+
+-- ((((((  حالات حساب درجة الالتزام  ))))))
+--المريض الجديد يبدأ بـ 50  
+--الالتزام يُحسب بعد الأحداث فقط  
+--الحضور +10، الغياب -15، المتابعة +5، التأخير -5  
+--الحساب يتم داخل ميثود واحدة RefreshPatientCompliance  
+--ويُحدّث عمود ComplianceScore في جدول Patients
 
 
 

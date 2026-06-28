@@ -470,8 +470,96 @@ namespace BusinessLogic.CMD_DB
 
 
 
+        /// <summary>
+        /// يبدأ زيارة جديدة بناءً على موعد محدد، 
+        /// يسجل وقت البداية، يغير حالة الموعد، 
+        /// ويضيف زيارة جديدة مرتبطة بالمريض والطبيب والموعد.
+        /// نوع الزيارة يتم تحديده من قبل المستخدم.
+        /// </summary>
+        public static bool StartVisitFromAppointment(int appointmentId, int personId, int doctorId, int visitTypeId, string visitStatus, string appointmentStatus)
+        {
+            DateTime startTime = DateTime.Now;
 
+            string query = @"
+    BEGIN TRY
+        BEGIN TRANSACTION;
 
+        -- 1) تحديث حالة الموعد
+        UPDATE Appointments
+        SET Status = @AppointmentStatus
+        WHERE AppointmentId = @AppointmentId;
+
+        -- 2) إنشاء زيارة جديدة
+        INSERT INTO Visits (PersonId, DoctorId, AppointmentId, VisitTypeId, VisitDate, StartTime, VisitStatus)
+        VALUES (@PersonId, @DoctorId, @AppointmentId, @VisitTypeId, GETDATE(), @StartTime, @VisitStatus);
+
+        COMMIT TRANSACTION;
+    END TRY
+    BEGIN CATCH
+        ROLLBACK TRANSACTION;
+    END CATCH
+    ";
+
+            var parameters = new Dictionary<string, object>
+            {
+                { "@AppointmentId", appointmentId },
+                { "@PersonId", personId },
+                { "@DoctorId", doctorId },
+                { "@VisitTypeId", visitTypeId },
+                { "@StartTime", startTime },
+                { "@VisitStatus", visitStatus },
+                { "@AppointmentStatus", appointmentStatus }
+            };
+
+            return ClassCommands.ExecuteQuery(query, parameters);
+        }
+
+        /// <summary>
+        /// تعديل بيانات زيارة محددة ضمن معاملة واحدة (Transaction).
+        /// يقوم بتحديث نوع الزيارة وحالة الزيارة، ثم تعديل حالة الموعد المرتبط بها.
+        /// يرجع true عند نجاح العملية بالكامل، و false عند حدوث أي خطأ.
+        /// </summary>
+        public static bool UpdateVisitWithAppointment( int visitId, int newVisitTypeId, string newVisitStatus, string newAppointmentStatus)
+        {
+            string query = @"
+    BEGIN TRY
+        BEGIN TRANSACTION;
+
+        ---------------------------------------------------
+        -- 1) تعديل الزيارة
+        ---------------------------------------------------
+        UPDATE Visits
+        SET VisitTypeId = @VisitTypeId,
+            VisitStatus = @VisitStatus
+        WHERE VisitId = @VisitId;
+
+        ---------------------------------------------------
+        -- 2) تعديل حالة الموعد المرتبط بالزيارة
+        ---------------------------------------------------
+        UPDATE Appointments
+        SET Status = @AppointmentStatus
+        WHERE AppointmentId = (
+            SELECT AppointmentId 
+            FROM Visits 
+            WHERE VisitId = @VisitId
+        );
+
+        COMMIT TRANSACTION;
+    END TRY
+    BEGIN CATCH
+        ROLLBACK TRANSACTION;
+    END CATCH ";
+
+            var parameters = new Dictionary<string, object>
+            {
+                { "@VisitId", visitId },
+                { "@VisitTypeId", newVisitTypeId },
+                { "@VisitStatus", newVisitStatus },
+                { "@AppointmentStatus", newAppointmentStatus }
+            };
+
+            return ClassCommands.ExecuteQuery(query, parameters);
+        }
 
 
 

@@ -7,6 +7,7 @@ using Program_Clinic_Management.Doctors;
 using Program_Clinic_Management.Patients;
 using Program_Clinic_Management.Persons;
 using Program_Clinic_Management.Settings.Backup;
+using Program_Clinic_Management.Visits;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -132,6 +133,14 @@ namespace Program_Clinic_Management.Admin
         {
             FrmAppointments frmAppointments = new FrmAppointments();
             MyTools.ShowForm(frmAppointments);
+        }
+
+        // زر إدارة الزيارات
+        private void btn_Visits_Click(object sender, EventArgs e)
+        {
+            FrmManageVisits manageVisits = new FrmManageVisits();
+            MyTools.ShowForm(manageVisits);
+
         }
     }
 }

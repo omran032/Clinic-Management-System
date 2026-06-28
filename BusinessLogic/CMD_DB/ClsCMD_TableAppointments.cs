@@ -1,9 +1,11 @@
-﻿using BusinessLogic.ToolChart;
+﻿using BusinessLogic.InfoTable;
+using BusinessLogic.ToolChart;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms.DataVisualization.Charting;
@@ -915,6 +917,188 @@ ORDER BY A.AppointmentDate ASC";
 
             return ClassCommands.ShowData(query, parameters);
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /// <summary>
+        /// يعيد جدولة مواعيد الطبيب بعد انتهاء زيارة فعلية
+        /// بفحص التداخل وتعديل كل المواعيد التالية داخل Connection واحد.
+        /// </summary>
+        public void AutoShiftAppointmentsAfterVisit(int doctorId, DateTime actualEndTime)
+        {
+            int gapMinutes = 5; // الفاصل بين كل موعد وآخر
+
+            using (SqlConnection conn = new SqlConnection(ClsConnectionDB.connectionString))
+            {
+                conn.Open();
+
+                using (SqlTransaction tx = conn.BeginTransaction())
+                {
+                    try
+                    {
+                        // 1) جلب كل المواعيد التالية لنفس الطبيب ونفس اليوم
+                        string selectSql = @"
+                    SELECT AppointmentId, StartTime, EstimatedDuration
+                    FROM Appointments
+                    WHERE DoctorId = @DoctorId
+                    AND CAST(StartTime AS DATE) = CAST(@ActualEndTime AS DATE)
+                    AND StartTime > @ActualEndTime
+                    ORDER BY StartTime ASC
+                ";
+
+                        List<ClassAppointment> nextAppointments = new List<ClassAppointment>();
+
+                        using (SqlCommand cmd = new SqlCommand(selectSql, conn, tx))
+                        {
+                            cmd.Parameters.AddWithValue("@DoctorId", doctorId);
+                            cmd.Parameters.AddWithValue("@ActualEndTime", actualEndTime);
+
+                            using (SqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    nextAppointments.Add(new ClassAppointment
+                                    {
+                                        AppointmentID = reader.GetInt32(0),
+                                        StartTime = reader.GetDateTime(1),
+                                        EstimatedDurationMinutes = reader.GetInt32(2)
+                                    });
+                                }
+                            }
+                        }
+
+                        // 2) الوقت الجديد الذي يجب أن يبدأ منه أول موعد بعد الزيارة
+                        DateTime newStartTime = actualEndTime.AddMinutes(gapMinutes);
+
+                        // 3) تعديل كل المواعيد التالية داخل نفس الـ Transaction
+                        foreach (var appt in nextAppointments)
+                        {
+                            // فحص التداخل
+                            if (appt.StartTime < newStartTime)
+                            {
+                                // تعديل الموعد داخل القاعدة
+                                string updateSql = @"
+                            UPDATE Appointments
+                            SET StartTime = @NewStartTime
+                            WHERE AppointmentId = @AppointmentId
+                        ";
+
+                                using (SqlCommand updateCmd = new SqlCommand(updateSql, conn, tx))
+                                {
+                                    updateCmd.Parameters.AddWithValue("@NewStartTime", newStartTime);
+                                    updateCmd.Parameters.AddWithValue("@AppointmentId", appt.AppointmentID);
+                                    updateCmd.ExecuteNonQuery();
+                                }
+
+                                // حساب وقت الموعد التالي
+                                newStartTime = newStartTime.AddMinutes(appt.EstimatedDurationMinutes + gapMinutes);
+                            }
+                            else
+                            {
+                                // لا يوجد تداخل، نحدّث وقت البداية الجديد بناءً على الموعد الحالي
+                                newStartTime = appt.StartTime.AddMinutes(appt.EstimatedDurationMinutes + gapMinutes);
+                            }
+                        }
+
+                        // 4) حفظ كل التعديلات دفعة واحدة
+                        tx.Commit();
+                    }
+                    catch
+                    {
+                        // لو صار خطأ، نرجع كل التعديلات
+                        tx.Rollback();
+                        throw;
+                    }
+                }
+            }
+        }
+
+
+
+
+
+
+        public enum AppointmentFilterType
+        {
+            TodayAllDoctors,          // كل مواعيد الأطباء اليوم
+            TodayByDoctor,            // مواعيد طبيب محدد اليوم
+            ByStatus,                 // حسب حالة الموعد فقط
+            ByStatusAndDoctor         // حسب حالة الموعد + طبيب محدد
+        }
+
+        public static DataTable GetAppointments(AppointmentFilterType filter,  int? doctorId = null, string status = null)
+        {
+            DataTable dt = new DataTable();
+            var parameters = new Dictionary<string, object>();
+
+            string query = @"
+        SELECT 
+            a.AppointmentID,
+            p.PersonId AS IDPatients,
+            (p.FirstName + ' ' + p.LastName) AS PersonName,
+            vt.TypeName AS VisitType,
+            a.Status,
+            CONVERT(VARCHAR(5), a.AppointmentDate, 108) AS Time
+        FROM Appointments a
+        INNER JOIN Persons p ON a.PersonId = p.PersonId
+        INNER JOIN VisitTypes vt ON a.VisitTypeId = vt.VisitTypeId
+        LEFT JOIN Doctors d ON a.DoctorId = d.DoctorId
+        WHERE 1 = 1
+    ";
+
+            // فلترة حسب نوع الطلب
+            switch (filter)
+            {
+                case AppointmentFilterType.TodayAllDoctors:
+                    query += " AND CAST(a.AppointmentDate AS DATE) = CAST(GETDATE() AS DATE) ";
+                    break;
+
+                case AppointmentFilterType.TodayByDoctor:
+                    query += " AND CAST(a.AppointmentDate AS DATE) = CAST(GETDATE() AS DATE) ";
+                    query += " AND a.DoctorId = @DoctorId ";
+                    parameters.Add("@DoctorId", Convert.ToInt32(doctorId));
+                    break;
+
+                case AppointmentFilterType.ByStatus:
+                    query += " AND a.Status = @Status ";
+                    parameters.Add("@Status", Convert.ToInt32(status));
+                    break;
+
+                case AppointmentFilterType.ByStatusAndDoctor:
+                    query += " AND a.Status = @Status ";
+                    query += " AND a.DoctorId = @DoctorId ";
+                    parameters.Add("@DoctorId", Convert.ToInt32(doctorId));
+                    parameters.Add("@Status", Convert.ToInt32(status));
+                    break;
+            }
+
+            // ترتيب حسب أقرب وقت للوقت الحالي
+            query += " ORDER BY a.AppointmentDate ASC ";
+
+            return ClassCommands.ShowData(query, parameters);
+           
+        }
+
+
+
 
 
 

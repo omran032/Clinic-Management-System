@@ -27,6 +27,7 @@ namespace BusinessLogic.InfoTable
 
         public int EstimatedDurationMinutes { get; set; }
 
+        public DateTime StartTime { get; set; }
 
         public static List<string> AppointmentStatusList = new List<string>()
         {
