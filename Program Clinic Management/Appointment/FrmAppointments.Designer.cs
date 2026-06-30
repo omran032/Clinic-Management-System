@@ -31,21 +31,21 @@
             this.components = new System.ComponentModel.Container();
             this.pnl_TopBar = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnClose = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnMinimize = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.ctrl_IconProjectClinic1 = new BusinessLogic.Ctrl_IconProjectClinic();
             this.label1 = new System.Windows.Forms.Label();
             this.Pnl_Option = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnAddAppointment = new Guna.UI2.WinForms.Guna2GradientButton();
             this.PnlShowForms = new Guna.UI2.WinForms.Guna2Panel();
-            this.ctrl_IconProjectClinic1 = new BusinessLogic.Ctrl_IconProjectClinic();
-            this.btnClose = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnMinimize = new Guna.UI2.WinForms.Guna2PictureBox();
             this.ElipseForm = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.ElipsePnl_Option = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pnl_TopBar.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
-            this.Pnl_Option.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
+            this.Pnl_Option.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_TopBar
@@ -70,80 +70,6 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(136, 61);
             this.guna2Panel1.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(746, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 36);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "المواعيد";
-            // 
-            // Pnl_Option
-            // 
-            this.Pnl_Option.BackColor = System.Drawing.Color.White;
-            this.Pnl_Option.Controls.Add(this.guna2GradientButton2);
-            this.Pnl_Option.Controls.Add(this.btnAddAppointment);
-            this.Pnl_Option.Location = new System.Drawing.Point(432, 67);
-            this.Pnl_Option.Name = "Pnl_Option";
-            this.Pnl_Option.Size = new System.Drawing.Size(720, 68);
-            this.Pnl_Option.TabIndex = 4;
-            // 
-            // guna2GradientButton2
-            // 
-            this.guna2GradientButton2.BorderRadius = 20;
-            this.guna2GradientButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton2.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton2.Location = new System.Drawing.Point(83, 10);
-            this.guna2GradientButton2.Name = "guna2GradientButton2";
-            this.guna2GradientButton2.Size = new System.Drawing.Size(185, 49);
-            this.guna2GradientButton2.TabIndex = 1;
-            this.guna2GradientButton2.Text = "عرض المواعيد";
-            this.guna2GradientButton2.Click += new System.EventHandler(this.guna2GradientButton2_Click);
-            // 
-            // btnAddAppointment
-            // 
-            this.btnAddAppointment.BorderRadius = 20;
-            this.btnAddAppointment.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddAppointment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddAppointment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAddAppointment.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAddAppointment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAddAppointment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddAppointment.ForeColor = System.Drawing.Color.White;
-            this.btnAddAppointment.Location = new System.Drawing.Point(453, 10);
-            this.btnAddAppointment.Name = "btnAddAppointment";
-            this.btnAddAppointment.Size = new System.Drawing.Size(185, 49);
-            this.btnAddAppointment.TabIndex = 0;
-            this.btnAddAppointment.Text = "موعد جديد";
-            this.btnAddAppointment.Click += new System.EventHandler(this.btnAddAppointment_Click);
-            // 
-            // PnlShowForms
-            // 
-            this.PnlShowForms.Location = new System.Drawing.Point(0, 144);
-            this.PnlShowForms.Name = "PnlShowForms";
-            this.PnlShowForms.Size = new System.Drawing.Size(1471, 883);
-            this.PnlShowForms.TabIndex = 5;
-            // 
-            // ctrl_IconProjectClinic1
-            // 
-            this.ctrl_IconProjectClinic1.BackColor = System.Drawing.Color.Transparent;
-            this.ctrl_IconProjectClinic1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrl_IconProjectClinic1.Location = new System.Drawing.Point(5, 3);
-            this.ctrl_IconProjectClinic1.Margin = new System.Windows.Forms.Padding(5);
-            this.ctrl_IconProjectClinic1.Name = "ctrl_IconProjectClinic1";
-            this.ctrl_IconProjectClinic1.Size = new System.Drawing.Size(246, 57);
-            this.ctrl_IconProjectClinic1.TabIndex = 4;
-            this.ctrl_IconProjectClinic1.TitleNameColor = System.Drawing.Color.White;
             // 
             // btnClose
             // 
@@ -173,6 +99,86 @@
             this.btnMinimize.TabStop = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
+            // ctrl_IconProjectClinic1
+            // 
+            this.ctrl_IconProjectClinic1.BackColor = System.Drawing.Color.Transparent;
+            this.ctrl_IconProjectClinic1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrl_IconProjectClinic1.Location = new System.Drawing.Point(5, 3);
+            this.ctrl_IconProjectClinic1.Margin = new System.Windows.Forms.Padding(5);
+            this.ctrl_IconProjectClinic1.Name = "ctrl_IconProjectClinic1";
+            this.ctrl_IconProjectClinic1.Size = new System.Drawing.Size(246, 57);
+            this.ctrl_IconProjectClinic1.TabIndex = 4;
+            this.ctrl_IconProjectClinic1.TitleNameColor = System.Drawing.Color.White;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(689, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(210, 36);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Appointments";
+            // 
+            // Pnl_Option
+            // 
+            this.Pnl_Option.BackColor = System.Drawing.Color.White;
+            this.Pnl_Option.Controls.Add(this.guna2GradientButton2);
+            this.Pnl_Option.Controls.Add(this.btnAddAppointment);
+            this.Pnl_Option.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Pnl_Option.Location = new System.Drawing.Point(0, 61);
+            this.Pnl_Option.Name = "Pnl_Option";
+            this.Pnl_Option.Size = new System.Drawing.Size(1471, 68);
+            this.Pnl_Option.TabIndex = 4;
+            // 
+            // guna2GradientButton2
+            // 
+            this.guna2GradientButton2.BorderRadius = 20;
+            this.guna2GradientButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton2.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButton2.FillColor = System.Drawing.Color.Navy;
+            this.guna2GradientButton2.FillColor2 = System.Drawing.Color.Blue;
+            this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton2.Location = new System.Drawing.Point(527, 11);
+            this.guna2GradientButton2.Name = "guna2GradientButton2";
+            this.guna2GradientButton2.Size = new System.Drawing.Size(185, 49);
+            this.guna2GradientButton2.TabIndex = 1;
+            this.guna2GradientButton2.Text = "عرض المواعيد";
+            this.guna2GradientButton2.Click += new System.EventHandler(this.guna2GradientButton2_Click);
+            // 
+            // btnAddAppointment
+            // 
+            this.btnAddAppointment.BorderRadius = 20;
+            this.btnAddAppointment.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddAppointment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddAppointment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddAppointment.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddAppointment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddAppointment.FillColor = System.Drawing.Color.Navy;
+            this.btnAddAppointment.FillColor2 = System.Drawing.Color.Blue;
+            this.btnAddAppointment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddAppointment.ForeColor = System.Drawing.Color.White;
+            this.btnAddAppointment.Location = new System.Drawing.Point(859, 11);
+            this.btnAddAppointment.Name = "btnAddAppointment";
+            this.btnAddAppointment.Size = new System.Drawing.Size(185, 49);
+            this.btnAddAppointment.TabIndex = 0;
+            this.btnAddAppointment.Text = "موعد جديد";
+            this.btnAddAppointment.Click += new System.EventHandler(this.btnAddAppointment_Click);
+            // 
+            // PnlShowForms
+            // 
+            this.PnlShowForms.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PnlShowForms.Location = new System.Drawing.Point(0, 129);
+            this.PnlShowForms.Name = "PnlShowForms";
+            this.PnlShowForms.Size = new System.Drawing.Size(1471, 883);
+            this.PnlShowForms.TabIndex = 5;
+            // 
             // ElipseForm
             // 
             this.ElipseForm.BorderRadius = 20;
@@ -188,7 +194,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1471, 1039);
+            this.ClientSize = new System.Drawing.Size(1471, 1019);
             this.Controls.Add(this.PnlShowForms);
             this.Controls.Add(this.Pnl_Option);
             this.Controls.Add(this.pnl_TopBar);
@@ -201,9 +207,9 @@
             this.pnl_TopBar.ResumeLayout(false);
             this.pnl_TopBar.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
-            this.Pnl_Option.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
+            this.Pnl_Option.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

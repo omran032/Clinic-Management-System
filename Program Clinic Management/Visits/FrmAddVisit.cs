@@ -28,11 +28,11 @@ namespace Program_Clinic_Management.Visits
             LoadData();
         }
 
-        public FrmAdd_UpdateVisit(Mode mode, ClassAppointment AppointmentInfo_ , int VisitID_)
+        public FrmAdd_UpdateVisit(  ClassAppointment AppointmentInfo_ , int VisitID_)
         {
             InitializeComponent();
 
-            Mode_ = mode;
+            Mode_ = Mode.Update;
             AppointmentInfo = AppointmentInfo_;
             VisitID = VisitID_;
             LoadData();
@@ -46,6 +46,8 @@ namespace Program_Clinic_Management.Visits
       public  enum Mode   {Update , Add }
         Mode Mode_ = Mode.Add;
 
+        public Action EventRefreshInfoVisits; // تحديث البيانات عند إضافة زيارة
+
         ClassDoctor DoctorInfo;
         ClassAppointment AppointmentInfo = new ClassAppointment();
 
@@ -53,6 +55,10 @@ namespace Program_Clinic_Management.Visits
         int DoctorIDSelected = -1;
         int AppointmentID = -1;
         int VisitID;
+
+        // لمعرفة اذا المستخدم طبيب ام لا
+        bool IsDoctor = false;
+
         void LoadData()
         {
             MyTools.MoveControl(pnl_TopBar, this);
@@ -78,17 +84,42 @@ namespace Program_Clinic_Management.Visits
             {
                 lblTitle.Text = "Update Visit";
                 btnSaveVisit.Text = "تعديل الزيارة";
-                ComboxDoctors.Enabled = false;
+                ComboxDoctors.Visible = false;
                 btnShowInfoDoctor.Visible = true;
 
                 DisplayInfoAppointment();
                 CombxStatusAppointment.Text = AppointmentInfo.Status;
 
+                // عرض الصلاحيات حسب الدور
+                DistributionPowers();
+
+                // عرض الموعد المراد تعديله
+                DataAppointments = GetAppointments(AppointmentFilterType.TodayAllDoctors, null, null, AppointmentInfo.AppointmentID, IsDoctor);
+                DataGV.DataSource = DataAppointments;
             }
         }
 
-                        ////**********//********//**********//********//**********//********
-                        ////**********//********//**********//********//**********//********
+
+        /// <summary>
+        /// مثود عرض الصلاحيات حسب الدور
+        /// </summary>
+        void DistributionPowers()
+        {
+            string Role = ClassUser.UserInfo.Role;
+            if (Role == "Doctor")
+            {
+                IsDoctor = true;
+                ComboxDoctors.Visible = false;
+                btnShowInfoDoctor.Visible = false;
+                label8.Visible = false;
+                return;
+            }
+          
+        }
+
+
+        ////**********//********//**********//********//**********//********
+        ////**********//********//**********//********//**********//********
 
         #region  **** أوامر  ****
 
@@ -115,7 +146,7 @@ namespace Program_Clinic_Management.Visits
         /// </summary>
         void DisplayAllAppointment()
         {
-            DataAppointments = ClsCMD_TableAppointments.GetAppointments(filterType);
+            DataAppointments = ClsCMD_TableAppointments.GetAppointments(filterType, null, null, null, IsDoctor);
             DataGV.DataSource = DataAppointments;
         }
 
@@ -123,12 +154,17 @@ namespace Program_Clinic_Management.Visits
         {
             if (DoctorIDSelected <= 0) return;
 
-            DataAppointments = ClsCMD_TableAppointments.GetAppointments(filterType, DoctorIDSelected);
+            // اذا يلي مسجل دخول طبيب ..يعرضله فقط زياراته الخاصة به
+            if (IsDoctor) 
+            DataAppointments = ClsCMD_TableAppointments.GetAppointments(filterType, null, null, null, IsDoctor);
+
+            else // اذا كان مدير ...يعرضله زيارات حسب الطبيب يلي ختاره
+            DataAppointments = ClsCMD_TableAppointments.GetAppointments(filterType, DoctorIDSelected, null, null, false);
+
             DataGV.DataSource = DataAppointments;
         }
 
-
-        public Action EventRefreshInfoVisits; // تحديث البيانات عند إضافة زيارة
+         
 
 
 
@@ -224,6 +260,7 @@ namespace Program_Clinic_Management.Visits
              
             btnShowInfoDoctor.Visible = true;
             DoctorIDSelected = Convert.ToInt32(ComboxDoctors.SelectedValue);
+           
 
             DoctorInfo = ClassDoctor.GetDoctorInfo(DoctorIDSelected);
             lblSpecialization.Text = " الإختصاص : " + DoctorInfo.SprcializationName;
@@ -247,9 +284,15 @@ namespace Program_Clinic_Management.Visits
       
         private void DataGV_SelectionChanged(object sender, EventArgs e) // حدث الضغط على الصف
         {
-            if (DataAppointments.Rows.Count == 0) return;
+            try
+            {
+                if (DataAppointments.Rows.Count == 0) return;
+                if (DataGV.CurrentRow == null || DataGV.CurrentRow.Index < 0) return;
 
-            AppointmentID = (int)DataGV.CurrentRow.Cells[0].Value; // ايجاد معرف الموعد المختار
+                AppointmentID = (int)DataGV.CurrentRow.Cells[0].Value; // ايجاد معرف الموعد المختار
+            }
+            catch { }
+         
             GetInfoAppointment(); // AppointmentInfo تحميل معلومات الموعد
 
             btnSaveVisit.Visible = true;
@@ -311,7 +354,7 @@ namespace Program_Clinic_Management.Visits
             }
 
             // التحقق من الاختيارات
-            if (ErrorContrl(ComboxDoctors)) return; if (ErrorContrl(ComboxVisitTypes)) return;
+            if (ErrorContrl(ComboxVisitTypes)) return;
             if (ErrorContrl(ComboxVisitTypes)) return; if (ErrorContrl(CombxStatusAppointment)) return;
 
             int PersonID = AppointmentInfo.PatientsInfo.PersonInfo.PersonID;
@@ -324,6 +367,14 @@ namespace Program_Clinic_Management.Visits
 
             if (Mode_ == Mode.Add) // وضع الاضافة
             {
+                if (ErrorContrl(ComboxDoctors)) return;
+
+                bool AppointmentIsExistVisit = ClsCMD_TableAppointments.IsAppointmentHasVisit(AppointmentInfo.AppointmentID);
+                if (AppointmentIsExistVisit)
+                {
+                    MessageBox.Show($"! هناك زيارة مسجلة للمريض موجودة بالفعل ", "لا يمكن إضافة زيارة لهذا الموعد", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 bool IsSecsesful = ClsCMD_TableVisits.StartVisitFromAppointment(AppointmentID, PersonID, DoctorID, VisitTypeIDSelected, StatusVisit, StatusAppointment);
                 if (IsSecsesful)
                 {

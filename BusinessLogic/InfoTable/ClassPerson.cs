@@ -13,13 +13,18 @@ namespace BusinessLogic.InfoTable
         public int PersonID { get; set; }
 
 
-       
+
+        public string FullName_{ get; set; }
+
         public string FullName
-        { 
-        get { return FirstName + " " + LastName; ; }
+        {
+            get {
+                FullName_ =  FirstName + " " + LastName;
+                return FullName_;
+                }
             set
             {
-                FullName = FirstName + " " + LastName;
+                FullName_ = value;
             }
         }
 

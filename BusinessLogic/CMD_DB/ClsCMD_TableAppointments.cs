@@ -8,6 +8,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using static BusinessLogic.CMD_DB.ClsCMD_TableVisits;
 
@@ -637,15 +638,38 @@ INNER JOIN VisitTypes vt ON a.VisitTypeId = vt.VisitTypeId
         /// <summary>
         /// تعديل موعد مع التحقق من عدم وجود موعد متداخل.
         /// 0  → يوجد تداخل
+        /// -2 → الموعد مرتبط بزيارة ولا يمكن تعديله
+        /// -3 → حالة الموعد لا تسمح بالتعديل
         /// ID → تم التعديل بنجاح
         /// -1 → خطأ غير متوقع
         /// </summary>
-        public static int UpdateAppointmentWithCheck(int appointmentId, int doctorId, int personId, int visitTypeId, DateTime appointmentDate, int durationMinutes, string status, string notes)
+          static int UpdateAppointmentWithCheck(
+            int appointmentId,
+            int doctorId,
+            int personId,
+            int visitTypeId,
+            DateTime appointmentDate,
+            int durationMinutes,
+            string status,
+            string notes)
         {
+            // ⭐ 0) التحقق من أن الموعد مرتبط بزيارة
+            if (ClsCMD_TableAppointments.IsAppointmentHasVisit(appointmentId))
+            {
+                return -2; // لا يمكن تعديل الموعد لأنه مرتبط بزيارة
+            }
+
+            // ⭐ 1) التحقق من حالة الموعد
+            // يسمح بالتعديل فقط إذا كان الموعد Pending
+            if (status != "Pending")
+            {
+                return -3; // حالة الموعد لا تسمح بالتعديل
+            }
+
             DateTime startTime = appointmentDate;
             DateTime endTime = appointmentDate.AddMinutes(durationMinutes);
 
-            // 1) التحقق من وجود موعد متداخل (مع استثناء نفس الموعد)
+            // ⭐ 2) التحقق من وجود موعد متداخل (مع استثناء نفس الموعد)
             string checkQuery = @"
         SELECT COUNT(*)
         FROM Appointments
@@ -671,7 +695,7 @@ INNER JOIN VisitTypes vt ON a.VisitTypeId = vt.VisitTypeId
                 return 0; // يوجد تداخل
             }
 
-            // 2) تنفيذ عملية التعديل
+            // ⭐ 3) تنفيذ عملية التعديل
             string updateQuery = @"
         UPDATE Appointments
         SET 
@@ -684,7 +708,7 @@ INNER JOIN VisitTypes vt ON a.VisitTypeId = vt.VisitTypeId
             DoctorId = @DoctorId
         WHERE AppointmentId = @AppointmentId;
 
-        SELECT @AppointmentId;  ";
+        SELECT @AppointmentId;";
 
             var updateParams = new Dictionary<string, object>()
             {
@@ -707,6 +731,41 @@ INNER JOIN VisitTypes vt ON a.VisitTypeId = vt.VisitTypeId
 
             return -1; // خطأ غير متوقع
         }
+
+
+        /// <summary>
+        /// تنفيذ عملية التعديل و عرض رسالة بالنتيجة
+        /// </summary>
+      public static int UpdateAppointmentWithCheckAndReturnMessage(int appointmentId,  int doctorId, int personId, int visitTypeId, DateTime appointmentDate, int durationMinutes, string status, string notes)
+        {
+            int result = UpdateAppointmentWithCheck(appointmentId, doctorId, personId, visitTypeId, appointmentDate, durationMinutes, status, notes);
+ 
+            if (result == -2)
+            {
+                MessageBox.Show( "لا يمكن تعديل هذا الموعد لأنه تحول إلى زيارة فعلية.\n" +
+                    "بمجرد حضور المريض وبدء الزيارة، يصبح الموعد ثابتاً ولا يمكن تغيير الطبيب أو الوقت أو نوع الزيارة.",
+                    "تعديل الموعد غير مسموح",  MessageBoxButtons.OK,  MessageBoxIcon.Warning  );
+            }
+            else if (result == -3)
+            {
+                MessageBox.Show("حالة الموعد لا تسمح بالتعديل", " لا يمكن تعديل الموعد", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (result == 0)
+            {
+                MessageBox.Show("لم يتم تعديل لانه يوجد موعد في نفس الوقت المحدد", "موعد محجوز", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            }
+            else if (result > 0)
+            {
+                MessageBox.Show("تم تعديل الموعد بنجاح", "تم التعديل", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("لم تنجح عملية التعديل", " فشل العملية", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return result;
+        }
+
 
 
         /// <summary>
@@ -757,9 +816,7 @@ INNER JOIN VisitTypes vt ON a.VisitTypeId = vt.VisitTypeId
         /// </summary>
         public static DataTable GetAppointments(bool wasUpcoming)
         {
-            string condition = wasUpcoming
-                ? "WHERE A.AppointmentDate >= GETDATE()"
-                : "";
+            string condition = wasUpcoming ? "WHERE A.AppointmentDate >= GETDATE()" : "";
 
             string query = $@" SELECT 
                          -- معلومات الموعد
@@ -1033,21 +1090,60 @@ ORDER BY A.AppointmentDate ASC";
 
 
 
+        /// <summary>
+        /// يفحص إذا كان الموعد مرتبط بزيارة داخل جدول Visits.
+        /// يرجع true إذا كانت هناك زيارة تحمل نفس AppointmentId.
+        /// يرجع false إذا لم توجد أي زيارة.
+        /// </summary>
+        public static bool IsAppointmentHasVisit(int appointmentId)
+        {
+            string query = @"
+        SELECT COUNT(*) 
+        FROM Visits
+        WHERE AppointmentId = @AppointmentId   ";
+
+            var parameters = new Dictionary<string, object>
+            {
+                { "@AppointmentId", appointmentId }
+            };
+
+            // إذا العدد أكبر من صفر → يعني موجود
+            int count = Convert.ToInt32(ClassCommands.ShowValue(query, parameters));
+            return count > 0;
+        }
 
 
 
         public enum AppointmentFilterType
         {
+            ByAppointmentID ,          // البحث حسب معرف الموعد
             TodayAllDoctors,          // كل مواعيد الأطباء اليوم
             TodayByDoctor,            // مواعيد طبيب محدد اليوم
             ByStatus,                 // حسب حالة الموعد فقط
             ByStatusAndDoctor         // حسب حالة الموعد + طبيب محدد
+
         }
 
-        public static DataTable GetAppointments(AppointmentFilterType filter,  int? doctorId = null, string status = null)
+
+        /// <summary>
+        /// إرجاع جدول مواعيد مع إمكانية الفلترة حسب نوع الفلتر المرسل.
+        /// يدعم عرض مواعيد اليوم لكل الأطباء، أو حسب طبيب محدد، أو حسب حالة الموعد،
+        ///— أو حسب حالة الموعد مع الطبيب.
+        /// يعرض: AppointmentID / IDPatients / PersonName / VisitType / Status / Time.
+        /// يتم ترتيب النتائج تصاعدياً حسب وقت الموعد.
+        /// ويمكن عرض كل البيانات للمواعيد _ او بيانات خاصة بمواعيد الطبيب فقط تلقائياً
+        /// </summary>
+        public static DataTable GetAppointments(
+                    AppointmentFilterType filter, int? doctorId = null, string status = null, int? appointmentId = null,bool onlyDoctorAppointments = false  )
         {
             DataTable dt = new DataTable();
             var parameters = new Dictionary<string, object>();
+
+            int doctorIdForFilter = 0;
+            if (onlyDoctorAppointments)
+            {
+                doctorIdForFilter = ClassUser.UserInfo.DoctorInfo.DoctorID;
+            }
 
             string query = @"
         SELECT 
@@ -1064,9 +1160,24 @@ ORDER BY A.AppointmentDate ASC";
         WHERE 1 = 1
     ";
 
-            // فلترة حسب نوع الطلب
+            // ⭐ إذا تم إرسال AppointmentID → تجاهل كل الفلاتر
+            if (appointmentId.HasValue)
+            {
+                query += " AND a.AppointmentID = @AppointmentID ";
+                parameters.Add("@AppointmentID", appointmentId.Value);
+
+                query += " ORDER BY a.AppointmentDate ASC ";
+                return ClassCommands.ShowData(query, parameters);
+            }
+
+            // ⭐ فلترة حسب نوع الطلب
             switch (filter)
             {
+                case AppointmentFilterType.ByAppointmentID:
+                    query += " AND a.AppointmentID = @AppointmentID ";
+                    parameters.Add("@AppointmentID", Convert.ToInt32(status));
+                    break;
+
                 case AppointmentFilterType.TodayAllDoctors:
                     query += " AND CAST(a.AppointmentDate AS DATE) = CAST(GETDATE() AS DATE) ";
                     break;
@@ -1079,23 +1190,31 @@ ORDER BY A.AppointmentDate ASC";
 
                 case AppointmentFilterType.ByStatus:
                     query += " AND a.Status = @Status ";
-                    parameters.Add("@Status", Convert.ToInt32(status));
+                    parameters.Add("@Status", status);
                     break;
 
                 case AppointmentFilterType.ByStatusAndDoctor:
                     query += " AND a.Status = @Status ";
                     query += " AND a.DoctorId = @DoctorId ";
                     parameters.Add("@DoctorId", Convert.ToInt32(doctorId));
-                    parameters.Add("@Status", Convert.ToInt32(status));
+                    parameters.Add("@Status", status);
                     break;
+            }
+
+            // ⭐ فلترة مواعيد الطبيب فقط (الميزة الجديدة)
+            if (onlyDoctorAppointments && doctorIdForFilter > 0)
+            {
+                query += " AND a.DoctorId = @DoctorIdFilter ";
+                parameters.Add("@DoctorIdFilter", doctorIdForFilter);
             }
 
             // ترتيب حسب أقرب وقت للوقت الحالي
             query += " ORDER BY a.AppointmentDate ASC ";
 
             return ClassCommands.ShowData(query, parameters);
-           
         }
+
+
 
 
 

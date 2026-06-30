@@ -127,9 +127,10 @@
             this.Controls.Add(this.Txt_TextSearch);
             this.Controls.Add(this.Combx_TypeFeltter);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Ctrl_FeltterDataPatients";
             this.Size = new System.Drawing.Size(765, 65);
+            this.Load += new System.EventHandler(this.Ctrl_FeltterDataPatients_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

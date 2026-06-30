@@ -19,7 +19,6 @@ namespace Program_Clinic_Management.Doctors.UI
     {
         public FrmAdd_UpdateAppointment(Mode ModeForm_ = Mode.Add , ClassAppointment AppointmentInfo_ = null)
         {
-
             InitializeComponent();
 
             LoadData();
@@ -47,13 +46,6 @@ namespace Program_Clinic_Management.Doctors.UI
 
         Mode ModeForm = Mode.Add;
         ClassAppointment AppointmentInfo ;
-
-
-      
-
-
-
-
 
 
         int doctorId = 0;
@@ -360,7 +352,7 @@ namespace Program_Clinic_Management.Doctors.UI
                     return;
                 }
 
-                int ResultAdd = ClsCMD_TableAppointments.AddAppointmentWithCheck(doctorId, PatientInfo.PatientID, VisitTypeID, AppointmentDate, TimeApp, StatusAppointment, Notes);
+                int ResultAdd = ClsCMD_TableAppointments.AddAppointmentWithCheck(doctorId, PatientInfo.PersonInfo.PersonID, VisitTypeID, AppointmentDate, TimeApp, StatusAppointment, Notes);
 
                 if (ResultAdd > 0)
                 {
@@ -386,21 +378,18 @@ namespace Program_Clinic_Management.Doctors.UI
 
            else if (ModeForm == Mode.Update)
             {
-                int ResultUpdate = ClsCMD_TableAppointments.UpdateAppointmentWithCheck
-                    (AppointmentInfo.AppointmentID, doctorId, PatientInfo.PatientID, VisitTypeID, AppointmentDate, TimeApp, StatusAppointment, Notes);
+                int ResultUpdate = ClsCMD_TableAppointments.UpdateAppointmentWithCheckAndReturnMessage
+                    (AppointmentInfo.AppointmentID, doctorId, PatientInfo.PersonInfo.PersonID, VisitTypeID, AppointmentDate, TimeApp, StatusAppointment, Notes);
                 if (ResultUpdate > 0)
                 {
-                    MessageBox.Show("تم تعديل الموعد بنجاح", "تم التعديل", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 else if (ResultUpdate == 0)
                 {
-                    MessageBox.Show("لم يتم تعديل لانه يوجد موعد في نفس الوقت المحدد", "موعد محجوز", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                     return;
                 }
                 else if (ResultUpdate == -1)
                 {
-                    MessageBox.Show("لم تنجح عملية التعديل", " فشل العملية", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }

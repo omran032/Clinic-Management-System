@@ -70,10 +70,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\FrmDashboardAdmin.cs">
+    <Compile Include="Dashboard\FrmDashboardAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin\FrmDashboardAdmin.Designer.cs">
+    <Compile Include="Dashboard\FrmDashboardAdmin.Designer.cs">
       <DependentUpon>FrmDashboardAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Appointment\FrmAppointments.cs">
@@ -99,6 +99,12 @@
     </Compile>
     <Compile Include="Appointment\UI\FrmShowAppointments.Designer.cs">
       <DependentUpon>FrmShowAppointments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\FrmDashboardDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard\FrmDashboardDoctor.Designer.cs">
+      <DependentUpon>FrmDashboardDoctor.cs</DependentUpon>
     </Compile>
     <Compile Include="Doctors\UControls\Ctrl_FeltterDataDoctors.cs">
       <SubType>UserControl</SubType>
@@ -263,7 +269,7 @@
     <Compile Include="Visits\FrmManageVisits.Designer.cs">
       <DependentUpon>FrmManageVisits.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Admin\FrmDashboardAdmin.resx">
+    <EmbeddedResource Include="Dashboard\FrmDashboardAdmin.resx">
       <DependentUpon>FrmDashboardAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Appointment\FrmAppointments.resx">
@@ -277,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Appointment\UI\FrmShowAppointments.resx">
       <DependentUpon>FrmShowAppointments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard\FrmDashboardDoctor.resx">
+      <DependentUpon>FrmDashboardDoctor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Doctors\UControls\Ctrl_FeltterDataDoctors.resx">
       <DependentUpon>Ctrl_FeltterDataDoctors.cs</DependentUpon>

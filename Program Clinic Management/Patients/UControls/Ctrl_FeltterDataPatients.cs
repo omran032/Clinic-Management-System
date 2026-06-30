@@ -21,7 +21,21 @@ namespace Program_Clinic_Management.Patients.UControls
             InitializeComponent();
         }
 
+        private void Ctrl_FeltterDataPatients_Load(object sender, EventArgs e) // تحميل العنصر
+        {
+            if (LicenseManager.UsageMode == LicenseUsageMode.Designtime || DesignMode)
+                return;
 
+            // اذا المستخدم طبيب
+            // يتم عرض مرضى الطبيب فقط
+            if (ClassUser.UserInfo.Role == "Doctor")
+            {
+                isDoctor = true;
+            }
+        }
+
+        // التحقق اذا كان طبيب 
+        bool isDoctor = false;
 
         /// <summary>
         /// حدث عرض كل بيانات المرضى في عملية البحث 
@@ -91,7 +105,7 @@ namespace Program_Clinic_Management.Patients.UControls
                 case "عرض الكل":
                     btn_Search.Enabled = false;
                     Txt_TextSearch.Enabled = false;
-                    DataPatients = ClsCMD_TablePatients.FeltterPatient(PatientFilterType.All); // بدلها بالامر عرض كل المرضى
+                    DataPatients = ClsCMD_TablePatients.FeltterPatient(PatientFilterType.All  , null , isDoctor); //  امر عرض كل المرضى
 
                     EventShowDataPatientsInDataTable?.Invoke(DataPatients); // تنفيذ حدث عرض البيانات في الجدول
                     break;
@@ -146,7 +160,7 @@ namespace Program_Clinic_Management.Patients.UControls
 
             }
             // إظهار البيانات
-            DataPatients = ClsCMD_TablePatients.FeltterPatient(PatientFilterType, SearchValue);
+            DataPatients = ClsCMD_TablePatients.FeltterPatient(PatientFilterType, SearchValue , isDoctor);
 
             EventShowDataPatientsInDataTable?.Invoke(DataPatients); // تنفيذ حدث عرض البيانات في الجدول
 
@@ -156,14 +170,6 @@ namespace Program_Clinic_Management.Patients.UControls
             InfoPatients = ClassPatients.GetInfoPatientInObj(DataPatients);
         }
 
-
-
-
-
-
-
-
-
-
+      
     }
 }

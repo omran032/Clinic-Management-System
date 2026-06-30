@@ -36,11 +36,11 @@
             this.DataGV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.MyContextMS = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.تسجيلزيارةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnUpdate = new Guna.UI2.WinForms.Guna2GradientButton();
             this.ToolStripMenu_btnShowInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenu_btnUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenu_btnDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.تسجيلزيارةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnUpdate = new Guna.UI2.WinForms.Guna2GradientButton();
             this.ctrl_FeltterDataAppointment1 = new Program_Clinic_Management.Appointment.UControls.Ctrl_FeltterDataAppointment();
             this.ElipseDGV = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DataGV)).BeginInit();
@@ -119,6 +119,30 @@
             this.MyContextMS.Name = "MyContextMS";
             this.MyContextMS.Size = new System.Drawing.Size(205, 156);
             // 
+            // ToolStripMenu_btnShowInfo
+            // 
+            this.ToolStripMenu_btnShowInfo.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenu_btnShowInfo.Image")));
+            this.ToolStripMenu_btnShowInfo.Name = "ToolStripMenu_btnShowInfo";
+            this.ToolStripMenu_btnShowInfo.Size = new System.Drawing.Size(204, 38);
+            this.ToolStripMenu_btnShowInfo.Text = "عرض المعلومات";
+            this.ToolStripMenu_btnShowInfo.Click += new System.EventHandler(this.ToolStripMenu_btnShowInfo_Click);
+            // 
+            // ToolStripMenu_btnUpdate
+            // 
+            this.ToolStripMenu_btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenu_btnUpdate.Image")));
+            this.ToolStripMenu_btnUpdate.Name = "ToolStripMenu_btnUpdate";
+            this.ToolStripMenu_btnUpdate.Size = new System.Drawing.Size(204, 38);
+            this.ToolStripMenu_btnUpdate.Text = "تعديل";
+            this.ToolStripMenu_btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // ToolStripMenu_btnDelete
+            // 
+            this.ToolStripMenu_btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenu_btnDelete.Image")));
+            this.ToolStripMenu_btnDelete.Name = "ToolStripMenu_btnDelete";
+            this.ToolStripMenu_btnDelete.Size = new System.Drawing.Size(204, 38);
+            this.ToolStripMenu_btnDelete.Text = "حذف";
+            this.ToolStripMenu_btnDelete.Click += new System.EventHandler(this.ToolStripMenu_btnDelete_Click);
+            // 
             // تسجيلزيارةToolStripMenuItem
             // 
             this.تسجيلزيارةToolStripMenuItem.Name = "تسجيلزيارةToolStripMenuItem";
@@ -149,30 +173,6 @@
             this.btnUpdate.TabIndex = 10;
             this.btnUpdate.Text = "تعديل";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // ToolStripMenu_btnShowInfo
-            // 
-            this.ToolStripMenu_btnShowInfo.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenu_btnShowInfo.Image")));
-            this.ToolStripMenu_btnShowInfo.Name = "ToolStripMenu_btnShowInfo";
-            this.ToolStripMenu_btnShowInfo.Size = new System.Drawing.Size(204, 38);
-            this.ToolStripMenu_btnShowInfo.Text = "عرض المعلومات";
-            this.ToolStripMenu_btnShowInfo.Click += new System.EventHandler(this.ToolStripMenu_btnShowInfo_Click);
-            // 
-            // ToolStripMenu_btnUpdate
-            // 
-            this.ToolStripMenu_btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenu_btnUpdate.Image")));
-            this.ToolStripMenu_btnUpdate.Name = "ToolStripMenu_btnUpdate";
-            this.ToolStripMenu_btnUpdate.Size = new System.Drawing.Size(204, 38);
-            this.ToolStripMenu_btnUpdate.Text = "تعديل";
-            this.ToolStripMenu_btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // ToolStripMenu_btnDelete
-            // 
-            this.ToolStripMenu_btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("ToolStripMenu_btnDelete.Image")));
-            this.ToolStripMenu_btnDelete.Name = "ToolStripMenu_btnDelete";
-            this.ToolStripMenu_btnDelete.Size = new System.Drawing.Size(204, 38);
-            this.ToolStripMenu_btnDelete.Text = "حذف";
-            this.ToolStripMenu_btnDelete.Click += new System.EventHandler(this.ToolStripMenu_btnDelete_Click);
             // 
             // ctrl_FeltterDataAppointment1
             // 

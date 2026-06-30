@@ -34,6 +34,22 @@ namespace Program_Clinic_Management.Patients
 
         }
 
+        // التحقق اذا كان طبيب 
+        bool isDoctor = false;
+
+        private void FrmManagePatients_Load(object sender, EventArgs e) // تحميل الفورم
+        {
+            // اذا المستخدم طبيب
+            // يتم عرض مرضى الطبيب فقط
+            if (ClassUser.UserInfo.Role == "Doctor")
+            {
+                isDoctor = true;
+
+                btnDelete.Visible = false;
+                btnAdd.Visible = false;
+            }
+       }
+
         void LoadData()
         {
             DT_InfoPatients = ClsCMD_TablePatients.GetAllPatientsWithPersonInfo();
@@ -219,6 +235,6 @@ namespace Program_Clinic_Management.Patients
             MyTools.ShowForm(ForminfoPatient);
         }
 
-
+  
     }
 }

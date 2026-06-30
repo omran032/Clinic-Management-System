@@ -35,11 +35,11 @@ namespace Program_Clinic_Management.Admin
             DateTime now = DateTime.Now;
             lblDate.Text = now.ToString("tt h:mm   yyyy / MM / dd   dddd");
 
-     //       lblNameUser.Text = ClassUser.UserInfo.PersonInfo.FullName.Trim(); // عرض الاسم
+            lblNameUser.Text = ClassUser.UserInfo.PersonInfo.FullName.Trim(); // عرض الاسم
 
               LoadData();
             DisginUI();
-           
+            DistributionPowers();
         }
 
         void DisginUI()
@@ -54,8 +54,24 @@ namespace Program_Clinic_Management.Admin
 
 
 
+        /// <summary>
+        /// مثود توزيع الصلاحيات
+        /// </summary>
+        void DistributionPowers()
+        {
+            string Role = ClassUser.UserInfo.Role;
 
+              if (Role == "Doctor")
+            {
+                btn_Logs.Visible = false;
+                btn_Backup.Visible = false;
+                btn_Payments.Visible = false;
+            }
+            else if (Role == "Reception")
+            {
 
+            }
+        }
 
 
         void LoadData()

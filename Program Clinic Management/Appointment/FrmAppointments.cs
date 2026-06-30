@@ -1,4 +1,6 @@
-﻿using Program_Clinic_Management.Appointment.UI;
+﻿using BusinessLogic.CMD_DB;
+using BusinessLogic.InfoTable;
+using Program_Clinic_Management.Appointment.UI;
 using Program_Clinic_Management.Doctors.UI;
 using System;
 using System.Collections.Generic;
@@ -28,6 +30,25 @@ namespace Program_Clinic_Management.Appointment
 
 
 
+        /// <summary>
+        /// مثود عرض الصلاحيات حسب الدور
+        /// </summary>
+        void DistributionPowers()
+        {
+            string Role = ClassUser.UserInfo.Role;
+            if (Role == "Doctor")
+            {
+                Pnl_Option.Visible = false;
+                this.Size = new Size(1471, 615);
+
+                // عرض واجهة الواعيد فقط
+                FrmShowAppointments showAppointments = new FrmShowAppointments();
+                MyTools.SitingsPanel(PnlShowForms, showAppointments);
+
+                return;
+            }
+           
+        }
 
 
 

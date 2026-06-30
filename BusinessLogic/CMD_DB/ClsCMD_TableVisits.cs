@@ -1,4 +1,5 @@
-﻿using BusinessLogic.ToolChart;
+﻿using BusinessLogic.InfoTable;
+using BusinessLogic.ToolChart;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -6,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using static BusinessLogic.CMD_DB.ClsCMD_TableAppointments;
 
@@ -559,6 +561,181 @@ namespace BusinessLogic.CMD_DB
             };
 
             return ClassCommands.ExecuteQuery(query, parameters);
+        }
+
+
+
+
+
+
+
+
+        /// <summary>
+        /// فحص اذا الزيارة مرتبطة بجدول ماا
+        /// </summary>
+        public static bool IsVisitLinked(int visitId)
+        {
+            string query = @"
+        SELECT COUNT(*) FROM Payments WHERE VisitId = @VisitId
+        UNION ALL
+        SELECT COUNT(*) FROM Prescriptions WHERE VisitId = @VisitId
+        UNION ALL
+        SELECT COUNT(*) FROM FollowUps WHERE VisitId = @VisitId  ";
+
+            var parameters = new Dictionary<string, object>
+            {
+                { "@VisitId", visitId }
+            };
+
+            DataTable dt = ClassCommands.ShowData(query, parameters);
+
+            // إذا أي جدول رجع عدد أكبر من صفر → الزيارة مرتبطة
+            foreach (DataRow row in dt.Rows)
+            {
+                if (Convert.ToInt32(row[0]) > 0)
+                    return true;
+            }
+
+            return false;
+        }
+
+
+
+        /// <summary>
+        /// حذف زيارة بعد التحقق من عدم وجود أي ارتباطات.
+        /// إذا كانت الزيارة مرتبطة يتم عرض رسالة منع الحذف.
+        /// إذا تم الحذف بنجاح يتم عرض رسالة نجاح.
+        /// يرجع true إذا تم الحذف، false إذا لم يتم.
+        /// </summary>
+        public static bool DeleteVisit(int visitId)
+        {
+            // 1) التحقق من الارتباطات
+            if (IsVisitLinked(visitId))
+            {
+                MessageBox.Show("لا يمكن حذف الزيارة لأنها مرتبطة ببيانات أخرى.", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            // 2) تنفيذ الحذف
+            string query = "DELETE FROM Visits WHERE VisitId = @VisitId";
+
+            var parameters = new Dictionary<string, object>
+            {
+                { "@VisitId", visitId }
+            };
+
+            bool result = ClassCommands.ExecuteQuery(query, parameters);
+
+            if (result)
+            {
+                MessageBox.Show("تم حذف الزيارة بنجاح.", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("فشل حذف الزيارة.",  "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return result;
+        }
+
+
+
+
+
+
+
+        public enum VisitFilterType
+        {
+            All,
+            ByPatientName,
+            ByVisitTypeAndDoctor,
+            ByVisitType,
+            ByDoctor
+        }
+
+        /// <summary>
+        /// إرجاع جدول الزيارات مع إمكانية الفلترة حسب نوع الفلتر المرسل.
+        /// يعرض: AppointmentID / VisitID / PatientName / DoctorName / VisitType / VisitDate / Duration
+        /// مرتبة من أقرب زيارة إلى أبعد زيارة.
+        /// يدعم فلترة اختيارية حسب التاريخ.
+        /// ويدعم عرض البيانات لطبيب محدد فقط ..لضمان استخدامه مع مختلف الصلاحيات
+        /// </summary>
+        public static DataTable GetVisitsFiltered
+  ( VisitFilterType filterType, string patientName = "",int visitTypeId = 0,int doctorId = 0, DateTime? visitDate = null, bool onlyDoctorVisits = false  )
+        {
+            int doctorIdForFilter = 0;
+           if(onlyDoctorVisits)
+             {
+                doctorIdForFilter = ClassUser.UserInfo.DoctorInfo.DoctorID;
+             }
+
+            string query = @"
+SELECT 
+    V.VisitId,
+    V.AppointmentId,
+    (P.FirstName + ' ' + P.LastName) AS PatientName,
+    (DP.FirstName + ' ' + DP.LastName) AS DoctorName,
+    VT.TypeName AS VisitType,
+    V.VisitDate,
+    A.AppointmentDate AS AppointmentDate
+FROM Visits V
+INNER JOIN Persons P ON V.PersonId = P.PersonId
+INNER JOIN Doctors D ON V.DoctorId = D.DoctorId
+INNER JOIN Persons DP ON D.PersonId = DP.PersonId
+INNER JOIN VisitTypes VT ON V.VisitTypeId = VT.VisitTypeId
+INNER JOIN Appointments A ON V.AppointmentId = A.AppointmentId
+WHERE 1 = 1
+";
+
+            // فلترة حسب نوع الفلترة
+            switch (filterType)
+            {
+                case VisitFilterType.ByPatientName:
+                    query += " AND (P.FirstName + ' ' + P.LastName) LIKE @PatientName ";
+                    break;
+
+                case VisitFilterType.ByVisitTypeAndDoctor:
+                    query += " AND V.VisitTypeId = @VisitTypeId AND V.DoctorId = @DoctorId ";
+                    break;
+
+                case VisitFilterType.ByVisitType:
+                    query += " AND V.VisitTypeId = @VisitTypeId ";
+                    break;
+
+                case VisitFilterType.ByDoctor:
+                    query += " AND V.DoctorId = @DoctorId ";
+                    break;
+
+                case VisitFilterType.All:
+                default:
+                    break;
+            }
+
+            // ⭐ فلترة حسب التاريخ (اختياري)
+            if (visitDate.HasValue)
+            {
+                query += " AND CAST(V.VisitDate AS DATE) = @VisitDate ";
+            }
+
+            // ⭐ فلترة زيارات الطبيب فقط (الميزة الجديدة)
+            if (onlyDoctorVisits && doctorIdForFilter > 0)
+            {
+                query += " AND V.DoctorId = @DoctorIdFilter ";
+            }
+
+            // ترتيب حسب أقرب زيارة
+            query += " ORDER BY V.VisitDate DESC, V.StartTime DESC ";
+
+            var parameters = new Dictionary<string, object>
+            {
+                { "@PatientName", "%" + patientName + "%" },
+                { "@VisitTypeId", visitTypeId },
+                { "@DoctorId", doctorId },
+                { "@VisitDate", visitDate?.Date ?? (object)DBNull.Value },
+                { "@DoctorIdFilter", doctorIdForFilter }
+            };
+
+            return ClassCommands.ShowData(query, parameters);
         }
 
 

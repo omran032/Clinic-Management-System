@@ -230,11 +230,7 @@ namespace BusinessLogic.CMD_DB
         /// <summary>
         /// البحث عن فجوة زمنية داخل اليوم تكفي مدة الموعد الجديد.
         /// </summary>
-        public static DateTime? FindAvailableGap(
-     DateTime day,
-     List<AppointmentInfo> todaysAppointments,
-     int durationMinutes,
-     SearchMode mode)
+          static DateTime? FindAvailableGap( DateTime day, List<AppointmentInfo> todaysAppointments, int durationMinutes,SearchMode mode)
         {
             // دوام الطبيب
             DateTime workStart = day.Date.AddHours(HoursStartWork).AddMinutes(30); // 10:30 AM
@@ -307,11 +303,7 @@ namespace BusinessLogic.CMD_DB
         /// الميثود النهائية التي تجمع كل خطوات الذكاء.
         /// ترجع أفضل موعد أو رسالة عدم توفر موعد ضمن الفترة (يوم، أسبوع، شهر).
         /// </summary>
-        public static SuggestedAppointment SuggestAppointment(
-            int doctorId,
-            TimeRangeOption rangeOption,
-            SearchMode mode,
-            int requiredDuration)
+        public static SuggestedAppointment SuggestAppointment( int doctorId, TimeRangeOption rangeOption, SearchMode mode,  int requiredDuration)
         {
             // 1) بناء الفترة الزمنية
             TimeRange range = BuildTimeRange(rangeOption);

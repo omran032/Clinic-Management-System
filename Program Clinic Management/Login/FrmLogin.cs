@@ -2,6 +2,8 @@
 using BusinessLogic.DB;
 using BusinessLogic.InfoTable;
 using Microsoft.Win32;
+using Program_Clinic_Management.Admin;
+using Program_Clinic_Management.Dashboard;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +14,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static BusinessLogic.ClassLogs;
-using Program_Clinic_Management.Admin;
 
 
 namespace Program_Clinic_Management.Login
@@ -59,7 +60,7 @@ namespace Program_Clinic_Management.Login
 
             lblMessageError.Visible = false;
 
-            if(RoleUser == "Manager" )
+            if(RoleUser == "Admin")
             {
                 FrmDashboardAdmin dashboardAdmin = new FrmDashboardAdmin();
                 dashboardAdmin.ShowDialog();
@@ -67,12 +68,14 @@ namespace Program_Clinic_Management.Login
 
            else if (RoleUser == "Doctor")
             {
-
+                FrmDashboardDoctor dashboardDoctor = new FrmDashboardDoctor();
+                dashboardDoctor.ShowDialog();
             }
 
-            else if (RoleUser == "Doctor")
+            else if (RoleUser == "Reception")
             {
-
+                FrmDashboardAdmin dashboardAdmin = new FrmDashboardAdmin();
+                dashboardAdmin.ShowDialog();
             }
             // Logs التسجيل بال
             ClassLogs.AddLog(ClassUser.UserInfo.UserID, LogAction.Login.ToString(), "Users", ClassUser.UserInfo.UserID, "User logged in");
@@ -110,15 +113,17 @@ namespace Program_Clinic_Management.Login
         {
             RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\ClinicAppLogin");
 
+            // الحالة الافتراضية: إلغاء التشييك
+            chk_RememperMe.Checked = false;
+
             if (key != null)
             {
                 TxtUserName.Text = key.GetValue("UserName", "").ToString();
                 TxtPassword.Text = key.GetValue("Password", "").ToString();
 
-                if (TxtUserName.Text != "")
+                if (!string.IsNullOrEmpty(TxtUserName.Text))
                     chk_RememperMe.Checked = true;
             }
-
         }
 
 

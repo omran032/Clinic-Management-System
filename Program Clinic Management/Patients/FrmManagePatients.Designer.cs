@@ -38,6 +38,7 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnClose = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnMinimize = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.ctrl_IconProjectClinic1 = new BusinessLogic.Ctrl_IconProjectClinic();
             this.label1 = new System.Windows.Forms.Label();
             this.DataGV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btnAdd = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -50,7 +51,6 @@
             this.ToolStripMenu_btnDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.حجزموعدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.تسجيلزيارةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ctrl_IconProjectClinic1 = new BusinessLogic.Ctrl_IconProjectClinic();
             this.ctrl_FeltterDataPatients1 = new Program_Clinic_Management.Patients.UControls.Ctrl_FeltterDataPatients();
             this.pnl_TopBar.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -115,6 +115,17 @@
             this.btnMinimize.TabIndex = 5;
             this.btnMinimize.TabStop = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // ctrl_IconProjectClinic1
+            // 
+            this.ctrl_IconProjectClinic1.BackColor = System.Drawing.Color.Transparent;
+            this.ctrl_IconProjectClinic1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrl_IconProjectClinic1.Location = new System.Drawing.Point(5, 3);
+            this.ctrl_IconProjectClinic1.Margin = new System.Windows.Forms.Padding(5);
+            this.ctrl_IconProjectClinic1.Name = "ctrl_IconProjectClinic1";
+            this.ctrl_IconProjectClinic1.Size = new System.Drawing.Size(246, 57);
+            this.ctrl_IconProjectClinic1.TabIndex = 4;
+            this.ctrl_IconProjectClinic1.TitleNameColor = System.Drawing.Color.White;
             // 
             // label1
             // 
@@ -269,7 +280,7 @@
             this.حجزموعدToolStripMenuItem,
             this.تسجيلزيارةToolStripMenuItem});
             this.MyContextMS.Name = "MyContextMS";
-            this.MyContextMS.Size = new System.Drawing.Size(205, 216);
+            this.MyContextMS.Size = new System.Drawing.Size(205, 194);
             // 
             // ToolStripMenu_btnShowInfo
             // 
@@ -307,17 +318,6 @@
             this.تسجيلزيارةToolStripMenuItem.Size = new System.Drawing.Size(204, 38);
             this.تسجيلزيارةToolStripMenuItem.Text = "تسجيل زيارة";
             // 
-            // ctrl_IconProjectClinic1
-            // 
-            this.ctrl_IconProjectClinic1.BackColor = System.Drawing.Color.Transparent;
-            this.ctrl_IconProjectClinic1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrl_IconProjectClinic1.Location = new System.Drawing.Point(5, 3);
-            this.ctrl_IconProjectClinic1.Margin = new System.Windows.Forms.Padding(5);
-            this.ctrl_IconProjectClinic1.Name = "ctrl_IconProjectClinic1";
-            this.ctrl_IconProjectClinic1.Size = new System.Drawing.Size(246, 57);
-            this.ctrl_IconProjectClinic1.TabIndex = 4;
-            this.ctrl_IconProjectClinic1.TitleNameColor = System.Drawing.Color.White;
-            // 
             // ctrl_FeltterDataPatients1
             // 
             this.ctrl_FeltterDataPatients1.BackColor = System.Drawing.Color.Transparent;
@@ -347,6 +347,7 @@
             this.Name = "FrmManagePatients";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "إدارة المرضى";
+            this.Load += new System.EventHandler(this.FrmManagePatients_Load);
             this.pnl_TopBar.ResumeLayout(false);
             this.pnl_TopBar.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -37,12 +38,12 @@
             this.btnClose = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnMinimize = new Guna.UI2.WinForms.Guna2PictureBox();
             this.ctrl_IconProjectClinic1 = new BusinessLogic.Ctrl_IconProjectClinic();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.ComboxVisitTypes = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnSearchFelter = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.ComboxDoctors = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -52,17 +53,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.DataGV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.txtNotesVisit = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.lblTimeAppointment = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
-            this.lblAllegies = new System.Windows.Forms.Label();
-            this.lblChronic = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.lblDuration = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.lblVisitDate = new System.Windows.Forms.Label();
@@ -81,6 +76,9 @@
             this.btnUpdateVisit = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnShowAllVisits = new Guna.UI2.WinForms.Guna2Button();
+            this.ElipseDGV = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.ElipseForm = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.pnl_TopBar.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -96,7 +94,7 @@
             this.pnl_TopBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.pnl_TopBar.Controls.Add(this.guna2Panel1);
             this.pnl_TopBar.Controls.Add(this.ctrl_IconProjectClinic1);
-            this.pnl_TopBar.Controls.Add(this.label1);
+            this.pnl_TopBar.Controls.Add(this.lblTitle);
             this.pnl_TopBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_TopBar.Location = new System.Drawing.Point(0, 0);
             this.pnl_TopBar.Name = "pnl_TopBar";
@@ -140,6 +138,7 @@
             this.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMinimize.TabIndex = 5;
             this.btnMinimize.TabStop = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // ctrl_IconProjectClinic1
             // 
@@ -152,17 +151,17 @@
             this.ctrl_IconProjectClinic1.TabIndex = 4;
             this.ctrl_IconProjectClinic1.TitleNameColor = System.Drawing.Color.White;
             // 
-            // label1
+            // lblTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(621, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(253, 36);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Visit Managment";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTitle.Location = new System.Drawing.Point(621, 12);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(253, 36);
+            this.lblTitle.TabIndex = 4;
+            this.lblTitle.Text = "Visit Managment";
             // 
             // ComboxVisitTypes
             // 
@@ -179,6 +178,7 @@
             this.ComboxVisitTypes.Name = "ComboxVisitTypes";
             this.ComboxVisitTypes.Size = new System.Drawing.Size(181, 36);
             this.ComboxVisitTypes.TabIndex = 7;
+            this.ComboxVisitTypes.SelectedIndexChanged += new System.EventHandler(this.ComboxVisitTypes_SelectedIndexChanged);
             // 
             // btnSearchFelter
             // 
@@ -191,11 +191,12 @@
             this.btnSearchFelter.FillColor = System.Drawing.Color.MediumBlue;
             this.btnSearchFelter.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchFelter.ForeColor = System.Drawing.Color.White;
-            this.btnSearchFelter.Location = new System.Drawing.Point(1252, 77);
+            this.btnSearchFelter.Location = new System.Drawing.Point(1206, 78);
             this.btnSearchFelter.Name = "btnSearchFelter";
             this.btnSearchFelter.Size = new System.Drawing.Size(110, 45);
             this.btnSearchFelter.TabIndex = 8;
-            this.btnSearchFelter.Text = "عرض";
+            this.btnSearchFelter.Text = "بحث";
+            this.btnSearchFelter.Click += new System.EventHandler(this.btnSearchFelter_Click);
             // 
             // label2
             // 
@@ -217,21 +218,22 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "الطبيب";
             // 
-            // guna2ComboBox1
+            // ComboxDoctors
             // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.BorderRadius = 10;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Location = new System.Drawing.Point(462, 84);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(255, 36);
-            this.guna2ComboBox1.TabIndex = 10;
+            this.ComboxDoctors.BackColor = System.Drawing.Color.Transparent;
+            this.ComboxDoctors.BorderRadius = 10;
+            this.ComboxDoctors.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ComboxDoctors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboxDoctors.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboxDoctors.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ComboxDoctors.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.ComboxDoctors.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.ComboxDoctors.ItemHeight = 30;
+            this.ComboxDoctors.Location = new System.Drawing.Point(462, 84);
+            this.ComboxDoctors.Name = "ComboxDoctors";
+            this.ComboxDoctors.Size = new System.Drawing.Size(255, 36);
+            this.ComboxDoctors.TabIndex = 10;
+            this.ComboxDoctors.SelectedIndexChanged += new System.EventHandler(this.ComboxDoctors_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -258,6 +260,7 @@
             this.guna2DateTimePicker1.Size = new System.Drawing.Size(219, 36);
             this.guna2DateTimePicker1.TabIndex = 14;
             this.guna2DateTimePicker1.Value = new System.DateTime(2026, 6, 27, 17, 58, 8, 862);
+            this.guna2DateTimePicker1.ValueChanged += new System.EventHandler(this.guna2DateTimePicker1_ValueChanged);
             // 
             // panel1
             // 
@@ -372,21 +375,16 @@
             this.DataGV.ThemeStyle.RowsStyle.Height = 22;
             this.DataGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DataGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DataGV.SelectionChanged += new System.EventHandler(this.DataGV_SelectionChanged);
             // 
             // guna2GroupBox1
             // 
             this.guna2GroupBox1.BorderRadius = 10;
-            this.guna2GroupBox1.Controls.Add(this.txtNotesVisit);
-            this.guna2GroupBox1.Controls.Add(this.label22);
-            this.guna2GroupBox1.Controls.Add(this.panel6);
+            this.guna2GroupBox1.Controls.Add(this.lblTimeAppointment);
+            this.guna2GroupBox1.Controls.Add(this.label9);
             this.guna2GroupBox1.Controls.Add(this.lblScore);
-            this.guna2GroupBox1.Controls.Add(this.lblAllegies);
-            this.guna2GroupBox1.Controls.Add(this.lblChronic);
             this.guna2GroupBox1.Controls.Add(this.label18);
             this.guna2GroupBox1.Controls.Add(this.panel5);
-            this.guna2GroupBox1.Controls.Add(this.label17);
-            this.guna2GroupBox1.Controls.Add(this.label16);
-            this.guna2GroupBox1.Controls.Add(this.panel4);
             this.guna2GroupBox1.Controls.Add(this.lblDuration);
             this.guna2GroupBox1.Controls.Add(this.label15);
             this.guna2GroupBox1.Controls.Add(this.lblVisitDate);
@@ -403,54 +401,35 @@
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.White;
             this.guna2GroupBox1.Location = new System.Drawing.Point(1130, 224);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(353, 571);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(353, 474);
             this.guna2GroupBox1.TabIndex = 23;
             this.guna2GroupBox1.Text = "تفاصيل الزيارة";
             this.guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtNotesVisit
+            // lblTimeAppointment
             // 
-            this.txtNotesVisit.BorderRadius = 10;
-            this.txtNotesVisit.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNotesVisit.DefaultText = "";
-            this.txtNotesVisit.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtNotesVisit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtNotesVisit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNotesVisit.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNotesVisit.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNotesVisit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNotesVisit.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNotesVisit.Location = new System.Drawing.Point(34, 502);
-            this.txtNotesVisit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtNotesVisit.Name = "txtNotesVisit";
-            this.txtNotesVisit.PlaceholderText = "";
-            this.txtNotesVisit.ReadOnly = true;
-            this.txtNotesVisit.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtNotesVisit.SelectedText = "";
-            this.txtNotesVisit.Size = new System.Drawing.Size(297, 55);
-            this.txtNotesVisit.TabIndex = 24;
-            this.txtNotesVisit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblTimeAppointment.AutoSize = true;
+            this.lblTimeAppointment.BackColor = System.Drawing.Color.Transparent;
+            this.lblTimeAppointment.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimeAppointment.ForeColor = System.Drawing.Color.Black;
+            this.lblTimeAppointment.Location = new System.Drawing.Point(122, 273);
+            this.lblTimeAppointment.Name = "lblTimeAppointment";
+            this.lblTimeAppointment.Size = new System.Drawing.Size(40, 22);
+            this.lblTimeAppointment.TabIndex = 43;
+            this.lblTimeAppointment.Text = "___";
             // 
-            // label22
+            // label9
             // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.Black;
-            this.label22.Location = new System.Drawing.Point(297, 483);
-            this.label22.Name = "label22";
-            this.label22.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label22.Size = new System.Drawing.Size(44, 15);
-            this.label22.TabIndex = 40;
-            this.label22.Text = "ملاحظات";
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.Silver;
-            this.panel6.Location = new System.Drawing.Point(17, 469);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(321, 1);
-            this.panel6.TabIndex = 20;
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(16, 273);
+            this.label9.Name = "label9";
+            this.label9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label9.Size = new System.Drawing.Size(94, 22);
+            this.label9.TabIndex = 42;
+            this.label9.Text = ": وقت الموعد";
             // 
             // lblScore
             // 
@@ -458,38 +437,12 @@
             this.lblScore.BackColor = System.Drawing.Color.Transparent;
             this.lblScore.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScore.ForeColor = System.Drawing.Color.Black;
-            this.lblScore.Location = new System.Drawing.Point(147, 426);
+            this.lblScore.Location = new System.Drawing.Point(126, 416);
             this.lblScore.Name = "lblScore";
             this.lblScore.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblScore.Size = new System.Drawing.Size(40, 22);
             this.lblScore.TabIndex = 39;
             this.lblScore.Text = "___";
-            // 
-            // lblAllegies
-            // 
-            this.lblAllegies.AutoSize = true;
-            this.lblAllegies.BackColor = System.Drawing.Color.Transparent;
-            this.lblAllegies.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAllegies.ForeColor = System.Drawing.Color.Black;
-            this.lblAllegies.Location = new System.Drawing.Point(147, 368);
-            this.lblAllegies.Name = "lblAllegies";
-            this.lblAllegies.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblAllegies.Size = new System.Drawing.Size(40, 22);
-            this.lblAllegies.TabIndex = 38;
-            this.lblAllegies.Text = "___";
-            // 
-            // lblChronic
-            // 
-            this.lblChronic.AutoSize = true;
-            this.lblChronic.BackColor = System.Drawing.Color.Transparent;
-            this.lblChronic.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChronic.ForeColor = System.Drawing.Color.Black;
-            this.lblChronic.Location = new System.Drawing.Point(147, 331);
-            this.lblChronic.Name = "lblChronic";
-            this.lblChronic.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblChronic.Size = new System.Drawing.Size(40, 22);
-            this.lblChronic.TabIndex = 37;
-            this.lblChronic.Text = "___";
             // 
             // label18
             // 
@@ -497,7 +450,7 @@
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(26, 426);
+            this.label18.Location = new System.Drawing.Point(21, 416);
             this.label18.Name = "label18";
             this.label18.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label18.Size = new System.Drawing.Size(99, 22);
@@ -507,44 +460,10 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Silver;
-            this.panel5.Location = new System.Drawing.Point(17, 403);
+            this.panel5.Location = new System.Drawing.Point(27, 386);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(321, 1);
             this.panel5.TabIndex = 19;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(36, 368);
-            this.label17.Name = "label17";
-            this.label17.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label17.Size = new System.Drawing.Size(79, 22);
-            this.label17.TabIndex = 35;
-            this.label17.Text = ": الحساسية";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(17, 331);
-            this.label16.Name = "label16";
-            this.label16.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label16.Size = new System.Drawing.Size(123, 22);
-            this.label16.TabIndex = 34;
-            this.label16.Text = ": الأمراض المزمنة";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Silver;
-            this.panel4.Location = new System.Drawing.Point(17, 307);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(321, 1);
-            this.panel4.TabIndex = 18;
             // 
             // lblDuration
             // 
@@ -552,9 +471,8 @@
             this.lblDuration.BackColor = System.Drawing.Color.Transparent;
             this.lblDuration.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDuration.ForeColor = System.Drawing.Color.Black;
-            this.lblDuration.Location = new System.Drawing.Point(126, 261);
+            this.lblDuration.Location = new System.Drawing.Point(122, 324);
             this.lblDuration.Name = "lblDuration";
-            this.lblDuration.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblDuration.Size = new System.Drawing.Size(40, 22);
             this.lblDuration.TabIndex = 33;
             this.lblDuration.Text = "___";
@@ -565,7 +483,7 @@
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(38, 261);
+            this.label15.Location = new System.Drawing.Point(40, 324);
             this.label15.Name = "label15";
             this.label15.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label15.Size = new System.Drawing.Size(50, 22);
@@ -578,9 +496,8 @@
             this.lblVisitDate.BackColor = System.Drawing.Color.Transparent;
             this.lblVisitDate.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVisitDate.ForeColor = System.Drawing.Color.Black;
-            this.lblVisitDate.Location = new System.Drawing.Point(126, 216);
+            this.lblVisitDate.Location = new System.Drawing.Point(122, 221);
             this.lblVisitDate.Name = "lblVisitDate";
-            this.lblVisitDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblVisitDate.Size = new System.Drawing.Size(40, 22);
             this.lblVisitDate.TabIndex = 31;
             this.lblVisitDate.Text = "___";
@@ -591,7 +508,7 @@
             this.lblVisitType.BackColor = System.Drawing.Color.Transparent;
             this.lblVisitType.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVisitType.ForeColor = System.Drawing.Color.Black;
-            this.lblVisitType.Location = new System.Drawing.Point(126, 168);
+            this.lblVisitType.Location = new System.Drawing.Point(122, 173);
             this.lblVisitType.Name = "lblVisitType";
             this.lblVisitType.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblVisitType.Size = new System.Drawing.Size(40, 22);
@@ -604,7 +521,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(17, 216);
+            this.label11.Location = new System.Drawing.Point(16, 221);
             this.label11.Name = "label11";
             this.label11.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label11.Size = new System.Drawing.Size(98, 22);
@@ -617,7 +534,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(17, 168);
+            this.label10.Location = new System.Drawing.Point(21, 173);
             this.label10.Name = "label10";
             this.label10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label10.Size = new System.Drawing.Size(89, 22);
@@ -627,7 +544,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Silver;
-            this.panel3.Location = new System.Drawing.Point(17, 147);
+            this.panel3.Location = new System.Drawing.Point(17, 152);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(321, 1);
             this.panel3.TabIndex = 17;
@@ -638,12 +555,12 @@
             this.lblNameDoctor.BackColor = System.Drawing.Color.Transparent;
             this.lblNameDoctor.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNameDoctor.ForeColor = System.Drawing.Color.Black;
-            this.lblNameDoctor.Location = new System.Drawing.Point(75, 106);
+            this.lblNameDoctor.Location = new System.Drawing.Point(75, 111);
             this.lblNameDoctor.Name = "lblNameDoctor";
             this.lblNameDoctor.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblNameDoctor.Size = new System.Drawing.Size(260, 22);
+            this.lblNameDoctor.Size = new System.Drawing.Size(35, 22);
             this.lblNameDoctor.TabIndex = 27;
-            this.lblNameDoctor.Text = "محمد عبدا الله سلامة عبد المجيد كحلوس";
+            this.lblNameDoctor.Text = "     ";
             // 
             // label8
             // 
@@ -651,7 +568,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(17, 106);
+            this.label8.Location = new System.Drawing.Point(17, 111);
             this.label8.Name = "label8";
             this.label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label8.Size = new System.Drawing.Size(60, 22);
@@ -667,9 +584,9 @@
             this.lblPatientName.Location = new System.Drawing.Point(76, 58);
             this.lblPatientName.Name = "lblPatientName";
             this.lblPatientName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblPatientName.Size = new System.Drawing.Size(260, 22);
+            this.lblPatientName.Size = new System.Drawing.Size(40, 22);
             this.lblPatientName.TabIndex = 25;
-            this.lblPatientName.Text = "محمد عبدا الله سلامة عبد المجيد كحلوس";
+            this.lblPatientName.Text = "      ";
             // 
             // label6
             // 
@@ -703,6 +620,8 @@
             this.TxtSearchNamePatient.SelectedText = "";
             this.TxtSearchNamePatient.Size = new System.Drawing.Size(297, 35);
             this.TxtSearchNamePatient.TabIndex = 19;
+            this.TxtSearchNamePatient.TextChanged += new System.EventHandler(this.TxtSearchNamePatient_TextChanged);
+            this.TxtSearchNamePatient.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtSearchNamePatient_KeyPress);
             // 
             // btnShowInfoPatient
             // 
@@ -712,14 +631,15 @@
             this.btnShowInfoPatient.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnShowInfoPatient.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnShowInfoPatient.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnShowInfoPatient.FillColor = System.Drawing.Color.MediumBlue;
+            this.btnShowInfoPatient.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(111)))), ((int)(((byte)(207)))));
             this.btnShowInfoPatient.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowInfoPatient.ForeColor = System.Drawing.Color.White;
-            this.btnShowInfoPatient.Location = new System.Drawing.Point(1206, 810);
+            this.btnShowInfoPatient.Location = new System.Drawing.Point(1206, 732);
             this.btnShowInfoPatient.Name = "btnShowInfoPatient";
             this.btnShowInfoPatient.Size = new System.Drawing.Size(228, 42);
             this.btnShowInfoPatient.TabIndex = 24;
-            this.btnShowInfoPatient.Text = "فتح ملف المريض";
+            this.btnShowInfoPatient.Text = "عرض ملف المريض";
+            this.btnShowInfoPatient.Click += new System.EventHandler(this.btnShowInfoPatient_Click);
             // 
             // btnAddVisit
             // 
@@ -741,7 +661,7 @@
             // 
             // btnDeleteVisit
             // 
-            this.btnDeleteVisit.BorderColor = System.Drawing.Color.Gray;
+            this.btnDeleteVisit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnDeleteVisit.BorderRadius = 5;
             this.btnDeleteVisit.BorderThickness = 1;
             this.btnDeleteVisit.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -751,16 +671,17 @@
             this.btnDeleteVisit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnDeleteVisit.FillColor = System.Drawing.Color.White;
             this.btnDeleteVisit.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteVisit.ForeColor = System.Drawing.Color.Black;
-            this.btnDeleteVisit.Location = new System.Drawing.Point(646, 810);
+            this.btnDeleteVisit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnDeleteVisit.Location = new System.Drawing.Point(799, 810);
             this.btnDeleteVisit.Name = "btnDeleteVisit";
             this.btnDeleteVisit.Size = new System.Drawing.Size(228, 42);
             this.btnDeleteVisit.TabIndex = 27;
             this.btnDeleteVisit.Text = "حذف الزيارة";
+            this.btnDeleteVisit.Click += new System.EventHandler(this.btnDeleteVisit_Click);
             // 
             // btnUpdateVisit
             // 
-            this.btnUpdateVisit.BorderColor = System.Drawing.Color.Gray;
+            this.btnUpdateVisit.BorderColor = System.Drawing.Color.Green;
             this.btnUpdateVisit.BorderRadius = 5;
             this.btnUpdateVisit.BorderThickness = 1;
             this.btnUpdateVisit.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -770,12 +691,13 @@
             this.btnUpdateVisit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnUpdateVisit.FillColor = System.Drawing.Color.White;
             this.btnUpdateVisit.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateVisit.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdateVisit.Location = new System.Drawing.Point(363, 810);
+            this.btnUpdateVisit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnUpdateVisit.Location = new System.Drawing.Point(427, 810);
             this.btnUpdateVisit.Name = "btnUpdateVisit";
             this.btnUpdateVisit.Size = new System.Drawing.Size(228, 42);
             this.btnUpdateVisit.TabIndex = 28;
             this.btnUpdateVisit.Text = "تعديل الزيارة";
+            this.btnUpdateVisit.Click += new System.EventHandler(this.btnUpdateVisit_Click);
             // 
             // guna2PictureBox2
             // 
@@ -803,12 +725,41 @@
             this.guna2PictureBox1.TabIndex = 21;
             this.guna2PictureBox1.TabStop = false;
             // 
+            // btnShowAllVisits
+            // 
+            this.btnShowAllVisits.BorderRadius = 5;
+            this.btnShowAllVisits.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShowAllVisits.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnShowAllVisits.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnShowAllVisits.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnShowAllVisits.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnShowAllVisits.FillColor = System.Drawing.Color.MediumBlue;
+            this.btnShowAllVisits.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowAllVisits.ForeColor = System.Drawing.Color.White;
+            this.btnShowAllVisits.Location = new System.Drawing.Point(1335, 78);
+            this.btnShowAllVisits.Name = "btnShowAllVisits";
+            this.btnShowAllVisits.Size = new System.Drawing.Size(110, 45);
+            this.btnShowAllVisits.TabIndex = 29;
+            this.btnShowAllVisits.Text = "عرض الكل";
+            this.btnShowAllVisits.Click += new System.EventHandler(this.btnShowAllVisits_Click);
+            // 
+            // ElipseDGV
+            // 
+            this.ElipseDGV.BorderRadius = 25;
+            this.ElipseDGV.TargetControl = this.DataGV;
+            // 
+            // ElipseForm
+            // 
+            this.ElipseForm.BorderRadius = 20;
+            this.ElipseForm.TargetControl = this;
+            // 
             // FrmManageVisits
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1495, 888);
+            this.Controls.Add(this.btnShowAllVisits);
             this.Controls.Add(this.btnUpdateVisit);
             this.Controls.Add(this.btnDeleteVisit);
             this.Controls.Add(this.btnAddVisit);
@@ -826,7 +777,7 @@
             this.Controls.Add(this.guna2DateTimePicker1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.guna2ComboBox1);
+            this.Controls.Add(this.ComboxDoctors);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSearchFelter);
             this.Controls.Add(this.ComboxVisitTypes);
@@ -859,12 +810,12 @@
         private Guna.UI2.WinForms.Guna2PictureBox btnClose;
         private Guna.UI2.WinForms.Guna2PictureBox btnMinimize;
         private BusinessLogic.Ctrl_IconProjectClinic ctrl_IconProjectClinic1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTitle;
         private Guna.UI2.WinForms.Guna2ComboBox ComboxVisitTypes;
         private Guna.UI2.WinForms.Guna2Button btnSearchFelter;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private Guna.UI2.WinForms.Guna2ComboBox ComboxDoctors;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
         private System.Windows.Forms.Panel panel1;
@@ -888,20 +839,17 @@
         private System.Windows.Forms.Label lblNameDoctor;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblScore;
-        private System.Windows.Forms.Label lblAllegies;
-        private System.Windows.Forms.Label lblChronic;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Panel panel4;
-        private Guna.UI2.WinForms.Guna2TextBox txtNotesVisit;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Panel panel6;
         private Guna.UI2.WinForms.Guna2TextBox TxtSearchNamePatient;
         private Guna.UI2.WinForms.Guna2Button btnShowInfoPatient;
         private Guna.UI2.WinForms.Guna2Button btnAddVisit;
         private Guna.UI2.WinForms.Guna2Button btnDeleteVisit;
         private Guna.UI2.WinForms.Guna2Button btnUpdateVisit;
+        private System.Windows.Forms.Label lblTimeAppointment;
+        private System.Windows.Forms.Label label9;
+        private Guna.UI2.WinForms.Guna2Button btnShowAllVisits;
+        private Guna.UI2.WinForms.Guna2Elipse ElipseDGV;
+        private Guna.UI2.WinForms.Guna2Elipse ElipseForm;
     }
 }

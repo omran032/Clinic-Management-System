@@ -311,73 +311,92 @@ namespace BusinessLogic.CMD_DB
         /// <summary>
         /// إحضار بيانات المرضى مع بيانات الشخص المرتبط بهم مع خيارات فلترة متعددة.
         /// </summary>
-        public static DataTable FeltterPatient(PatientFilterType filterType, string value = "")
+       public static DataTable FeltterPatient( PatientFilterType filterType, string value = "", bool onlyDoctorPatients = false  )
         {
+            int doctorId = 0;
+            if (ClassUser.UserInfo.DoctorInfo != null)
+                       doctorId = ClassUser.UserInfo.DoctorInfo.DoctorID;
+
             try
             {
                 string query = @"
-    SELECT 
-        P.PatientID as [ID Patiient],
-        P.PersonID,
-        PR.FirstName,
-        PR.LastName,
-        (PR.FirstName + ' ' + PR.LastName) AS FullName,
-        PR.Gender,
-        PR.BirthDate,
-        PR.Phone,
-        PR.CreatedAt,
-        PR.UpdatedAt,
-        PR.Address,
-                         -- بيانات المريض
-        P.MedicalNotes,
-        P.FirstVisitDate,
-        P.ChronicDiseases,
-        P.Allergies,
-        P.Notes,
-        P.ComplianceScore
-    FROM Patients P
-    INNER JOIN Persons PR ON PR.PersonID = P.PersonID
-    WHERE 1 = 1
-    ";
+SELECT 
+    P.PatientID as [ID Patiient],
+    P.PersonID,
+    PR.FirstName,
+    PR.LastName,
+    (PR.FirstName + ' ' + PR.LastName) AS FullName,
+    PR.Gender,
+    PR.BirthDate,
+    PR.Phone,
+    PR.CreatedAt,
+    PR.UpdatedAt,
+    PR.Address,
+    P.MedicalNotes,
+    P.FirstVisitDate,
+    P.ChronicDiseases,
+    P.Allergies,
+    P.Notes,
+    P.ComplianceScore
+FROM Patients P
+INNER JOIN Persons PR ON PR.PersonID = P.PersonID
+WHERE 1 = 1
+";
 
-                var parameters = new Dictionary<string, object>();
+        var parameters = new Dictionary<string, object>();
 
-                switch (filterType)
+        // فلترة حسب نوع الطلب
+        switch (filterType)
+        {
+            case PatientFilterType.PatientID:
+                query += " AND P.PatientID = @PatientID";
+                parameters.Add("@PatientID", Convert.ToInt32(value));
+                break;
+
+            case PatientFilterType.PersonID:
+                query += " AND P.PersonID = @PersonID";
+                parameters.Add("@PersonID", Convert.ToInt32(value));
+                break;
+
+            case PatientFilterType.PersonName:
+                query += " AND (PR.FirstName LIKE @Name OR PR.LastName LIKE @Name OR (PR.FirstName + ' ' + PR.LastName) LIKE @Name)";
+                parameters.Add("@Name", "%" + value + "%");
+                break;
+
+            case PatientFilterType.Phone:
+                query += " AND PR.Phone LIKE @Phone";
+                parameters.Add("@Phone", "%" + value + "%");
+                break;
+
+            case PatientFilterType.All:
+                break;
+        }
+
+        // ⭐ فلترة مرضى الطبيب فقط
+                if (onlyDoctorPatients && doctorId > 0)
                 {
-                    case PatientFilterType.PatientID:
-                        query += " AND P.PatientID = @PatientID";
-                        parameters.Add("@PatientID", Convert.ToInt32(value));
-                        break;
+                    query += @"
+                        AND P.PersonID IN (
+                    SELECT DISTINCT A.PersonId
+                    FROM Appointments A
+                    WHERE A.DoctorId = @DoctorId
+                    UNION
+                    SELECT DISTINCT V.PersonId
+                    FROM Visits V
+                WHERE V.DoctorId = @DoctorId
+                                            )";
+            parameters.Add("@DoctorId", doctorId);
+        }
 
-                    case PatientFilterType.PersonID:
-                        query += " AND P.PersonID = @PersonID";
-                        parameters.Add("@PersonID", Convert.ToInt32(value));
-                        break;
-
-                    case PatientFilterType.PersonName:
-                        query += " AND (PR.FirstName LIKE @Name OR PR.LastName LIKE @Name OR (PR.FirstName + ' ' + PR.LastName) LIKE @Name)";
-                        parameters.Add("@Name", "%" + value + "%");
-                        break;
-
-                    case PatientFilterType.Phone:
-                        query += " AND PR.Phone LIKE @Phone";
-                        parameters.Add("@Phone", "%" + value + "%");
-                        break;
-
-                    case PatientFilterType.All:
-                        // لا نضيف أي شرط
-                        break;
-                }
-
-                return ClassCommands.ShowData(query, parameters);
-            }
+        return ClassCommands.ShowData(query, parameters);
+       }
             catch
             {
                 MessageBox.Show("مشكلة في عملية الفلترة ....أعد المحاولة", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
+}
 
-        }
 
 
 

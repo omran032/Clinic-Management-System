@@ -30,12 +30,9 @@ namespace Program_Clinic_Management.Patients.UI
             PatientsInfo = PatientsInfo_;
 
             Load();
-
         }
 
-        // بقا  ضيف حدث مشان الرفرش
-        //
-        //
+        //   حدث مشان الرفرش
         public event Action EventShowRefrechData;
 
         ClassPatients PatientsInfo = new ClassPatients();
@@ -72,6 +69,13 @@ namespace Program_Clinic_Management.Patients.UI
         // تحديد وضع عرض الواجهة ... تعديل _ حذف
         void Load()
         {
+            // اذا المستخدم طبيب
+            // يتم عرض مرضى الطبيب فقط
+            if (ClassUser.UserInfo.Role == "Doctor")
+            {
+                btn_AddPerson.Visible = false;
+            }
+
             if (mode == Mode.Add)
             {
                 lblTitle.Text = "Add";
@@ -294,6 +298,6 @@ namespace Program_Clinic_Management.Patients.UI
             MyTools.ShowForm(add_UpdatePerson);
         }
 
-
+      
     }
 }
