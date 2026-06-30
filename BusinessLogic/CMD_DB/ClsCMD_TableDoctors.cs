@@ -322,6 +322,7 @@ namespace BusinessLogic.CMD_DB
                 "Name",             // النص الظاهر للمستخدم
                 "SpecializationId"  // القيمة المخزّنة (ID)
             );
+            combo.Text = null;
         }
 
 
@@ -352,10 +353,7 @@ namespace BusinessLogic.CMD_DB
         }
 
 
-
-       
-
-
+         
 
 
 

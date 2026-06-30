@@ -39,10 +39,10 @@
             this.ToolStripMenu_btnShowInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenu_btnUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenu_btnDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.تسجيلزيارةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.ctrl_FeltterDataAppointment1 = new Program_Clinic_Management.Appointment.UControls.Ctrl_FeltterDataAppointment();
             this.ElipseDGV = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.ctrl_FeltterDataAppointment1 = new Program_Clinic_Management.Appointment.UControls.Ctrl_FeltterDataAppointment();
             ((System.ComponentModel.ISupportInitialize)(this.DataGV)).BeginInit();
             this.MyContextMS.SuspendLayout();
             this.SuspendLayout();
@@ -101,7 +101,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1256, 22);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(1282, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(134, 31);
             this.label1.TabIndex = 6;
@@ -115,7 +116,7 @@
             this.ToolStripMenu_btnShowInfo,
             this.ToolStripMenu_btnUpdate,
             this.ToolStripMenu_btnDelete,
-            this.تسجيلزيارةToolStripMenuItem});
+            this.ToolStripMenuItem});
             this.MyContextMS.Name = "MyContextMS";
             this.MyContextMS.Size = new System.Drawing.Size(205, 156);
             // 
@@ -143,11 +144,11 @@
             this.ToolStripMenu_btnDelete.Text = "حذف";
             this.ToolStripMenu_btnDelete.Click += new System.EventHandler(this.ToolStripMenu_btnDelete_Click);
             // 
-            // تسجيلزيارةToolStripMenuItem
+            // ToolStripMenuItem
             // 
-            this.تسجيلزيارةToolStripMenuItem.Name = "تسجيلزيارةToolStripMenuItem";
-            this.تسجيلزيارةToolStripMenuItem.Size = new System.Drawing.Size(204, 38);
-            this.تسجيلزيارةToolStripMenuItem.Text = "تسجيل زيارة";
+            this.ToolStripMenuItem.Name = "ToolStripMenuItem";
+            this.ToolStripMenuItem.Size = new System.Drawing.Size(204, 38);
+            this.ToolStripMenuItem.Text = "تسجيل زيارة";
             // 
             // btnUpdate
             // 
@@ -174,6 +175,11 @@
             this.btnUpdate.Text = "تعديل";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // ElipseDGV
+            // 
+            this.ElipseDGV.BorderRadius = 20;
+            this.ElipseDGV.TargetControl = this.DataGV;
+            // 
             // ctrl_FeltterDataAppointment1
             // 
             this.ctrl_FeltterDataAppointment1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -183,11 +189,6 @@
             this.ctrl_FeltterDataAppointment1.Size = new System.Drawing.Size(766, 49);
             this.ctrl_FeltterDataAppointment1.TabIndex = 11;
             this.ctrl_FeltterDataAppointment1.TrueSearchAll = false;
-            // 
-            // ElipseDGV
-            // 
-            this.ElipseDGV.BorderRadius = 20;
-            this.ElipseDGV.TargetControl = this.DataGV;
             // 
             // FrmShowAppointments
             // 
@@ -220,7 +221,7 @@
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenu_btnShowInfo;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenu_btnUpdate;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenu_btnDelete;
-        private System.Windows.Forms.ToolStripMenuItem تسجيلزيارةToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem;
         private UControls.Ctrl_FeltterDataAppointment ctrl_FeltterDataAppointment1;
         private Guna.UI2.WinForms.Guna2Elipse ElipseDGV;
     }

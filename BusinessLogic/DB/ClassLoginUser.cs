@@ -32,7 +32,8 @@ namespace BusinessLogic.DB
                 U.Username,
                 R.RoleName,
                 P.PersonId,
-                (P.FirstName + ' ' + P.LastName) AS FullName,
+                P.FirstName , 
+                P.LastName  ,
                 P.Gender,
                 P.BirthDate,
                 P.Phone,
@@ -65,7 +66,8 @@ namespace BusinessLogic.DB
                         PersonInfo = new ClassPerson
                         {
                             PersonID = Convert.ToInt32(dr["PersonId"]),
-                            FullName = dr["FullName"].ToString(),
+                            FirstName = dr["FirstName"].ToString(),
+                            LastName = dr["LastName"].ToString(),
                             Gender = dr["Gender"].ToString(),
                             BirthDate = Convert.ToDateTime( dr["BirthDate"] ),
                             Phone = dr["Phone"].ToString(),

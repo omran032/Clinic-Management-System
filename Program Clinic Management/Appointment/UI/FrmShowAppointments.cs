@@ -22,17 +22,48 @@ namespace Program_Clinic_Management.Appointment.UI
             InitializeComponent();
 
             ClassStyleAndColor.Style_DataGridView(DataGV);
+
+            DistributionPowers();
             LoadDataInTable();
 
              SettingsControls();
         }
+
+
+
+        bool UserIsDoctor = false;
+        /// <summary>
+        /// مثود عرض الصلاحيات حسب الدور
+        /// </summary>
+        void DistributionPowers()
+        {
+            string Role = ClassUser.UserInfo.Role;
+            if (Role == "Doctor")
+            {
+                UserIsDoctor = true;
+
+                btnUpdate.Visible = false;
+                // اخفاء خيارات القائمة
+                ToolStripMenu_btnUpdate.Visible = false;
+                ToolStripMenu_btnDelete.Visible = false;
+                ToolStripMenuItem.Visible = false;
+                return;
+            }
+        }
+
+
+
+
+
+
+
 
         #region   ***** أوامر *****
 
         // تحميل البيانات في الجدول 
         void LoadDataInTable()
         {
-            DT_InfoPatients = ClsCMD_TableAppointments.GetAppointments(false);
+            DT_InfoPatients = ClsCMD_TableAppointments.GetAppointments(false , UserIsDoctor);
             DataGV.DataSource = DT_InfoPatients;
             FormatPatientsGrid();
 
@@ -144,6 +175,21 @@ namespace Program_Clinic_Management.Appointment.UI
 
         #region   ***** أزرار وعناصر *****
 
+        // عرض معلومات الموعد
+        private void ToolStripMenu_btnShowInfo_Click(object sender, EventArgs e)
+        {
+            SettingsControls();
+            if (AppointmentID == 0 || AppointmentInfo == null)
+            {
+                MessageBox.Show("اختر الموعد من الجدول أولاً", "الموعد غير معروف", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                return;
+            }
+
+            FrmInfoAppointment frmInfoAppointment = new FrmInfoAppointment(AppointmentInfo);
+            MyTools.ShowForm(frmInfoAppointment);
+
+        }
+
         // زر الحذف
         private void ToolStripMenu_btnDelete_Click(object sender, EventArgs e)
         {
@@ -178,21 +224,6 @@ namespace Program_Clinic_Management.Appointment.UI
         }
 
 
-        // عرض معلومات الموعد
-        private void ToolStripMenu_btnShowInfo_Click(object sender, EventArgs e)
-        {
-            SettingsControls();
-            if (AppointmentID == 0 || AppointmentInfo == null)
-            {
-                MessageBox.Show("اختر الموعد من الجدول أولاً", "الموعد غير معروف", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
-                return;
-            }
-
-            FrmInfoAppointment frmInfoAppointment = new FrmInfoAppointment(AppointmentInfo);
-            MyTools.ShowForm(frmInfoAppointment);
-
-        }
-
         //زر التعديل
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -214,5 +245,6 @@ namespace Program_Clinic_Management.Appointment.UI
 
         #endregion
 
+        
     }
 }

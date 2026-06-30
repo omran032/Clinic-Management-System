@@ -1,4 +1,6 @@
 ﻿using BusinessLogic.InfoTable;
+using Program_Clinic_Management.Appointment;
+using Program_Clinic_Management.Manage_Users;
 using Program_Clinic_Management.Patients;
 using Program_Clinic_Management.Visits;
 using System;
@@ -44,6 +46,21 @@ namespace Program_Clinic_Management.Dashboard
         {
             FrmManageVisits manageVisits = new FrmManageVisits();
             MyTools.ShowForm(manageVisits);
+        }
+
+        // زر إدارة المواعيد
+        private void btn_Appointments_Click(object sender, EventArgs e)
+        {
+            FrmAppointments frmAppointments = new FrmAppointments();
+            MyTools.ShowForm(frmAppointments);
+        }
+
+        // زر عرض الملف الشخصي
+        private void btnMyProfile_Click(object sender, EventArgs e)
+        {
+            FrmShowInfoUser showInfoUser = new FrmShowInfoUser(ClassUser.UserInfo.UserID, "My Profile");
+            MyTools.ShowForm(showInfoUser);
+
         }
     }
 }

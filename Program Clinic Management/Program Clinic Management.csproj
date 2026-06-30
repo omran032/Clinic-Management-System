@@ -166,6 +166,24 @@
     <Compile Include="Login\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manage Users\FrmAdd_UpdateUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage Users\FrmAdd_UpdateUsers.Designer.cs">
+      <DependentUpon>FrmAdd_UpdateUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage Users\FrmManageUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage Users\FrmManageUsers.Designer.cs">
+      <DependentUpon>FrmManageUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage Users\FrmShowInfoUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage Users\FrmShowInfoUser.Designer.cs">
+      <DependentUpon>FrmShowInfoUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Patients\FrmManagePatients.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -317,6 +335,15 @@
     <EmbeddedResource Include="Login\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Manage Users\FrmAdd_UpdateUsers.resx">
+      <DependentUpon>FrmAdd_UpdateUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage Users\FrmManageUsers.resx">
+      <DependentUpon>FrmManageUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage Users\FrmShowInfoUser.resx">
+      <DependentUpon>FrmShowInfoUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Patients\FrmManagePatients.resx">
       <DependentUpon>FrmManagePatients.cs</DependentUpon>
     </EmbeddedResource>
@@ -390,6 +417,7 @@
     <Content Include="ClinicSystemDB_log.ldf">
       <DependentUpon>ClinicSystemDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\My Profile.png" />
     <None Include="Resources\Add.png" />
     <None Include="Resources\Patient.png" />
     <None Include="Resources\Doctor.png" />

@@ -51,6 +51,7 @@
     <Compile Include="ClassStyleAndColor.cs" />
     <Compile Include="AppointmentSmartEngine\ClsAppointmentSmartEngine.cs" />
     <Compile Include="CMD_DB\ClsCMD_Backup.cs" />
+    <Compile Include="CMD_DB\ClsCMD_ManageUsers.cs" />
     <Compile Include="CMD_DB\ClsCMD_TablePatients.cs" />
     <Compile Include="CMD_DB\ClsCMD_TablePayments.cs" />
     <Compile Include="CMD_DB\ClsCMD_TableAppointments.cs" />

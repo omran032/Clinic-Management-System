@@ -808,55 +808,75 @@ INNER JOIN VisitTypes vt ON a.VisitTypeId = vt.VisitTypeId
 
 
 
-
         /// <summary>
         /// إرجاع المواعيد مع معلومات الطبيب والمريض ونوع الزيارة.
         /// إذا wasUpcoming = true → يرجع المواعيد المتبقية فقط.
         /// إذا wasUpcoming = false → يرجع كل المواعيد.
+        /// إذا UserIsDoctor = true → يرجع فقط مواعيد الطبيب الحالي.
         /// </summary>
-        public static DataTable GetAppointments(bool wasUpcoming)
+        public static DataTable GetAppointments(bool wasUpcoming, bool UserIsDoctor = false)
         {
+            int DoctorID = 0;
+
+            // إذا المستخدم طبيب → نأخذ معرفه
+            if (UserIsDoctor)
+            {
+                DoctorID = ClassUser.UserInfo.DoctorInfo.DoctorID;
+            }
+
+            // شرط المواعيد المتبقية
             string condition = wasUpcoming ? "WHERE A.AppointmentDate >= GETDATE()" : "";
 
-            string query = $@" SELECT 
-                         -- معلومات الموعد
-    A.AppointmentId,
-    A.AppointmentDate,
-    A.Status,
+            // إذا المستخدم طبيب → نضيف شرط إضافي
+            if (UserIsDoctor)
+            {
+                // إذا كان هناك شرط سابق (wasUpcoming = true)
+                if (!string.IsNullOrEmpty(condition))
+                    condition += $" AND A.DoctorId = {DoctorID}";
+                else
+                    condition = $"WHERE A.DoctorId = {DoctorID}";
+            }
 
-                        -- معلومات المريض (Persons)
-     P.PersonId,
-     P.Phone As PatientPhone,
-    (P.FirstName + ' ' + P.LastName) AS PatientName,
+            string query = $@"
+        SELECT 
+            -- معلومات الموعد
+            A.AppointmentId,
+            A.AppointmentDate,
+            A.Status,
 
-                        -- معلومات المريض (Patients)
-    PT.PatientId AS [ID Patiient],
+            -- معلومات المريض (Persons)
+            P.PersonId,
+            P.Phone AS PatientPhone,
+            (P.FirstName + ' ' + P.LastName) AS PatientName,
 
-                        -- معلومات الطبيب
-    D.DoctorId,
-    (DP.FirstName + ' ' + DP.LastName) AS DoctorName,
-    DP.Phone AS DoctorPhone,
-    S.Name AS SpecializationName,
+            -- معلومات المريض (Patients)
+            PT.PatientId AS [ID Patient],
 
-                        -- نوع الزيارة
-    VT.VisitTypeId,
-    VT.TypeName AS VisitTypeName
- 
-FROM Appointments A
-INNER JOIN Persons P ON A.PersonId = P.PersonId
-INNER JOIN Patients PT ON P.PersonId = PT.PersonId
-INNER JOIN Doctors D ON A.DoctorId = D.DoctorId
-INNER JOIN Persons DP ON D.PersonId = DP.PersonId
-INNER JOIN Specializations S ON D.SpecializationId = S.SpecializationId
-INNER JOIN VisitTypes VT ON A.VisitTypeId = VT.VisitTypeId
+            -- معلومات الطبيب
+            D.DoctorId,
+            (DP.FirstName + ' ' + DP.LastName) AS DoctorName,
+            DP.Phone AS DoctorPhone,
+            S.Name AS SpecializationName,
 
-{condition}
+            -- نوع الزيارة
+            VT.VisitTypeId,
+            VT.TypeName AS VisitTypeName
 
-ORDER BY A.AppointmentDate ASC";
+        FROM Appointments A
+        INNER JOIN Persons P ON A.PersonId = P.PersonId
+        INNER JOIN Patients PT ON P.PersonId = PT.PersonId
+        INNER JOIN Doctors D ON A.DoctorId = D.DoctorId
+        INNER JOIN Persons DP ON D.PersonId = DP.PersonId
+        INNER JOIN Specializations S ON D.SpecializationId = S.SpecializationId
+        INNER JOIN VisitTypes VT ON A.VisitTypeId = VT.VisitTypeId
 
+        {condition}
+
+        ORDER BY A.AppointmentDate ASC ";
 
             return ClassCommands.ShowData(query);
         }
+
 
 
 
@@ -876,13 +896,23 @@ ORDER BY A.AppointmentDate ASC";
 
         /// <summary>
         /// إرجاع المواعيد حسب نوع الفلترة المطلوبة.
-        /// تعتمد على Enum واحد فقط + قيمة الفلترة عند الحاجة.
+        /// إذا UserIsDoctor = true → يعرض فقط مواعيد الطبيب الحالي.
+        /// إذا UserIsDoctor = false → يعرض كل المواعيد.
         /// </summary>
-        public static DataTable GetAppointmentsByFilter(AppointmentFilter filter, string value = "")
+        public static DataTable GetAppointmentsByFilter(AppointmentFilter filter, string value = "", bool UserIsDoctor = false)
         {
             string condition = "";
             var parameters = new Dictionary<string, object>();
 
+            // إذا المستخدم طبيب → نأخذ معرفه
+            int doctorId = 0;
+            if (UserIsDoctor)
+            {
+                doctorId = ClassUser.UserInfo.DoctorInfo.DoctorID;
+            }
+
+
+            // فلترة حسب النوع
             switch (filter)
             {
                 case AppointmentFilter.Today:
@@ -892,15 +922,13 @@ ORDER BY A.AppointmentDate ASC";
                 case AppointmentFilter.ThisWeek:
                     condition = @"
                 WHERE A.AppointmentDate >= DATEADD(DAY, 1 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE))
-                AND   A.AppointmentDate <  DATEADD(DAY, 8 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE))
-            ";
+                AND   A.AppointmentDate <  DATEADD(DAY, 8 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE)) ";
                     break;
 
                 case AppointmentFilter.ThisMonth:
                     condition = @"
                 WHERE MONTH(A.AppointmentDate) = MONTH(GETDATE())
-                AND   YEAR(A.AppointmentDate) = YEAR(GETDATE())
-            ";
+                AND   YEAR(A.AppointmentDate) = YEAR(GETDATE())  ";
                     break;
 
                 case AppointmentFilter.DoctorId:
@@ -932,6 +960,21 @@ ORDER BY A.AppointmentDate ASC";
                 default:
                     condition = "";
                     break;
+            }
+
+            // إضافة شرط الطبيب إذا كان المستخدم طبيب
+            if (UserIsDoctor)
+            {
+                if (string.IsNullOrWhiteSpace(condition))
+                {
+                    condition = $"WHERE D.DoctorId = @CurrentDoctorId";
+                }
+                else
+                {
+                    condition += $" AND D.DoctorId = @CurrentDoctorId";
+                }
+
+                parameters.Add("@CurrentDoctorId", doctorId);
             }
 
             string query = $@"
@@ -974,6 +1017,7 @@ ORDER BY A.AppointmentDate ASC";
 
             return ClassCommands.ShowData(query, parameters);
         }
+
 
 
 

@@ -15,6 +15,8 @@ namespace BusinessLogic.InfoTable
 
         public string Role  { get; set; }
 
+        public bool IsActive { get; set; }
+
         public ClassPerson PersonInfo { get; set; }
 
         // معلومات اذا كان طبيب

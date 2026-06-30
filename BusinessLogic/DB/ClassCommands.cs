@@ -258,6 +258,32 @@ namespace BusinessLogic
 
 
         /// <summary>
+        /// مثود عام لجلب قيمة واحدة فقط من قاعدة البيانات (SELECT Scalar)
+        /// يرجع Object ويمكن تحويله لاحقاً لأي نوع.
+        /// </summary>
+        public static object ExecuteScalarObject(string query, Dictionary<string, object> parameters)
+        {
+            if (string.IsNullOrWhiteSpace(ClsConnectionDB.connectionString))
+                throw new InvalidOperationException("ClsConnectionDB.connectionString غير مهيّأة.");
+
+            using (SqlConnection conn = new SqlConnection(ClsConnectionDB.connectionString))
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                // ربط الباراميترات
+                foreach (var param in parameters)
+                {
+                    cmd.Parameters.AddWithValue(param.Key, param.Value ?? DBNull.Value);
+                }
+
+                conn.Open();
+                object result = cmd.ExecuteScalar();
+
+                return result == DBNull.Value ? null : result;
+            }
+        }
+
+
+        /// <summary>
         /// تنفيذ استعلام (إضافة – تعديل – حذف – نسخ احتياطي)
         /// يرجع true إذا نجحت العملية، false إذا فشلت
         /// </summary>

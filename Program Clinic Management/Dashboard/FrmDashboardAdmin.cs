@@ -4,9 +4,12 @@ using BusinessLogic.InfoTable;
 using BusinessLogic.ToolChart;
 using Program_Clinic_Management.Appointment;
 using Program_Clinic_Management.Doctors;
+using Program_Clinic_Management.Login;
+using Program_Clinic_Management.Manage_Users;
 using Program_Clinic_Management.Patients;
 using Program_Clinic_Management.Persons;
 using Program_Clinic_Management.Settings.Backup;
+using Program_Clinic_Management.Settings.Logs;
 using Program_Clinic_Management.Visits;
 using System;
 using System.Collections.Generic;
@@ -61,7 +64,7 @@ namespace Program_Clinic_Management.Admin
         {
             string Role = ClassUser.UserInfo.Role;
 
-              if (Role == "Doctor")
+            if (Role == "Doctor")
             {
                 btn_Logs.Visible = false;
                 btn_Backup.Visible = false;
@@ -69,7 +72,11 @@ namespace Program_Clinic_Management.Admin
             }
             else if (Role == "Reception")
             {
-
+                btn_Logs.Visible = false;
+                btn_Backup.Visible = false;
+                btn_Doctors.Visible = false;
+                btn_ManageUsers.Visible = false;
+                btnSettings.Visible = false;
             }
         }
 
@@ -157,6 +164,28 @@ namespace Program_Clinic_Management.Admin
             FrmManageVisits manageVisits = new FrmManageVisits();
             MyTools.ShowForm(manageVisits);
 
+        }
+
+        // زر اظهار واجهة عرض الموظفين
+        private void btn_ManageUsers_Click(object sender, EventArgs e)
+        {
+            FrmManageUsers manageUsers = new FrmManageUsers();
+            MyTools.ShowForm(manageUsers);
+        }
+
+        // زر عرض الملف الشخصي
+        private void btnMyProfile_Click(object sender, EventArgs e)
+        {
+            FrmShowInfoUser showInfoUser = new FrmShowInfoUser(ClassUser.UserInfo.UserID , "My Profile");
+            showInfoUser.ShowDialog();
+
+        }
+
+        // زر عرض واجهة السجلات
+        private void btn_Logs_Click(object sender, EventArgs e)
+        {
+            FrmLogs frmLogs = new FrmLogs();
+            frmLogs.ShowDialog();
         }
     }
 }

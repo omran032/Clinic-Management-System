@@ -22,6 +22,7 @@ namespace Program_Clinic_Management.Appointment
 
             MyTools.MoveControl(pnl_TopBar, this);
 
+            DistributionPowers();
         }
 
 
@@ -39,15 +40,13 @@ namespace Program_Clinic_Management.Appointment
             if (Role == "Doctor")
             {
                 Pnl_Option.Visible = false;
-                this.Size = new Size(1471, 615);
+                this.Size = new Size(1471, 620);
 
                 // عرض واجهة الواعيد فقط
                 FrmShowAppointments showAppointments = new FrmShowAppointments();
                 MyTools.SitingsPanel(PnlShowForms, showAppointments);
-
                 return;
             }
-           
         }
 
 

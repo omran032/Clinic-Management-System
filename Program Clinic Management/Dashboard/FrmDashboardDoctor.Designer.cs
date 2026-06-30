@@ -35,7 +35,7 @@
             this.lblNameUser = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PnlList = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnSettings = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnMyProfile = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btn_Visits = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btn_Appointments = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnPatients = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -80,6 +80,7 @@
             this.lblDate.Size = new System.Drawing.Size(260, 19);
             this.lblDate.TabIndex = 3;
             this.lblDate.Text = " AM 8:30  2026 / 5 / 25   الإثنين";
+            this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblNameUser
             // 
@@ -107,7 +108,7 @@
             // PnlList
             // 
             this.PnlList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
-            this.PnlList.Controls.Add(this.btnSettings);
+            this.PnlList.Controls.Add(this.btnMyProfile);
             this.PnlList.Controls.Add(this.btn_Visits);
             this.PnlList.Controls.Add(this.btn_Appointments);
             this.PnlList.Controls.Add(this.btnPatients);
@@ -117,29 +118,30 @@
             this.PnlList.Size = new System.Drawing.Size(240, 627);
             this.PnlList.TabIndex = 3;
             // 
-            // btnSettings
+            // btnMyProfile
             // 
-            this.btnSettings.BackColor = System.Drawing.Color.Transparent;
-            this.btnSettings.BorderColor = System.Drawing.Color.Transparent;
-            this.btnSettings.BorderRadius = 5;
-            this.btnSettings.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSettings.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSettings.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSettings.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSettings.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSettings.FillColor = System.Drawing.Color.RoyalBlue;
-            this.btnSettings.FillColor2 = System.Drawing.Color.Cyan;
-            this.btnSettings.FocusedColor = System.Drawing.Color.Transparent;
-            this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSettings.ForeColor = System.Drawing.Color.White;
-            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
-            this.btnSettings.ImageOffset = new System.Drawing.Point(-12, 0);
-            this.btnSettings.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnSettings.Location = new System.Drawing.Point(12, 362);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(210, 47);
-            this.btnSettings.TabIndex = 27;
-            this.btnSettings.Text = "Sittings";
+            this.btnMyProfile.BackColor = System.Drawing.Color.Transparent;
+            this.btnMyProfile.BorderColor = System.Drawing.Color.Transparent;
+            this.btnMyProfile.BorderRadius = 5;
+            this.btnMyProfile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnMyProfile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnMyProfile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnMyProfile.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnMyProfile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnMyProfile.FillColor = System.Drawing.Color.RoyalBlue;
+            this.btnMyProfile.FillColor2 = System.Drawing.Color.Cyan;
+            this.btnMyProfile.FocusedColor = System.Drawing.Color.Transparent;
+            this.btnMyProfile.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMyProfile.ForeColor = System.Drawing.Color.White;
+            this.btnMyProfile.Image = global::Program_Clinic_Management.Properties.Resources.My_Profile;
+            this.btnMyProfile.ImageOffset = new System.Drawing.Point(-3, 0);
+            this.btnMyProfile.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnMyProfile.Location = new System.Drawing.Point(12, 367);
+            this.btnMyProfile.Name = "btnMyProfile";
+            this.btnMyProfile.Size = new System.Drawing.Size(210, 47);
+            this.btnMyProfile.TabIndex = 28;
+            this.btnMyProfile.Text = "ملفي الشخصي";
+            this.btnMyProfile.Click += new System.EventHandler(this.btnMyProfile_Click);
             // 
             // btn_Visits
             // 
@@ -159,7 +161,7 @@
             this.btn_Visits.Image = global::Program_Clinic_Management.Properties.Resources.Date;
             this.btn_Visits.ImageOffset = new System.Drawing.Point(-15, 0);
             this.btn_Visits.ImageSize = new System.Drawing.Size(30, 30);
-            this.btn_Visits.Location = new System.Drawing.Point(12, 248);
+            this.btn_Visits.Location = new System.Drawing.Point(12, 256);
             this.btn_Visits.Name = "btn_Visits";
             this.btn_Visits.Size = new System.Drawing.Size(210, 47);
             this.btn_Visits.TabIndex = 17;
@@ -184,11 +186,12 @@
             this.btn_Appointments.Image = global::Program_Clinic_Management.Properties.Resources.Appointment;
             this.btn_Appointments.ImageOffset = new System.Drawing.Point(-15, 0);
             this.btn_Appointments.ImageSize = new System.Drawing.Size(30, 30);
-            this.btn_Appointments.Location = new System.Drawing.Point(12, 139);
+            this.btn_Appointments.Location = new System.Drawing.Point(12, 145);
             this.btn_Appointments.Name = "btn_Appointments";
             this.btn_Appointments.Size = new System.Drawing.Size(210, 47);
             this.btn_Appointments.TabIndex = 15;
             this.btn_Appointments.Text = "المواعيد";
+            this.btn_Appointments.Click += new System.EventHandler(this.btn_Appointments_Click);
             // 
             // btnPatients
             // 
@@ -245,9 +248,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private BusinessLogic.Ctrl_IconProjectClinic ctrl_IconProjectClinic1;
         private Guna.UI2.WinForms.Guna2Panel PnlList;
-        private Guna.UI2.WinForms.Guna2GradientButton btnSettings;
         private Guna.UI2.WinForms.Guna2GradientButton btn_Visits;
         private Guna.UI2.WinForms.Guna2GradientButton btn_Appointments;
         private Guna.UI2.WinForms.Guna2GradientButton btnPatients;
+        private Guna.UI2.WinForms.Guna2GradientButton btnMyProfile;
     }
 }

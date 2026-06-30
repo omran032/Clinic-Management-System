@@ -119,7 +119,7 @@
             "أسم المريض",
             "حالة الموعد",
             "رقم هاتف المريض"});
-            this.Combx_TypeFeltter.Location = new System.Drawing.Point(123, 8);
+            this.Combx_TypeFeltter.Location = new System.Drawing.Point(127, 10);
             this.Combx_TypeFeltter.Name = "Combx_TypeFeltter";
             this.Combx_TypeFeltter.Size = new System.Drawing.Size(250, 36);
             this.Combx_TypeFeltter.TabIndex = 12;

@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static BusinessLogic.CMD_DB.ClsCMD_TableAppointments;
 using static BusinessLogic.CMD_DB.ClsCMD_TableDoctors;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Program_Clinic_Management.Appointment.UControls
 {
@@ -21,14 +22,28 @@ namespace Program_Clinic_Management.Appointment.UControls
             InitializeComponent();
         }
 
+        // تحديد اذا المستخدم طبيب ام لا ...لعرض صلاحياته الخاصة بالواجهة 
+        bool UserIsDoctor = false;
+
         // تحميل العنصر
         private void Ctrl_FeltterDataAppointment_Load(object sender, EventArgs e)
         {
             if (DesignMode) return;
 
-            // Combox تعبئة اسماء الاطباء داخل عنصر
-            ClsCMD_TableDoctors.FillDoctorsComboBox(Combx_Doctors);
-            Combx_Doctors.Text = null;
+            string Role = ClassUser.UserInfo.Role;
+            if(Role == "Doctor") // هل السمتخدم طبيب
+            {
+                UserIsDoctor = true;
+                Combx_TypeFeltter.Items.Remove("مواعيد الطبيب");
+            }
+
+            else // مستخدم آخر
+            {
+                // Combox تعبئة اسماء الاطباء داخل عنصر
+                ClsCMD_TableDoctors.FillDoctorsComboBox(Combx_Doctors);
+                Combx_Doctors.Text = null;
+            }
+            
 
         }
 
@@ -106,7 +121,7 @@ namespace Program_Clinic_Management.Appointment.UControls
                 case "عرض الكل":
                     btn_Search.Enabled = false;
                     Txt_TextSearch.Enabled = false;
-                    DataAppointment = ClsCMD_TableAppointments.GetAppointmentsByFilter(AppointmentFilter.All);  // Table All Info 
+                    DataAppointment = ClsCMD_TableAppointments.GetAppointmentsByFilter(AppointmentFilter.All, null, UserIsDoctor);  // Table All Info 
 
                     EventShowDataAppointmentsInDataTable?.Invoke(DataAppointment); // تنفيذ حدث عرض البيانات في الجدول
                     break;
@@ -114,7 +129,7 @@ namespace Program_Clinic_Management.Appointment.UControls
                 case "مواعيد اليوم":
                     btn_Search.Enabled = false;
                     Txt_TextSearch.Enabled = false;
-                    DataAppointment = ClsCMD_TableAppointments.GetAppointmentsByFilter(AppointmentFilter.Today);
+                    DataAppointment = ClsCMD_TableAppointments.GetAppointmentsByFilter(AppointmentFilter.Today, null, UserIsDoctor);
 
                     EventShowDataAppointmentsInDataTable?.Invoke(DataAppointment); // تنفيذ حدث عرض البيانات في الجدول
                     break;
@@ -122,7 +137,7 @@ namespace Program_Clinic_Management.Appointment.UControls
                 case "مواعيد الأسبوع":
                     btn_Search.Enabled = false;
                     Txt_TextSearch.Enabled = false;
-                    DataAppointment = ClsCMD_TableAppointments.GetAppointmentsByFilter(AppointmentFilter.ThisWeek);
+                    DataAppointment = ClsCMD_TableAppointments.GetAppointmentsByFilter(AppointmentFilter.ThisWeek, null, UserIsDoctor);
 
                     EventShowDataAppointmentsInDataTable?.Invoke(DataAppointment); // تنفيذ حدث عرض البيانات في الجدول
                     break;
@@ -130,7 +145,7 @@ namespace Program_Clinic_Management.Appointment.UControls
                 case "مواعيد الشهر":
                     btn_Search.Enabled = false;
                     Txt_TextSearch.Enabled = false;
-                    DataAppointment = ClsCMD_TableAppointments.GetAppointmentsByFilter(AppointmentFilter.ThisMonth);
+                    DataAppointment = ClsCMD_TableAppointments.GetAppointmentsByFilter(AppointmentFilter.ThisMonth , null , UserIsDoctor);
 
                     EventShowDataAppointmentsInDataTable?.Invoke(DataAppointment); // تنفيذ حدث عرض البيانات في الجدول
                     break;
@@ -180,8 +195,9 @@ namespace Program_Clinic_Management.Appointment.UControls
                     MessageBox.Show("قم بإختيار نوع البحث أولاً", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
+            //  تحدد اذا المستخدم طبيب ام لاء ... حتى  نعرض مواعيده فقط UserIsDoctor
             // إظهار البيانات
-            DataAppointment = ClsCMD_TableAppointments.GetAppointmentsByFilter(AppointmentFilter_, SearchValue);
+            DataAppointment = ClsCMD_TableAppointments.GetAppointmentsByFilter(AppointmentFilter_, SearchValue  , UserIsDoctor);
 
             EventShowDataAppointmentsInDataTable?.Invoke(DataAppointment); // تنفيذ حدث عرض البيانات في الجدول
 
