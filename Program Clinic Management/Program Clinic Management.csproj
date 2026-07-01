@@ -214,6 +214,18 @@
     <Compile Include="Patients\UI\Frm_InfoPatient.Designer.cs">
       <DependentUpon>Frm_InfoPatient.cs</DependentUpon>
     </Compile>
+    <Compile Include="Payments\FrmAddPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payments\FrmAddPayment.Designer.cs">
+      <DependentUpon>FrmAddPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payments\FrmManagePayments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payments\FrmManagePayments.Designer.cs">
+      <DependentUpon>FrmManagePayments.cs</DependentUpon>
+    </Compile>
     <Compile Include="Persons\FrmManagePersons.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,6 +299,12 @@
     <Compile Include="Visits\FrmManageVisits.Designer.cs">
       <DependentUpon>FrmManageVisits.cs</DependentUpon>
     </Compile>
+    <Compile Include="Visits\UControls\CtrlInfoVisit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Visits\UControls\CtrlInfoVisit.Designer.cs">
+      <DependentUpon>CtrlInfoVisit.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Dashboard\FrmDashboardAdmin.resx">
       <DependentUpon>FrmDashboardAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -359,6 +377,12 @@
     <EmbeddedResource Include="Patients\UI\Frm_InfoPatient.resx">
       <DependentUpon>Frm_InfoPatient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Payments\FrmAddPayment.resx">
+      <DependentUpon>FrmAddPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payments\FrmManagePayments.resx">
+      <DependentUpon>FrmManagePayments.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Persons\FrmManagePersons.resx">
       <DependentUpon>FrmManagePersons.cs</DependentUpon>
     </EmbeddedResource>
@@ -397,6 +421,9 @@
     <EmbeddedResource Include="Visits\FrmManageVisits.resx">
       <DependentUpon>FrmManageVisits.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Visits\UControls\CtrlInfoVisit.resx">
+      <DependentUpon>CtrlInfoVisit.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -417,6 +444,7 @@
     <Content Include="ClinicSystemDB_log.ldf">
       <DependentUpon>ClinicSystemDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Payment.png" />
     <None Include="Resources\My Profile.png" />
     <None Include="Resources\Add.png" />
     <None Include="Resources\Patient.png" />
@@ -452,7 +480,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Visits\UControls\" />
+    <Folder Include="Payments\Ctrl\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">

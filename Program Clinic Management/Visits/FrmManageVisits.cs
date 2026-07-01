@@ -3,6 +3,7 @@ using BusinessLogic.CMD_DB;
 using BusinessLogic.InfoTable;
 using Program_Clinic_Management.Appointment;
 using Program_Clinic_Management.Patients.UI;
+using Program_Clinic_Management.Payments;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -75,9 +76,15 @@ namespace Program_Clinic_Management.Visits
                 btnAddVisit.Visible = false;
                 btnDeleteVisit.Visible = false;
                 ComboxDoctors.Text = ClassUser.UserInfo.PersonInfo.FullName;
- 
+                ToolStrip_btnAddPayment.Visible = false;
+
                 return;
             }
+
+            else if(Role == "Reception")
+            {    
+            }
+
             // Combox تعبئة اسماء الاطباء بالعنصر
             ClsCMD_TableDoctors.FillDoctorsComboBox(ComboxDoctors);
             ComboxDoctors.Text = null;
@@ -248,6 +255,22 @@ namespace Program_Clinic_Management.Visits
 
         }
 
+        // زر إضافة دفعة للزيارة
+        private void ToolStrip_btnAddPayment_Click(object sender, EventArgs e)
+        {
+            if (VisittID <= 0) return;
+
+            // فحص اذا كانت الزيارة تم تسجيل دفعة فيها أم لاء
+            if (ClsCMD_TablePayments.GetPaymentIdByVisit(VisittID) != null)
+            {
+                MessageBox.Show("تم دفع رسوم الزيارة ..لذلك لا يمكن إضافة دفعة جديدة عليها", "لا يمكن إضافة دفعة", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+            FrmAddPayment addPayment = new FrmAddPayment(VisittID);
+            MyTools.ShowForm(addPayment);
+        }
 
         // زر عرض كل الزيارات لكل الاطباء
         private void btnShowAllVisits_Click(object sender, EventArgs e)
@@ -311,6 +334,12 @@ namespace Program_Clinic_Management.Visits
 
 
         #endregion
+
+
+
+     
+
+
 
     }
 }

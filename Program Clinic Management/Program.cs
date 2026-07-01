@@ -23,10 +23,10 @@ namespace Program_Clinic_Management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-         // Application.Run(new FrmLogin());
+         Application.Run(new FrmLogin());
 
 
-           Application.Run(new FrmLogs());
+          // Application.Run(new FrmLogs());
          //   Application.Run(new FrmDashboardAdmin());
 
             // Application.Run(new FrmAddVisit());

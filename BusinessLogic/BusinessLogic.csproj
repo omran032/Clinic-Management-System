@@ -65,6 +65,7 @@
     <Compile Include="InfoTable\ClassAppointment.cs" />
     <Compile Include="InfoTable\ClassDoctor.cs" />
     <Compile Include="InfoTable\ClassPatients.cs" />
+    <Compile Include="InfoTable\ClassPayments.cs" />
     <Compile Include="InfoTable\ClassPerson.cs" />
     <Compile Include="InfoTable\ClassUser.cs" />
     <Compile Include="InfoTable\ClassVisit.cs" />

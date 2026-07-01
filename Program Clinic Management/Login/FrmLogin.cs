@@ -78,7 +78,7 @@ namespace Program_Clinic_Management.Login
                 dashboardAdmin.ShowDialog();
             }
 
-            this.Hide();
+           // this.Hide();
             // Logs التسجيل بال
             ClassLogs.AddLog(ClassUser.UserInfo.UserID, LogAction.Login.ToString(), "Users", ClassUser.UserInfo.UserID, "User logged in");
 
@@ -137,7 +137,7 @@ namespace Program_Clinic_Management.Login
               "نسيت كلمة المرور",
               MessageBoxButtons.OK,
               MessageBoxIcon.Information
-          );
+                           );
 
             // هون يفضل تبدل الرقم صفر ....ب معرف المستخدم الحقيقي
             ClassLogs.AddLog(0, LogAction.ForgotPassword.ToString(), "Users", 0, "User requested password reset");

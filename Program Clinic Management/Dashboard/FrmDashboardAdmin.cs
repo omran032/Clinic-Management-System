@@ -7,6 +7,7 @@ using Program_Clinic_Management.Doctors;
 using Program_Clinic_Management.Login;
 using Program_Clinic_Management.Manage_Users;
 using Program_Clinic_Management.Patients;
+using Program_Clinic_Management.Payments;
 using Program_Clinic_Management.Persons;
 using Program_Clinic_Management.Settings.Backup;
 using Program_Clinic_Management.Settings.Logs;
@@ -188,11 +189,19 @@ namespace Program_Clinic_Management.Admin
             frmLogs.ShowDialog();
         }
 
+        // زر عرض واجهة المدفوعات
+        private void btn_Payments_Click(object sender, EventArgs e)
+        {
+            FrmManagePayments managePayments = new FrmManagePayments();
+            MyTools.ShowForm(managePayments);
+
+        }
+
         // حدث يعمل عند اغلاق الواجهة
         private void FrmDashboardAdmin_FormClosed(object sender, FormClosedEventArgs e)
         {
             // إظهار شاشة تسجيل الدخول الأصلية
-            Application.OpenForms["FrmLogin"].Show();
+          //  Application.OpenForms["FrmLogin"].Show();
 
         }
 
@@ -201,7 +210,9 @@ namespace Program_Clinic_Management.Admin
         {
             this.Close();
             // إظهار شاشة تسجيل الدخول الأصلية
-            Application.OpenForms["FrmLogin"].Show();
+          //  Application.OpenForms["FrmLogin"].Show();
         }
+
+       
     }
 }

@@ -52,6 +52,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.DataGV = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.MyContextMS = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ToolStrip_btnAddPayment = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.lblTimeAppointment = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -74,16 +76,17 @@
             this.btnAddVisit = new Guna.UI2.WinForms.Guna2Button();
             this.btnDeleteVisit = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdateVisit = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnShowAllVisits = new Guna.UI2.WinForms.Guna2Button();
             this.ElipseDGV = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.ElipseForm = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnl_TopBar.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGV)).BeginInit();
+            this.MyContextMS.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -340,6 +343,7 @@
             this.DataGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DataGV.ColumnHeadersHeight = 4;
             this.DataGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.DataGV.ContextMenuStrip = this.MyContextMS;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -376,6 +380,23 @@
             this.DataGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DataGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.DataGV.SelectionChanged += new System.EventHandler(this.DataGV_SelectionChanged);
+            // 
+            // MyContextMS
+            // 
+            this.MyContextMS.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MyContextMS.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.MyContextMS.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStrip_btnAddPayment});
+            this.MyContextMS.Name = "MyContextMS";
+            this.MyContextMS.Size = new System.Drawing.Size(197, 64);
+            // 
+            // ToolStrip_btnAddPayment
+            // 
+            this.ToolStrip_btnAddPayment.Image = global::Program_Clinic_Management.Properties.Resources.Payment;
+            this.ToolStrip_btnAddPayment.Name = "ToolStrip_btnAddPayment";
+            this.ToolStrip_btnAddPayment.Size = new System.Drawing.Size(196, 38);
+            this.ToolStrip_btnAddPayment.Text = "إضافة دفعة";
+            this.ToolStrip_btnAddPayment.Click += new System.EventHandler(this.ToolStrip_btnAddPayment_Click);
             // 
             // guna2GroupBox1
             // 
@@ -699,32 +720,6 @@
             this.btnUpdateVisit.Text = "تعديل الزيارة";
             this.btnUpdateVisit.Click += new System.EventHandler(this.btnUpdateVisit_Click);
             // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(1139, 78);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(20, 18);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox2.TabIndex = 22;
-            this.guna2PictureBox2.TabStop = false;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(1139, 112);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(20, 18);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 21;
-            this.guna2PictureBox1.TabStop = false;
-            // 
             // btnShowAllVisits
             // 
             this.btnShowAllVisits.BorderRadius = 5;
@@ -752,6 +747,32 @@
             // 
             this.ElipseForm.BorderRadius = 20;
             this.ElipseForm.TargetControl = this;
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(1139, 78);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(20, 18);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox2.TabIndex = 22;
+            this.guna2PictureBox2.TabStop = false;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(1139, 112);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(20, 18);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 21;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // FrmManageVisits
             // 
@@ -794,6 +815,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGV)).EndInit();
+            this.MyContextMS.ResumeLayout(false);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
@@ -851,5 +873,7 @@
         private Guna.UI2.WinForms.Guna2Button btnShowAllVisits;
         private Guna.UI2.WinForms.Guna2Elipse ElipseDGV;
         private Guna.UI2.WinForms.Guna2Elipse ElipseForm;
+        private System.Windows.Forms.ContextMenuStrip MyContextMS;
+        private System.Windows.Forms.ToolStripMenuItem ToolStrip_btnAddPayment;
     }
 }
