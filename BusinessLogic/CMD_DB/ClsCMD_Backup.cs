@@ -108,7 +108,7 @@ namespace BusinessLogic.CMD_DB
         /// </summary>
         public static void LogBackupOperation(int userId, string backupPath)
         {
-            ClassLogs.AddLog(userId, LogAction.DatabaseBackup.ToString(), "Backup", 0, $"تم إنشاء نسخة احتياطية في: {backupPath}" );
+            ClassLogs.AddLog(userId, LogAction.UpdateDoctor.ToString(), "Backup", 0, $"تم إنشاء نسخة احتياطية في: {backupPath}" );
         }
 
         /// <summary>

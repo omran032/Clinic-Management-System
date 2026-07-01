@@ -39,9 +39,12 @@
             this.btn_Visits = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btn_Appointments = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnPatients = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.PicLogOut = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnlTopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PnlList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicLogOut)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTopBar
@@ -218,12 +221,41 @@
             this.btnPatients.Text = "المرضى";
             this.btnPatients.Click += new System.EventHandler(this.btnPatients_Click);
             // 
+            // PicLogOut
+            // 
+            this.PicLogOut.BackColor = System.Drawing.Color.Transparent;
+            this.PicLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PicLogOut.Image = ((System.Drawing.Image)(resources.GetObject("PicLogOut.Image")));
+            this.PicLogOut.Location = new System.Drawing.Point(1099, 651);
+            this.PicLogOut.Name = "PicLogOut";
+            this.PicLogOut.Size = new System.Drawing.Size(36, 33);
+            this.PicLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PicLogOut.TabIndex = 9;
+            this.PicLogOut.TabStop = false;
+            this.PicLogOut.Click += new System.EventHandler(this.PicLogOut_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(1135, 656);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 19);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "تسجيل خروج";
+            this.label2.Click += new System.EventHandler(this.PicLogOut_Click);
+            // 
             // FrmDashboardDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(247)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(1222, 692);
+            this.Controls.Add(this.PicLogOut);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.PnlList);
             this.Controls.Add(this.pnlTopBar);
             this.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -231,12 +263,15 @@
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "FrmDashboardDoctor";
             this.Text = "Dashboard Doctor";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmDashboardDoctor_FormClosed);
             this.Load += new System.EventHandler(this.FrmDashboardDoctor_Load);
             this.pnlTopBar.ResumeLayout(false);
             this.pnlTopBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PnlList.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PicLogOut)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -252,5 +287,7 @@
         private Guna.UI2.WinForms.Guna2GradientButton btn_Appointments;
         private Guna.UI2.WinForms.Guna2GradientButton btnPatients;
         private Guna.UI2.WinForms.Guna2GradientButton btnMyProfile;
+        private System.Windows.Forms.PictureBox PicLogOut;
+        private System.Windows.Forms.Label label2;
     }
 }

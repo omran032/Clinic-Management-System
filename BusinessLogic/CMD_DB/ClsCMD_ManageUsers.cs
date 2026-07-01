@@ -338,6 +338,28 @@ END CATCH
 
 
 
+        /// <summary>
+        /// تعبئة ComboBox بأسماء المستخدمين مع تخزين UserId داخل ValueMember
+        /// </summary>
+        public static void LoadUsers(ComboBox combo)
+        {
+            string query = @"
+        SELECT 
+            UserId,
+            Username
+        FROM Users
+        ORDER BY Username ASC
+    ";
+
+            DataTable dt = ClassCommands.ShowData(query);
+
+            combo.DataSource = dt;
+            combo.DisplayMember = "Username";   // يظهر الاسم
+            combo.ValueMember = "UserId";       // يخزن الـ ID
+            combo.SelectedIndex = -1;           // بدون اختيار افتراضي
+        }
+
+
 
 
     }

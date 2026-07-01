@@ -174,7 +174,7 @@ namespace Program_Clinic_Management.Patients
          int result =   ClsCMD_TablePatients.DeletePatientByID(PatientID);
             if(result == 1 )
             {     // حفظ العملية بالسجل
-                ClassLogs.AddLog(ClassUser.UserInfo.UserID, LogAction.Delete.ToString(), "Patients", PatientID, "حذف المريض");
+                ClassLogs.AddLog(ClassUser.UserInfo.UserID, LogAction.DeletePatient.ToString(), "Patients", PatientID, "حذف المريض");
 
                 LoadData();
             }

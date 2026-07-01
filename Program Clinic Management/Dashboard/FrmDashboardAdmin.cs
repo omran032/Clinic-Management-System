@@ -38,7 +38,7 @@ namespace Program_Clinic_Management.Admin
             DateTime now = DateTime.Now;
             lblDate.Text = now.ToString("tt h:mm   yyyy / MM / dd   dddd");
 
-            lblNameUser.Text = ClassUser.UserInfo.PersonInfo.FullName.Trim(); // عرض الاسم
+            lblNameUser.Text = ClassUser.UserInfo.Role + " : " +ClassUser.UserInfo.PersonInfo.FullName.Trim(); // عرض الاسم
 
               LoadData();
             DisginUI();
@@ -186,6 +186,22 @@ namespace Program_Clinic_Management.Admin
         {
             FrmLogs frmLogs = new FrmLogs();
             frmLogs.ShowDialog();
+        }
+
+        // حدث يعمل عند اغلاق الواجهة
+        private void FrmDashboardAdmin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // إظهار شاشة تسجيل الدخول الأصلية
+            Application.OpenForms["FrmLogin"].Show();
+
+        }
+
+        // تسجيل الخروج
+        private void PicLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            // إظهار شاشة تسجيل الدخول الأصلية
+            Application.OpenForms["FrmLogin"].Show();
         }
     }
 }

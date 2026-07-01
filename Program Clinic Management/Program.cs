@@ -8,6 +8,7 @@ using Program_Clinic_Management.Login;
 using Program_Clinic_Management.Manage_Users;
 using Program_Clinic_Management.Persons.UI;
 using Program_Clinic_Management.Settings.Backup;
+using Program_Clinic_Management.Settings.Logs;
 using Program_Clinic_Management.Visits;
 
 namespace Program_Clinic_Management
@@ -22,10 +23,10 @@ namespace Program_Clinic_Management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-          Application.Run(new FrmLogin());
+         // Application.Run(new FrmLogin());
 
 
-          // Application.Run(new FrmManageUsers());
+           Application.Run(new FrmLogs());
          //   Application.Run(new FrmDashboardAdmin());
 
             // Application.Run(new FrmAddVisit());

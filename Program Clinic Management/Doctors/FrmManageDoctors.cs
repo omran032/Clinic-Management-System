@@ -150,7 +150,7 @@ namespace Program_Clinic_Management.Doctors
 
             if (result == 1)
             {     // حفظ العملية بالسجل
-                ClassLogs.AddLog(ClassUser.UserInfo.UserID, LogAction.Delete.ToString(), "Doctors", DoctorID, "حذف الطبيب");
+                ClassLogs.AddLog(ClassUser.UserInfo.UserID, LogAction.DeleteDoctor.ToString(), "Doctors", DoctorID, "حذف الطبيب");
 
                 LoadData();
             }

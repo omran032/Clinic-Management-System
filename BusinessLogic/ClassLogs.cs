@@ -1,27 +1,19 @@
-﻿using System;
+﻿using BusinessLogic.InfoTable;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BusinessLogic
 {
     public class ClassLogs
     {
 
-        public enum LogAction
-        {
-            Login,
-            Logout,
-            Add,
-            Update,
-            Delete,
-            ForgotPassword,
-            ChangeStatus,
-            DatabaseBackup
-        }
+      
          
 
 
@@ -86,38 +78,60 @@ namespace BusinessLogic
             }
         }
 
-                 /////////////////////////////////////////////////////////////////////
-                 /////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////
+ 
 
         /// <summary>
-        /// إرجاع جميع سجلات الـ Logs مع معلومات المستخدم والشخص
-        /// مرتبة من الأقدم إلى الأحدث
+        /// جلب سجل العمليات مع معلومات المستخدم والشخص.
+        /// يمكن الفلترة حسب نوع العملية أو المستخدم أو الاثنين.
+        /// إذا لم يتم تمرير أي فلترة → يرجع كل السجلات.
         /// </summary>
-        public static DataTable GetAllLogsWithUserInfo()
+        public static DataTable GetAllLogsWithUserInfo(string actionFilter = null, int? userIdFilter = null)
         {
             string query = @"
-        SELECT 
-            L.LogID,
-            L.UserID,
-            L.Action,
-            L.TableName,
-            L.RecordID,
-            L.Description,
-            L.Timestamp,
+    SELECT 
+        L.LogId,
+        L.UserId,
+        L.Action,
+        L.RecordID,
+        L.Details,
+        L.Timestamp,
 
-            U.UserName AS UserLoginName,
-            U.IDPerson AS PersonID,
+        U.Username AS UserLoginName,
+        U.PersonId AS PersonID,
 
-            P.FirstName + ' ' + P.LastName AS PersonFullName
+        P.FirstName + ' ' + P.LastName AS PersonFullName
 
-        FROM Logs L
-        LEFT JOIN Users U ON L.UserID = U.UserID
-        LEFT JOIN Persons P ON U.IDPerson = P.PersonID
+    FROM Logs L
+    LEFT JOIN Users U ON L.UserId = U.UserId
+    LEFT JOIN Persons P ON U.PersonId = P.PersonId
+    WHERE 1 = 1
+    ";
 
-        ORDER BY L.Timestamp ASC ";
+            // بناء الفلاتر ديناميكياً
+            var parameters = new Dictionary<string, object>();
 
-            return ClassCommands.ShowData(query);
+            if (!string.IsNullOrWhiteSpace(actionFilter))
+            {
+                query += " AND L.Action = @Action ";
+                parameters.Add("@Action", actionFilter);
+            }
+
+            if (userIdFilter.HasValue)
+            {
+                query += " AND L.UserId = @UserId ";
+                parameters.Add("@UserId", userIdFilter.Value);
+            }
+
+            // ترتيب من الأحدث إلى الأقدم
+            query += " ORDER BY L.Timestamp DESC ";
+
+            return ClassCommands.ShowData(query, parameters);
         }
+
+
+
 
 
         /// <summary>
@@ -237,6 +251,91 @@ namespace BusinessLogic
 
             return ClassCommands.ShowData(query, parameters);
         }
+
+
+
+
+
+        public enum LogAction
+        {
+            Login,
+            Logout,
+            ForgotPassword,
+            DatabaseBackup,
+
+            AddPerson,
+            UpdatePerson,
+            DeletePerson,
+
+            AddDoctor,
+            UpdateDoctor,
+            DeleteDoctor,
+
+            AddPatient,
+            UpdatePatient,
+            DeletePatient,
+
+            AddAppointment,
+            UpdateAppointment,
+            DeleteAppointment,
+
+            AddVisit,
+            UpdateVisit,
+            DeleteVisit,
+
+            AddPayment,
+            UpdatePayment,
+            DeletePayment,
+
+            AddUser,
+            UpdateUser,
+            DeleteUser
+        }
+
+
+        /// <summary>
+        /// تسجيل أي عملية داخل النظام
+        /// </summary>
+        public static void Log(LogAction action, string tableName, int recordId, string details)
+        {
+            string query = @"
+        INSERT INTO Logs (UserId, Action, Timestamp, RecordID, Details)
+        VALUES (@UserId, @Action, GETDATE(), @RecordID, @Details) ";
+
+            var parameters = new Dictionary<string, object>
+            {
+                { "@UserId", ClassUser.UserInfo.UserID },
+                { "@Action", action.ToString() },
+                { "@RecordID", recordId },
+                { "@Details", details }
+            };
+
+            ClassCommands.ExecuteTransaction(query, parameters);
+        }
+
+
+
+
+
+        /// <summary>
+        /// تعبئة الكومبوكس بجميع قيم الـ Enum LogAction
+        /// </summary>
+        public static void FillComboWithLogActions(ComboBox combo)
+        {
+            combo.Items.Clear(); // تنظيف العناصر القديمة
+
+            foreach (var action in Enum.GetValues(typeof(LogAction)))
+            {
+                combo.Items.Add(action);
+            }
+
+            combo.SelectedIndex = -1; // عدم اختيار أي عنصر افتراضياً
+        }
+
+
+
+
+
 
     }
 }

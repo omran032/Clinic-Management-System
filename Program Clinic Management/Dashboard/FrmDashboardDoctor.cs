@@ -62,5 +62,20 @@ namespace Program_Clinic_Management.Dashboard
             MyTools.ShowForm(showInfoUser);
 
         }
+
+        // حدث يعمل عند اغلاق الواجهة
+        private void FrmDashboardDoctor_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // إظهار شاشة تسجيل الدخول الأصلية
+            Application.OpenForms["FrmLogin"].Show();
+        }
+
+        //تجسيل الخروج
+        private void PicLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            // إظهار شاشة تسجيل الدخول الأصلية
+            Application.OpenForms["FrmLogin"].Show();
+        }
     }
 }

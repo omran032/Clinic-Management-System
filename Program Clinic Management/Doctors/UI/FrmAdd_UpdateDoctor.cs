@@ -226,7 +226,7 @@ namespace Program_Clinic_Management.Doctors.UI
                     lblID_Doctor.Text = "ID Doctor : " + newID;
 
                     // تسجيل العملية
-                    ClassLogs.AddLog(currentUserID, LogAction.Add.ToString(), "Doctors", newID, "إضافة طبيب جديد");
+                    ClassLogs.AddLog(currentUserID, LogAction.AddDoctor.ToString(), "Doctors", newID, "إضافة طبيب جديد");
 
                     // التحويل لوضع التعديل
                     mode = Mode.Update;
@@ -243,7 +243,7 @@ namespace Program_Clinic_Management.Doctors.UI
                 if (ok)
                 {
                     // تسجيل عملية التعديل بالسجل
-                    ClassLogs.AddLog(currentUserID, LogAction.Update.ToString(), "Doctors", DoctorInfo.DoctorID, "تعديل بيانات الطبيب");
+                    ClassLogs.AddLog(currentUserID, LogAction.UpdateDoctor.ToString(), "Doctors", DoctorInfo.DoctorID, "تعديل بيانات الطبيب");
 
                     LoadInfoPatient(); // تحديث العرض
                     EventShowRefrechData?.Invoke(); // تحديث البيانات

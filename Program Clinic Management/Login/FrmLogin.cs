@@ -77,6 +77,8 @@ namespace Program_Clinic_Management.Login
                 FrmDashboardAdmin dashboardAdmin = new FrmDashboardAdmin();
                 dashboardAdmin.ShowDialog();
             }
+
+            this.Hide();
             // Logs التسجيل بال
             ClassLogs.AddLog(ClassUser.UserInfo.UserID, LogAction.Login.ToString(), "Users", ClassUser.UserInfo.UserID, "User logged in");
 

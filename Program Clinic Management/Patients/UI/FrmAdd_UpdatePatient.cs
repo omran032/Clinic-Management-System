@@ -253,7 +253,7 @@ namespace Program_Clinic_Management.Patients.UI
                     PatientsInfo.PatientID = newID;
 
                     // تسجيل العملية
-                    ClassLogs.AddLog(currentUserID, LogAction.Add.ToString(),"Patients", newID, "إضافة مريض جديد");
+                    ClassLogs.AddLog(currentUserID, LogAction.AddPatient.ToString(),"Patients", newID, "إضافة مريض جديد");
 
                     // التحويل لوضع التعديل
                     mode = Mode.Update;
@@ -269,7 +269,7 @@ namespace Program_Clinic_Management.Patients.UI
                 if (ok)
                 {
                     // تسجيل عملية التعديل
-                    ClassLogs.AddLog(currentUserID, LogAction.Update.ToString(), "Patients", PatientsInfo.PatientID, "تعديل بيانات المريض");
+                    ClassLogs.AddLog(currentUserID, LogAction.UpdatePatient.ToString(), "Patients", PatientsInfo.PatientID, "تعديل بيانات المريض");
 
                     LoadInfoPatient(); // تحديث العرض
                     EventShowRefrechData?.Invoke(); // تحديث البيانات
