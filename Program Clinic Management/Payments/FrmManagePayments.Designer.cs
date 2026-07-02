@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DataGV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.pnl_TopBar = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnClose = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnMinimize = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.ctrl_IconProjectClinic1 = new BusinessLogic.Ctrl_IconProjectClinic();
             this.lblTitle = new System.Windows.Forms.Label();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -51,9 +51,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnAddPayment = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btnUpdatePayment = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btnDeletePayment = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label3 = new System.Windows.Forms.Label();
             this.ComboxFelterTypes = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
@@ -67,18 +64,28 @@
             this.label7 = new System.Windows.Forms.Label();
             this.PnlTxt = new System.Windows.Forms.Panel();
             this.TxtFellterPatientAndDoctor = new Guna.UI2.WinForms.Guna2TextBox();
-            this.ctrl_IconProjectClinic1 = new BusinessLogic.Ctrl_IconProjectClinic();
+            this.MyContextMS = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ElipseForm = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.ElipseDGV = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.btnDeletePayment = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnUpdatePayment = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnAddPayment = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnClose = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnMinimize = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.ToolStrip_btnInfoPayment = new System.Windows.Forms.ToolStripMenuItem();
+            this.تعديلالدفعةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.DataGV)).BeginInit();
             this.pnl_TopBar.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             this.guna2ShadowPanel1.SuspendLayout();
             this.guna2ShadowPanel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.Pnl_BtnSearsh.SuspendLayout();
             this.PnlDate.SuspendLayout();
             this.PnlTxt.SuspendLayout();
+            this.MyContextMS.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             this.SuspendLayout();
             // 
             // DataGV
@@ -95,6 +102,7 @@
             this.DataGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DataGV.ColumnHeadersHeight = 4;
             this.DataGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.DataGV.ContextMenuStrip = this.MyContextMS;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -155,33 +163,16 @@
             this.guna2Panel1.Size = new System.Drawing.Size(136, 61);
             this.guna2Panel1.TabIndex = 6;
             // 
-            // btnClose
+            // ctrl_IconProjectClinic1
             // 
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.Image = global::Program_Clinic_Management.Properties.Resources.X;
-            this.btnClose.ImageRotate = 0F;
-            this.btnClose.Location = new System.Drawing.Point(85, 12);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(39, 36);
-            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnClose.TabIndex = 4;
-            this.btnClose.TabStop = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimize.Image = global::Program_Clinic_Management.Properties.Resources.Minimize;
-            this.btnMinimize.ImageRotate = 0F;
-            this.btnMinimize.Location = new System.Drawing.Point(19, 12);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(42, 40);
-            this.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMinimize.TabIndex = 5;
-            this.btnMinimize.TabStop = false;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            this.ctrl_IconProjectClinic1.BackColor = System.Drawing.Color.Transparent;
+            this.ctrl_IconProjectClinic1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrl_IconProjectClinic1.Location = new System.Drawing.Point(-15, 3);
+            this.ctrl_IconProjectClinic1.Margin = new System.Windows.Forms.Padding(5);
+            this.ctrl_IconProjectClinic1.Name = "ctrl_IconProjectClinic1";
+            this.ctrl_IconProjectClinic1.Size = new System.Drawing.Size(246, 57);
+            this.ctrl_IconProjectClinic1.TabIndex = 4;
+            this.ctrl_IconProjectClinic1.TitleNameColor = System.Drawing.Color.White;
             // 
             // lblTitle
             // 
@@ -339,76 +330,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(240, 1);
             this.panel2.TabIndex = 24;
-            // 
-            // btnAddPayment
-            // 
-            this.btnAddPayment.BorderRadius = 20;
-            this.btnAddPayment.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddPayment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddPayment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAddPayment.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAddPayment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAddPayment.FillColor = System.Drawing.Color.Blue;
-            this.btnAddPayment.FillColor2 = System.Drawing.Color.Navy;
-            this.btnAddPayment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddPayment.ForeColor = System.Drawing.Color.White;
-            this.btnAddPayment.Image = global::Program_Clinic_Management.Properties.Resources.Payment;
-            this.btnAddPayment.ImageOffset = new System.Drawing.Point(-10, 0);
-            this.btnAddPayment.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnAddPayment.Location = new System.Drawing.Point(447, 667);
-            this.btnAddPayment.Name = "btnAddPayment";
-            this.btnAddPayment.Size = new System.Drawing.Size(236, 49);
-            this.btnAddPayment.TabIndex = 47;
-            this.btnAddPayment.Text = "إضافة دفعة";
-            this.btnAddPayment.Click += new System.EventHandler(this.btnAddPayment_Click);
-            // 
-            // btnUpdatePayment
-            // 
-            this.btnUpdatePayment.BorderColor = System.Drawing.Color.Lime;
-            this.btnUpdatePayment.BorderRadius = 20;
-            this.btnUpdatePayment.BorderThickness = 1;
-            this.btnUpdatePayment.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnUpdatePayment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnUpdatePayment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnUpdatePayment.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnUpdatePayment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnUpdatePayment.FillColor = System.Drawing.Color.Teal;
-            this.btnUpdatePayment.FillColor2 = System.Drawing.Color.Green;
-            this.btnUpdatePayment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdatePayment.ForeColor = System.Drawing.Color.White;
-            this.btnUpdatePayment.Image = global::Program_Clinic_Management.Properties.Resources.Synchronize;
-            this.btnUpdatePayment.ImageOffset = new System.Drawing.Point(-10, 0);
-            this.btnUpdatePayment.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnUpdatePayment.Location = new System.Drawing.Point(63, 667);
-            this.btnUpdatePayment.Name = "btnUpdatePayment";
-            this.btnUpdatePayment.Size = new System.Drawing.Size(246, 49);
-            this.btnUpdatePayment.TabIndex = 48;
-            this.btnUpdatePayment.Text = " تعديل دفعة";
-            this.btnUpdatePayment.Click += new System.EventHandler(this.btnUpdatePayment_Click);
-            // 
-            // btnDeletePayment
-            // 
-            this.btnDeletePayment.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnDeletePayment.BorderRadius = 20;
-            this.btnDeletePayment.BorderThickness = 1;
-            this.btnDeletePayment.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDeletePayment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDeletePayment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDeletePayment.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDeletePayment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDeletePayment.FillColor = System.Drawing.Color.Gray;
-            this.btnDeletePayment.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnDeletePayment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeletePayment.ForeColor = System.Drawing.Color.White;
-            this.btnDeletePayment.Image = global::Program_Clinic_Management.Properties.Resources.Remove;
-            this.btnDeletePayment.ImageOffset = new System.Drawing.Point(-10, 0);
-            this.btnDeletePayment.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnDeletePayment.Location = new System.Drawing.Point(841, 667);
-            this.btnDeletePayment.Name = "btnDeletePayment";
-            this.btnDeletePayment.Size = new System.Drawing.Size(243, 49);
-            this.btnDeletePayment.TabIndex = 49;
-            this.btnDeletePayment.Text = "حذف دفعة";
-            this.btnDeletePayment.Click += new System.EventHandler(this.btnDeletePayment_Click);
             // 
             // label3
             // 
@@ -591,16 +512,139 @@
             this.TxtFellterPatientAndDoctor.Visible = false;
             this.TxtFellterPatientAndDoctor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtFellterPatientAndDoctor_KeyPress);
             // 
-            // ctrl_IconProjectClinic1
+            // MyContextMS
             // 
-            this.ctrl_IconProjectClinic1.BackColor = System.Drawing.Color.Transparent;
-            this.ctrl_IconProjectClinic1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrl_IconProjectClinic1.Location = new System.Drawing.Point(-15, 3);
-            this.ctrl_IconProjectClinic1.Margin = new System.Windows.Forms.Padding(5);
-            this.ctrl_IconProjectClinic1.Name = "ctrl_IconProjectClinic1";
-            this.ctrl_IconProjectClinic1.Size = new System.Drawing.Size(246, 57);
-            this.ctrl_IconProjectClinic1.TabIndex = 4;
-            this.ctrl_IconProjectClinic1.TitleNameColor = System.Drawing.Color.White;
+            this.MyContextMS.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MyContextMS.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.MyContextMS.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStrip_btnInfoPayment,
+            this.تعديلالدفعةToolStripMenuItem});
+            this.MyContextMS.Name = "MyContextMS";
+            this.MyContextMS.Size = new System.Drawing.Size(202, 102);
+            // 
+            // ElipseForm
+            // 
+            this.ElipseForm.BorderRadius = 20;
+            this.ElipseForm.TargetControl = this;
+            // 
+            // ElipseDGV
+            // 
+            this.ElipseDGV.BorderRadius = 25;
+            this.ElipseDGV.TargetControl = this.DataGV;
+            // 
+            // btnDeletePayment
+            // 
+            this.btnDeletePayment.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnDeletePayment.BorderRadius = 20;
+            this.btnDeletePayment.BorderThickness = 1;
+            this.btnDeletePayment.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeletePayment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDeletePayment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDeletePayment.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDeletePayment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDeletePayment.FillColor = System.Drawing.Color.Gray;
+            this.btnDeletePayment.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnDeletePayment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeletePayment.ForeColor = System.Drawing.Color.White;
+            this.btnDeletePayment.Image = global::Program_Clinic_Management.Properties.Resources.Remove;
+            this.btnDeletePayment.ImageOffset = new System.Drawing.Point(-10, 0);
+            this.btnDeletePayment.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnDeletePayment.Location = new System.Drawing.Point(841, 667);
+            this.btnDeletePayment.Name = "btnDeletePayment";
+            this.btnDeletePayment.Size = new System.Drawing.Size(243, 49);
+            this.btnDeletePayment.TabIndex = 49;
+            this.btnDeletePayment.Text = "حذف دفعة";
+            this.btnDeletePayment.Click += new System.EventHandler(this.btnDeletePayment_Click);
+            // 
+            // btnUpdatePayment
+            // 
+            this.btnUpdatePayment.BorderColor = System.Drawing.Color.Lime;
+            this.btnUpdatePayment.BorderRadius = 20;
+            this.btnUpdatePayment.BorderThickness = 1;
+            this.btnUpdatePayment.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdatePayment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUpdatePayment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUpdatePayment.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUpdatePayment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUpdatePayment.FillColor = System.Drawing.Color.Teal;
+            this.btnUpdatePayment.FillColor2 = System.Drawing.Color.Green;
+            this.btnUpdatePayment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdatePayment.ForeColor = System.Drawing.Color.White;
+            this.btnUpdatePayment.Image = global::Program_Clinic_Management.Properties.Resources.Update;
+            this.btnUpdatePayment.ImageOffset = new System.Drawing.Point(-10, 0);
+            this.btnUpdatePayment.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnUpdatePayment.Location = new System.Drawing.Point(63, 667);
+            this.btnUpdatePayment.Name = "btnUpdatePayment";
+            this.btnUpdatePayment.Size = new System.Drawing.Size(246, 49);
+            this.btnUpdatePayment.TabIndex = 48;
+            this.btnUpdatePayment.Text = " تعديل دفعة";
+            this.btnUpdatePayment.Click += new System.EventHandler(this.btnUpdatePayment_Click);
+            // 
+            // btnAddPayment
+            // 
+            this.btnAddPayment.BorderRadius = 20;
+            this.btnAddPayment.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddPayment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddPayment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddPayment.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddPayment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddPayment.FillColor = System.Drawing.Color.Blue;
+            this.btnAddPayment.FillColor2 = System.Drawing.Color.Navy;
+            this.btnAddPayment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddPayment.ForeColor = System.Drawing.Color.White;
+            this.btnAddPayment.Image = global::Program_Clinic_Management.Properties.Resources.Payment;
+            this.btnAddPayment.ImageOffset = new System.Drawing.Point(-10, 0);
+            this.btnAddPayment.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnAddPayment.Location = new System.Drawing.Point(447, 667);
+            this.btnAddPayment.Name = "btnAddPayment";
+            this.btnAddPayment.Size = new System.Drawing.Size(236, 49);
+            this.btnAddPayment.TabIndex = 47;
+            this.btnAddPayment.Text = "إضافة دفعة";
+            this.btnAddPayment.Click += new System.EventHandler(this.btnAddPayment_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.Image = global::Program_Clinic_Management.Properties.Resources.X;
+            this.btnClose.ImageRotate = 0F;
+            this.btnClose.Location = new System.Drawing.Point(85, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(39, 36);
+            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnClose.TabIndex = 4;
+            this.btnClose.TabStop = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimize.Image = global::Program_Clinic_Management.Properties.Resources.Minimize;
+            this.btnMinimize.ImageRotate = 0F;
+            this.btnMinimize.Location = new System.Drawing.Point(19, 12);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(42, 40);
+            this.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMinimize.TabIndex = 5;
+            this.btnMinimize.TabStop = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // ToolStrip_btnInfoPayment
+            // 
+            this.ToolStrip_btnInfoPayment.Image = global::Program_Clinic_Management.Properties.Resources.Info;
+            this.ToolStrip_btnInfoPayment.Name = "ToolStrip_btnInfoPayment";
+            this.ToolStrip_btnInfoPayment.Size = new System.Drawing.Size(201, 38);
+            this.ToolStrip_btnInfoPayment.Text = "معلومات الدفعة";
+            this.ToolStrip_btnInfoPayment.Click += new System.EventHandler(this.ToolStrip_btnInfoPayment_Click);
+            // 
+            // تعديلالدفعةToolStripMenuItem
+            // 
+            this.تعديلالدفعةToolStripMenuItem.Image = global::Program_Clinic_Management.Properties.Resources.Update;
+            this.تعديلالدفعةToolStripMenuItem.Name = "تعديلالدفعةToolStripMenuItem";
+            this.تعديلالدفعةToolStripMenuItem.Size = new System.Drawing.Size(201, 38);
+            this.تعديلالدفعةToolStripMenuItem.Text = "تعديل الدفعة";
+            this.تعديلالدفعةToolStripMenuItem.Click += new System.EventHandler(this.btnUpdatePayment_Click);
             // 
             // FrmManagePayments
             // 
@@ -608,7 +652,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1461, 773);
+            this.ClientSize = new System.Drawing.Size(1461, 752);
             this.Controls.Add(this.guna2ShadowPanel2);
             this.Controls.Add(this.btnDeletePayment);
             this.Controls.Add(this.btnUpdatePayment);
@@ -627,8 +671,6 @@
             this.pnl_TopBar.ResumeLayout(false);
             this.pnl_TopBar.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
             this.guna2ShadowPanel2.ResumeLayout(false);
@@ -638,6 +680,9 @@
             this.PnlDate.ResumeLayout(false);
             this.PnlDate.PerformLayout();
             this.PnlTxt.ResumeLayout(false);
+            this.MyContextMS.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -681,5 +726,10 @@
         private System.Windows.Forms.Panel PnlTxt;
         private System.Windows.Forms.Panel Pnl_BtnSearsh;
         private Guna.UI2.WinForms.Guna2GradientButton btnSearsh;
+        private System.Windows.Forms.ContextMenuStrip MyContextMS;
+        private System.Windows.Forms.ToolStripMenuItem ToolStrip_btnInfoPayment;
+        private System.Windows.Forms.ToolStripMenuItem تعديلالدفعةToolStripMenuItem;
+        private Guna.UI2.WinForms.Guna2Elipse ElipseForm;
+        private Guna.UI2.WinForms.Guna2Elipse ElipseDGV;
     }
 }

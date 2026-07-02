@@ -219,8 +219,17 @@ namespace Program_Clinic_Management.Payments
         }
 
 
+        // زر عرض معلومات الدفعة
+        private void ToolStrip_btnInfoPayment_Click(object sender, EventArgs e)
+        {
+            if (PaymentID <= 0) return;
 
+            FrmInfoPayment infoPayment = new FrmInfoPayment(PaymentID);
+            infoPayment.ShowDialog();
+
+        }
         #endregion
+
 
     }
 }

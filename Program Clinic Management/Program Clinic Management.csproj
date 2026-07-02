@@ -214,11 +214,23 @@
     <Compile Include="Patients\UI\Frm_InfoPatient.Designer.cs">
       <DependentUpon>Frm_InfoPatient.cs</DependentUpon>
     </Compile>
+    <Compile Include="Payments\Ctrl\Ctrl_InfoPayment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Payments\Ctrl\Ctrl_InfoPayment.Designer.cs">
+      <DependentUpon>Ctrl_InfoPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Payments\FrmAddPayment.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Payments\FrmAddPayment.Designer.cs">
       <DependentUpon>FrmAddPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payments\FrmInfoPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payments\FrmInfoPayment.Designer.cs">
+      <DependentUpon>FrmInfoPayment.cs</DependentUpon>
     </Compile>
     <Compile Include="Payments\FrmManagePayments.cs">
       <SubType>Form</SubType>
@@ -377,8 +389,14 @@
     <EmbeddedResource Include="Patients\UI\Frm_InfoPatient.resx">
       <DependentUpon>Frm_InfoPatient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Payments\Ctrl\Ctrl_InfoPayment.resx">
+      <DependentUpon>Ctrl_InfoPayment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Payments\FrmAddPayment.resx">
       <DependentUpon>FrmAddPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payments\FrmInfoPayment.resx">
+      <DependentUpon>FrmInfoPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Payments\FrmManagePayments.resx">
       <DependentUpon>FrmManagePayments.cs</DependentUpon>
@@ -444,6 +462,8 @@
     <Content Include="ClinicSystemDB_log.ldf">
       <DependentUpon>ClinicSystemDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Info.png" />
+    <None Include="Resources\Update.png" />
     <None Include="Resources\Payment.png" />
     <None Include="Resources\My Profile.png" />
     <None Include="Resources\Add.png" />
@@ -479,9 +499,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Payments\Ctrl\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
       <Project>{edebb9b3-3ed0-4ea9-9009-58fbf6a380b3}</Project>

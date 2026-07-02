@@ -57,6 +57,42 @@ namespace BusinessLogic.CMD_DB
 
 
         /// <summary>
+        /// جلب الاسم الكامل للمستخدم من خلال UserID
+        /// </summary>
+        public static string GetUserFullName(int userId)
+        {
+            string query = @"
+        SELECT 
+            u.UserID,
+            p.PersonID,
+            p.FirstName,
+            p.LastName
+        FROM Users u
+        INNER JOIN Persons p ON u.PersonID = p.PersonID
+        WHERE u.UserID = @UserID
+    ";
+
+            var parameters = new Dictionary<string, object>()
+    {
+        { "@UserID", userId }
+    };
+
+            DataTable dt = ClassCommands.ShowData(query, parameters);
+
+            if (dt.Rows.Count == 0)
+                return null;   // المستخدم غير موجود
+
+            DataRow row = dt.Rows[0];
+
+            string first = row["FirstName"]?.ToString();
+            string last = row["LastName"]?.ToString();
+
+            return $"{first} {last}";
+        }
+
+
+
+        /// <summary>
         /// إرجاع جدول المستخدمين مع المعلومات اللازمة لواجهة User Management.
         /// </summary>
         public static DataTable GetUsersForManagement()
