@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -24,7 +25,7 @@ namespace BusinessLogic.CMD_DB
             string query = @"
         SELECT TOP 1 Timestamp
         FROM Logs
-        WHERE Action = 'Database Backup'
+        WHERE Action = 'DatabaseBackup'
         ORDER BY Timestamp DESC";
 
             DataTable dt = ClassCommands.ShowData(query);
@@ -69,28 +70,44 @@ namespace BusinessLogic.CMD_DB
         }
 
 
+
+
         /// <summary>
-        /// إنشاء نسخة احتياطية لقاعدة البيانات
+        /// يقوم بإنشاء نسخة احتياطية من ملف قاعدة البيانات MDF
+        /// اعتماداً على المسار الموجود في مجلد المستندات.
         /// </summary>
-        public static bool CreateBackup(string backupFilePath)
+        /// <param name="backupPath">المسار الكامل للنسخة الاحتياطية المطلوبة</param>
+        /// <returns>true إذا نجح النسخ، false إذا فشل</returns>
+        public static bool BackupDatabase(string backupPath)
         {
-            if (!IsValidBackupPath(backupFilePath))
-                return false;
-
-            string query = $@"
-        BACKUP DATABASE [ClinicSystemDB]
-        TO DISK = '{backupFilePath}'
-        WITH FORMAT, INIT, SKIP, NOREWIND, NOUNLOAD, STATS = 10;";
-
             try
             {
-                return ClassCommands.ExecuteNonQuery_Command(query  );
+                // مسار ملف الـ MDF
+                string mdfPath = Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+                    @"Clinic Management\Database\ClinicSystemDB.mdf"
+                );
+
+                if (!File.Exists(mdfPath))
+                    return false;
+
+                // 1) إغلاق جميع الاتصالات
+                SqlConnection.ClearAllPools();
+
+                // 2) الانتظار لحظة حتى يفلت LocalDB الملف
+                System.Threading.Thread.Sleep(500);
+
+                // 3) نسخ الملف
+                File.Copy(mdfPath, backupPath, overwrite: true);
+
+                return true;
             }
             catch
             {
                 return false;
             }
         }
+
 
 
         /// <summary>

@@ -72,8 +72,8 @@ namespace BusinessLogic.CMD_DB
         /// <param name="MyChart"></param>
         public static void LoadWeeklyVisitsChart(Chart MyChart)
         {
-            string Title = "Weekly Patient Visits (Last 7 Days)";
-            string SeriesName = "Visits";
+            string Title = "مخطط مواعيد الأسبوع";
+            string SeriesName = "الزيارات";
 
 
             string Query = @"

@@ -106,8 +106,8 @@ namespace BusinessLogic.CMD_DB
         /// </summary>
         public static void LoadWeeklyAppointmentsDayByDay(Chart MyChart)
         {
-            string Title = "Weekly Appointments (Day by Day)";
-            string SeriesName = "Appointments";
+            string Title = "مخطط مواعيد الأسبوع";
+            string SeriesName = "المواعيد";
 
             string Query = @"
         SELECT 

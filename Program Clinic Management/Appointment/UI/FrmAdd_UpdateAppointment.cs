@@ -318,9 +318,6 @@ namespace Program_Clinic_Management.Doctors.UI
                 btn_UseDate.Enabled = true;
                 lblDate.Visible = true;
             }
-
-          
-
         }
 
         // زر استخدام التاريخ المقترح
@@ -328,7 +325,11 @@ namespace Program_Clinic_Management.Doctors.UI
         {
             if (result != null)
             {
-                DateTP_DateApp.Value = result.SuggestedDateTime;
+                // التاريخ فقط
+                DateTP_DateApp.Value = result.SuggestedDateTime.Date;
+
+                // الوقت فقط
+                DateTP_TimeApp.Value = DateTime.Today + result.SuggestedDateTime.TimeOfDay;
             }
             else
                 MessageBox.Show("لم يتم تحديد الموعد", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -343,9 +344,10 @@ namespace Program_Clinic_Management.Doctors.UI
                 MessageBox.Show("المعلومات غير مكتملة" , "ادخل بقية المعلومات" , MessageBoxButtons.OK , MessageBoxIcon.Error);
                 return;
             }
-            DateTime AppointmentDate = DateTP_DateApp.Value;
+            DateTime AppointmentDate = DateTP_DateApp.Value.Date + DateTP_TimeApp.Value.TimeOfDay ;
             string Notes = txtNotes.Text.Trim();
             string StatusAppointment = Combox_StatusAppointment.Text.Trim();
+
 
             if (ModeForm == Mode.Add)
             {

@@ -148,9 +148,11 @@ namespace Program_Clinic_Management.Dashboard
         //تجسيل الخروج
         private void PicLogOut_Click(object sender, EventArgs e)
         {
-            this.Close();
-            // إظهار شاشة تسجيل الدخول الأصلية
-            Application.OpenForms["FrmLogin"].Show();
+            Application.Exit();
+
+            //this.Close();
+            //// إظهار شاشة تسجيل الدخول الأصلية
+            //Application.OpenForms["FrmLogin"].Show();
         }
 
         // زر تحديث عدد مواعيد اليوم

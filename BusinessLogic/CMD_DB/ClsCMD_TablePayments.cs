@@ -26,8 +26,8 @@ namespace BusinessLogic.CMD_DB
         /// </summary>
         public static void LoadWeeklyRevenueDayByDay(Chart MyChart)
         {
-            string Title = "Weekly Revenue (Day by Day)";
-            string SeriesName = "DailyRevenue";
+            string Title = "مخطط إيرادات الأسبوع";
+            string SeriesName = "الإيرادات اليومية";
 
             string Query = @"
         SELECT 

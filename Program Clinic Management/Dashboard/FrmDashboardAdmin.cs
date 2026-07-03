@@ -55,10 +55,6 @@ namespace Program_Clinic_Management.Admin
             MyTools.ColorControl(PnlList, Color.FromArgb(194, 247, 252), Color.FromArgb(245, 245, 245));
         }
 
-     
-
-
-
         /// <summary>
         /// مثود توزيع الصلاحيات
         /// </summary>
@@ -105,6 +101,8 @@ namespace Program_Clinic_Management.Admin
 
         }
 
+
+        #region  ****  ازرار وعناصر    ****
 
         private void LoadSystemInfo()
         {
@@ -203,17 +201,17 @@ namespace Program_Clinic_Management.Admin
         {
             // إظهار شاشة تسجيل الدخول الأصلية
           //  Application.OpenForms["FrmLogin"].Show();
-
         }
 
         // تسجيل الخروج
         private void PicLogOut_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
             // إظهار شاشة تسجيل الدخول الأصلية
           //  Application.OpenForms["FrmLogin"].Show();
         }
 
-       
+        #endregion
+
     }
 }

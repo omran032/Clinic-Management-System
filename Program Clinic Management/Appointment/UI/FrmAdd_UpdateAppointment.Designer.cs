@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.PnlDoctor = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.link_InfoDoctor = new System.Windows.Forms.LinkLabel();
             this.btn_SHowAppointmentDoctor = new Guna.UI2.WinForms.Guna2GradientButton();
             this.lbl_CountAppointmentDoctor = new System.Windows.Forms.Label();
@@ -44,9 +45,14 @@
             this.lblGenderPatient = new System.Windows.Forms.Label();
             this.lblAgePatient = new System.Windows.Forms.Label();
             this.pnlPatient = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.link_InfoPatient = new System.Windows.Forms.LinkLabel();
             this.label8 = new System.Windows.Forms.Label();
+            this.ctrl_FeltterDataPatients1 = new Program_Clinic_Management.Patients.UControls.Ctrl_FeltterDataPatients();
             this.PnlAppointment = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Combox_StatusAppointment = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtNotes = new Guna.UI2.WinForms.Guna2TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -61,6 +67,7 @@
             this.RdoRangeToday = new Guna.UI2.WinForms.Guna2RadioButton();
             this.RdoRangeTomorrow = new Guna.UI2.WinForms.Guna2RadioButton();
             this.pnl_AI = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.Pnl_2 = new Guna.UI2.WinForms.Guna2Panel();
             this.RdoNearestAppointment = new Guna.UI2.WinForms.Guna2RadioButton();
             this.RdoLatestAppointment = new Guna.UI2.WinForms.Guna2RadioButton();
@@ -72,14 +79,7 @@
             this.btnProposeDate = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label16 = new System.Windows.Forms.Label();
             this.lblAppointmentID = new System.Windows.Forms.Label();
-            this.Combox_StatusAppointment = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnSave = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.ctrl_FeltterDataPatients1 = new Program_Clinic_Management.Patients.UControls.Ctrl_FeltterDataPatients();
             this.ElipsePnlPatent = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.ElipsePnlDoctor = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.ElipsePnlAppointment = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -87,18 +87,19 @@
             this.Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.Elipse_2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.ElipsePnl_ProposeDate = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.DateTP_TimeApp = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.PnlDoctor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.pnlPatient.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             this.PnlAppointment.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_TimeApp)).BeginInit();
             this.Pnl_1.SuspendLayout();
             this.pnl_AI.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.Pnl_2.SuspendLayout();
             this.pnl_ProposeDate.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -126,6 +127,18 @@
             this.PnlDoctor.Name = "PnlDoctor";
             this.PnlDoctor.Size = new System.Drawing.Size(714, 265);
             this.PnlDoctor.TabIndex = 2;
+            // 
+            // guna2PictureBox3
+            // 
+            this.guna2PictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox3.Image = global::Program_Clinic_Management.Properties.Resources.Doctor;
+            this.guna2PictureBox3.ImageRotate = 0F;
+            this.guna2PictureBox3.Location = new System.Drawing.Point(660, 3);
+            this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.Size = new System.Drawing.Size(43, 36);
+            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox3.TabIndex = 27;
+            this.guna2PictureBox3.TabStop = false;
             // 
             // link_InfoDoctor
             // 
@@ -293,6 +306,18 @@
             this.pnlPatient.Size = new System.Drawing.Size(714, 265);
             this.pnlPatient.TabIndex = 1;
             // 
+            // guna2PictureBox4
+            // 
+            this.guna2PictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox4.Image = global::Program_Clinic_Management.Properties.Resources.Patient;
+            this.guna2PictureBox4.ImageRotate = 0F;
+            this.guna2PictureBox4.Location = new System.Drawing.Point(669, 2);
+            this.guna2PictureBox4.Name = "guna2PictureBox4";
+            this.guna2PictureBox4.Size = new System.Drawing.Size(43, 36);
+            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox4.TabIndex = 28;
+            this.guna2PictureBox4.TabStop = false;
+            // 
             // link_InfoPatient
             // 
             this.link_InfoPatient.AutoSize = true;
@@ -317,9 +342,20 @@
             this.label8.TabIndex = 7;
             this.label8.Text = "معلومات المريض";
             // 
+            // ctrl_FeltterDataPatients1
+            // 
+            this.ctrl_FeltterDataPatients1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrl_FeltterDataPatients1.Location = new System.Drawing.Point(63, 42);
+            this.ctrl_FeltterDataPatients1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ctrl_FeltterDataPatients1.Name = "ctrl_FeltterDataPatients1";
+            this.ctrl_FeltterDataPatients1.Size = new System.Drawing.Size(589, 57);
+            this.ctrl_FeltterDataPatients1.TabIndex = 0;
+            this.ctrl_FeltterDataPatients1.TrueSearchAll = false;
+            // 
             // PnlAppointment
             // 
             this.PnlAppointment.BackColor = System.Drawing.Color.White;
+            this.PnlAppointment.Controls.Add(this.DateTP_TimeApp);
             this.PnlAppointment.Controls.Add(this.guna2PictureBox2);
             this.PnlAppointment.Controls.Add(this.label4);
             this.PnlAppointment.Controls.Add(this.Combox_StatusAppointment);
@@ -335,6 +371,46 @@
             this.PnlAppointment.Name = "PnlAppointment";
             this.PnlAppointment.Size = new System.Drawing.Size(1447, 215);
             this.PnlAppointment.TabIndex = 3;
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox2.Image = global::Program_Clinic_Management.Properties.Resources.Appointment;
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(1399, 1);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(43, 36);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox2.TabIndex = 26;
+            this.guna2PictureBox2.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label4.Location = new System.Drawing.Point(456, 23);
+            this.label4.Name = "label4";
+            this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label4.Size = new System.Drawing.Size(72, 19);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "حالة الموعد";
+            // 
+            // Combox_StatusAppointment
+            // 
+            this.Combox_StatusAppointment.BackColor = System.Drawing.Color.Transparent;
+            this.Combox_StatusAppointment.BorderColor = System.Drawing.Color.Navy;
+            this.Combox_StatusAppointment.BorderRadius = 15;
+            this.Combox_StatusAppointment.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.Combox_StatusAppointment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Combox_StatusAppointment.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Combox_StatusAppointment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Combox_StatusAppointment.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.Combox_StatusAppointment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.Combox_StatusAppointment.ItemHeight = 30;
+            this.Combox_StatusAppointment.Location = new System.Drawing.Point(361, 58);
+            this.Combox_StatusAppointment.Name = "Combox_StatusAppointment";
+            this.Combox_StatusAppointment.Size = new System.Drawing.Size(271, 36);
+            this.Combox_StatusAppointment.TabIndex = 18;
             // 
             // txtNotes
             // 
@@ -363,7 +439,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label15.Location = new System.Drawing.Point(1149, 23);
+            this.label15.Location = new System.Drawing.Point(1137, 23);
             this.label15.Name = "label15";
             this.label15.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label15.Size = new System.Drawing.Size(45, 19);
@@ -440,12 +516,12 @@
             this.DateTP_DateApp.CustomFormat = " tt mm : HH   / dd / MM / yyyy";
             this.DateTP_DateApp.FillColor = System.Drawing.Color.White;
             this.DateTP_DateApp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateTP_DateApp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DateTP_DateApp.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DateTP_DateApp.Location = new System.Drawing.Point(1017, 58);
             this.DateTP_DateApp.MaxDate = new System.DateTime(2050, 1, 1, 0, 0, 0, 0);
             this.DateTP_DateApp.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.DateTP_DateApp.Name = "DateTP_DateApp";
-            this.DateTP_DateApp.Size = new System.Drawing.Size(291, 36);
+            this.DateTP_DateApp.Size = new System.Drawing.Size(141, 36);
             this.DateTP_DateApp.TabIndex = 13;
             this.DateTP_DateApp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.DateTP_DateApp.Value = new System.DateTime(2026, 6, 10, 10, 42, 2, 935);
@@ -566,6 +642,18 @@
             this.pnl_AI.Name = "pnl_AI";
             this.pnl_AI.Size = new System.Drawing.Size(1447, 213);
             this.pnl_AI.TabIndex = 4;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = global::Program_Clinic_Management.Properties.Resources.AI;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(1390, 3);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(43, 36);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 25;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // Pnl_2
             // 
@@ -724,34 +812,6 @@
             this.lblAppointmentID.TabIndex = 23;
             this.lblAppointmentID.Text = "Appintment ID :";
             // 
-            // Combox_StatusAppointment
-            // 
-            this.Combox_StatusAppointment.BackColor = System.Drawing.Color.Transparent;
-            this.Combox_StatusAppointment.BorderColor = System.Drawing.Color.Navy;
-            this.Combox_StatusAppointment.BorderRadius = 15;
-            this.Combox_StatusAppointment.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.Combox_StatusAppointment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Combox_StatusAppointment.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Combox_StatusAppointment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Combox_StatusAppointment.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.Combox_StatusAppointment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.Combox_StatusAppointment.ItemHeight = 30;
-            this.Combox_StatusAppointment.Location = new System.Drawing.Point(361, 58);
-            this.Combox_StatusAppointment.Name = "Combox_StatusAppointment";
-            this.Combox_StatusAppointment.Size = new System.Drawing.Size(271, 36);
-            this.Combox_StatusAppointment.TabIndex = 18;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(456, 23);
-            this.label4.Name = "label4";
-            this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label4.Size = new System.Drawing.Size(72, 19);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "حالة الموعد";
-            // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.Transparent;
@@ -774,64 +834,6 @@
             this.btnSave.TabIndex = 20;
             this.btnSave.Text = "حجز الموعد";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::Program_Clinic_Management.Properties.Resources.AI;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(1390, 3);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(43, 36);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 25;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.Image = global::Program_Clinic_Management.Properties.Resources.Appointment;
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(1399, 1);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(43, 36);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox2.TabIndex = 26;
-            this.guna2PictureBox2.TabStop = false;
-            // 
-            // guna2PictureBox3
-            // 
-            this.guna2PictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox3.Image = global::Program_Clinic_Management.Properties.Resources.Doctor;
-            this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(660, 3);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(43, 36);
-            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox3.TabIndex = 27;
-            this.guna2PictureBox3.TabStop = false;
-            // 
-            // guna2PictureBox4
-            // 
-            this.guna2PictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox4.Image = global::Program_Clinic_Management.Properties.Resources.Patient;
-            this.guna2PictureBox4.ImageRotate = 0F;
-            this.guna2PictureBox4.Location = new System.Drawing.Point(669, 2);
-            this.guna2PictureBox4.Name = "guna2PictureBox4";
-            this.guna2PictureBox4.Size = new System.Drawing.Size(43, 36);
-            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox4.TabIndex = 28;
-            this.guna2PictureBox4.TabStop = false;
-            // 
-            // ctrl_FeltterDataPatients1
-            // 
-            this.ctrl_FeltterDataPatients1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrl_FeltterDataPatients1.Location = new System.Drawing.Point(63, 42);
-            this.ctrl_FeltterDataPatients1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ctrl_FeltterDataPatients1.Name = "ctrl_FeltterDataPatients1";
-            this.ctrl_FeltterDataPatients1.Size = new System.Drawing.Size(589, 57);
-            this.ctrl_FeltterDataPatients1.TabIndex = 0;
-            this.ctrl_FeltterDataPatients1.TrueSearchAll = false;
             // 
             // ElipsePnlPatent
             // 
@@ -868,6 +870,24 @@
             this.ElipsePnl_ProposeDate.BorderRadius = 15;
             this.ElipsePnl_ProposeDate.TargetControl = this.pnl_ProposeDate;
             // 
+            // DateTP_TimeApp
+            // 
+            this.DateTP_TimeApp.BackColor = System.Drawing.Color.White;
+            this.DateTP_TimeApp.BorderRadius = 15;
+            this.DateTP_TimeApp.Checked = true;
+            this.DateTP_TimeApp.CustomFormat = " tt mm : HH   / dd / MM / yyyy";
+            this.DateTP_TimeApp.FillColor = System.Drawing.Color.White;
+            this.DateTP_TimeApp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateTP_TimeApp.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.DateTP_TimeApp.Location = new System.Drawing.Point(1164, 58);
+            this.DateTP_TimeApp.MaxDate = new System.DateTime(2050, 1, 1, 0, 0, 0, 0);
+            this.DateTP_TimeApp.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
+            this.DateTP_TimeApp.Name = "DateTP_TimeApp";
+            this.DateTP_TimeApp.Size = new System.Drawing.Size(141, 36);
+            this.DateTP_TimeApp.TabIndex = 27;
+            this.DateTP_TimeApp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.DateTP_TimeApp.Value = new System.DateTime(2026, 6, 10, 10, 42, 2, 935);
+            // 
             // FrmAdd_UpdateAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -890,23 +910,23 @@
             this.Load += new System.EventHandler(this.FrmAdd_UpdateAppointment_Load);
             this.PnlDoctor.ResumeLayout(false);
             this.PnlDoctor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             this.pnlPatient.ResumeLayout(false);
             this.pnlPatient.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
             this.PnlAppointment.ResumeLayout(false);
             this.PnlAppointment.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeric_TimeApp)).EndInit();
             this.Pnl_1.ResumeLayout(false);
             this.Pnl_1.PerformLayout();
             this.pnl_AI.ResumeLayout(false);
             this.pnl_AI.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.Pnl_2.ResumeLayout(false);
             this.Pnl_2.PerformLayout();
             this.pnl_ProposeDate.ResumeLayout(false);
             this.pnl_ProposeDate.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -972,5 +992,6 @@
         private Guna.UI2.WinForms.Guna2Elipse Elipse1;
         private Guna.UI2.WinForms.Guna2Elipse Elipse_2;
         private Guna.UI2.WinForms.Guna2Elipse ElipsePnl_ProposeDate;
+        private Guna.UI2.WinForms.Guna2DateTimePicker DateTP_TimeApp;
     }
 }

@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDashboardAdmin));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend13 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title13 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title14 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend15 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title15 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.pnlTopBar = new Guna.UI2.WinForms.Guna2Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ctrl_IconProjectClinic1 = new BusinessLogic.Ctrl_IconProjectClinic();
@@ -72,20 +72,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.chartPayments = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartVisits = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.ctrl_ShowStatisticscs_DelayedPayments = new Program_Clinic_Management.UControls.Ctrl_ShowStatisticscs();
-            this.ctrl_ShowStatisticscsAbsences = new Program_Clinic_Management.UControls.Ctrl_ShowStatisticscs();
-            this.ctrl_ShowStatisticscsAppointment = new Program_Clinic_Management.UControls.Ctrl_ShowStatisticscs();
-            this.ctrl_ShowStatisticscs_Visits = new Program_Clinic_Management.UControls.Ctrl_ShowStatisticscs();
             this.label3 = new System.Windows.Forms.Label();
+            this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.Elipse_PnlDisplay = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.ElipseChartVisits = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.ElipseChartPayments = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.ElipsePnlBackup = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.ctrl_ShowStatisticscs_DelayedPayments = new Program_Clinic_Management.UControls.Ctrl_ShowStatisticscs();
+            this.ctrl_ShowStatisticscsAbsences = new Program_Clinic_Management.UControls.Ctrl_ShowStatisticscs();
+            this.ctrl_ShowStatisticscsAppointment = new Program_Clinic_Management.UControls.Ctrl_ShowStatisticscs();
+            this.ctrl_ShowStatisticscs_Visits = new Program_Clinic_Management.UControls.Ctrl_ShowStatisticscs();
             this.Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.ElipseCtrl_DelayedPayments = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.pnlTopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChartAppointment)).BeginInit();
@@ -163,24 +163,24 @@
             // 
             // ChartAppointment
             // 
-            chartArea13.Name = "ChartArea1";
-            this.ChartAppointment.ChartAreas.Add(chartArea13);
-            legend13.Name = "Legend1";
-            this.ChartAppointment.Legends.Add(legend13);
+            chartArea1.Name = "ChartArea1";
+            this.ChartAppointment.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.ChartAppointment.Legends.Add(legend1);
             this.ChartAppointment.Location = new System.Drawing.Point(807, 277);
             this.ChartAppointment.Name = "ChartAppointment";
             this.ChartAppointment.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series13.ChartArea = "ChartArea1";
-            series13.Legend = "Legend1";
-            series13.Name = "Series1";
-            this.ChartAppointment.Series.Add(series13);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.ChartAppointment.Series.Add(series1);
             this.ChartAppointment.Size = new System.Drawing.Size(438, 306);
             this.ChartAppointment.TabIndex = 17;
             this.ChartAppointment.Text = "chart2";
-            title13.Name = "sdddsd";
-            title13.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
-            title13.TextStyle = System.Windows.Forms.DataVisualization.Charting.TextStyle.Frame;
-            this.ChartAppointment.Titles.Add(title13);
+            title1.Name = "sdddsd";
+            title1.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            title1.TextStyle = System.Windows.Forms.DataVisualization.Charting.TextStyle.Frame;
+            this.ChartAppointment.Titles.Add(title1);
             // 
             // PnlDisplay
             // 
@@ -600,45 +600,86 @@
             // 
             // chartPayments
             // 
-            chartArea14.Name = "ChartArea1";
-            this.chartPayments.ChartAreas.Add(chartArea14);
-            legend14.Name = "Legend1";
-            this.chartPayments.Legends.Add(legend14);
+            chartArea2.Name = "ChartArea1";
+            this.chartPayments.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartPayments.Legends.Add(legend2);
             this.chartPayments.Location = new System.Drawing.Point(1308, 277);
             this.chartPayments.Name = "chartPayments";
             this.chartPayments.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series14.ChartArea = "ChartArea1";
-            series14.Legend = "Legend1";
-            series14.Name = "Series1";
-            this.chartPayments.Series.Add(series14);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartPayments.Series.Add(series2);
             this.chartPayments.Size = new System.Drawing.Size(438, 306);
             this.chartPayments.TabIndex = 16;
             this.chartPayments.Text = "chart1";
-            title14.Name = "sdddsd";
-            title14.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
-            title14.TextStyle = System.Windows.Forms.DataVisualization.Charting.TextStyle.Frame;
-            this.chartPayments.Titles.Add(title14);
+            title2.Name = "sdddsd";
+            title2.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            title2.TextStyle = System.Windows.Forms.DataVisualization.Charting.TextStyle.Frame;
+            this.chartPayments.Titles.Add(title2);
             // 
             // chartVisits
             // 
-            chartArea15.Name = "ChartArea1";
-            this.chartVisits.ChartAreas.Add(chartArea15);
-            legend15.Name = "Legend1";
-            this.chartVisits.Legends.Add(legend15);
+            chartArea3.Name = "ChartArea1";
+            this.chartVisits.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartVisits.Legends.Add(legend3);
             this.chartVisits.Location = new System.Drawing.Point(306, 277);
             this.chartVisits.Name = "chartVisits";
             this.chartVisits.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series15.ChartArea = "ChartArea1";
-            series15.Legend = "Legend1";
-            series15.Name = "Series1";
-            this.chartVisits.Series.Add(series15);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartVisits.Series.Add(series3);
             this.chartVisits.Size = new System.Drawing.Size(438, 306);
             this.chartVisits.TabIndex = 15;
             this.chartVisits.Text = "chart1";
-            title15.Name = "sdddsd";
-            title15.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
-            title15.TextStyle = System.Windows.Forms.DataVisualization.Charting.TextStyle.Frame;
-            this.chartVisits.Titles.Add(title15);
+            title3.Name = "sdddsd";
+            title3.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            title3.TextStyle = System.Windows.Forms.DataVisualization.Charting.TextStyle.Frame;
+            this.chartVisits.Titles.Add(title3);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Maroon;
+            this.label3.Location = new System.Drawing.Point(1633, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(150, 29);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "لوحة التحكم";
+            // 
+            // guna2ShadowPanel1
+            // 
+            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(222, 9);
+            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
+            this.guna2ShadowPanel1.Radius = 10;
+            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(39, 832);
+            this.guna2ShadowPanel1.TabIndex = 24;
+            // 
+            // Elipse_PnlDisplay
+            // 
+            this.Elipse_PnlDisplay.BorderRadius = 20;
+            // 
+            // ElipseChartVisits
+            // 
+            this.ElipseChartVisits.BorderRadius = 50;
+            this.ElipseChartVisits.TargetControl = this.chartVisits;
+            // 
+            // ElipseChartPayments
+            // 
+            this.ElipseChartPayments.BorderRadius = 50;
+            this.ElipseChartPayments.TargetControl = this.chartPayments;
+            // 
+            // ElipsePnlBackup
+            // 
+            this.ElipsePnlBackup.BorderRadius = 50;
             // 
             // ctrl_ShowStatisticscs_DelayedPayments
             // 
@@ -692,36 +733,6 @@
             this.ctrl_ShowStatisticscs_Visits.TextLableInfo = ".";
             this.ctrl_ShowStatisticscs_Visits.TextLableTitle = "زيارات اليوم";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Maroon;
-            this.label3.Location = new System.Drawing.Point(1633, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(150, 29);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "لوحة التحكم";
-            // 
-            // Elipse_PnlDisplay
-            // 
-            this.Elipse_PnlDisplay.BorderRadius = 20;
-            // 
-            // ElipseChartVisits
-            // 
-            this.ElipseChartVisits.BorderRadius = 50;
-            this.ElipseChartVisits.TargetControl = this.chartVisits;
-            // 
-            // ElipseChartPayments
-            // 
-            this.ElipseChartPayments.BorderRadius = 50;
-            this.ElipseChartPayments.TargetControl = this.chartPayments;
-            // 
-            // ElipsePnlBackup
-            // 
-            this.ElipsePnlBackup.BorderRadius = 50;
-            // 
             // Elipse1
             // 
             this.Elipse1.BorderRadius = 50;
@@ -742,17 +753,6 @@
             this.ElipseCtrl_DelayedPayments.BorderRadius = 50;
             this.ElipseCtrl_DelayedPayments.TargetControl = this.ctrl_ShowStatisticscs_DelayedPayments;
             // 
-            // guna2ShadowPanel1
-            // 
-            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(222, 9);
-            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
-            this.guna2ShadowPanel1.Radius = 10;
-            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(39, 832);
-            this.guna2ShadowPanel1.TabIndex = 24;
-            // 
             // FrmDashboardAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
@@ -762,7 +762,6 @@
             this.Controls.Add(this.PnlDisplay);
             this.Controls.Add(this.pnlTopBar);
             this.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "FrmDashboardAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

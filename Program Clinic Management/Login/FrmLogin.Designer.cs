@@ -227,10 +227,10 @@
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.BackColor = System.Drawing.Color.Transparent;
-            this.lblDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(769, 9);
+            this.lblDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Location = new System.Drawing.Point(415, 492);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(193, 19);
+            this.lblDate.Size = new System.Drawing.Size(197, 19);
             this.lblDate.TabIndex = 1;
             this.lblDate.Text = " AM 8:30  2026 / 5 / 24   الأحد";
             // 
@@ -256,7 +256,7 @@
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.guna2Panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
