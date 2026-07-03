@@ -20,9 +20,9 @@ using System.Windows.Forms;
         /// <summary>
         /// استدعاء الأيقونة من الموارد وتعيينها للفورم
         /// </summary>
-        public static void SetFormIcon(Form form)
+        public static void SetIconFormResources(Form form)
         {
-          //  form.Icon = Properties.Resources.iconForm_Linky;
+        //  form.Icon = Properties.Resources.ImageName;
         }
 
         /// <summary>
@@ -447,6 +447,23 @@ using System.Windows.Forms;
         return $"{years} سنة - {months} شهر - {days} يوم";
     }
 
+
+    /// <summary>
+    /// يعين أيقونة التطبيق الأساسية (Icon الخاصة بالـ EXE)
+    /// لجميع النوافذ بشكل تلقائي.
+    /// </summary>
+    public static void SetAppIcon(Form frm)
+    {
+        try
+        {
+            Icon appIcon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+            frm.Icon = appIcon;
+        }
+        catch
+        {
+            // تجاهل في حال عدم وجود أيقونة للتطبيق
+        }
+    }
 
 
     /// <summary>

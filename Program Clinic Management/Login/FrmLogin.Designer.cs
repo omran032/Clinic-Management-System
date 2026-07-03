@@ -165,6 +165,7 @@
             this.TxtPassword.IconRightSize = new System.Drawing.Size(28, 28);
             this.TxtPassword.Location = new System.Drawing.Point(36, 197);
             this.TxtPassword.Name = "TxtPassword";
+            this.TxtPassword.PasswordChar = '*';
             this.TxtPassword.PlaceholderText = "كلمة المرور";
             this.TxtPassword.SelectedText = "";
             this.TxtPassword.Size = new System.Drawing.Size(291, 36);
@@ -199,7 +200,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(75, 63);
+            this.label3.Location = new System.Drawing.Point(75, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(208, 19);
             this.label3.TabIndex = 3;
@@ -210,6 +211,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Navy;
             this.label2.Location = new System.Drawing.Point(48, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(267, 25);
@@ -225,10 +227,10 @@
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.BackColor = System.Drawing.Color.Transparent;
-            this.lblDate.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(767, 14);
+            this.lblDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Location = new System.Drawing.Point(769, 9);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(227, 21);
+            this.lblDate.Size = new System.Drawing.Size(193, 19);
             this.lblDate.TabIndex = 1;
             this.lblDate.Text = " AM 8:30  2026 / 5 / 24   الأحد";
             // 

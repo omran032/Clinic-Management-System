@@ -256,6 +256,23 @@ namespace BusinessLogic
 
 
 
+        /// <summary>
+        /// تعبئة الكومبوكس بجميع قيم الـ Enum LogAction
+        /// </summary>
+        public static void FillComboWithLogActions(ComboBox combo)
+        {
+            combo.Items.Clear(); // تنظيف العناصر القديمة
+
+            foreach (var action in Enum.GetValues(typeof(LogAction)))
+            {
+                combo.Items.Add(action);
+            }
+
+            combo.SelectedIndex = -1; // عدم اختيار أي عنصر افتراضياً
+        }
+
+
+
         public enum LogAction
         {
             Login,
@@ -316,21 +333,6 @@ namespace BusinessLogic
 
 
 
-
-        /// <summary>
-        /// تعبئة الكومبوكس بجميع قيم الـ Enum LogAction
-        /// </summary>
-        public static void FillComboWithLogActions(ComboBox combo)
-        {
-            combo.Items.Clear(); // تنظيف العناصر القديمة
-
-            foreach (var action in Enum.GetValues(typeof(LogAction)))
-            {
-                combo.Items.Add(action);
-            }
-
-            combo.SelectedIndex = -1; // عدم اختيار أي عنصر افتراضياً
-        }
 
 
 

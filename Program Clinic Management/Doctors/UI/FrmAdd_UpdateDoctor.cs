@@ -20,6 +20,7 @@ namespace Program_Clinic_Management.Doctors.UI
         public FrmAdd_UpdateDoctor(Mode mode_, ClassDoctor DoctorInfo_ = null)
         {
             InitializeComponent();
+            MyTools.SetAppIcon(this);
 
             SettingsControls();
 
@@ -211,9 +212,7 @@ namespace Program_Clinic_Management.Doctors.UI
             SaveInfoPatient_InObj();
 
             // معرف المستخدم الحالي
-            int currentUserID = 1;
-            if (ClassUser.UserInfo != null)
-                currentUserID = ClassUser.UserInfo.UserID;
+            int currentUserID = ClassUser.UserInfo.UserID;
 
             if (mode == Mode.Add)
             {

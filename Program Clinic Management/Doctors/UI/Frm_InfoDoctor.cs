@@ -21,6 +21,7 @@ namespace Program_Clinic_Management.Doctors.UI
             // ضبط شكل العناصر و الفورم
             ClassStyleAndColor.Style_TopBar_And_HiderForm(pnl_TopBar, this);
             MyTools.MoveControl(pnl_TopBar, this);
+            MyTools.SetAppIcon(this);
 
             if (DoctorInfo_ == null || DesignMode) return;
 

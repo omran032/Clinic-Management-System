@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static BusinessLogic.ClassLogs;
 
 namespace Program_Clinic_Management.Doctors.UI
 {
@@ -20,6 +21,8 @@ namespace Program_Clinic_Management.Doctors.UI
         public FrmAdd_UpdateAppointment(Mode ModeForm_ = Mode.Add , ClassAppointment AppointmentInfo_ = null)
         {
             InitializeComponent();
+
+            MyTools.SetAppIcon(this);
 
             LoadData();
             ModeForm = ModeForm_;
@@ -366,6 +369,8 @@ namespace Program_Clinic_Management.Doctors.UI
                 else if (ResultAdd == 0)
                 {
                     MessageBox.Show("لم يتم الاضافة لانه يوجد موعد في نفس الوقت المحدد", "موعد محجوز", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                    Log(LogAction.AddAppointment, "Appointments", ResultAdd, "إضافة موعد جديد");   // تسجيل العمل في Log
+
                     return;
                 }
                 else if (ResultAdd == -1)
@@ -380,16 +385,11 @@ namespace Program_Clinic_Management.Doctors.UI
             {
                 int ResultUpdate = ClsCMD_TableAppointments.UpdateAppointmentWithCheckAndReturnMessage
                     (AppointmentInfo.AppointmentID, doctorId, PatientInfo.PersonInfo.PersonID, VisitTypeID, AppointmentDate, TimeApp, StatusAppointment, Notes);
+                //رسائل النتيجة يعرضها المثود
+
                 if (ResultUpdate > 0)
                 {
-                    return;
-                }
-                else if (ResultUpdate == 0)
-                {
-                    return;
-                }
-                else if (ResultUpdate == -1)
-                {
+                    Log(LogAction.UpdateAppointment, "Appointments", AppointmentInfo.AppointmentID, "تعديل موعد");   // تسجيل العمل في Log
                     return;
                 }
             }

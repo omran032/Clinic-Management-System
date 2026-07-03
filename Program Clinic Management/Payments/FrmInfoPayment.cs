@@ -16,6 +16,7 @@ namespace Program_Clinic_Management.Payments
         {
             InitializeComponent();
             MyTools.MoveControl(pnl_TopBar, this);
+            MyTools.SetAppIcon(this);
 
             PaymentID = PaymentID_;
         }

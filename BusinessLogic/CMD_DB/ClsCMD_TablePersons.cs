@@ -200,7 +200,10 @@ namespace BusinessLogic.CMD_DB
             };
  
             if (  ClassCommands.ExecuteQuery(query, parameters))
-                      MessageBox.Show("تم تعديل بيانات الشخص بنجاح.", "نجاح العملية", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            {
+               MessageBox.Show("تم تعديل بيانات الشخص بنجاح.", "نجاح العملية", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ClassLogs.AddLog(ClassUser.UserInfo.UserID, "AddPerson", "Persons", person.PersonID , "إضافة شخص جديد");   // تسجيل العمل في Log
+            }
             else
                 MessageBox.Show("لم يتم تعديل بيانات الشخص.", "فشل العملية", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
@@ -232,7 +235,10 @@ namespace BusinessLogic.CMD_DB
             int newID = ClassCommands.ExecuteScalar(query, parameters);
 
             if (newID > 0)
+            {
                 MessageBox.Show("تمت إضافة الشخص بنجاح.", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ClassLogs.AddLog(ClassUser.UserInfo.UserID, "AddPerson", "Persons", newID , "إضافة شخص جديد");   // تسجيل العمل في Log
+            }
             else
                 MessageBox.Show("فشل إضافة الشخص.", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 

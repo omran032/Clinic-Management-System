@@ -119,6 +119,7 @@
             // 
             // ctrl_InfoVisits_AppointmentsDoctor1
             // 
+            this.ctrl_InfoVisits_AppointmentsDoctor1.BackColor = System.Drawing.Color.AliceBlue;
             this.ctrl_InfoVisits_AppointmentsDoctor1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ctrl_InfoVisits_AppointmentsDoctor1.Location = new System.Drawing.Point(0, 59);
             this.ctrl_InfoVisits_AppointmentsDoctor1.Margin = new System.Windows.Forms.Padding(4);

@@ -1027,11 +1027,8 @@ INNER JOIN VisitTypes vt ON a.VisitTypeId = vt.VisitTypeId
 
 
 
-
-
-
-
-
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -1260,7 +1257,91 @@ INNER JOIN VisitTypes vt ON a.VisitTypeId = vt.VisitTypeId
 
 
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+
+        /// <summary>
+        ///  ( جلب آخر 3 مواعيد قادمة للطبيب ( غير منتهية 
+        /// </summary>
+        public static List<ClassAppointment> GetLastThreeUpcomingAppointments(int doctorId)
+        {
+            string query = @"
+        SELECT TOP 3
+            A.AppointmentId,
+            A.AppointmentDate,
+            A.Status,
+            A.Notes AS AppointmentNotes,
+            A.EstimatedDurationMinutes,
+
+            -- Patient (Persons)
+            P.PersonId,
+            P.FirstName,
+            P.LastName,
+            P.Gender,
+            P.BirthDate,
+            P.Phone,
+            P.Address,
+            P.CreatedAt,
+            P.UpdatedAt,
+
+            -- Patient (Patients)
+            PT.PatientId AS [ID Patiient],
+            PT.MedicalNotes,
+            PT.FirstVisitDate,
+            PT.ChronicDiseases,
+            PT.Allergies,
+            PT.Notes,
+            PT.ComplianceScore,
+
+            -- Doctor
+            D.DoctorId AS [Doctor ID],
+            D.SpecializationId,
+            S.Name AS [Specialization Name],
+            D.Notes AS DoctorNotes,
+
+            -- Doctor Person
+            DP.PersonId AS DoctorPersonId,
+            DP.FirstName AS DoctorFirstName,
+            DP.LastName AS DoctorLastName,
+            DP.Phone AS DoctorPhone,
+            DP.Address AS DoctorAddress,
+
+            -- Visit Type
+            VT.VisitTypeId,
+            VT.TypeName AS VisitTypeName,
+            VT.Description AS VisitTypeDescription
+
+        FROM Appointments A
+        INNER JOIN Persons P ON A.PersonId = P.PersonId
+        INNER JOIN Patients PT ON P.PersonId = PT.PersonId
+        INNER JOIN Doctors D ON A.DoctorId = D.DoctorId
+        INNER JOIN Persons DP ON D.PersonId = DP.PersonId
+        INNER JOIN Specializations S ON D.SpecializationId = S.SpecializationId
+        INNER JOIN VisitTypes VT ON A.VisitTypeId = VT.VisitTypeId
+        WHERE A.DoctorId = @DoctorId
+          AND A.AppointmentDate > GETDATE()
+          AND A.Status IN ('Pending', 'InProgress', 'Delayed')
+        ORDER BY A.AppointmentDate ASC  ";
+
+            var parameters = new Dictionary<string, object>()
+            {
+                    { "@DoctorId", doctorId }
+            };
+
+            DataTable dt = ClassCommands.ShowData(query, parameters);
+
+            List<ClassAppointment> appointments = new List<ClassAppointment>();
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                ClassAppointment appointment = ClassAppointment.GetInfoAppointmentInObj(dt, i);
+                appointments.Add(appointment);
+            }
+
+            return appointments;
+        }
 
 
 

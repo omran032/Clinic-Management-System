@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static BusinessLogic.ClassLogs;
 
 namespace Program_Clinic_Management.Appointment.UI
 {
@@ -22,6 +23,7 @@ namespace Program_Clinic_Management.Appointment.UI
             InitializeComponent();
 
             ClassStyleAndColor.Style_DataGridView(DataGV);
+            MyTools.SetAppIcon(this);
 
             DistributionPowers();
             LoadDataInTable();
@@ -212,6 +214,8 @@ namespace Program_Clinic_Management.Appointment.UI
             if (result == 1)
             {
                 MessageBox.Show("تم حذف الموعد بنجاح.", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Log(LogAction.DeleteAppointment, "Appointments", AppointmentID, "حذف موعد");   // تسجيل العمل في Log
+                LoadDataInTable(); // Reeresh
             }
             else if (result == 0)
             {

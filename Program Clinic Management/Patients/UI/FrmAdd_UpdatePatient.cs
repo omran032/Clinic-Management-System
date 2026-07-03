@@ -23,6 +23,7 @@ namespace Program_Clinic_Management.Patients.UI
         public FrmAdd_UpdatePatient(  Mode mode_ ,  ClassPatients PatientsInfo_ = null )
         {
             InitializeComponent();
+            MyTools.SetAppIcon(this);
 
             SettingsControls();
 

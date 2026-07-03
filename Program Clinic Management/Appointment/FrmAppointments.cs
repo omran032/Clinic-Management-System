@@ -21,6 +21,7 @@ namespace Program_Clinic_Management.Appointment
             InitializeComponent();
 
             MyTools.MoveControl(pnl_TopBar, this);
+            MyTools.SetAppIcon(this);
 
             DistributionPowers();
         }

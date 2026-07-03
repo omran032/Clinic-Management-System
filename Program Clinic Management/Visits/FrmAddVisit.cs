@@ -23,6 +23,7 @@ namespace Program_Clinic_Management.Visits
         public FrmAdd_UpdateVisit( )
         {
             InitializeComponent();
+            MyTools.SetAppIcon(this);
 
             Mode_ = Mode.Add;
             LoadData();
@@ -380,6 +381,7 @@ namespace Program_Clinic_Management.Visits
                 {
                     ClsCMD_TablePatients.UpdateComplianceByAppointmentStatus(PersonID, StatusAppointment); // تحديث درجة الالتزام
                     MessageBox.Show($"تم تسجيل الزيارة للمريض \n\n {NamePatient} ", "نجاح العملية", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClassLogs.AddLog(ClassUser.UserInfo.UserID, "AddVisit", "Visits", 0 , "إضافة زيارة جديدة");   // تسجيل العمل في Log
                     DisplaylAppointmentDoctor();
                     return;
                 }
@@ -397,6 +399,7 @@ namespace Program_Clinic_Management.Visits
                 {
                     ClsCMD_TablePatients.UpdateComplianceByAppointmentStatus(PersonID, StatusAppointment); // تحديث درجة الالتزام
                     MessageBox.Show($"تم تعديل الزيارة للمريض \n\n {NamePatient} ", "نجاح العملية", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClassLogs.AddLog(ClassUser.UserInfo.UserID, "UpdateVisit", "Visits", VisitID , "تعديل زيارة");   // تسجيل العمل في Log
                     DisplaylAppointmentDoctor();
                     return;
                 }

@@ -149,6 +149,7 @@
             this.ToolStripMenuItem.Name = "ToolStripMenuItem";
             this.ToolStripMenuItem.Size = new System.Drawing.Size(204, 38);
             this.ToolStripMenuItem.Text = "تسجيل زيارة";
+            this.ToolStripMenuItem.Visible = false;
             // 
             // btnUpdate
             // 

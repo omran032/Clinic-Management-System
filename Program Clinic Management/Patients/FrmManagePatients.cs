@@ -31,6 +31,7 @@ namespace Program_Clinic_Management.Patients
             ClassStyleAndColor.Style_DataGridView(DataGV);
             // تحريك الفورم
             MyTools.MoveControl(pnl_TopBar, this);
+            MyTools.SetAppIcon(this);
 
         }
 

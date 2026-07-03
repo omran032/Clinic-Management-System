@@ -12,6 +12,7 @@ using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static BusinessLogic.ClassLogs;
 
 namespace Program_Clinic_Management.Manage_Users
 {
@@ -21,6 +22,7 @@ namespace Program_Clinic_Management.Manage_Users
         {
             InitializeComponent();
             MyTools.MoveControl(pnl_TopBar, this);
+            MyTools.SetAppIcon(this);
 
             ModeForm = mode_;
             UserID_Update = UserID_;
@@ -223,6 +225,8 @@ namespace Program_Clinic_Management.Manage_Users
                 {
                     EventRefreshData?.Invoke(); // تحديث قائمة المستخدمين 
                   MessageBox.Show(" تم إضافة مستخدم جديد بصلاحية" + SelectedRole, "تمت العملية بنجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Log(LogAction.AddUser, "Users",0, "إضافة مستخدم جديد");   // تسجيل العمل في Log
+
                     this.Close();
                 }
 
@@ -239,9 +243,10 @@ namespace Program_Clinic_Management.Manage_Users
                 {
                     EventRefreshData?.Invoke(); // تحديث قائمة المستخدمين 
                     MessageBox.Show(" تم تعديل بيانات مستخدم  " , "تمت عملية التعديل بنجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Log(LogAction.UpdateUser, "Users", UserID_Update, "تعديل بيانات مستخدم");   // تسجيل العمل في Log
+
                     this.Close();
                 }
-
                 else
                     MessageBox.Show(" لم تتم عملية تعديل المستخدم ", "لم تنجح عملية التعديل ,حصل مشكلة", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

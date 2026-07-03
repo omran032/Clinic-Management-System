@@ -629,6 +629,7 @@ namespace BusinessLogic.CMD_DB
             if (result)
             {
                 MessageBox.Show("تم حذف الزيارة بنجاح.", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ClassLogs.AddLog(ClassUser.UserInfo.UserID, "DeleteVisit", "Visits", visitId , "حذف زيارة");   // تسجيل العمل في Log
             }
             else
             {
@@ -737,6 +738,92 @@ WHERE 1 = 1
 
             return ClassCommands.ShowData(query, parameters);
         }
+
+
+
+
+
+
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+        /// <summary>
+        /// جلب عدد مواعيد اليوم للطبيب + عدد المواعيد المتبقية + جدول المواعيد
+        /// مع فصل التاريخ عن الوقت، وإرجاع PatientId بدل PersonId
+        /// </summary>
+        public static (int Total, int Remaining, DataTable List) GetTodayAppointmentsInfo_WithPatientId(int doctorId)
+        {
+            string query = @"
+        SELECT 
+            A.AppointmentId,
+
+            -- فصل التاريخ عن الوقت
+            CAST(A.AppointmentDate AS DATE) AS AppointmentDate,
+            CAST(A.AppointmentDate AS TIME) AS AppointmentTime,
+
+            A.Status,
+            A.EstimatedDurationMinutes,
+
+            -- إرجاع PatientId بدل PersonId
+            PT.PatientId AS PatientId,
+
+            A.VisitTypeId
+
+        FROM Appointments A
+        INNER JOIN Patients PT ON A.PersonId = PT.PersonId
+        WHERE A.DoctorId = @DoctorId
+          AND CAST(A.AppointmentDate AS DATE) = CAST(GETDATE() AS DATE)
+        ORDER BY A.AppointmentDate ASC
+    ";
+
+            var parameters = new Dictionary<string, object>()
+            {
+                { "@DoctorId", doctorId }
+            };
+
+            DataTable dt = ClassCommands.ShowData(query, parameters);
+
+            // عدد كل مواعيد اليوم
+            int total = dt.Rows.Count;
+
+            // عدد المواعيد المتبقية
+            int remaining = 0;
+
+            foreach (DataRow row in dt.Rows)
+            {
+                string status = row["Status"].ToString();
+
+                if (status == "Pending" || status == "InProgress" || status == "Delayed")
+                    remaining++;
+            }
+
+            return (total, remaining, dt);
+
+
+            #region  XXXX   طريقة  الاستدعاء     XXXX
+
+            //var info = GetTodayAppointmentsInfo_WithPatientId(doctorId);
+            //// عرض البيانات بالجدول
+            //dataGridView1.DataSource = info.List;
+            //// عرض العدد الكلي للمواعيد
+            //lblTotal.Text = info.Total.ToString();
+            //// عرض عدد مواعيد متبقية
+            //lblRemaining.Text = info.Remaining.ToString();
+
+            #endregion
+        }
+
+
+
+
+
+
+
 
 
 

@@ -19,6 +19,7 @@ namespace Program_Clinic_Management.Persons.UI
         public FrmAdd_UpdatePerson(Mode mode_ , ClassPerson personInfo_ = null)
         {
             InitializeComponent();
+            MyTools.SetAppIcon(this);
 
             SettingsControls();
 

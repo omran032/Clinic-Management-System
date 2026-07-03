@@ -17,6 +17,7 @@ namespace Program_Clinic_Management.Appointment.UI
         {
             InitializeComponent();
             MyTools.MoveControl(pnl_TopBar, this);
+            MyTools.SetAppIcon(this);
 
             if (AppointMentInfo_ == null) return;
 

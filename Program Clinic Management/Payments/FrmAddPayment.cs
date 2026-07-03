@@ -1,4 +1,5 @@
-﻿using BusinessLogic.CMD_DB;
+﻿using BusinessLogic;
+using BusinessLogic.CMD_DB;
 using BusinessLogic.InfoTable;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace Program_Clinic_Management.Payments
         public FrmAddPayment(int VisitID_)
         {
             InitializeComponent();
+            MyTools.SetAppIcon(this);
 
             VisitID = VisitID_;
             ModeForm = Mode.Add;
@@ -167,6 +169,7 @@ namespace Program_Clinic_Management.Payments
                 if (PaymentID > 0)
                 {
                     MessageBox.Show(" تم إضافة دفعة جديدة من المريض  ", " الدفعة رقم " + PaymentID, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClassLogs.AddLog(ClassUser.UserInfo.UserID, "AddPayment", "Payments", PaymentID , "إضافة دفعة جديدة");   // تسجيل العمل في Log
                 }
                 else
                 {
@@ -180,6 +183,7 @@ namespace Program_Clinic_Management.Payments
                 if (result  )
                 {
                     MessageBox.Show("تم تعديل الدفعة بنجاح ", " تمت عملية التعديل "  , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClassLogs.AddLog(ClassUser.UserInfo.UserID, "UpdatePayment", "Payments", personID , "تعديل دفعة");   // تسجيل العمل في Log
                 }
                 else
                 {

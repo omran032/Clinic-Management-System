@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using static BusinessLogic.CMD_DB.ClsCMD_TableVisits;
 
@@ -431,8 +432,13 @@ namespace BusinessLogic.CMD_DB
                 int rows = ClassCommands.ExecuteScalar(query, parameters);
 
                 if (rows > 0)
+                {
+                    ClassLogs.AddLog(ClassUser.UserInfo.UserID, "DeletePayment", "Payments", paymentId , "حذف دفعة");   // تسجيل العمل في Log
+                    MessageBox.Show("تم حذف الدفعة بنجاح" , "تم الحذف" ,MessageBoxButtons.OK , MessageBoxIcon.Information);
                     return "تم حذف الدفعة بنجاح";
+                }
 
+                    MessageBox.Show("لم يتم العثور على الدفعة المطلوبة", "فشل عملية الحذف" ,MessageBoxButtons.OK , MessageBoxIcon.Error);
                 return "لم يتم العثور على الدفعة المطلوبة";
             }
             catch

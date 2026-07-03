@@ -40,12 +40,12 @@
             this.ctrl_IconProjectClinic1 = new BusinessLogic.Ctrl_IconProjectClinic();
             this.lblTitle = new System.Windows.Forms.Label();
             this.DataGV = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.ElipseDGV = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.ElipseForm = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.btnAddNewUser = new Guna.UI2.WinForms.Guna2Button();
             this.MyContextMS = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ToolStripMenu_btnShowInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenu_btnUpdate = new System.Windows.Forms.ToolStripMenuItem();
+            this.ElipseDGV = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.ElipseForm = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.btnAddNewUser = new Guna.UI2.WinForms.Guna2Button();
             this.pnl_TopBar.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -180,34 +180,6 @@
             this.DataGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.DataGV.SelectionChanged += new System.EventHandler(this.DataGV_SelectionChanged);
             // 
-            // ElipseDGV
-            // 
-            this.ElipseDGV.BorderRadius = 25;
-            this.ElipseDGV.TargetControl = this.DataGV;
-            // 
-            // ElipseForm
-            // 
-            this.ElipseForm.BorderRadius = 20;
-            this.ElipseForm.TargetControl = this;
-            // 
-            // btnAddNewUser
-            // 
-            this.btnAddNewUser.BorderRadius = 5;
-            this.btnAddNewUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddNewUser.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddNewUser.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddNewUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAddNewUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAddNewUser.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(111)))), ((int)(((byte)(207)))));
-            this.btnAddNewUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNewUser.ForeColor = System.Drawing.Color.White;
-            this.btnAddNewUser.Location = new System.Drawing.Point(835, 98);
-            this.btnAddNewUser.Name = "btnAddNewUser";
-            this.btnAddNewUser.Size = new System.Drawing.Size(228, 42);
-            this.btnAddNewUser.TabIndex = 25;
-            this.btnAddNewUser.Text = "إضافة مستخدم";
-            this.btnAddNewUser.Click += new System.EventHandler(this.btnAddNewUser_Click);
-            // 
             // MyContextMS
             // 
             this.MyContextMS.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -233,6 +205,37 @@
             this.ToolStripMenu_btnUpdate.Size = new System.Drawing.Size(204, 38);
             this.ToolStripMenu_btnUpdate.Text = "تعديل";
             this.ToolStripMenu_btnUpdate.Click += new System.EventHandler(this.ToolStripMenu_btnUpdate_Click);
+            // 
+            // ElipseDGV
+            // 
+            this.ElipseDGV.BorderRadius = 25;
+            this.ElipseDGV.TargetControl = this.DataGV;
+            // 
+            // ElipseForm
+            // 
+            this.ElipseForm.BorderRadius = 20;
+            this.ElipseForm.TargetControl = this;
+            // 
+            // btnAddNewUser
+            // 
+            this.btnAddNewUser.BorderRadius = 5;
+            this.btnAddNewUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddNewUser.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddNewUser.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddNewUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddNewUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddNewUser.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(111)))), ((int)(((byte)(207)))));
+            this.btnAddNewUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNewUser.ForeColor = System.Drawing.Color.White;
+            this.btnAddNewUser.Image = global::Program_Clinic_Management.Properties.Resources.Add;
+            this.btnAddNewUser.ImageOffset = new System.Drawing.Point(-3, 0);
+            this.btnAddNewUser.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnAddNewUser.Location = new System.Drawing.Point(845, 99);
+            this.btnAddNewUser.Name = "btnAddNewUser";
+            this.btnAddNewUser.Size = new System.Drawing.Size(228, 42);
+            this.btnAddNewUser.TabIndex = 25;
+            this.btnAddNewUser.Text = "إضافة مستخدم";
+            this.btnAddNewUser.Click += new System.EventHandler(this.btnAddNewUser_Click);
             // 
             // FrmManageUsers
             // 

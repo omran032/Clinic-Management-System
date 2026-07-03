@@ -1,6 +1,8 @@
 ﻿using BusinessLogic;
 using BusinessLogic.CMD_DB;
 using BusinessLogic.InfoTable;
+using Program_Clinic_Management.Doctors.UI;
+using Program_Clinic_Management.Manage_Users;
 using Program_Clinic_Management.Patients.UControls;
 using Program_Clinic_Management.Patients.UI;
 using System;
@@ -14,7 +16,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static BusinessLogic.ClassLogs;
 using static BusinessLogic.CMD_DB.ClsCMD_TableDoctors;
-using Program_Clinic_Management.Doctors.UI;
 
 namespace Program_Clinic_Management.Doctors
 {
@@ -32,6 +33,7 @@ namespace Program_Clinic_Management.Doctors
             ClassStyleAndColor.Style_DataGridView(DataGV);
             // تحريك الفورم
             MyTools.MoveControl(pnl_TopBar, this);
+            MyTools.SetAppIcon(this);
 
             ctrl_FeltterDataDoctors.EventShowDataPDoctorsInDataTable += LoadDataFeltter;
 
@@ -159,6 +161,10 @@ namespace Program_Clinic_Management.Doctors
 
         #endregion
 
+
+                        // /////// /////////// /////// /////// ///////
+                        // /////// /////////// /////// /////// ///////
+
         // زر حذف الطبيب
         private void ToolStripMenu_btnDelete_Click(object sender, EventArgs e)
         {
@@ -183,13 +189,7 @@ namespace Program_Clinic_Management.Doctors
             MyTools.ShowForm(add_UpdateDoctor);
         }
 
-        // زر الإضافة
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            FrmAdd_UpdateDoctor add_UpdateDoctor = new FrmAdd_UpdateDoctor(FrmAdd_UpdateDoctor.Mode.Add);
-            add_UpdateDoctor.EventShowRefrechData += LoadData; // حدث التحديث عند التغيير
-            MyTools.ShowForm(add_UpdateDoctor);
-        }
+ 
 
         // زر عرض معلومات الطبيب
         private void ToolStripMenu_btnShowInfo_Click(object sender, EventArgs e)
@@ -214,6 +214,26 @@ namespace Program_Clinic_Management.Doctors
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        // إضافة طبيب من واجهة المستخدمين
+        private void btnAdd_Click_1(object sender, EventArgs e)
+        {
+            FrmAdd_UpdateUsers add_UpdateUsers = new FrmAdd_UpdateUsers();
+            add_UpdateUsers.EventRefreshData += LoadData; // تحديث عند الاضافة
+            MyTools.ShowForm(add_UpdateUsers);
+        }
+
+        // زر الإضافة
+        //متوقف
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            //متوقف والسبب
+            // السبب هو انه عند إضافة طبيب من واجهة الإضافة لا يتم إضافة الطبيب  ضمن اليوزر _ لهيك مستقبلا بدك تلاقي طريقة تضيفه بنفس الرطريقة مع إضافته ضمن اليوزر 
+            //
+            FrmAdd_UpdateDoctor add_UpdateDoctor = new FrmAdd_UpdateDoctor(FrmAdd_UpdateDoctor.Mode.Add);
+            add_UpdateDoctor.EventShowRefrechData += LoadData; // حدث التحديث عند التغيير
+            MyTools.ShowForm(add_UpdateDoctor);
         }
     }
 }

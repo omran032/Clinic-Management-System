@@ -68,6 +68,7 @@ namespace BusinessLogic.CMD_DB
             return Directory.Exists(dir);
         }
 
+
         /// <summary>
         /// إنشاء نسخة احتياطية لقاعدة البيانات
         /// </summary>
@@ -77,14 +78,13 @@ namespace BusinessLogic.CMD_DB
                 return false;
 
             string query = $@"
-        BACKUP DATABASE [{ClsConnectionDB.DatabaseName}]
+        BACKUP DATABASE [ClinicSystemDB]
         TO DISK = '{backupFilePath}'
         WITH FORMAT, INIT, SKIP, NOREWIND, NOUNLOAD, STATS = 10;";
 
             try
             {
-                ClassCommands.ExecuteNonQuery_Command(query  );
-                return true;
+                return ClassCommands.ExecuteNonQuery_Command(query  );
             }
             catch
             {

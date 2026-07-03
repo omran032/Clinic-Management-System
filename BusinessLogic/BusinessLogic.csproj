@@ -47,7 +47,7 @@
   <ItemGroup>
     <Compile Include="AppointmentSmartEngine\DayLoad.cs" />
     <Compile Include="AppointmentSmartEngine\SuggestedAppointment.cs" />
-    <Compile Include="ClassLogs.cs" />
+    <Compile Include="CMD_DB\ClassLogs.cs" />
     <Compile Include="ClassStyleAndColor.cs" />
     <Compile Include="AppointmentSmartEngine\ClsAppointmentSmartEngine.cs" />
     <Compile Include="CMD_DB\ClsCMD_Backup.cs" />

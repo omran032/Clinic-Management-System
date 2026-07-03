@@ -18,6 +18,7 @@ namespace Program_Clinic_Management.Manage_Users
         {
             InitializeComponent();
             MyTools.MoveControl(pnl_TopBar, this);
+            MyTools.SetAppIcon(this);
 
             UserID = UserID_;
             lblTitle.Text = Title;

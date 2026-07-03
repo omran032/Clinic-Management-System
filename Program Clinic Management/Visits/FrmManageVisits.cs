@@ -22,7 +22,7 @@ namespace Program_Clinic_Management.Visits
         public FrmManageVisits()
         {
             InitializeComponent();
-
+            MyTools.SetAppIcon(this);
             MyTools.MoveControl(pnl_TopBar, this);
             ClassStyleAndColor.Style_DataGridView(DataGV);
 

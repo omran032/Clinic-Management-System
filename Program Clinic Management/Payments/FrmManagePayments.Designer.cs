@@ -33,8 +33,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DataGV = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.MyContextMS = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ToolStrip_btnInfoPayment = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStrip_btnUpdatePayment = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_TopBar = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnClose = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnMinimize = new Guna.UI2.WinForms.Guna2PictureBox();
             this.ctrl_IconProjectClinic1 = new BusinessLogic.Ctrl_IconProjectClinic();
             this.lblTitle = new System.Windows.Forms.Label();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
@@ -64,28 +69,23 @@
             this.label7 = new System.Windows.Forms.Label();
             this.PnlTxt = new System.Windows.Forms.Panel();
             this.TxtFellterPatientAndDoctor = new Guna.UI2.WinForms.Guna2TextBox();
-            this.MyContextMS = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ElipseForm = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.ElipseDGV = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btnDeletePayment = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnUpdatePayment = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnAddPayment = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btnClose = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnMinimize = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.ToolStrip_btnInfoPayment = new System.Windows.Forms.ToolStripMenuItem();
-            this.تعديلالدفعةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.DataGV)).BeginInit();
+            this.MyContextMS.SuspendLayout();
             this.pnl_TopBar.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             this.guna2ShadowPanel1.SuspendLayout();
             this.guna2ShadowPanel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.Pnl_BtnSearsh.SuspendLayout();
             this.PnlDate.SuspendLayout();
             this.PnlTxt.SuspendLayout();
-            this.MyContextMS.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).BeginInit();
             this.SuspendLayout();
             // 
             // DataGV
@@ -112,7 +112,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DataGV.DefaultCellStyle = dataGridViewCellStyle3;
             this.DataGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DataGV.Location = new System.Drawing.Point(0, 165);
+            this.DataGV.Location = new System.Drawing.Point(16, 165);
             this.DataGV.Name = "DataGV";
             this.DataGV.RowHeadersVisible = false;
             this.DataGV.Size = new System.Drawing.Size(1101, 472);
@@ -140,6 +140,32 @@
             this.DataGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.DataGV.SelectionChanged += new System.EventHandler(this.DataGV_SelectionChanged);
             // 
+            // MyContextMS
+            // 
+            this.MyContextMS.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MyContextMS.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.MyContextMS.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStrip_btnInfoPayment,
+            this.ToolStrip_btnUpdatePayment});
+            this.MyContextMS.Name = "MyContextMS";
+            this.MyContextMS.Size = new System.Drawing.Size(202, 102);
+            // 
+            // ToolStrip_btnInfoPayment
+            // 
+            this.ToolStrip_btnInfoPayment.Image = global::Program_Clinic_Management.Properties.Resources.Info;
+            this.ToolStrip_btnInfoPayment.Name = "ToolStrip_btnInfoPayment";
+            this.ToolStrip_btnInfoPayment.Size = new System.Drawing.Size(201, 38);
+            this.ToolStrip_btnInfoPayment.Text = "معلومات الدفعة";
+            this.ToolStrip_btnInfoPayment.Click += new System.EventHandler(this.ToolStrip_btnInfoPayment_Click);
+            // 
+            // ToolStrip_btnUpdatePayment
+            // 
+            this.ToolStrip_btnUpdatePayment.Image = global::Program_Clinic_Management.Properties.Resources.Update;
+            this.ToolStrip_btnUpdatePayment.Name = "ToolStrip_btnUpdatePayment";
+            this.ToolStrip_btnUpdatePayment.Size = new System.Drawing.Size(201, 38);
+            this.ToolStrip_btnUpdatePayment.Text = "تعديل الدفعة";
+            this.ToolStrip_btnUpdatePayment.Click += new System.EventHandler(this.btnUpdatePayment_Click);
+            // 
             // pnl_TopBar
             // 
             this.pnl_TopBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -162,6 +188,34 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(136, 61);
             this.guna2Panel1.TabIndex = 6;
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.Image = global::Program_Clinic_Management.Properties.Resources.X;
+            this.btnClose.ImageRotate = 0F;
+            this.btnClose.Location = new System.Drawing.Point(85, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(39, 36);
+            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnClose.TabIndex = 4;
+            this.btnClose.TabStop = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimize.Image = global::Program_Clinic_Management.Properties.Resources.Minimize;
+            this.btnMinimize.ImageRotate = 0F;
+            this.btnMinimize.Location = new System.Drawing.Point(19, 12);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(42, 40);
+            this.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMinimize.TabIndex = 5;
+            this.btnMinimize.TabStop = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // ctrl_IconProjectClinic1
             // 
@@ -512,16 +566,6 @@
             this.TxtFellterPatientAndDoctor.Visible = false;
             this.TxtFellterPatientAndDoctor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtFellterPatientAndDoctor_KeyPress);
             // 
-            // MyContextMS
-            // 
-            this.MyContextMS.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MyContextMS.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.MyContextMS.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStrip_btnInfoPayment,
-            this.تعديلالدفعةToolStripMenuItem});
-            this.MyContextMS.Name = "MyContextMS";
-            this.MyContextMS.Size = new System.Drawing.Size(202, 102);
-            // 
             // ElipseForm
             // 
             this.ElipseForm.BorderRadius = 20;
@@ -602,50 +646,6 @@
             this.btnAddPayment.Text = "إضافة دفعة";
             this.btnAddPayment.Click += new System.EventHandler(this.btnAddPayment_Click);
             // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.Image = global::Program_Clinic_Management.Properties.Resources.X;
-            this.btnClose.ImageRotate = 0F;
-            this.btnClose.Location = new System.Drawing.Point(85, 12);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(39, 36);
-            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnClose.TabIndex = 4;
-            this.btnClose.TabStop = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimize.Image = global::Program_Clinic_Management.Properties.Resources.Minimize;
-            this.btnMinimize.ImageRotate = 0F;
-            this.btnMinimize.Location = new System.Drawing.Point(19, 12);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(42, 40);
-            this.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMinimize.TabIndex = 5;
-            this.btnMinimize.TabStop = false;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
-            // ToolStrip_btnInfoPayment
-            // 
-            this.ToolStrip_btnInfoPayment.Image = global::Program_Clinic_Management.Properties.Resources.Info;
-            this.ToolStrip_btnInfoPayment.Name = "ToolStrip_btnInfoPayment";
-            this.ToolStrip_btnInfoPayment.Size = new System.Drawing.Size(201, 38);
-            this.ToolStrip_btnInfoPayment.Text = "معلومات الدفعة";
-            this.ToolStrip_btnInfoPayment.Click += new System.EventHandler(this.ToolStrip_btnInfoPayment_Click);
-            // 
-            // تعديلالدفعةToolStripMenuItem
-            // 
-            this.تعديلالدفعةToolStripMenuItem.Image = global::Program_Clinic_Management.Properties.Resources.Update;
-            this.تعديلالدفعةToolStripMenuItem.Name = "تعديلالدفعةToolStripMenuItem";
-            this.تعديلالدفعةToolStripMenuItem.Size = new System.Drawing.Size(201, 38);
-            this.تعديلالدفعةToolStripMenuItem.Text = "تعديل الدفعة";
-            this.تعديلالدفعةToolStripMenuItem.Click += new System.EventHandler(this.btnUpdatePayment_Click);
-            // 
             // FrmManagePayments
             // 
             this.AcceptButton = this.btnSearsh;
@@ -668,9 +668,12 @@
             this.Text = "FrmManagePayments";
             this.Load += new System.EventHandler(this.FrmManagePayments_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGV)).EndInit();
+            this.MyContextMS.ResumeLayout(false);
             this.pnl_TopBar.ResumeLayout(false);
             this.pnl_TopBar.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
             this.guna2ShadowPanel2.ResumeLayout(false);
@@ -680,9 +683,6 @@
             this.PnlDate.ResumeLayout(false);
             this.PnlDate.PerformLayout();
             this.PnlTxt.ResumeLayout(false);
-            this.MyContextMS.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -728,7 +728,7 @@
         private Guna.UI2.WinForms.Guna2GradientButton btnSearsh;
         private System.Windows.Forms.ContextMenuStrip MyContextMS;
         private System.Windows.Forms.ToolStripMenuItem ToolStrip_btnInfoPayment;
-        private System.Windows.Forms.ToolStripMenuItem تعديلالدفعةToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStrip_btnUpdatePayment;
         private Guna.UI2.WinForms.Guna2Elipse ElipseForm;
         private Guna.UI2.WinForms.Guna2Elipse ElipseDGV;
     }

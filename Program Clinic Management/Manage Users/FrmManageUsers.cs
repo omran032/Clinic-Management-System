@@ -23,6 +23,8 @@ namespace Program_Clinic_Management.Manage_Users
 
             ClassStyleAndColor.Style_DataGridView(DataGV); // تصميم الجدول
             MyTools.MoveControl(pnl_TopBar, this);
+            MyTools.SetAppIcon(this);
+
         }
 
         DataTable DatatableUsers = new DataTable();

@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmManageDoctors));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ElipseForm = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.MyContextMS = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ToolStripMenu_btnShowInfo = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,11 +46,13 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnClose = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnMinimize = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.ctrl_IconProjectClinic1 = new BusinessLogic.Ctrl_IconProjectClinic();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnAdd = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnAddDoctor = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2GradientButton();
             this.ctrl_FeltterDataDoctors = new Program_Clinic_Management.Ctrl_FeltterDataDoctors();
+            this.ctrl_IconProjectClinic1 = new BusinessLogic.Ctrl_IconProjectClinic();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnAdd = new Guna.UI2.WinForms.Guna2GradientButton();
             this.MyContextMS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGV)).BeginInit();
             this.pnl_TopBar.SuspendLayout();
@@ -120,26 +122,26 @@
             // 
             // DataGV
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.DataGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.DataGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.DataGV.ColumnHeadersHeight = 4;
             this.DataGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGV.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGV.DefaultCellStyle = dataGridViewCellStyle9;
             this.DataGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DataGV.Location = new System.Drawing.Point(42, 187);
             this.DataGV.Name = "DataGV";
@@ -219,17 +221,6 @@
             this.btnMinimize.TabStop = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
-            // ctrl_IconProjectClinic1
-            // 
-            this.ctrl_IconProjectClinic1.BackColor = System.Drawing.Color.Transparent;
-            this.ctrl_IconProjectClinic1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrl_IconProjectClinic1.Location = new System.Drawing.Point(5, 3);
-            this.ctrl_IconProjectClinic1.Margin = new System.Windows.Forms.Padding(5);
-            this.ctrl_IconProjectClinic1.Name = "ctrl_IconProjectClinic1";
-            this.ctrl_IconProjectClinic1.Size = new System.Drawing.Size(246, 57);
-            this.ctrl_IconProjectClinic1.TabIndex = 4;
-            this.ctrl_IconProjectClinic1.TitleNameColor = System.Drawing.Color.White;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -242,30 +233,31 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "الأطباء";
             // 
-            // btnAdd
+            // btnAddDoctor
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.BorderColor = System.Drawing.Color.Blue;
-            this.btnAdd.BorderRadius = 10;
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAdd.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAdd.FillColor = System.Drawing.Color.Blue;
-            this.btnAdd.FillColor2 = System.Drawing.Color.DeepSkyBlue;
-            this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Image = global::Program_Clinic_Management.Properties.Resources.user;
-            this.btnAdd.ImageOffset = new System.Drawing.Point(-6, 0);
-            this.btnAdd.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnAdd.Location = new System.Drawing.Point(800, 571);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(212, 53);
-            this.btnAdd.TabIndex = 12;
-            this.btnAdd.Text = "إضافة";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnAddDoctor.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddDoctor.BorderColor = System.Drawing.Color.Blue;
+            this.btnAddDoctor.BorderRadius = 10;
+            this.btnAddDoctor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddDoctor.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddDoctor.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddDoctor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddDoctor.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddDoctor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddDoctor.FillColor = System.Drawing.Color.Blue;
+            this.btnAddDoctor.FillColor2 = System.Drawing.Color.DeepSkyBlue;
+            this.btnAddDoctor.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddDoctor.ForeColor = System.Drawing.Color.White;
+            this.btnAddDoctor.Image = global::Program_Clinic_Management.Properties.Resources.user;
+            this.btnAddDoctor.ImageOffset = new System.Drawing.Point(-6, 0);
+            this.btnAddDoctor.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnAddDoctor.Location = new System.Drawing.Point(507, 653);
+            this.btnAddDoctor.Name = "btnAddDoctor";
+            this.btnAddDoctor.Size = new System.Drawing.Size(212, 53);
+            this.btnAddDoctor.TabIndex = 12;
+            this.btnAddDoctor.Text = "إضافة";
+            this.btnAddDoctor.Visible = false;
+            this.btnAddDoctor.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdate
             // 
@@ -285,7 +277,7 @@
             this.btnUpdate.Image = global::Program_Clinic_Management.Properties.Resources.Synchronize;
             this.btnUpdate.ImageOffset = new System.Drawing.Point(-6, 0);
             this.btnUpdate.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnUpdate.Location = new System.Drawing.Point(349, 571);
+            this.btnUpdate.Location = new System.Drawing.Point(254, 566);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(212, 53);
             this.btnUpdate.TabIndex = 11;
@@ -303,13 +295,64 @@
             this.ctrl_FeltterDataDoctors.TabIndex = 14;
             this.ctrl_FeltterDataDoctors.TrueSearchAll = false;
             // 
+            // ctrl_IconProjectClinic1
+            // 
+            this.ctrl_IconProjectClinic1.BackColor = System.Drawing.Color.Transparent;
+            this.ctrl_IconProjectClinic1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrl_IconProjectClinic1.Location = new System.Drawing.Point(5, 3);
+            this.ctrl_IconProjectClinic1.Margin = new System.Windows.Forms.Padding(5);
+            this.ctrl_IconProjectClinic1.Name = "ctrl_IconProjectClinic1";
+            this.ctrl_IconProjectClinic1.Size = new System.Drawing.Size(246, 57);
+            this.ctrl_IconProjectClinic1.TabIndex = 4;
+            this.ctrl_IconProjectClinic1.TitleNameColor = System.Drawing.Color.White;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(513, 705);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(201, 22);
+            this.label2.TabIndex = 15;
+            this.label2.Tag = "السبب هو انه عند إضافة طبيب من واجهة الإضافة لا يتم إضافة الطبيب  ضمن اليوزر _ له" +
+    "يك مستقبلا بدك تلاقي طريقة تضيفه بنفس الرطريقة مع إضافته ضمن اليوزر ";
+            this.label2.Text = "مخفي _ متوقف _ السبب بالتاغ";
+            this.label2.Visible = false;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.BorderColor = System.Drawing.Color.Blue;
+            this.btnAdd.BorderRadius = 10;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAdd.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAdd.FillColor = System.Drawing.Color.Blue;
+            this.btnAdd.FillColor2 = System.Drawing.Color.DeepSkyBlue;
+            this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Image = global::Program_Clinic_Management.Properties.Resources.user;
+            this.btnAdd.ImageOffset = new System.Drawing.Point(-6, 0);
+            this.btnAdd.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnAdd.Location = new System.Drawing.Point(766, 566);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(212, 53);
+            this.btnAdd.TabIndex = 16;
+            this.btnAdd.Text = "إضافة";
+            this.btnAdd.Visible = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
+            // 
             // FrmManageDoctors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1398, 736);
-            this.Controls.Add(this.ctrl_FeltterDataDoctors);
             this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.ctrl_FeltterDataDoctors);
+            this.Controls.Add(this.btnAddDoctor);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.DataGV);
             this.Controls.Add(this.pnl_TopBar);
@@ -327,6 +370,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -347,8 +391,10 @@
         private BusinessLogic.Ctrl_IconProjectClinic ctrl_IconProjectClinic1;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2DataGridView DataGV;
-        private Guna.UI2.WinForms.Guna2GradientButton btnAdd;
+        private Guna.UI2.WinForms.Guna2GradientButton btnAddDoctor;
         private Guna.UI2.WinForms.Guna2GradientButton btnUpdate;
         private Ctrl_FeltterDataDoctors ctrl_FeltterDataDoctors;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2GradientButton btnAdd;
     }
 }

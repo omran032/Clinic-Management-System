@@ -1,5 +1,6 @@
 ﻿using BusinessLogic;
 using BusinessLogic.CMD_DB;
+using BusinessLogic.InfoTable;
 using Program_Clinic_Management.Visits;
 using System;
 using System.Collections.Generic;
@@ -21,9 +22,9 @@ namespace Program_Clinic_Management.Payments
         {
             InitializeComponent();
             MyTools.MoveControl(pnl_TopBar, this);
+            MyTools.SetAppIcon(this);
+
             ClassStyleAndColor.Style_DataGridView(DataGV);
-
-
         }
 
 
@@ -38,7 +39,7 @@ namespace Program_Clinic_Management.Payments
         private void FrmManagePayments_Load(object sender, EventArgs e)
         {
             LoadData();
-
+            DistributionPowers();
             ComboxFelterTypes.Text = "عرض الكل";
         }
 
@@ -61,6 +62,22 @@ namespace Program_Clinic_Management.Payments
             paymentFilterType = PaymentFilterType.All;
             DataTablePayment = ClsCMD_TablePayments.GetPaymentsFelter(paymentFilterType);
             DataGV.DataSource = DataTablePayment;
+        }
+
+
+        /// <summary>
+        /// مثود عرض الصلاحيات حسب الدور
+        /// </summary>
+        void DistributionPowers()
+        {
+            string Role = ClassUser.UserInfo.Role ;
+            if (Role == "Reception")
+            {
+                btnUpdatePayment.Visible = false;
+                btnDeletePayment.Visible = false;
+                ToolStrip_btnUpdatePayment.Visible = false;
+                return;
+            }
         }
 
         #endregion

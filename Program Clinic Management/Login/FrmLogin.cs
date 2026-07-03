@@ -23,6 +23,8 @@ namespace Program_Clinic_Management.Login
         public FrmLogin()
         {
             InitializeComponent();
+            MyTools.SetAppIcon(this);
+
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)
@@ -140,7 +142,7 @@ namespace Program_Clinic_Management.Login
                            );
 
             // هون يفضل تبدل الرقم صفر ....ب معرف المستخدم الحقيقي
-            ClassLogs.AddLog(0, LogAction.ForgotPassword.ToString(), "Users", 0, "User requested password reset");
+            ClassLogs.AddLog(1, LogAction.ForgotPassword.ToString(), "Users", 1, "User requested password reset");
         }
 
         // زر اتصل بالإدارة

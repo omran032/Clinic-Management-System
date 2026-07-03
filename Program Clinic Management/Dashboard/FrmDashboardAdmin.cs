@@ -31,6 +31,8 @@ namespace Program_Clinic_Management.Admin
         public FrmDashboardAdmin()
         {
             InitializeComponent();
+            MyTools.SetAppIcon(this);
+
         }
 
         // تحميل الفورم
@@ -49,9 +51,8 @@ namespace Program_Clinic_Management.Admin
         void DisginUI()
         {
             MyTools.ColorControl(pnlTopBar, Color.FromArgb(0, 0, 64), Color.FromArgb(184, 247, 252)) ;
-            MyTools.ColorControl(ctrl_IconProjectClinic1, Color.FromArgb(0, 0, 64), Color.FromArgb(184, 247, 252));
-            MyTools.ColorControl(PnlDisplay, Color.FromArgb(186, 249, 253), Color.FromArgb(88, 146, 211));
-            MyTools.ColorControl(PnlList, Color.FromArgb(194, 247, 252), Color.FromArgb(121, 243, 252));
+            MyTools.ColorControl(PnlDisplay, Color.FromArgb(186, 249, 253), Color.FromArgb(245, 245, 245));
+            MyTools.ColorControl(PnlList, Color.FromArgb(194, 247, 252), Color.FromArgb(245, 245, 245));
         }
 
      

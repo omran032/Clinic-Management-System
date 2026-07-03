@@ -22,7 +22,8 @@ namespace Program_Clinic_Management.Persons
         {
             InitializeComponent();
             SettingsControls();
-           
+            MyTools.SetAppIcon(this);
+
             // ضبط شكل العناصر و الفورم
             ClassStyleAndColor.Style_TopBar_And_HiderForm(pnl_TopBar , this); 
             ClassStyleAndColor.Style_DataGridView(DataGV);
@@ -95,6 +96,7 @@ namespace Program_Clinic_Management.Persons
             if (PersonID == -1)
             {
                 MessageBox.Show("حدد الشخص أولاً", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ClassLogs.AddLog(ClassUser.UserInfo.UserID, "DeletePerson", "Persons", PersonID , "حذف شخص");   // تسجيل العمل في Log
                 return;
             }
             ClsCMD_TablePersons.DeletePerson(PersonID);

@@ -22,6 +22,7 @@ namespace Program_Clinic_Management
             ClassStyleAndColor.Style_TopBar_And_HiderForm(pnl_TopBar, this);
             ClassStyleAndColor.Style_DataGridView(DataGV);
             MyTools.MoveControl(pnl_TopBar, this);
+            MyTools.SetAppIcon(this);
 
             if (DT == null || DesignMode ) return;
 

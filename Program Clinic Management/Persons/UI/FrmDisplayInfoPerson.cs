@@ -19,6 +19,8 @@ namespace Program_Clinic_Management.Persons.UI
         {
             InitializeComponent();
             SettingsControls();
+            MyTools.SetAppIcon(this);
+
         }
         public FrmDisplayInfoPerson(ClassPerson PersonInfo)
         {

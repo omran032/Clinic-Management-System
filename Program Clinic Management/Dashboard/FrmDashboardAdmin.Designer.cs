@@ -30,46 +30,46 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDashboardAdmin));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            this.PnlList = new Guna.UI2.WinForms.Guna2Panel();
-            this.btn_ManageUsers = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btnSettings = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btn_Visits = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btnMyProfile = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btn_Appointments = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btn_Logs = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btn_Backup = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btnPersons = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btnPatients = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btn_Doctors = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btn_Payments = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.ctrl_IconProjectClinic1 = new BusinessLogic.Ctrl_IconProjectClinic();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend13 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title13 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title14 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend15 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title15 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.pnlTopBar = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ctrl_IconProjectClinic1 = new BusinessLogic.Ctrl_IconProjectClinic();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblNameUser = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ElipseChartAppointment = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.ChartAppointment = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.PnlDisplay = new Guna.UI2.WinForms.Guna2Panel();
-            this.PicLogOut = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.PnlBackup = new Guna.UI2.WinForms.Guna2Panel();
+            this.PnlList = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btn_ManageUsers = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnSettings = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnMyProfile = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btn_Visits = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btn_Payments = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btn_Doctors = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btn_Appointments = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnPatients = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btn_Logs = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnPersons = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btn_Backup = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.PnlBackup = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.lbl_TimeLastBackup = new System.Windows.Forms.Label();
             this.lblDatabaseStatus = new System.Windows.Forms.Label();
-            this.lbl_Virtion = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbl_Virtion = new System.Windows.Forms.Label();
+            this.PicLogOut = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.chartPayments = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartVisits = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.ctrl_ShowStatisticscs_DelayedPayments = new Program_Clinic_Management.UControls.Ctrl_ShowStatisticscs();
@@ -85,38 +85,157 @@
             this.Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.ElipseCtrl_DelayedPayments = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.PnlList.SuspendLayout();
+            this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.pnlTopBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChartAppointment)).BeginInit();
             this.PnlDisplay.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PicLogOut)).BeginInit();
+            this.PnlList.SuspendLayout();
             this.PnlBackup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicLogOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartPayments)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartVisits)).BeginInit();
             this.SuspendLayout();
             // 
+            // pnlTopBar
+            // 
+            this.pnlTopBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(57)))), ((int)(((byte)(107)))));
+            this.pnlTopBar.Controls.Add(this.pictureBox1);
+            this.pnlTopBar.Controls.Add(this.ctrl_IconProjectClinic1);
+            this.pnlTopBar.Controls.Add(this.lblDate);
+            this.pnlTopBar.Controls.Add(this.lblNameUser);
+            this.pnlTopBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTopBar.Location = new System.Drawing.Point(0, 0);
+            this.pnlTopBar.Name = "pnlTopBar";
+            this.pnlTopBar.Size = new System.Drawing.Size(1791, 65);
+            this.pnlTopBar.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1701, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(63, 56);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            // 
+            // ctrl_IconProjectClinic1
+            // 
+            this.ctrl_IconProjectClinic1.BackColor = System.Drawing.Color.Transparent;
+            this.ctrl_IconProjectClinic1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrl_IconProjectClinic1.Location = new System.Drawing.Point(0, 6);
+            this.ctrl_IconProjectClinic1.Margin = new System.Windows.Forms.Padding(5);
+            this.ctrl_IconProjectClinic1.Name = "ctrl_IconProjectClinic1";
+            this.ctrl_IconProjectClinic1.Size = new System.Drawing.Size(246, 57);
+            this.ctrl_IconProjectClinic1.TabIndex = 21;
+            this.ctrl_IconProjectClinic1.TitleNameColor = System.Drawing.Color.White;
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblDate.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.ForeColor = System.Drawing.Color.White;
+            this.lblDate.Location = new System.Drawing.Point(377, 23);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(260, 19);
+            this.lblDate.TabIndex = 3;
+            this.lblDate.Text = " AM 8:30  2026 / 5 / 25   الإثنين";
+            // 
+            // lblNameUser
+            // 
+            this.lblNameUser.AutoSize = true;
+            this.lblNameUser.BackColor = System.Drawing.Color.Transparent;
+            this.lblNameUser.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNameUser.ForeColor = System.Drawing.Color.White;
+            this.lblNameUser.Location = new System.Drawing.Point(1454, 23);
+            this.lblNameUser.Name = "lblNameUser";
+            this.lblNameUser.Size = new System.Drawing.Size(225, 19);
+            this.lblNameUser.TabIndex = 2;
+            this.lblNameUser.Text = "Admin : Mohammad Sayed";
+            // 
+            // ElipseChartAppointment
+            // 
+            this.ElipseChartAppointment.BorderRadius = 50;
+            this.ElipseChartAppointment.TargetControl = this.ChartAppointment;
+            // 
+            // ChartAppointment
+            // 
+            chartArea13.Name = "ChartArea1";
+            this.ChartAppointment.ChartAreas.Add(chartArea13);
+            legend13.Name = "Legend1";
+            this.ChartAppointment.Legends.Add(legend13);
+            this.ChartAppointment.Location = new System.Drawing.Point(807, 277);
+            this.ChartAppointment.Name = "ChartAppointment";
+            this.ChartAppointment.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            series13.ChartArea = "ChartArea1";
+            series13.Legend = "Legend1";
+            series13.Name = "Series1";
+            this.ChartAppointment.Series.Add(series13);
+            this.ChartAppointment.Size = new System.Drawing.Size(438, 306);
+            this.ChartAppointment.TabIndex = 17;
+            this.ChartAppointment.Text = "chart2";
+            title13.Name = "sdddsd";
+            title13.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            title13.TextStyle = System.Windows.Forms.DataVisualization.Charting.TextStyle.Frame;
+            this.ChartAppointment.Titles.Add(title13);
+            // 
+            // PnlDisplay
+            // 
+            this.PnlDisplay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(247)))), ((int)(((byte)(252)))));
+            this.PnlDisplay.Controls.Add(this.PnlList);
+            this.PnlDisplay.Controls.Add(this.PnlBackup);
+            this.PnlDisplay.Controls.Add(this.PicLogOut);
+            this.PnlDisplay.Controls.Add(this.label2);
+            this.PnlDisplay.Controls.Add(this.ChartAppointment);
+            this.PnlDisplay.Controls.Add(this.chartPayments);
+            this.PnlDisplay.Controls.Add(this.chartVisits);
+            this.PnlDisplay.Controls.Add(this.ctrl_ShowStatisticscs_DelayedPayments);
+            this.PnlDisplay.Controls.Add(this.ctrl_ShowStatisticscsAbsences);
+            this.PnlDisplay.Controls.Add(this.ctrl_ShowStatisticscsAppointment);
+            this.PnlDisplay.Controls.Add(this.ctrl_ShowStatisticscs_Visits);
+            this.PnlDisplay.Controls.Add(this.label3);
+            this.PnlDisplay.Controls.Add(this.guna2ShadowPanel1);
+            this.PnlDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PnlDisplay.Location = new System.Drawing.Point(0, 65);
+            this.PnlDisplay.Name = "PnlDisplay";
+            this.PnlDisplay.Size = new System.Drawing.Size(1791, 841);
+            this.PnlDisplay.TabIndex = 2;
+            // 
             // PnlList
             // 
-            this.PnlList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(246)))), ((int)(((byte)(252)))));
+            this.PnlList.BackColor = System.Drawing.Color.Transparent;
+            this.PnlList.Controls.Add(this.guna2Panel1);
             this.PnlList.Controls.Add(this.btn_ManageUsers);
             this.PnlList.Controls.Add(this.btnSettings);
-            this.PnlList.Controls.Add(this.btn_Visits);
             this.PnlList.Controls.Add(this.btnMyProfile);
-            this.PnlList.Controls.Add(this.btn_Appointments);
-            this.PnlList.Controls.Add(this.btn_Logs);
-            this.PnlList.Controls.Add(this.btn_Backup);
-            this.PnlList.Controls.Add(this.btnPersons);
-            this.PnlList.Controls.Add(this.btnPatients);
-            this.PnlList.Controls.Add(this.btn_Doctors);
+            this.PnlList.Controls.Add(this.btn_Visits);
             this.PnlList.Controls.Add(this.btn_Payments);
-            this.PnlList.Controls.Add(this.guna2Panel3);
-            this.PnlList.Controls.Add(this.ctrl_IconProjectClinic1);
+            this.PnlList.Controls.Add(this.btn_Doctors);
+            this.PnlList.Controls.Add(this.btn_Appointments);
+            this.PnlList.Controls.Add(this.btnPatients);
+            this.PnlList.Controls.Add(this.btn_Logs);
+            this.PnlList.Controls.Add(this.btnPersons);
+            this.PnlList.Controls.Add(this.btn_Backup);
             this.PnlList.Dock = System.Windows.Forms.DockStyle.Left;
+            this.PnlList.FillColor = System.Drawing.Color.White;
             this.PnlList.Location = new System.Drawing.Point(0, 0);
             this.PnlList.Name = "PnlList";
-            this.PnlList.Size = new System.Drawing.Size(240, 906);
-            this.PnlList.TabIndex = 0;
+            this.PnlList.Radius = 10;
+            this.PnlList.ShadowColor = System.Drawing.Color.Black;
+            this.PnlList.Size = new System.Drawing.Size(257, 841);
+            this.PnlList.TabIndex = 20;
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(257, 26);
+            this.guna2Panel1.TabIndex = 31;
             // 
             // btn_ManageUsers
             // 
@@ -128,15 +247,15 @@
             this.btn_ManageUsers.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_ManageUsers.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_ManageUsers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_ManageUsers.FillColor = System.Drawing.Color.RoyalBlue;
-            this.btn_ManageUsers.FillColor2 = System.Drawing.Color.Cyan;
+            this.btn_ManageUsers.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_ManageUsers.FillColor2 = System.Drawing.Color.Blue;
             this.btn_ManageUsers.FocusedColor = System.Drawing.Color.Transparent;
             this.btn_ManageUsers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ManageUsers.ForeColor = System.Drawing.Color.White;
             this.btn_ManageUsers.Image = ((System.Drawing.Image)(resources.GetObject("btn_ManageUsers.Image")));
             this.btn_ManageUsers.ImageOffset = new System.Drawing.Point(-3, 0);
             this.btn_ManageUsers.ImageSize = new System.Drawing.Size(30, 30);
-            this.btn_ManageUsers.Location = new System.Drawing.Point(12, 827);
+            this.btn_ManageUsers.Location = new System.Drawing.Point(23, 541);
             this.btn_ManageUsers.Name = "btn_ManageUsers";
             this.btn_ManageUsers.Size = new System.Drawing.Size(210, 47);
             this.btn_ManageUsers.TabIndex = 29;
@@ -153,44 +272,20 @@
             this.btnSettings.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSettings.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSettings.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSettings.FillColor = System.Drawing.Color.RoyalBlue;
-            this.btnSettings.FillColor2 = System.Drawing.Color.Cyan;
+            this.btnSettings.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnSettings.FillColor2 = System.Drawing.Color.Blue;
             this.btnSettings.FocusedColor = System.Drawing.Color.Transparent;
             this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettings.ForeColor = System.Drawing.Color.White;
             this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
             this.btnSettings.ImageOffset = new System.Drawing.Point(-12, 0);
             this.btnSettings.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnSettings.Location = new System.Drawing.Point(12, 754);
+            this.btnSettings.Location = new System.Drawing.Point(23, 760);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(210, 47);
             this.btnSettings.TabIndex = 27;
             this.btnSettings.Text = "Sittings";
-            // 
-            // btn_Visits
-            // 
-            this.btn_Visits.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Visits.BorderColor = System.Drawing.Color.Transparent;
-            this.btn_Visits.BorderRadius = 5;
-            this.btn_Visits.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Visits.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Visits.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_Visits.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_Visits.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_Visits.FillColor = System.Drawing.Color.RoyalBlue;
-            this.btn_Visits.FillColor2 = System.Drawing.Color.Cyan;
-            this.btn_Visits.FocusedColor = System.Drawing.Color.Transparent;
-            this.btn_Visits.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Visits.ForeColor = System.Drawing.Color.White;
-            this.btn_Visits.Image = global::Program_Clinic_Management.Properties.Resources.Date;
-            this.btn_Visits.ImageOffset = new System.Drawing.Point(-15, 0);
-            this.btn_Visits.ImageSize = new System.Drawing.Size(30, 30);
-            this.btn_Visits.Location = new System.Drawing.Point(12, 389);
-            this.btn_Visits.Name = "btn_Visits";
-            this.btn_Visits.Size = new System.Drawing.Size(210, 47);
-            this.btn_Visits.TabIndex = 17;
-            this.btn_Visits.Text = "الزيارات";
-            this.btn_Visits.Click += new System.EventHandler(this.btn_Visits_Click);
+            this.btnSettings.Visible = false;
             // 
             // btnMyProfile
             // 
@@ -202,171 +297,45 @@
             this.btnMyProfile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnMyProfile.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnMyProfile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnMyProfile.FillColor = System.Drawing.Color.RoyalBlue;
-            this.btnMyProfile.FillColor2 = System.Drawing.Color.Cyan;
+            this.btnMyProfile.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnMyProfile.FillColor2 = System.Drawing.Color.Blue;
             this.btnMyProfile.FocusedColor = System.Drawing.Color.Transparent;
             this.btnMyProfile.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMyProfile.ForeColor = System.Drawing.Color.White;
             this.btnMyProfile.Image = global::Program_Clinic_Management.Properties.Resources.My_Profile;
             this.btnMyProfile.ImageOffset = new System.Drawing.Point(-3, 0);
             this.btnMyProfile.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnMyProfile.Location = new System.Drawing.Point(12, 97);
+            this.btnMyProfile.Location = new System.Drawing.Point(23, 29);
             this.btnMyProfile.Name = "btnMyProfile";
             this.btnMyProfile.Size = new System.Drawing.Size(210, 47);
             this.btnMyProfile.TabIndex = 23;
             this.btnMyProfile.Text = "ملفي الشخصي";
             this.btnMyProfile.Click += new System.EventHandler(this.btnMyProfile_Click);
             // 
-            // btn_Appointments
+            // btn_Visits
             // 
-            this.btn_Appointments.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Appointments.BorderColor = System.Drawing.Color.Transparent;
-            this.btn_Appointments.BorderRadius = 5;
-            this.btn_Appointments.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Appointments.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Appointments.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_Appointments.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_Appointments.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_Appointments.FillColor = System.Drawing.Color.RoyalBlue;
-            this.btn_Appointments.FillColor2 = System.Drawing.Color.Cyan;
-            this.btn_Appointments.FocusedColor = System.Drawing.Color.Transparent;
-            this.btn_Appointments.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Appointments.ForeColor = System.Drawing.Color.White;
-            this.btn_Appointments.Image = global::Program_Clinic_Management.Properties.Resources.Appointment;
-            this.btn_Appointments.ImageOffset = new System.Drawing.Point(-15, 0);
-            this.btn_Appointments.ImageSize = new System.Drawing.Size(30, 30);
-            this.btn_Appointments.Location = new System.Drawing.Point(12, 316);
-            this.btn_Appointments.Name = "btn_Appointments";
-            this.btn_Appointments.Size = new System.Drawing.Size(210, 47);
-            this.btn_Appointments.TabIndex = 15;
-            this.btn_Appointments.Text = "المواعيد";
-            this.btn_Appointments.Click += new System.EventHandler(this.btn_Appointments_Click);
-            // 
-            // btn_Logs
-            // 
-            this.btn_Logs.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Logs.BorderColor = System.Drawing.Color.Transparent;
-            this.btn_Logs.BorderRadius = 5;
-            this.btn_Logs.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Logs.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Logs.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_Logs.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_Logs.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_Logs.FillColor = System.Drawing.Color.RoyalBlue;
-            this.btn_Logs.FillColor2 = System.Drawing.Color.Cyan;
-            this.btn_Logs.FocusedColor = System.Drawing.Color.Transparent;
-            this.btn_Logs.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Logs.ForeColor = System.Drawing.Color.White;
-            this.btn_Logs.Image = global::Program_Clinic_Management.Properties.Resources.log;
-            this.btn_Logs.ImageOffset = new System.Drawing.Point(-4, 0);
-            this.btn_Logs.ImageSize = new System.Drawing.Size(30, 30);
-            this.btn_Logs.Location = new System.Drawing.Point(12, 608);
-            this.btn_Logs.Name = "btn_Logs";
-            this.btn_Logs.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btn_Logs.Size = new System.Drawing.Size(210, 47);
-            this.btn_Logs.TabIndex = 21;
-            this.btn_Logs.Text = "السجلات Logs";
-            this.btn_Logs.Click += new System.EventHandler(this.btn_Logs_Click);
-            // 
-            // btn_Backup
-            // 
-            this.btn_Backup.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Backup.BorderColor = System.Drawing.Color.Transparent;
-            this.btn_Backup.BorderRadius = 5;
-            this.btn_Backup.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Backup.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Backup.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_Backup.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_Backup.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_Backup.FillColor = System.Drawing.Color.RoyalBlue;
-            this.btn_Backup.FillColor2 = System.Drawing.Color.Cyan;
-            this.btn_Backup.FocusedColor = System.Drawing.Color.Transparent;
-            this.btn_Backup.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_Backup.ForeColor = System.Drawing.Color.White;
-            this.btn_Backup.Image = global::Program_Clinic_Management.Properties.Resources.Database;
-            this.btn_Backup.ImageOffset = new System.Drawing.Point(-1, 0);
-            this.btn_Backup.ImageSize = new System.Drawing.Size(30, 30);
-            this.btn_Backup.Location = new System.Drawing.Point(12, 681);
-            this.btn_Backup.Name = "btn_Backup";
-            this.btn_Backup.Size = new System.Drawing.Size(210, 47);
-            this.btn_Backup.TabIndex = 25;
-            this.btn_Backup.Text = "النسخ الاحتياطي";
-            this.btn_Backup.Click += new System.EventHandler(this.btn_Backup_Click);
-            // 
-            // btnPersons
-            // 
-            this.btnPersons.BackColor = System.Drawing.Color.Transparent;
-            this.btnPersons.BorderColor = System.Drawing.Color.Transparent;
-            this.btnPersons.BorderRadius = 5;
-            this.btnPersons.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnPersons.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnPersons.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnPersons.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnPersons.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnPersons.FillColor = System.Drawing.Color.RoyalBlue;
-            this.btnPersons.FillColor2 = System.Drawing.Color.Cyan;
-            this.btnPersons.FocusedColor = System.Drawing.Color.Transparent;
-            this.btnPersons.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPersons.ForeColor = System.Drawing.Color.White;
-            this.btnPersons.Image = global::Program_Clinic_Management.Properties.Resources.People;
-            this.btnPersons.ImageOffset = new System.Drawing.Point(-15, 0);
-            this.btnPersons.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnPersons.Location = new System.Drawing.Point(12, 243);
-            this.btnPersons.Name = "btnPersons";
-            this.btnPersons.Size = new System.Drawing.Size(210, 47);
-            this.btnPersons.TabIndex = 13;
-            this.btnPersons.Text = "الأشخاص";
-            this.btnPersons.Click += new System.EventHandler(this.btnPersons_Click);
-            // 
-            // btnPatients
-            // 
-            this.btnPatients.BackColor = System.Drawing.Color.Transparent;
-            this.btnPatients.BorderColor = System.Drawing.Color.Transparent;
-            this.btnPatients.BorderRadius = 5;
-            this.btnPatients.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnPatients.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnPatients.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnPatients.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnPatients.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnPatients.FillColor = System.Drawing.Color.RoyalBlue;
-            this.btnPatients.FillColor2 = System.Drawing.Color.Cyan;
-            this.btnPatients.FocusedColor = System.Drawing.Color.Transparent;
-            this.btnPatients.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPatients.ForeColor = System.Drawing.Color.White;
-            this.btnPatients.Image = ((System.Drawing.Image)(resources.GetObject("btnPatients.Image")));
-            this.btnPatients.ImageOffset = new System.Drawing.Point(-19, 0);
-            this.btnPatients.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnPatients.Location = new System.Drawing.Point(12, 170);
-            this.btnPatients.Name = "btnPatients";
-            this.btnPatients.Size = new System.Drawing.Size(210, 47);
-            this.btnPatients.TabIndex = 11;
-            this.btnPatients.Text = "المرضى";
-            this.btnPatients.Click += new System.EventHandler(this.btnPatients_Click);
-            // 
-            // btn_Doctors
-            // 
-            this.btn_Doctors.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Doctors.BorderColor = System.Drawing.Color.Transparent;
-            this.btn_Doctors.BorderRadius = 5;
-            this.btn_Doctors.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Doctors.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_Doctors.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_Doctors.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_Doctors.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_Doctors.FillColor = System.Drawing.Color.RoyalBlue;
-            this.btn_Doctors.FillColor2 = System.Drawing.Color.Cyan;
-            this.btn_Doctors.FocusedColor = System.Drawing.Color.Transparent;
-            this.btn_Doctors.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Doctors.ForeColor = System.Drawing.Color.White;
-            this.btn_Doctors.Image = global::Program_Clinic_Management.Properties.Resources.Control_Panel;
-            this.btn_Doctors.ImageOffset = new System.Drawing.Point(-18, 0);
-            this.btn_Doctors.ImageSize = new System.Drawing.Size(30, 30);
-            this.btn_Doctors.Location = new System.Drawing.Point(12, 535);
-            this.btn_Doctors.Name = "btn_Doctors";
-            this.btn_Doctors.Size = new System.Drawing.Size(210, 47);
-            this.btn_Doctors.TabIndex = 9;
-            this.btn_Doctors.Text = "الأطباء";
-            this.btn_Doctors.Click += new System.EventHandler(this.btn_Doctors_Click);
+            this.btn_Visits.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Visits.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_Visits.BorderRadius = 5;
+            this.btn_Visits.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Visits.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Visits.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Visits.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Visits.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Visits.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_Visits.FillColor2 = System.Drawing.Color.Blue;
+            this.btn_Visits.FocusedColor = System.Drawing.Color.Transparent;
+            this.btn_Visits.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Visits.ForeColor = System.Drawing.Color.White;
+            this.btn_Visits.Image = global::Program_Clinic_Management.Properties.Resources.Date;
+            this.btn_Visits.ImageOffset = new System.Drawing.Point(-15, 0);
+            this.btn_Visits.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_Visits.Location = new System.Drawing.Point(23, 322);
+            this.btn_Visits.Name = "btn_Visits";
+            this.btn_Visits.Size = new System.Drawing.Size(210, 47);
+            this.btn_Visits.TabIndex = 17;
+            this.btn_Visits.Text = "الزيارات";
+            this.btn_Visits.Click += new System.EventHandler(this.btn_Visits_Click);
             // 
             // btn_Payments
             // 
@@ -378,141 +347,236 @@
             this.btn_Payments.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_Payments.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_Payments.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_Payments.FillColor = System.Drawing.Color.RoyalBlue;
-            this.btn_Payments.FillColor2 = System.Drawing.Color.Cyan;
+            this.btn_Payments.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_Payments.FillColor2 = System.Drawing.Color.Blue;
             this.btn_Payments.FocusedColor = System.Drawing.Color.Transparent;
             this.btn_Payments.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Payments.ForeColor = System.Drawing.Color.White;
             this.btn_Payments.Image = global::Program_Clinic_Management.Properties.Resources.view_detail_;
             this.btn_Payments.ImageOffset = new System.Drawing.Point(-9, 0);
             this.btn_Payments.ImageSize = new System.Drawing.Size(30, 30);
-            this.btn_Payments.Location = new System.Drawing.Point(12, 462);
+            this.btn_Payments.Location = new System.Drawing.Point(23, 395);
             this.btn_Payments.Name = "btn_Payments";
             this.btn_Payments.Size = new System.Drawing.Size(210, 47);
             this.btn_Payments.TabIndex = 19;
             this.btn_Payments.Text = "المدفوعات";
             this.btn_Payments.Click += new System.EventHandler(this.btn_Payments_Click);
             // 
-            // guna2Panel3
+            // btn_Doctors
             // 
-            this.guna2Panel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel3.Location = new System.Drawing.Point(0, 65);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(240, 26);
-            this.guna2Panel3.TabIndex = 9;
+            this.btn_Doctors.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Doctors.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_Doctors.BorderRadius = 5;
+            this.btn_Doctors.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Doctors.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Doctors.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Doctors.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Doctors.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Doctors.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_Doctors.FillColor2 = System.Drawing.Color.Blue;
+            this.btn_Doctors.FocusedColor = System.Drawing.Color.Transparent;
+            this.btn_Doctors.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Doctors.ForeColor = System.Drawing.Color.White;
+            this.btn_Doctors.Image = global::Program_Clinic_Management.Properties.Resources.Control_Panel;
+            this.btn_Doctors.ImageOffset = new System.Drawing.Point(-18, 0);
+            this.btn_Doctors.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_Doctors.Location = new System.Drawing.Point(23, 468);
+            this.btn_Doctors.Name = "btn_Doctors";
+            this.btn_Doctors.Size = new System.Drawing.Size(210, 47);
+            this.btn_Doctors.TabIndex = 9;
+            this.btn_Doctors.Text = "الأطباء";
+            this.btn_Doctors.Click += new System.EventHandler(this.btn_Doctors_Click);
             // 
-            // ctrl_IconProjectClinic1
+            // btn_Appointments
             // 
-            this.ctrl_IconProjectClinic1.BackColor = System.Drawing.Color.Transparent;
-            this.ctrl_IconProjectClinic1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ctrl_IconProjectClinic1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrl_IconProjectClinic1.Location = new System.Drawing.Point(0, 0);
-            this.ctrl_IconProjectClinic1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.ctrl_IconProjectClinic1.Name = "ctrl_IconProjectClinic1";
-            this.ctrl_IconProjectClinic1.Size = new System.Drawing.Size(240, 65);
-            this.ctrl_IconProjectClinic1.TabIndex = 2;
-            this.ctrl_IconProjectClinic1.TitleNameColor = System.Drawing.Color.White;
+            this.btn_Appointments.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Appointments.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_Appointments.BorderRadius = 5;
+            this.btn_Appointments.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Appointments.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Appointments.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Appointments.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Appointments.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Appointments.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_Appointments.FillColor2 = System.Drawing.Color.Blue;
+            this.btn_Appointments.FocusedColor = System.Drawing.Color.Transparent;
+            this.btn_Appointments.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Appointments.ForeColor = System.Drawing.Color.White;
+            this.btn_Appointments.Image = global::Program_Clinic_Management.Properties.Resources.Appointment;
+            this.btn_Appointments.ImageOffset = new System.Drawing.Point(-15, 0);
+            this.btn_Appointments.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_Appointments.Location = new System.Drawing.Point(23, 249);
+            this.btn_Appointments.Name = "btn_Appointments";
+            this.btn_Appointments.Size = new System.Drawing.Size(210, 47);
+            this.btn_Appointments.TabIndex = 15;
+            this.btn_Appointments.Text = "المواعيد";
+            this.btn_Appointments.Click += new System.EventHandler(this.btn_Appointments_Click);
             // 
-            // pnlTopBar
+            // btnPatients
             // 
-            this.pnlTopBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(57)))), ((int)(((byte)(107)))));
-            this.pnlTopBar.Controls.Add(this.lblDate);
-            this.pnlTopBar.Controls.Add(this.lblNameUser);
-            this.pnlTopBar.Controls.Add(this.pictureBox1);
-            this.pnlTopBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTopBar.Location = new System.Drawing.Point(240, 0);
-            this.pnlTopBar.Name = "pnlTopBar";
-            this.pnlTopBar.Size = new System.Drawing.Size(1551, 65);
-            this.pnlTopBar.TabIndex = 1;
+            this.btnPatients.BackColor = System.Drawing.Color.Transparent;
+            this.btnPatients.BorderColor = System.Drawing.Color.Transparent;
+            this.btnPatients.BorderRadius = 5;
+            this.btnPatients.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPatients.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPatients.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPatients.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPatients.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPatients.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnPatients.FillColor2 = System.Drawing.Color.Blue;
+            this.btnPatients.FocusedColor = System.Drawing.Color.Transparent;
+            this.btnPatients.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPatients.ForeColor = System.Drawing.Color.White;
+            this.btnPatients.Image = ((System.Drawing.Image)(resources.GetObject("btnPatients.Image")));
+            this.btnPatients.ImageOffset = new System.Drawing.Point(-19, 0);
+            this.btnPatients.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnPatients.Location = new System.Drawing.Point(23, 103);
+            this.btnPatients.Name = "btnPatients";
+            this.btnPatients.Size = new System.Drawing.Size(210, 47);
+            this.btnPatients.TabIndex = 11;
+            this.btnPatients.Text = "المرضى";
+            this.btnPatients.Click += new System.EventHandler(this.btnPatients_Click);
             // 
-            // lblDate
+            // btn_Logs
             // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.BackColor = System.Drawing.Color.Transparent;
-            this.lblDate.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.ForeColor = System.Drawing.Color.White;
-            this.lblDate.Location = new System.Drawing.Point(43, 22);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(260, 19);
-            this.lblDate.TabIndex = 3;
-            this.lblDate.Text = " AM 8:30  2026 / 5 / 25   الإثنين";
+            this.btn_Logs.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Logs.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_Logs.BorderRadius = 5;
+            this.btn_Logs.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Logs.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Logs.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Logs.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Logs.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Logs.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_Logs.FillColor2 = System.Drawing.Color.Blue;
+            this.btn_Logs.FocusedColor = System.Drawing.Color.Transparent;
+            this.btn_Logs.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Logs.ForeColor = System.Drawing.Color.White;
+            this.btn_Logs.Image = global::Program_Clinic_Management.Properties.Resources.log;
+            this.btn_Logs.ImageOffset = new System.Drawing.Point(-4, 0);
+            this.btn_Logs.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_Logs.Location = new System.Drawing.Point(23, 614);
+            this.btn_Logs.Name = "btn_Logs";
+            this.btn_Logs.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btn_Logs.Size = new System.Drawing.Size(210, 47);
+            this.btn_Logs.TabIndex = 21;
+            this.btn_Logs.Text = "السجلات Logs";
+            this.btn_Logs.Click += new System.EventHandler(this.btn_Logs_Click);
             // 
-            // lblNameUser
+            // btnPersons
             // 
-            this.lblNameUser.AutoSize = true;
-            this.lblNameUser.BackColor = System.Drawing.Color.Transparent;
-            this.lblNameUser.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameUser.ForeColor = System.Drawing.Color.White;
-            this.lblNameUser.Location = new System.Drawing.Point(1211, 22);
-            this.lblNameUser.Name = "lblNameUser";
-            this.lblNameUser.Size = new System.Drawing.Size(225, 19);
-            this.lblNameUser.TabIndex = 2;
-            this.lblNameUser.Text = "Admin : Mohammad Sayed";
+            this.btnPersons.BackColor = System.Drawing.Color.Transparent;
+            this.btnPersons.BorderColor = System.Drawing.Color.Transparent;
+            this.btnPersons.BorderRadius = 5;
+            this.btnPersons.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPersons.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPersons.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPersons.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPersons.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPersons.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnPersons.FillColor2 = System.Drawing.Color.Blue;
+            this.btnPersons.FocusedColor = System.Drawing.Color.Transparent;
+            this.btnPersons.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPersons.ForeColor = System.Drawing.Color.White;
+            this.btnPersons.Image = global::Program_Clinic_Management.Properties.Resources.People;
+            this.btnPersons.ImageOffset = new System.Drawing.Point(-15, 0);
+            this.btnPersons.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnPersons.Location = new System.Drawing.Point(23, 176);
+            this.btnPersons.Name = "btnPersons";
+            this.btnPersons.Size = new System.Drawing.Size(210, 47);
+            this.btnPersons.TabIndex = 13;
+            this.btnPersons.Text = "الأشخاص";
+            this.btnPersons.Click += new System.EventHandler(this.btnPersons_Click);
             // 
-            // pictureBox1
+            // btn_Backup
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1452, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(63, 56);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.btn_Backup.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Backup.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_Backup.BorderRadius = 5;
+            this.btn_Backup.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Backup.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_Backup.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Backup.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_Backup.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_Backup.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_Backup.FillColor2 = System.Drawing.Color.Blue;
+            this.btn_Backup.FocusedColor = System.Drawing.Color.Transparent;
+            this.btn_Backup.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_Backup.ForeColor = System.Drawing.Color.White;
+            this.btn_Backup.Image = global::Program_Clinic_Management.Properties.Resources.Database;
+            this.btn_Backup.ImageOffset = new System.Drawing.Point(-1, 0);
+            this.btn_Backup.ImageSize = new System.Drawing.Size(30, 30);
+            this.btn_Backup.Location = new System.Drawing.Point(23, 687);
+            this.btn_Backup.Name = "btn_Backup";
+            this.btn_Backup.Size = new System.Drawing.Size(210, 47);
+            this.btn_Backup.TabIndex = 25;
+            this.btn_Backup.Text = "النسخ الاحتياطي";
+            this.btn_Backup.Click += new System.EventHandler(this.btn_Backup_Click);
             // 
-            // ElipseChartAppointment
+            // PnlBackup
             // 
-            this.ElipseChartAppointment.BorderRadius = 50;
-            this.ElipseChartAppointment.TargetControl = this.ChartAppointment;
+            this.PnlBackup.BackColor = System.Drawing.Color.Transparent;
+            this.PnlBackup.Controls.Add(this.lbl_TimeLastBackup);
+            this.PnlBackup.Controls.Add(this.lblDatabaseStatus);
+            this.PnlBackup.Controls.Add(this.label1);
+            this.PnlBackup.Controls.Add(this.lbl_Virtion);
+            this.PnlBackup.FillColor = System.Drawing.Color.White;
+            this.PnlBackup.Location = new System.Drawing.Point(778, 640);
+            this.PnlBackup.Name = "PnlBackup";
+            this.PnlBackup.Radius = 10;
+            this.PnlBackup.ShadowColor = System.Drawing.Color.DarkGray;
+            this.PnlBackup.ShadowShift = 4;
+            this.PnlBackup.Size = new System.Drawing.Size(497, 154);
+            this.PnlBackup.TabIndex = 19;
             // 
-            // ChartAppointment
+            // lbl_TimeLastBackup
             // 
-            chartArea1.Name = "ChartArea1";
-            this.ChartAppointment.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.ChartAppointment.Legends.Add(legend1);
-            this.ChartAppointment.Location = new System.Drawing.Point(558, 281);
-            this.ChartAppointment.Name = "ChartAppointment";
-            this.ChartAppointment.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.ChartAppointment.Series.Add(series1);
-            this.ChartAppointment.Size = new System.Drawing.Size(438, 306);
-            this.ChartAppointment.TabIndex = 17;
-            this.ChartAppointment.Text = "chart2";
-            title1.Name = "sdddsd";
-            title1.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
-            title1.TextStyle = System.Windows.Forms.DataVisualization.Charting.TextStyle.Frame;
-            this.ChartAppointment.Titles.Add(title1);
+            this.lbl_TimeLastBackup.AutoSize = true;
+            this.lbl_TimeLastBackup.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TimeLastBackup.Location = new System.Drawing.Point(144, 121);
+            this.lbl_TimeLastBackup.Name = "lbl_TimeLastBackup";
+            this.lbl_TimeLastBackup.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lbl_TimeLastBackup.Size = new System.Drawing.Size(178, 22);
+            this.lbl_TimeLastBackup.TabIndex = 7;
+            this.lbl_TimeLastBackup.Text = "أخر نسخة لقاعدة البيانات:  ";
             // 
-            // PnlDisplay
+            // lblDatabaseStatus
             // 
-            this.PnlDisplay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(247)))), ((int)(((byte)(252)))));
-            this.PnlDisplay.Controls.Add(this.PicLogOut);
-            this.PnlDisplay.Controls.Add(this.label2);
-            this.PnlDisplay.Controls.Add(this.PnlBackup);
-            this.PnlDisplay.Controls.Add(this.ChartAppointment);
-            this.PnlDisplay.Controls.Add(this.chartPayments);
-            this.PnlDisplay.Controls.Add(this.chartVisits);
-            this.PnlDisplay.Controls.Add(this.ctrl_ShowStatisticscs_DelayedPayments);
-            this.PnlDisplay.Controls.Add(this.ctrl_ShowStatisticscsAbsences);
-            this.PnlDisplay.Controls.Add(this.ctrl_ShowStatisticscsAppointment);
-            this.PnlDisplay.Controls.Add(this.ctrl_ShowStatisticscs_Visits);
-            this.PnlDisplay.Controls.Add(this.label3);
-            this.PnlDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PnlDisplay.Location = new System.Drawing.Point(240, 65);
-            this.PnlDisplay.Name = "PnlDisplay";
-            this.PnlDisplay.Size = new System.Drawing.Size(1551, 841);
-            this.PnlDisplay.TabIndex = 2;
+            this.lblDatabaseStatus.AutoSize = true;
+            this.lblDatabaseStatus.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDatabaseStatus.Location = new System.Drawing.Point(182, 84);
+            this.lblDatabaseStatus.Name = "lblDatabaseStatus";
+            this.lblDatabaseStatus.Size = new System.Drawing.Size(107, 22);
+            this.lblDatabaseStatus.TabIndex = 6;
+            this.lblDatabaseStatus.Text = "قاعدة البيانات : ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(92)))), ((int)(((byte)(191)))));
+            this.label1.Location = new System.Drawing.Point(169, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(132, 26);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "معلومات النظام";
+            // 
+            // lbl_Virtion
+            // 
+            this.lbl_Virtion.AutoSize = true;
+            this.lbl_Virtion.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Virtion.Location = new System.Drawing.Point(205, 47);
+            this.lbl_Virtion.Name = "lbl_Virtion";
+            this.lbl_Virtion.Size = new System.Drawing.Size(72, 22);
+            this.lbl_Virtion.TabIndex = 5;
+            this.lbl_Virtion.Text = "الإصدار : ";
             // 
             // PicLogOut
             // 
             this.PicLogOut.BackColor = System.Drawing.Color.Transparent;
             this.PicLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PicLogOut.Image = ((System.Drawing.Image)(resources.GetObject("PicLogOut.Image")));
-            this.PicLogOut.Location = new System.Drawing.Point(1412, 796);
+            this.PicLogOut.Location = new System.Drawing.Point(1661, 796);
             this.PicLogOut.Name = "PicLogOut";
             this.PicLogOut.Size = new System.Drawing.Size(36, 33);
             this.PicLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -527,114 +591,60 @@
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(1448, 801);
+            this.label2.Location = new System.Drawing.Point(1697, 801);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 19);
             this.label2.TabIndex = 8;
             this.label2.Text = "تسجيل خروج";
             this.label2.Click += new System.EventHandler(this.PicLogOut_Click);
             // 
-            // PnlBackup
-            // 
-            this.PnlBackup.BackColor = System.Drawing.Color.White;
-            this.PnlBackup.Controls.Add(this.lbl_TimeLastBackup);
-            this.PnlBackup.Controls.Add(this.lblDatabaseStatus);
-            this.PnlBackup.Controls.Add(this.lbl_Virtion);
-            this.PnlBackup.Controls.Add(this.label1);
-            this.PnlBackup.Location = new System.Drawing.Point(531, 622);
-            this.PnlBackup.Name = "PnlBackup";
-            this.PnlBackup.Size = new System.Drawing.Size(497, 154);
-            this.PnlBackup.TabIndex = 18;
-            // 
-            // lbl_TimeLastBackup
-            // 
-            this.lbl_TimeLastBackup.AutoSize = true;
-            this.lbl_TimeLastBackup.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TimeLastBackup.Location = new System.Drawing.Point(158, 115);
-            this.lbl_TimeLastBackup.Name = "lbl_TimeLastBackup";
-            this.lbl_TimeLastBackup.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lbl_TimeLastBackup.Size = new System.Drawing.Size(178, 22);
-            this.lbl_TimeLastBackup.TabIndex = 7;
-            this.lbl_TimeLastBackup.Text = "أخر نسخة لقاعدة البيانات:  ";
-            // 
-            // lblDatabaseStatus
-            // 
-            this.lblDatabaseStatus.AutoSize = true;
-            this.lblDatabaseStatus.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDatabaseStatus.Location = new System.Drawing.Point(196, 78);
-            this.lblDatabaseStatus.Name = "lblDatabaseStatus";
-            this.lblDatabaseStatus.Size = new System.Drawing.Size(107, 22);
-            this.lblDatabaseStatus.TabIndex = 6;
-            this.lblDatabaseStatus.Text = "قاعدة البيانات : ";
-            // 
-            // lbl_Virtion
-            // 
-            this.lbl_Virtion.AutoSize = true;
-            this.lbl_Virtion.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Virtion.Location = new System.Drawing.Point(219, 41);
-            this.lbl_Virtion.Name = "lbl_Virtion";
-            this.lbl_Virtion.Size = new System.Drawing.Size(72, 22);
-            this.lbl_Virtion.TabIndex = 5;
-            this.lbl_Virtion.Text = "الإصدار : ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(92)))), ((int)(((byte)(191)))));
-            this.label1.Location = new System.Drawing.Point(183, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 26);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "معلومات النظام";
-            // 
             // chartPayments
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartPayments.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartPayments.Legends.Add(legend2);
-            this.chartPayments.Location = new System.Drawing.Point(1059, 281);
+            chartArea14.Name = "ChartArea1";
+            this.chartPayments.ChartAreas.Add(chartArea14);
+            legend14.Name = "Legend1";
+            this.chartPayments.Legends.Add(legend14);
+            this.chartPayments.Location = new System.Drawing.Point(1308, 277);
             this.chartPayments.Name = "chartPayments";
             this.chartPayments.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartPayments.Series.Add(series2);
+            series14.ChartArea = "ChartArea1";
+            series14.Legend = "Legend1";
+            series14.Name = "Series1";
+            this.chartPayments.Series.Add(series14);
             this.chartPayments.Size = new System.Drawing.Size(438, 306);
             this.chartPayments.TabIndex = 16;
             this.chartPayments.Text = "chart1";
-            title2.Name = "sdddsd";
-            title2.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
-            title2.TextStyle = System.Windows.Forms.DataVisualization.Charting.TextStyle.Frame;
-            this.chartPayments.Titles.Add(title2);
+            title14.Name = "sdddsd";
+            title14.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            title14.TextStyle = System.Windows.Forms.DataVisualization.Charting.TextStyle.Frame;
+            this.chartPayments.Titles.Add(title14);
             // 
             // chartVisits
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chartVisits.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartVisits.Legends.Add(legend3);
-            this.chartVisits.Location = new System.Drawing.Point(57, 281);
+            chartArea15.Name = "ChartArea1";
+            this.chartVisits.ChartAreas.Add(chartArea15);
+            legend15.Name = "Legend1";
+            this.chartVisits.Legends.Add(legend15);
+            this.chartVisits.Location = new System.Drawing.Point(306, 277);
             this.chartVisits.Name = "chartVisits";
             this.chartVisits.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartVisits.Series.Add(series3);
+            series15.ChartArea = "ChartArea1";
+            series15.Legend = "Legend1";
+            series15.Name = "Series1";
+            this.chartVisits.Series.Add(series15);
             this.chartVisits.Size = new System.Drawing.Size(438, 306);
             this.chartVisits.TabIndex = 15;
             this.chartVisits.Text = "chart1";
-            title3.Name = "sdddsd";
-            title3.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
-            title3.TextStyle = System.Windows.Forms.DataVisualization.Charting.TextStyle.Frame;
-            this.chartVisits.Titles.Add(title3);
+            title15.Name = "sdddsd";
+            title15.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal;
+            title15.TextStyle = System.Windows.Forms.DataVisualization.Charting.TextStyle.Frame;
+            this.chartVisits.Titles.Add(title15);
             // 
             // ctrl_ShowStatisticscs_DelayedPayments
             // 
             this.ctrl_ShowStatisticscs_DelayedPayments.BackColor = System.Drawing.Color.White;
             this.ctrl_ShowStatisticscs_DelayedPayments.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrl_ShowStatisticscs_DelayedPayments.Location = new System.Drawing.Point(1188, 68);
+            this.ctrl_ShowStatisticscs_DelayedPayments.Location = new System.Drawing.Point(1388, 309);
             this.ctrl_ShowStatisticscs_DelayedPayments.Margin = new System.Windows.Forms.Padding(6);
             this.ctrl_ShowStatisticscs_DelayedPayments.Name = "ctrl_ShowStatisticscs_DelayedPayments";
             this.ctrl_ShowStatisticscs_DelayedPayments.PicImage = ((System.Drawing.Image)(resources.GetObject("ctrl_ShowStatisticscs_DelayedPayments.PicImage")));
@@ -647,7 +657,7 @@
             // 
             this.ctrl_ShowStatisticscsAbsences.BackColor = System.Drawing.Color.White;
             this.ctrl_ShowStatisticscsAbsences.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrl_ShowStatisticscsAbsences.Location = new System.Drawing.Point(811, 68);
+            this.ctrl_ShowStatisticscsAbsences.Location = new System.Drawing.Point(1358, 64);
             this.ctrl_ShowStatisticscsAbsences.Margin = new System.Windows.Forms.Padding(6);
             this.ctrl_ShowStatisticscsAbsences.Name = "ctrl_ShowStatisticscsAbsences";
             this.ctrl_ShowStatisticscsAbsences.PicImage = ((System.Drawing.Image)(resources.GetObject("ctrl_ShowStatisticscsAbsences.PicImage")));
@@ -660,7 +670,7 @@
             // 
             this.ctrl_ShowStatisticscsAppointment.BackColor = System.Drawing.Color.White;
             this.ctrl_ShowStatisticscsAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrl_ShowStatisticscsAppointment.Location = new System.Drawing.Point(434, 68);
+            this.ctrl_ShowStatisticscsAppointment.Location = new System.Drawing.Point(867, 64);
             this.ctrl_ShowStatisticscsAppointment.Margin = new System.Windows.Forms.Padding(6);
             this.ctrl_ShowStatisticscsAppointment.Name = "ctrl_ShowStatisticscsAppointment";
             this.ctrl_ShowStatisticscsAppointment.PicImage = global::Program_Clinic_Management.Properties.Resources.Appointment;
@@ -673,7 +683,7 @@
             // 
             this.ctrl_ShowStatisticscs_Visits.BackColor = System.Drawing.Color.White;
             this.ctrl_ShowStatisticscs_Visits.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrl_ShowStatisticscs_Visits.Location = new System.Drawing.Point(57, 68);
+            this.ctrl_ShowStatisticscs_Visits.Location = new System.Drawing.Point(353, 64);
             this.ctrl_ShowStatisticscs_Visits.Margin = new System.Windows.Forms.Padding(6);
             this.ctrl_ShowStatisticscs_Visits.Name = "ctrl_ShowStatisticscs_Visits";
             this.ctrl_ShowStatisticscs_Visits.PicImage = global::Program_Clinic_Management.Properties.Resources.Date;
@@ -688,7 +698,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Maroon;
-            this.label3.Location = new System.Drawing.Point(1384, 16);
+            this.label3.Location = new System.Drawing.Point(1633, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(150, 29);
             this.label3.TabIndex = 9;
@@ -711,7 +721,6 @@
             // ElipsePnlBackup
             // 
             this.ElipsePnlBackup.BorderRadius = 50;
-            this.ElipsePnlBackup.TargetControl = this.PnlBackup;
             // 
             // Elipse1
             // 
@@ -733,6 +742,17 @@
             this.ElipseCtrl_DelayedPayments.BorderRadius = 50;
             this.ElipseCtrl_DelayedPayments.TargetControl = this.ctrl_ShowStatisticscs_DelayedPayments;
             // 
+            // guna2ShadowPanel1
+            // 
+            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(222, 9);
+            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
+            this.guna2ShadowPanel1.Radius = 10;
+            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(39, 832);
+            this.guna2ShadowPanel1.TabIndex = 24;
+            // 
             // FrmDashboardAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
@@ -741,7 +761,6 @@
             this.ClientSize = new System.Drawing.Size(1791, 906);
             this.Controls.Add(this.PnlDisplay);
             this.Controls.Add(this.pnlTopBar);
-            this.Controls.Add(this.PnlList);
             this.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
@@ -750,16 +769,16 @@
             this.Text = "Dashboard Admin";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmDashboardAdmin_FormClosed);
             this.Load += new System.EventHandler(this.FrmDashboardAdmin_Load);
-            this.PnlList.ResumeLayout(false);
             this.pnlTopBar.ResumeLayout(false);
             this.pnlTopBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChartAppointment)).EndInit();
             this.PnlDisplay.ResumeLayout(false);
             this.PnlDisplay.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PicLogOut)).EndInit();
+            this.PnlList.ResumeLayout(false);
             this.PnlBackup.ResumeLayout(false);
             this.PnlBackup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicLogOut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartPayments)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartVisits)).EndInit();
             this.ResumeLayout(false);
@@ -767,19 +786,14 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2Panel PnlList;
         private Guna.UI2.WinForms.Guna2Panel pnlTopBar;
-        private BusinessLogic.Ctrl_IconProjectClinic ctrl_IconProjectClinic1;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblNameUser;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2Elipse Elipse1;
         private Guna.UI2.WinForms.Guna2Elipse Elipse2;
         private Guna.UI2.WinForms.Guna2Elipse Elipse3;
         private Guna.UI2.WinForms.Guna2Elipse ElipseChartAppointment;
         private Guna.UI2.WinForms.Guna2GradientButton btn_Doctors;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2GradientButton btnMyProfile;
         private Guna.UI2.WinForms.Guna2GradientButton btn_Logs;
         private Guna.UI2.WinForms.Guna2GradientButton btn_Payments;
@@ -803,7 +817,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartPayments;
         private Guna.UI2.WinForms.Guna2Elipse ElipseChartPayments;
         private Guna.UI2.WinForms.Guna2Elipse ElipsePnlBackup;
-        private Guna.UI2.WinForms.Guna2Panel PnlBackup;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_TimeLastBackup;
         private System.Windows.Forms.Label lblDatabaseStatus;
@@ -811,5 +824,11 @@
         private Guna.UI2.WinForms.Guna2Elipse ElipseCtrl_DelayedPayments;
         private System.Windows.Forms.PictureBox PicLogOut;
         private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2ShadowPanel PnlBackup;
+        private Guna.UI2.WinForms.Guna2ShadowPanel PnlList;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private BusinessLogic.Ctrl_IconProjectClinic ctrl_IconProjectClinic1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
     }
 }
