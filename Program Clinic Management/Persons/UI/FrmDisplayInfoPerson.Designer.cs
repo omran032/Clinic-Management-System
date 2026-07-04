@@ -107,12 +107,13 @@
             // 
             this.ctrl_PersonInfo.BackColor = System.Drawing.Color.LightCyan;
             this.ctrl_PersonInfo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrl_PersonInfo.Location = new System.Drawing.Point(112, 66);
+            this.ctrl_PersonInfo.GroupTitle = null;
+            this.ctrl_PersonInfo.Location = new System.Drawing.Point(28, 65);
             this.ctrl_PersonInfo.Margin = new System.Windows.Forms.Padding(4);
             this.ctrl_PersonInfo.Name = "ctrl_PersonInfo";
             this.ctrl_PersonInfo.PersonID = 0;
             this.ctrl_PersonInfo.PersonInfo = null;
-            this.ctrl_PersonInfo.Size = new System.Drawing.Size(576, 434);
+            this.ctrl_PersonInfo.Size = new System.Drawing.Size(694, 434);
             this.ctrl_PersonInfo.TabIndex = 2;
             // 
             // ElipseForm

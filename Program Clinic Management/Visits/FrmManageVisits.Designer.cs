@@ -81,6 +81,7 @@
             this.ElipseForm = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.PnlDoctor = new System.Windows.Forms.Panel();
             this.pnl_TopBar.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -90,6 +91,7 @@
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.PnlDoctor.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_TopBar
@@ -214,7 +216,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(397, 90);
+            this.label3.Location = new System.Drawing.Point(6, 12);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label3.Size = new System.Drawing.Size(50, 22);
@@ -232,7 +234,7 @@
             this.ComboxDoctors.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.ComboxDoctors.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.ComboxDoctors.ItemHeight = 30;
-            this.ComboxDoctors.Location = new System.Drawing.Point(462, 84);
+            this.ComboxDoctors.Location = new System.Drawing.Point(71, 6);
             this.ComboxDoctors.Name = "ComboxDoctors";
             this.ComboxDoctors.Size = new System.Drawing.Size(255, 36);
             this.ComboxDoctors.TabIndex = 10;
@@ -388,13 +390,13 @@
             this.MyContextMS.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStrip_btnAddPayment});
             this.MyContextMS.Name = "MyContextMS";
-            this.MyContextMS.Size = new System.Drawing.Size(197, 64);
+            this.MyContextMS.Size = new System.Drawing.Size(174, 42);
             // 
             // ToolStrip_btnAddPayment
             // 
             this.ToolStrip_btnAddPayment.Image = global::Program_Clinic_Management.Properties.Resources.Payment;
             this.ToolStrip_btnAddPayment.Name = "ToolStrip_btnAddPayment";
-            this.ToolStrip_btnAddPayment.Size = new System.Drawing.Size(196, 38);
+            this.ToolStrip_btnAddPayment.Size = new System.Drawing.Size(173, 38);
             this.ToolStrip_btnAddPayment.Text = "إضافة دفعة";
             this.ToolStrip_btnAddPayment.Click += new System.EventHandler(this.ToolStrip_btnAddPayment_Click);
             // 
@@ -774,12 +776,22 @@
             this.guna2PictureBox1.TabIndex = 21;
             this.guna2PictureBox1.TabStop = false;
             // 
+            // PnlDoctor
+            // 
+            this.PnlDoctor.Controls.Add(this.ComboxDoctors);
+            this.PnlDoctor.Controls.Add(this.label3);
+            this.PnlDoctor.Location = new System.Drawing.Point(392, 78);
+            this.PnlDoctor.Name = "PnlDoctor";
+            this.PnlDoctor.Size = new System.Drawing.Size(329, 48);
+            this.PnlDoctor.TabIndex = 30;
+            // 
             // FrmManageVisits
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1495, 888);
+            this.Controls.Add(this.PnlDoctor);
             this.Controls.Add(this.btnShowAllVisits);
             this.Controls.Add(this.btnUpdateVisit);
             this.Controls.Add(this.btnDeleteVisit);
@@ -797,8 +809,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.guna2DateTimePicker1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.ComboxDoctors);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSearchFelter);
             this.Controls.Add(this.ComboxVisitTypes);
@@ -820,6 +830,8 @@
             this.guna2GroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.PnlDoctor.ResumeLayout(false);
+            this.PnlDoctor.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -875,5 +887,6 @@
         private Guna.UI2.WinForms.Guna2Elipse ElipseForm;
         private System.Windows.Forms.ContextMenuStrip MyContextMS;
         private System.Windows.Forms.ToolStripMenuItem ToolStrip_btnAddPayment;
+        private System.Windows.Forms.Panel PnlDoctor;
     }
 }

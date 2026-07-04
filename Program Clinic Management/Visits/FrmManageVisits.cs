@@ -75,9 +75,9 @@ namespace Program_Clinic_Management.Visits
                 lblTitle.Text = "Manage Your Visits";
                 btnAddVisit.Visible = false;
                 btnDeleteVisit.Visible = false;
-                ComboxDoctors.Text = ClassUser.UserInfo.PersonInfo.FullName;
+                PnlDoctor.Visible = false;
                 ToolStrip_btnAddPayment.Visible = false;
-
+                 
                 return;
             }
 

@@ -643,7 +643,7 @@ INNER JOIN VisitTypes vt ON a.VisitTypeId = vt.VisitTypeId
         /// ID → تم التعديل بنجاح
         /// -1 → خطأ غير متوقع
         /// </summary>
-          static int UpdateAppointmentWithCheck(
+        static int UpdateAppointmentWithCheck(
             int appointmentId,
             int doctorId,
             int personId,
@@ -655,21 +655,49 @@ INNER JOIN VisitTypes vt ON a.VisitTypeId = vt.VisitTypeId
         {
             // ⭐ 0) التحقق من أن الموعد مرتبط بزيارة
             if (ClsCMD_TableAppointments.IsAppointmentHasVisit(appointmentId))
+                return -2;
+
+            // ⭐ 1) جلب حالة الموعد الأصلية من قاعدة البيانات
+            string getStatusQuery = "SELECT Status FROM Appointments WHERE AppointmentId = @AppointmentId";
+            var getStatusParams = new Dictionary<string, object>()
+    {
+        { "@AppointmentId", appointmentId }
+    };
+
+            string currentStatus = ClassCommands.ShowValue(getStatusQuery, getStatusParams)?.ToString();
+
+            // ⭐ 2) التحقق من حالة الموعد الأصلية
+            if (currentStatus != "Pending")
+                return -3;
+
+            // ⭐ 3) جلب بيانات الموعد القديم (التاريخ + المدة)
+            string getOldQuery = @"
+        SELECT AppointmentDate, EstimatedDurationMinutes
+        FROM Appointments
+        WHERE AppointmentId = @AppointmentId";
+
+            var getOldParams = new Dictionary<string, object>()
+    {
+        { "@AppointmentId", appointmentId }
+    };
+
+            DataTable oldData = ClassCommands.ShowData(getOldQuery, getOldParams);
+
+            DateTime oldDate = Convert.ToDateTime(oldData.Rows[0]["AppointmentDate"]);
+            int oldDuration = Convert.ToInt32(oldData.Rows[0]["EstimatedDurationMinutes"]);
+
+            // ⭐ 4) إذا الموعد الجديد نفس القديم تمامًا → لا يوجد تداخل
+            if (oldDate == appointmentDate && oldDuration == durationMinutes)
             {
-                return -2; // لا يمكن تعديل الموعد لأنه مرتبط بزيارة
+                // نسمح بالتعديل بدون فحص التداخل
+                return ApplyUpdate();
             }
 
-            // ⭐ 1) التحقق من حالة الموعد
-            // يسمح بالتعديل فقط إذا كان الموعد Pending
-            if (status != "Pending")
-            {
-                return -3; // حالة الموعد لا تسمح بالتعديل
-            }
-
+            // ⭐ 5) حساب وقت البداية والنهاية الجديد
             DateTime startTime = appointmentDate;
             DateTime endTime = appointmentDate.AddMinutes(durationMinutes);
 
-            // ⭐ 2) التحقق من وجود موعد متداخل (مع استثناء نفس الموعد)
+            // ⭐ 6) التحقق من وجود موعد متداخل (مع استثناء نفس الموعد)
             string checkQuery = @"
         SELECT COUNT(*)
         FROM Appointments
@@ -681,62 +709,66 @@ INNER JOIN VisitTypes vt ON a.VisitTypeId = vt.VisitTypeId
             )";
 
             var checkParams = new Dictionary<string, object>()
-            {
-                { "@DoctorId", doctorId },
-                { "@AppointmentId", appointmentId },
-                { "@StartTime", startTime },
-                { "@EndTime", endTime }
-            };
+    {
+        { "@DoctorId", doctorId },
+        { "@AppointmentId", appointmentId },
+        { "@StartTime", startTime },
+        { "@EndTime", endTime }
+    };
 
             int conflictCount = Convert.ToInt32(ClassCommands.ExecuteScalar(checkQuery, checkParams));
 
             if (conflictCount > 0)
-            {
                 return 0; // يوجد تداخل
-            }
 
-            // ⭐ 3) تنفيذ عملية التعديل
-            string updateQuery = @"
-        UPDATE Appointments
-        SET 
-            PersonId = @PersonId,
-            VisitTypeId = @VisitTypeId,
-            AppointmentDate = @AppointmentDate,
-            Status = @Status,
-            Notes = @Notes,
-            EstimatedDurationMinutes = @Duration,
-            DoctorId = @DoctorId
-        WHERE AppointmentId = @AppointmentId;
+            // ⭐ 7) تنفيذ عملية التعديل
+            return ApplyUpdate();
 
-        SELECT @AppointmentId;";
-
-            var updateParams = new Dictionary<string, object>()
+            // ⭐ دالة داخلية لتنفيذ التعديل
+            int ApplyUpdate()
             {
-                { "@AppointmentId", appointmentId },
-                { "@PersonId", personId },
-                { "@VisitTypeId", visitTypeId },
-                { "@AppointmentDate", appointmentDate },
-                { "@Status", status },
-                { "@Notes", notes },
-                { "@Duration", durationMinutes },
-                { "@DoctorId", doctorId }
-            };
+                string updateQuery = @"
+            UPDATE Appointments
+            SET 
+                PersonId = @PersonId,
+                VisitTypeId = @VisitTypeId,
+                AppointmentDate = @AppointmentDate,
+                Status = @Status,
+                Notes = @Notes,
+                EstimatedDurationMinutes = @Duration,
+                DoctorId = @DoctorId
+            WHERE AppointmentId = @AppointmentId;
 
-            object result = ClassCommands.ExecuteScalar(updateQuery, updateParams);
+            SELECT @AppointmentId;";
 
-            if (result != null && int.TryParse(result.ToString(), out int updatedId))
-            {
-                return updatedId; // تم التعديل بنجاح
+                var updateParams = new Dictionary<string, object>()
+        {
+            { "@AppointmentId", appointmentId },
+            { "@PersonId", personId },
+            { "@VisitTypeId", visitTypeId },
+            { "@AppointmentDate", appointmentDate },
+            { "@Status", status },
+            { "@Notes", notes },
+            { "@Duration", durationMinutes },
+            { "@DoctorId", doctorId }
+        };
+
+                object result = ClassCommands.ExecuteScalar(updateQuery, updateParams);
+
+                if (result != null && int.TryParse(result.ToString(), out int updatedId))
+                    return updatedId;
+
+                return -1;
             }
-
-            return -1; // خطأ غير متوقع
         }
+
+
 
 
         /// <summary>
         /// تنفيذ عملية التعديل و عرض رسالة بالنتيجة
         /// </summary>
-      public static int UpdateAppointmentWithCheckAndReturnMessage(int appointmentId,  int doctorId, int personId, int visitTypeId, DateTime appointmentDate, int durationMinutes, string status, string notes)
+        public static int UpdateAppointmentWithCheckAndReturnMessage(int appointmentId,  int doctorId, int personId, int visitTypeId, DateTime appointmentDate, int durationMinutes, string status, string notes)
         {
             int result = UpdateAppointmentWithCheck(appointmentId, doctorId, personId, visitTypeId, appointmentDate, durationMinutes, status, notes);
  

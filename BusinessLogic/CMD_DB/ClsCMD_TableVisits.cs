@@ -72,7 +72,7 @@ namespace BusinessLogic.CMD_DB
         /// <param name="MyChart"></param>
         public static void LoadWeeklyVisitsChart(Chart MyChart)
         {
-            string Title = "مخطط مواعيد الأسبوع";
+            string Title = "مخطط زيارات الأسبوع";
             string SeriesName = "الزيارات";
 
 
@@ -546,10 +546,12 @@ namespace BusinessLogic.CMD_DB
             WHERE VisitId = @VisitId
         );
 
-        COMMIT TRANSACTION;
+             COMMIT TRANSACTION;
+       SELECT 1;   -- مهم جداً لنجاح ShowValue
     END TRY
     BEGIN CATCH
-        ROLLBACK TRANSACTION;
+             ROLLBACK TRANSACTION;
+       SELECT 0;   -- حتى نعرف أن العملية فشلت
     END CATCH ";
 
             var parameters = new Dictionary<string, object>
@@ -560,7 +562,9 @@ namespace BusinessLogic.CMD_DB
                 { "@AppointmentStatus", newAppointmentStatus }
             };
 
-            return ClassCommands.ExecuteQuery(query, parameters);
+            var result = ClassCommands.ShowValue(query, parameters);
+            return Convert.ToInt32(result) == 1;
+
         }
 
 

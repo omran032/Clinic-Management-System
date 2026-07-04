@@ -90,6 +90,8 @@ namespace Program_Clinic_Management.Visits
 
                 DisplayInfoAppointment();
                 CombxStatusAppointment.Text = AppointmentInfo.Status;
+                ComboxVisitTypes.Items.Add(AppointmentInfo.VisitTypeInfo.VisitName)  ;
+                ComboxVisitTypes.Text = AppointmentInfo.VisitTypeInfo.VisitName;
 
                 // عرض الصلاحيات حسب الدور
                 DistributionPowers();
@@ -362,7 +364,7 @@ namespace Program_Clinic_Management.Visits
             int DoctorID = AppointmentInfo.DoctorInfo.DoctorID;
             string StatusVisit = CombxStatusVisit.Text.Trim();
             string StatusAppointment = CombxStatusAppointment.Text.Trim();
-
+            VisitTypeIDSelected = AppointmentInfo.VisitTypeInfo.VisitTypeID;
 
             string NamePatient = AppointmentInfo.PatientsInfo.PersonInfo.FullName;
 
@@ -394,6 +396,7 @@ namespace Program_Clinic_Management.Visits
 
             else if (Mode_ == Mode.Update) // وضع الاضافة
             {
+                MessageBox.Show("ID V : " + VisitTypeIDSelected);
                 bool IsSecsesful = ClsCMD_TableVisits.UpdateVisitWithAppointment(VisitID, VisitTypeIDSelected, StatusVisit, StatusAppointment);
                 if (IsSecsesful)
                 {

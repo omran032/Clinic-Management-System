@@ -14,6 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static BusinessLogic.ClassLogs;
+using static BusinessLogic.CMD_DB.ClsCMD_TablePatients;
 
 namespace Program_Clinic_Management.Patients
 {
@@ -44,16 +45,22 @@ namespace Program_Clinic_Management.Patients
             // يتم عرض مرضى الطبيب فقط
             if (ClassUser.UserInfo.Role == "Doctor")
             {
-                isDoctor = true;
+                isDoctor = true; 
 
                 btnDelete.Visible = false;
                 btnAdd.Visible = false;
+
+                ToolStripMenu_btnDelete.Visible = false;
+                ToolStrip_btnNewAppointment.Visible = false;
+                ToolStrip_btnNewVisit.Visible = false;
             }
        }
 
         void LoadData()
         {
-            DT_InfoPatients = ClsCMD_TablePatients.GetAllPatientsWithPersonInfo();
+            DT_InfoPatients = ClsCMD_TablePatients.FeltterPatient(PatientFilterType.All, null, isDoctor); //  امر عرض كل المرضى
+           // DT_InfoPatients = ClsCMD_TablePatients.GetAllPatientsWithPersonInfo();
+
             // تحميل البيانات بالجدول
             DataGV.DataSource = DT_InfoPatients;
 

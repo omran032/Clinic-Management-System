@@ -49,8 +49,8 @@
             this.ToolStripMenu_btnShowInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenu_btnUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenu_btnDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.حجزموعدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.تسجيلزيارةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStrip_btnNewAppointment = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStrip_btnNewVisit = new System.Windows.Forms.ToolStripMenuItem();
             this.ctrl_FeltterDataPatients1 = new Program_Clinic_Management.Patients.UControls.Ctrl_FeltterDataPatients();
             this.pnl_TopBar.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -277,8 +277,8 @@
             this.ToolStripMenu_btnShowInfo,
             this.ToolStripMenu_btnUpdate,
             this.ToolStripMenu_btnDelete,
-            this.حجزموعدToolStripMenuItem,
-            this.تسجيلزيارةToolStripMenuItem});
+            this.ToolStrip_btnNewAppointment,
+            this.ToolStrip_btnNewVisit});
             this.MyContextMS.Name = "MyContextMS";
             this.MyContextMS.Size = new System.Drawing.Size(205, 194);
             // 
@@ -306,17 +306,19 @@
             this.ToolStripMenu_btnDelete.Text = "حذف";
             this.ToolStripMenu_btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // حجزموعدToolStripMenuItem
+            // ToolStrip_btnNewAppointment
             // 
-            this.حجزموعدToolStripMenuItem.Name = "حجزموعدToolStripMenuItem";
-            this.حجزموعدToolStripMenuItem.Size = new System.Drawing.Size(204, 38);
-            this.حجزموعدToolStripMenuItem.Text = "حجز موعد";
+            this.ToolStrip_btnNewAppointment.Name = "ToolStrip_btnNewAppointment";
+            this.ToolStrip_btnNewAppointment.Size = new System.Drawing.Size(204, 38);
+            this.ToolStrip_btnNewAppointment.Text = "حجز موعد";
+            this.ToolStrip_btnNewAppointment.Visible = false;
             // 
-            // تسجيلزيارةToolStripMenuItem
+            // ToolStrip_btnNewVisit
             // 
-            this.تسجيلزيارةToolStripMenuItem.Name = "تسجيلزيارةToolStripMenuItem";
-            this.تسجيلزيارةToolStripMenuItem.Size = new System.Drawing.Size(204, 38);
-            this.تسجيلزيارةToolStripMenuItem.Text = "تسجيل زيارة";
+            this.ToolStrip_btnNewVisit.Name = "ToolStrip_btnNewVisit";
+            this.ToolStrip_btnNewVisit.Size = new System.Drawing.Size(204, 38);
+            this.ToolStrip_btnNewVisit.Text = "تسجيل زيارة";
+            this.ToolStrip_btnNewVisit.Visible = false;
             // 
             // ctrl_FeltterDataPatients1
             // 
@@ -377,8 +379,8 @@
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenu_btnShowInfo;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenu_btnUpdate;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenu_btnDelete;
-        private System.Windows.Forms.ToolStripMenuItem حجزموعدToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem تسجيلزيارةToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStrip_btnNewAppointment;
+        private System.Windows.Forms.ToolStripMenuItem ToolStrip_btnNewVisit;
         private UControls.Ctrl_FeltterDataPatients ctrl_FeltterDataPatients1;
     }
 }

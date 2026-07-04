@@ -144,7 +144,8 @@ namespace Program_Clinic_Management.Doctors.UI
             // مدة الموعد
             numeric_TimeApp.Value = AppointmentInfo.EstimatedDurationMinutes;
             // تاريخ و الوقت
-            DateTP_DateApp.Value = AppointmentInfo.AppointmentDate;
+            DateTP_DateApp.Value = AppointmentInfo.AppointmentDate.Date;
+            DateTP_TimeApp.Value = DateTime.Today + AppointmentInfo.AppointmentDate.TimeOfDay;
 
             // VisitType نوع الزيارة
             Combx_TypeVisit.SelectedValue = AppointmentInfo.VisitTypeInfo.VisitTypeID;

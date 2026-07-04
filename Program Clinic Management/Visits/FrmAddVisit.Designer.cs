@@ -580,7 +580,7 @@
             this.ToolStripMenu_btnShowInfo,
             this.ToolStripMenu_btnInfoPatient});
             this.MyContextMS.Name = "MyContextMS";
-            this.MyContextMS.Size = new System.Drawing.Size(212, 80);
+            this.MyContextMS.Size = new System.Drawing.Size(212, 102);
             // 
             // ToolStripMenu_btnShowInfo
             // 
@@ -592,6 +592,7 @@
             // 
             // ToolStripMenu_btnInfoPatient
             // 
+            this.ToolStripMenu_btnInfoPatient.Image = global::Program_Clinic_Management.Properties.Resources.Patient;
             this.ToolStripMenu_btnInfoPatient.Name = "ToolStripMenu_btnInfoPatient";
             this.ToolStripMenu_btnInfoPatient.Size = new System.Drawing.Size(211, 38);
             this.ToolStripMenu_btnInfoPatient.Text = "معلومات المريض";

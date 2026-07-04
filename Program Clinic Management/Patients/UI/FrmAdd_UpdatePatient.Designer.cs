@@ -225,7 +225,8 @@
             this.btn_Next.Name = "btn_Next";
             this.btn_Next.Size = new System.Drawing.Size(82, 44);
             this.btn_Next.TabIndex = 27;
-            this.btn_Next.Text = "Next";
+            this.btn_Next.Text = "التالي";
+            this.btn_Next.Visible = false;
             this.btn_Next.Click += new System.EventHandler(this.btn_Next_Click);
             // 
             // btn_AddPerson
@@ -260,7 +261,7 @@
             this.ctrl_PersonInfo.Name = "ctrl_PersonInfo";
             this.ctrl_PersonInfo.PersonID = 0;
             this.ctrl_PersonInfo.PersonInfo = null;
-            this.ctrl_PersonInfo.Size = new System.Drawing.Size(576, 427);
+            this.ctrl_PersonInfo.Size = new System.Drawing.Size(680, 427);
             this.ctrl_PersonInfo.TabIndex = 1;
             // 
             // ctrl_FeltterDataPersons
