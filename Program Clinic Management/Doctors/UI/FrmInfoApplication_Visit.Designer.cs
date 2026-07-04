@@ -159,10 +159,10 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DataGV.DefaultCellStyle = dataGridViewCellStyle3;
             this.DataGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.DataGV.Location = new System.Drawing.Point(4, 72);
+            this.DataGV.Location = new System.Drawing.Point(6, 72);
             this.DataGV.Name = "DataGV";
             this.DataGV.RowHeadersVisible = false;
-            this.DataGV.Size = new System.Drawing.Size(858, 516);
+            this.DataGV.Size = new System.Drawing.Size(852, 516);
             this.DataGV.TabIndex = 6;
             this.DataGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.DataGV.ThemeStyle.AlternatingRowsStyle.Font = null;

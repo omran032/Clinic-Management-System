@@ -24,7 +24,6 @@ namespace Program_Clinic_Management.Patients
         {
             InitializeComponent();
 
-            LoadData();
             SettingsControls();
 
             // ضبط شكل العناصر و الفورم
@@ -54,12 +53,13 @@ namespace Program_Clinic_Management.Patients
                 ToolStrip_btnNewAppointment.Visible = false;
                 ToolStrip_btnNewVisit.Visible = false;
             }
-       }
+            LoadData();
+
+        }
 
         void LoadData()
         {
             DT_InfoPatients = ClsCMD_TablePatients.FeltterPatient(PatientFilterType.All, null, isDoctor); //  امر عرض كل المرضى
-           // DT_InfoPatients = ClsCMD_TablePatients.GetAllPatientsWithPersonInfo();
 
             // تحميل البيانات بالجدول
             DataGV.DataSource = DT_InfoPatients;

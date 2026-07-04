@@ -30,27 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmManageDoctors));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ElipseForm = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.MyContextMS = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ToolStripMenu_btnShowInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenu_btnUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenu_btnDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.حجزموعدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.تسجيلزيارةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ElipseDGV = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.DataGV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.pnl_TopBar = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnClose = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnMinimize = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.ctrl_IconProjectClinic1 = new BusinessLogic.Ctrl_IconProjectClinic();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddDoctor = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2GradientButton();
             this.ctrl_FeltterDataDoctors = new Program_Clinic_Management.Ctrl_FeltterDataDoctors();
-            this.ctrl_IconProjectClinic1 = new BusinessLogic.Ctrl_IconProjectClinic();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAdd = new Guna.UI2.WinForms.Guna2GradientButton();
             this.MyContextMS.SuspendLayout();
@@ -73,11 +71,9 @@
             this.MyContextMS.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenu_btnShowInfo,
             this.ToolStripMenu_btnUpdate,
-            this.ToolStripMenu_btnDelete,
-            this.حجزموعدToolStripMenuItem,
-            this.تسجيلزيارةToolStripMenuItem});
+            this.ToolStripMenu_btnDelete});
             this.MyContextMS.Name = "MyContextMS";
-            this.MyContextMS.Size = new System.Drawing.Size(205, 194);
+            this.MyContextMS.Size = new System.Drawing.Size(205, 118);
             // 
             // ToolStripMenu_btnShowInfo
             // 
@@ -103,18 +99,6 @@
             this.ToolStripMenu_btnDelete.Text = "حذف";
             this.ToolStripMenu_btnDelete.Click += new System.EventHandler(this.ToolStripMenu_btnDelete_Click);
             // 
-            // حجزموعدToolStripMenuItem
-            // 
-            this.حجزموعدToolStripMenuItem.Name = "حجزموعدToolStripMenuItem";
-            this.حجزموعدToolStripMenuItem.Size = new System.Drawing.Size(204, 38);
-            this.حجزموعدToolStripMenuItem.Text = "حجز موعد";
-            // 
-            // تسجيلزيارةToolStripMenuItem
-            // 
-            this.تسجيلزيارةToolStripMenuItem.Name = "تسجيلزيارةToolStripMenuItem";
-            this.تسجيلزيارةToolStripMenuItem.Size = new System.Drawing.Size(204, 38);
-            this.تسجيلزيارةToolStripMenuItem.Text = "تسجيل زيارة";
-            // 
             // ElipseDGV
             // 
             this.ElipseDGV.BorderRadius = 25;
@@ -122,26 +106,26 @@
             // 
             // DataGV
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.DataGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.DataGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DataGV.ColumnHeadersHeight = 4;
             this.DataGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGV.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGV.DefaultCellStyle = dataGridViewCellStyle3;
             this.DataGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DataGV.Location = new System.Drawing.Point(42, 187);
             this.DataGV.Name = "DataGV";
@@ -221,6 +205,17 @@
             this.btnMinimize.TabStop = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
+            // ctrl_IconProjectClinic1
+            // 
+            this.ctrl_IconProjectClinic1.BackColor = System.Drawing.Color.Transparent;
+            this.ctrl_IconProjectClinic1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrl_IconProjectClinic1.Location = new System.Drawing.Point(5, 3);
+            this.ctrl_IconProjectClinic1.Margin = new System.Windows.Forms.Padding(5);
+            this.ctrl_IconProjectClinic1.Name = "ctrl_IconProjectClinic1";
+            this.ctrl_IconProjectClinic1.Size = new System.Drawing.Size(246, 57);
+            this.ctrl_IconProjectClinic1.TabIndex = 4;
+            this.ctrl_IconProjectClinic1.TitleNameColor = System.Drawing.Color.White;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -294,17 +289,6 @@
             this.ctrl_FeltterDataDoctors.Size = new System.Drawing.Size(778, 55);
             this.ctrl_FeltterDataDoctors.TabIndex = 14;
             this.ctrl_FeltterDataDoctors.TrueSearchAll = false;
-            // 
-            // ctrl_IconProjectClinic1
-            // 
-            this.ctrl_IconProjectClinic1.BackColor = System.Drawing.Color.Transparent;
-            this.ctrl_IconProjectClinic1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrl_IconProjectClinic1.Location = new System.Drawing.Point(5, 3);
-            this.ctrl_IconProjectClinic1.Margin = new System.Windows.Forms.Padding(5);
-            this.ctrl_IconProjectClinic1.Name = "ctrl_IconProjectClinic1";
-            this.ctrl_IconProjectClinic1.Size = new System.Drawing.Size(246, 57);
-            this.ctrl_IconProjectClinic1.TabIndex = 4;
-            this.ctrl_IconProjectClinic1.TitleNameColor = System.Drawing.Color.White;
             // 
             // label2
             // 
@@ -381,8 +365,6 @@
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenu_btnShowInfo;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenu_btnUpdate;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenu_btnDelete;
-        private System.Windows.Forms.ToolStripMenuItem حجزموعدToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem تسجيلزيارةToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2Elipse ElipseDGV;
         private Guna.UI2.WinForms.Guna2Panel pnl_TopBar;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;

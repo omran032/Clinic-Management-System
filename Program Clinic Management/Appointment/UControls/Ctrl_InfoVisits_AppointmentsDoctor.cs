@@ -34,14 +34,7 @@ namespace Program_Clinic_Management.Doctors.UControls
 
             AppointmentInfo = AppointmentInfo_;
 
-            // حماية قبل Load()
-            //if (AppointmentInfo.VisitTypeInfo == null)
-            //    lbl_TypeVisit.Text = "نوع الزيارة : غير محدد";
 
-            //else
-                lbl_TypeVisit.Text = "Visit Type : " + AppointmentInfo.VisitTypeInfo.VisitName;
-
-             
            lbl_ID_V_A.Text = "ID Appointment : " + AppointmentInfo.AppointmentID;
            GroupInfo_V_A.Text = "معلومات الموعد";
 
@@ -49,16 +42,19 @@ namespace Program_Clinic_Management.Doctors.UControls
             ctrlNotes.InfoText = AppointmentInfo_.Appointment_Notes;
 
             lblStatusAppointment.Visible = true;
-            lblStatusAppointment.Text = "حالة الموعد : " + AppointmentInfo.Status;
 
-            lblDate_V_A.Text = "تاريخ الموعد : " + AppointmentInfo.AppointmentDate;
+            lblStatusAppointment.Text =  AppointmentInfo.Status;
+            lblType.Text = "نوع الموعد : "; lbl_TypeVisit.Text = AppointmentInfo.VisitTypeInfo.VisitName;
+            lblDate.Text = "تاريخ الموعد : "; lblDate_V_A.Text = AppointmentInfo.AppointmentDate.ToString("yyyy / MM /dd _ hh : mm tt");
 
             // عرض معلومات الطبيب 
             if(ShowInfoDoctor)
             {
                 ctrl_PersonInfoDoctor.PersonInfo = AppointmentInfo_.DoctorInfo.PersonInfo;
-                lblSpecialization.Text = "Specialization : " + AppointmentInfo_.DoctorInfo.SprcializationName;
+                lblSpecialization.Text = AppointmentInfo_.DoctorInfo.SprcializationName;
             }
+            LoadInfoPatient(AppointmentInfo_.PatientsInfo);
+
 
         }
 
@@ -77,11 +73,11 @@ namespace Program_Clinic_Management.Doctors.UControls
             ctrlNotes.TitleText = "ملاحظات الزيارة";
             ctrlNotes.InfoText = VisitInfo.Visit_Notes;
 
-            lblStatusAppointment.Visible = false;
+            lblStatus.Visible = false; lblStatusAppointment.Visible = false;
 
-            lblDate_V_A.Text = "Visit Date : " + VisitInfo_.VisitDate;
             lbl_ID_V_A.Text  = "ID Visit : " + VisitInfo_.VisitID;
-            lbl_TypeVisit.Text = "Visit Type : " + VisitInfo_.VisitTypeInfo.VisitName;
+            lblDate.Text = "تاريخ الزيارة : ";  lblDate_V_A.Text = VisitInfo_.VisitDate.ToString("yyyy / MM /dd _ hh : mm tt");
+            lblType.Text = "نوع الزيارة : ";  lbl_TypeVisit.Text =  VisitInfo_.VisitTypeInfo.VisitName;
 
             LoadInfoPatient(VisitInfo.PatientsInfo);
         }
@@ -95,6 +91,6 @@ namespace Program_Clinic_Management.Doctors.UControls
             ctrl_PatientInfo1.PatientsInfo = PatientInfo;
         }
 
-
+        
     }
 }

@@ -83,28 +83,11 @@ namespace Program_Clinic_Management.Doctors.UControls
             }
         }
 
-
-
-
-        #region  **** Appointment عناصر المواعيد ****
-
-        ClsCMD_TableAppointments.AppointmentRange AppRange = AppointmentRange.Today;
-
-        // الفترة  ComboBox  // Appointment
-        private void Combox_RangAppointment_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string Range = Combox_RangAppointment.Text.Trim();
-
-            AppRange =         Range == "اليوم"  ? AppointmentRange.Today :
-                               Range == "الأسبوع" ? AppointmentRange.ThisWeek :
-                                                   AppointmentRange.ThisMonth;
-        } 
-
-        // المواعيد  ComboBox  // Appointment
-        private void ComboxTypeAppointment_SelectedIndexChanged(object sender, EventArgs e)
+        // عرض نتيجة الإختيار في قسم المواعيد
+        void DataAppointments()
         {
             string TypeAppointment = ComboxTypeAppointment.Text.Trim();
- 
+
             switch (TypeAppointment)
             {
                 case "المواعيد المتبقية":
@@ -119,6 +102,52 @@ namespace Program_Clinic_Management.Doctors.UControls
                     lblCountAppointments.Text = "عدد المواعيد : " + ClsCMD_TableAppointments.GetAbsentAppointmentsCount(DoctorID, AppRange);
                     break;
             }
+        }
+
+
+        // عرض نتيجة الإختيار في قسم الزيارات
+        void DataVisits()
+        {
+            string TypeVisit = ComboxTypeVisit.Text.Trim();
+
+            switch (TypeVisit)
+            {
+                case "زيارة طارئه":
+                    lblCountVisits.Text = "عدد الزيارات : " + ClsCMD_TableVisits.GetEmergencyVisitsCount(DoctorID, VisitRange);
+                    break;
+
+                case "زيارة للمتابعة":
+                    lblCountVisits.Text = "عدد الزيارات : " + ClsCMD_TableVisits.GetFollowUpVisitsCount(DoctorID, VisitRange);
+                    break;
+
+                case "زيارة استشارية":
+                    lblCountVisits.Text = "عدد الزيارات : " + ClsCMD_TableVisits.GetConsultationVisitsCount(DoctorID, VisitRange);
+                    break;
+            }
+        }
+
+                                  ///////////////////////////////////////////////////////////
+
+        #region  **** Appointment عناصر المواعيد ****
+
+        ClsCMD_TableAppointments.AppointmentRange AppRange = AppointmentRange.Today;
+
+        // الفترة  ComboBox  // Appointment
+        private void Combox_RangAppointment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string Range = Combox_RangAppointment.Text.Trim();
+
+            AppRange =         Range == "اليوم"  ? AppointmentRange.Today :
+                               Range == "الأسبوع" ? AppointmentRange.ThisWeek :
+                                                   AppointmentRange.ThisMonth;
+
+            DataAppointments();
+        } 
+
+        // المواعيد  ComboBox  // Appointment
+        private void ComboxTypeAppointment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataAppointments();
         }
 
 
@@ -169,27 +198,13 @@ namespace Program_Clinic_Management.Doctors.UControls
             VisitRange =       Range == "اليوم" ?  ClsCMD_TableVisits.Range.Today :
                                Range == "الأسبوع" ? ClsCMD_TableVisits.Range.ThisWeek :
                                                    ClsCMD_TableVisits.Range.ThisMonth;
+            DataVisits();
         }
  
         // حالة الزيارة  ComboBox // Visit
         private void ComboxTypeVisit_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string TypeVisit = ComboxTypeVisit.Text.Trim();
-
-            switch (TypeVisit)
-            {
-                case "زيارة طارئه":
-                    lblCountVisits.Text = "عدد الزيارات : " + ClsCMD_TableVisits.GetEmergencyVisitsCount(DoctorID, VisitRange);
-                    break;
-
-                case "زيارة للمتابعة":
-                    lblCountVisits.Text = "عدد الزيارات : " + ClsCMD_TableVisits.GetFollowUpVisitsCount(DoctorID, VisitRange);
-                    break;
-
-                case "زيارة استشارية":
-                    lblCountVisits.Text = "عدد الزيارات : " + ClsCMD_TableVisits.GetConsultationVisitsCount(DoctorID, VisitRange);
-                    break;
-            }
+            DataVisits();
         }
 
 

@@ -572,24 +572,23 @@ namespace BusinessLogic.CMD_DB
 
 
 
-
-
         /// <summary>
-        /// فحص اذا الزيارة مرتبطة بجدول ماا
+        /// التحقق مما إذا كانت الزيارة مرتبطة بأي جدول آخر (مثل المدفوعات).
+        /// ترجع:
+        /// true  → الزيارة مرتبطة ولا يمكن حذفها أو تعديلها بشكل كامل
+        /// false → الزيارة غير مرتبطة ويمكن التعامل معها بحرية
         /// </summary>
         public static bool IsVisitLinked(int visitId)
         {
+            // الاستعلام يفحص فقط الجداول الموجودة فعليًا في قاعدة البيانات
             string query = @"
         SELECT COUNT(*) FROM Payments WHERE VisitId = @VisitId
-        UNION ALL
-        SELECT COUNT(*) FROM Prescriptions WHERE VisitId = @VisitId
-        UNION ALL
-        SELECT COUNT(*) FROM FollowUps WHERE VisitId = @VisitId  ";
+    ";
 
             var parameters = new Dictionary<string, object>
-            {
-                { "@VisitId", visitId }
-            };
+    {
+        { "@VisitId", visitId }
+    };
 
             DataTable dt = ClassCommands.ShowData(query, parameters);
 
@@ -602,6 +601,9 @@ namespace BusinessLogic.CMD_DB
 
             return false;
         }
+
+
+       
 
 
 

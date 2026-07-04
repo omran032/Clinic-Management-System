@@ -72,8 +72,8 @@ namespace BusinessLogic.InfoTable
                 Appointment_Notes = row.Table.Columns.Contains("AppointmentNotes")
                                     ? row["AppointmentNotes"]?.ToString() : null ,
 
-                EstimatedDurationMinutes = Convert.ToInt32(row["EstimatedDurationMinutes"]) 
-
+                EstimatedDurationMinutes = Convert.ToInt32(row["EstimatedDurationMinutes"])
+                
             };
 
             // تعبئة معلومات المريض (Patients + Persons)

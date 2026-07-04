@@ -77,6 +77,7 @@ namespace Program_Clinic_Management.Persons.UControls
         {
             btn_Search.Enabled = true;
             Txt_TextSearch.Enabled = true;
+            Txt_TextSearch.Text = null;
 
             string SearchValue = Txt_TextSearch.Text.Trim();
 
@@ -104,7 +105,15 @@ namespace Program_Clinic_Management.Persons.UControls
             }
         }
 
-
+        // TextBox عنصر 
+        private void Txt_TextSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // منع صوت التنبيه
+                btn_Search.PerformClick();  // تنفيذ الزر
+            }
+        }
 
         // زر البحث
         private void btn_Search_Click(object sender, EventArgs e)
@@ -142,6 +151,7 @@ namespace Program_Clinic_Management.Persons.UControls
             InfoPerson = ClassPerson.SaveDataInObj(DataPersons);
         }
 
+       
        
     }
 }

@@ -40,6 +40,8 @@
             this.ctrlCountVisits_AppointmentsDoctor1 = new Program_Clinic_Management.Doctors.UControls.CtrlCountVisits_AppointmentsDoctor();
             this.ctrl_PersonInfo1 = new Program_Clinic_Management.Persons.UControls.Ctrl_PersonInfo();
             this.ElipseForm = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.pnl_TopBar.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -124,21 +126,21 @@
             // 
             this.lblSpecialization.AutoSize = true;
             this.lblSpecialization.BackColor = System.Drawing.Color.Transparent;
-            this.lblSpecialization.Location = new System.Drawing.Point(72, 567);
+            this.lblSpecialization.Location = new System.Drawing.Point(203, 567);
             this.lblSpecialization.Name = "lblSpecialization";
-            this.lblSpecialization.Size = new System.Drawing.Size(133, 22);
+            this.lblSpecialization.Size = new System.Drawing.Size(30, 22);
             this.lblSpecialization.TabIndex = 5;
-            this.lblSpecialization.Text = "Specialization :";
+            this.lblSpecialization.Text = "__";
             // 
             // lbl_WorkPeriod
             // 
             this.lbl_WorkPeriod.AutoSize = true;
             this.lbl_WorkPeriod.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_WorkPeriod.Location = new System.Drawing.Point(74, 633);
+            this.lbl_WorkPeriod.Location = new System.Drawing.Point(203, 626);
             this.lbl_WorkPeriod.Name = "lbl_WorkPeriod";
-            this.lbl_WorkPeriod.Size = new System.Drawing.Size(129, 22);
+            this.lbl_WorkPeriod.Size = new System.Drawing.Size(30, 22);
             this.lbl_WorkPeriod.TabIndex = 6;
-            this.lbl_WorkPeriod.Text = "Work period : ";
+            this.lbl_WorkPeriod.Text = "__";
             // 
             // ctrlCountVisits_AppointmentsDoctor1
             // 
@@ -170,11 +172,33 @@
             this.ElipseForm.BorderRadius = 20;
             this.ElipseForm.TargetControl = this;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(74, 567);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(123, 22);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "إختصاص الطبيب :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Location = new System.Drawing.Point(118, 626);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 22);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "مدة العمل :";
+            // 
             // Frm_InfoDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 998);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.ctrlCountVisits_AppointmentsDoctor1);
             this.Controls.Add(this.lbl_WorkPeriod);
             this.Controls.Add(this.lblSpecialization);
@@ -209,5 +233,7 @@
         private System.Windows.Forms.Label lbl_WorkPeriod;
         private UControls.CtrlCountVisits_AppointmentsDoctor ctrlCountVisits_AppointmentsDoctor1;
         private Guna.UI2.WinForms.Guna2Elipse ElipseForm;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }

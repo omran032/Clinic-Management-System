@@ -68,15 +68,15 @@ namespace Program_Clinic_Management.Persons.UControls
 
         void LoadData()
         {
-            lbl_ID.Text       = "ID : " + PersonInfo.PersonID;
-            lblFullName.Text  = "Full Name : " + PersonInfo.FullName;
-            lblGender.Text    = "Gender : " + PersonInfo.Gender;
-            lblBirthDate.Text = "BirthDate : " + PersonInfo.BirthDate.ToString("yyyy / MM / dd");
-            lblAge.Text       = "Age : "   + PersonInfo.Age;
-            lblPhone.Text     = "Phone : " + PersonInfo.Phone;
-            lblAddress.Text   = "Address : " + PersonInfo.Address;
-            lblCtratedAt.Text = "Ctreated At : " + PersonInfo.CreatedAt;
-            lblUpdatedAt.Text = "Updated At : "  + PersonInfo.UpdatedAt;
+            lbl_ID.Text       =  PersonInfo.PersonID.ToString();
+            lblFullName.Text  =  PersonInfo.FullName;
+            lblGender.Text    =  PersonInfo.Gender;
+            lblBirthDate.Text =  PersonInfo.BirthDate.ToString("yyyy / MM / dd");
+            lblAge.Text       =  PersonInfo.Age.ToString();
+            lblPhone.Text     =  PersonInfo.Phone;
+            lblAddress.Text   =  PersonInfo.Address;
+            lblCtratedAt.Text =  PersonInfo.CreatedAt;
+            lblUpdatedAt.Text =  PersonInfo.UpdatedAt;
         }
 
 

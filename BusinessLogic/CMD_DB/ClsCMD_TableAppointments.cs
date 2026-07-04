@@ -236,6 +236,8 @@ namespace BusinessLogic.CMD_DB
             a.AppointmentDate,
             a.Status,
             a.Notes AS AppointmentNotes,
+            a.EstimatedDurationMinutes,
+
 
                    -- نوع الزيارة
             vt.VisitTypeId,
@@ -361,6 +363,7 @@ INNER JOIN VisitTypes vt ON a.VisitTypeId = vt.VisitTypeId
             a.AppointmentDate,
             a.Status,
             a.Notes AS AppointmentNotes,
+            a.EstimatedDurationMinutes,
 
             -- نوع الزيارة
             vt.VisitTypeId,
@@ -486,6 +489,7 @@ INNER JOIN VisitTypes vt ON a.VisitTypeId = vt.VisitTypeId
             a.AppointmentDate,
             a.Status,
             a.Notes AS AppointmentNotes,
+            a.EstimatedDurationMinutes,
 
                                -- نوع الزيارة
             vt.VisitTypeId,
@@ -554,7 +558,7 @@ INNER JOIN VisitTypes vt ON a.VisitTypeId = vt.VisitTypeId
 
             var parameters = new Dictionary<string, object>()
             {
-            { "@PersonId", personId }
+                { "@PersonId", personId }
             };
 
             int count = Convert.ToInt32(ClassCommands.ExecuteScalar(query, parameters));

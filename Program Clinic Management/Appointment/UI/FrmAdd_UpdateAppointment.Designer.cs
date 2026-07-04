@@ -50,6 +50,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.ctrl_FeltterDataPatients1 = new Program_Clinic_Management.Patients.UControls.Ctrl_FeltterDataPatients();
             this.PnlAppointment = new Guna.UI2.WinForms.Guna2Panel();
+            this.DateTP_TimeApp = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.Combox_StatusAppointment = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -87,7 +88,8 @@
             this.Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.Elipse_2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.ElipsePnl_ProposeDate = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.DateTP_TimeApp = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+            this.guna2ContextMenuStrip2 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.PnlDoctor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.pnlPatient.SuspendLayout();
@@ -371,6 +373,25 @@
             this.PnlAppointment.Name = "PnlAppointment";
             this.PnlAppointment.Size = new System.Drawing.Size(1447, 215);
             this.PnlAppointment.TabIndex = 3;
+            // 
+            // DateTP_TimeApp
+            // 
+            this.DateTP_TimeApp.BackColor = System.Drawing.Color.White;
+            this.DateTP_TimeApp.BorderRadius = 15;
+            this.DateTP_TimeApp.Checked = true;
+            this.DateTP_TimeApp.CustomFormat = " tt mm : HH   / dd / MM / yyyy";
+            this.DateTP_TimeApp.FillColor = System.Drawing.Color.White;
+            this.DateTP_TimeApp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateTP_TimeApp.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.DateTP_TimeApp.Location = new System.Drawing.Point(1164, 58);
+            this.DateTP_TimeApp.MaxDate = new System.DateTime(2050, 1, 1, 0, 0, 0, 0);
+            this.DateTP_TimeApp.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
+            this.DateTP_TimeApp.Name = "DateTP_TimeApp";
+            this.DateTP_TimeApp.ShowUpDown = true;
+            this.DateTP_TimeApp.Size = new System.Drawing.Size(141, 36);
+            this.DateTP_TimeApp.TabIndex = 27;
+            this.DateTP_TimeApp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.DateTP_TimeApp.Value = new System.DateTime(2026, 6, 10, 10, 42, 2, 935);
             // 
             // guna2PictureBox2
             // 
@@ -870,23 +891,34 @@
             this.ElipsePnl_ProposeDate.BorderRadius = 15;
             this.ElipsePnl_ProposeDate.TargetControl = this.pnl_ProposeDate;
             // 
-            // DateTP_TimeApp
+            // guna2ContextMenuStrip1
             // 
-            this.DateTP_TimeApp.BackColor = System.Drawing.Color.White;
-            this.DateTP_TimeApp.BorderRadius = 15;
-            this.DateTP_TimeApp.Checked = true;
-            this.DateTP_TimeApp.CustomFormat = " tt mm : HH   / dd / MM / yyyy";
-            this.DateTP_TimeApp.FillColor = System.Drawing.Color.White;
-            this.DateTP_TimeApp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateTP_TimeApp.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.DateTP_TimeApp.Location = new System.Drawing.Point(1164, 58);
-            this.DateTP_TimeApp.MaxDate = new System.DateTime(2050, 1, 1, 0, 0, 0, 0);
-            this.DateTP_TimeApp.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
-            this.DateTP_TimeApp.Name = "DateTP_TimeApp";
-            this.DateTP_TimeApp.Size = new System.Drawing.Size(141, 36);
-            this.DateTP_TimeApp.TabIndex = 27;
-            this.DateTP_TimeApp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.DateTP_TimeApp.Value = new System.DateTime(2026, 6, 10, 10, 42, 2, 935);
+            this.guna2ContextMenuStrip1.Name = "guna2ContextMenuStrip1";
+            this.guna2ContextMenuStrip1.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.guna2ContextMenuStrip1.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
+            this.guna2ContextMenuStrip1.RenderStyle.ColorTable = null;
+            this.guna2ContextMenuStrip1.RenderStyle.RoundedEdges = true;
+            this.guna2ContextMenuStrip1.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
+            this.guna2ContextMenuStrip1.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.guna2ContextMenuStrip1.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.guna2ContextMenuStrip1.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
+            this.guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.guna2ContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // guna2ContextMenuStrip2
+            // 
+            this.guna2ContextMenuStrip2.Name = "guna2ContextMenuStrip2";
+            this.guna2ContextMenuStrip2.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.guna2ContextMenuStrip2.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
+            this.guna2ContextMenuStrip2.RenderStyle.ColorTable = null;
+            this.guna2ContextMenuStrip2.RenderStyle.RoundedEdges = true;
+            this.guna2ContextMenuStrip2.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
+            this.guna2ContextMenuStrip2.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.guna2ContextMenuStrip2.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.guna2ContextMenuStrip2.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
+            this.guna2ContextMenuStrip2.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            this.guna2ContextMenuStrip2.Size = new System.Drawing.Size(61, 4);
+            this.guna2ContextMenuStrip2.Opening += new System.ComponentModel.CancelEventHandler(this.guna2ContextMenuStrip2_Opening);
             // 
             // FrmAdd_UpdateAppointment
             // 
@@ -993,5 +1025,7 @@
         private Guna.UI2.WinForms.Guna2Elipse Elipse_2;
         private Guna.UI2.WinForms.Guna2Elipse ElipsePnl_ProposeDate;
         private Guna.UI2.WinForms.Guna2DateTimePicker DateTP_TimeApp;
+        private Guna.UI2.WinForms.Guna2ContextMenuStrip guna2ContextMenuStrip1;
+        private Guna.UI2.WinForms.Guna2ContextMenuStrip guna2ContextMenuStrip2;
     }
 }

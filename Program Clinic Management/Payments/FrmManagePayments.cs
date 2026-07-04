@@ -56,7 +56,7 @@ namespace Program_Clinic_Management.Payments
             lblRevenueYear.Text = ClsCMD_TablePayments.GetClinicRevenue(RevenueType.ThisYear) + "";
         }
 
-        void LoadDataTableAll()
+      public void LoadDataTableAll()
         {
             // تحميل كل الدفعات بالجدول
             paymentFilterType = PaymentFilterType.All;

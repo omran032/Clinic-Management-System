@@ -444,7 +444,7 @@ using System.Windows.Forms;
             months += 12;
         }
 
-        return $"{years} سنة - {months} شهر - {days} يوم";
+        return $"{years} y - {months} M - {days} D";
     }
 
 

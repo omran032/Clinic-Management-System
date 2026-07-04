@@ -78,6 +78,7 @@
             this.Txt_TextSearch.SelectedText = "";
             this.Txt_TextSearch.Size = new System.Drawing.Size(271, 36);
             this.Txt_TextSearch.TabIndex = 1;
+            this.Txt_TextSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_TextSearch_KeyDown);
             // 
             // label1
             // 

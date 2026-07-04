@@ -84,6 +84,8 @@ namespace Program_Clinic_Management.Doctors.UI
             // تصغير حجم البنل لقتراح الموعد
             pnl_AI.Size = new Size(1447, 100);
 
+            DateTP_DateApp.MinDate = DateTime.Today;
+
 
         }
 
@@ -349,6 +351,11 @@ namespace Program_Clinic_Management.Doctors.UI
             string Notes = txtNotes.Text.Trim();
             string StatusAppointment = Combox_StatusAppointment.Text.Trim();
 
+            if (AppointmentDate < DateTime.Today)
+            {
+                MessageBox.Show("التاريخ غير صالح للموعد", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             if (ModeForm == Mode.Add)
             {
@@ -366,14 +373,15 @@ namespace Program_Clinic_Management.Doctors.UI
                     lblAppointmentID.Text = "Appointment ID : " + ResultAdd;
                     MessageBox.Show("تم إضافة الموعد بنجاح", "تم الإضافة", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // هون فيك تحول شكل لواجهة لوضع التعديل تلقائيا اذا بدك
+                    Log(LogAction.AddAppointment, "Appointments", ResultAdd, "إضافة موعد جديد");   // تسجيل العمل في Log
+                    // تغيير لوضع التعديل
+                    ModeForm = Mode.Update;
+                    LoadModeUpdate();
                     return;
                 }
                 else if (ResultAdd == 0)
                 {
                     MessageBox.Show("لم يتم الاضافة لانه يوجد موعد في نفس الوقت المحدد", "موعد محجوز", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                    Log(LogAction.AddAppointment, "Appointments", ResultAdd, "إضافة موعد جديد");   // تسجيل العمل في Log
-
                     return;
                 }
                 else if (ResultAdd == -1)
@@ -454,10 +462,14 @@ namespace Program_Clinic_Management.Doctors.UI
 
 
 
-        #endregion
 
         #endregion
 
-       
+        #endregion
+
+        private void guna2ContextMenuStrip2_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
     }
 }

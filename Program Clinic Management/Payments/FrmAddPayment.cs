@@ -112,6 +112,21 @@ namespace Program_Clinic_Management.Payments
             }
         }
 
+        /// <summary>
+        /// التحقق مما إذا كانت واجهة FrmManagePayments مفتوحة،
+        ///— وإذا كانت مفتوحة يتم تنفيذ الميثود LoadDataTableAll داخلها.
+        /// </summary>
+        public static void RefreshManagePaymentsIfOpen()
+        {
+            foreach (Form frm in Application.OpenForms)
+            {
+                if (frm is FrmManagePayments managePaymentsForm)
+                {
+                    managePaymentsForm.LoadDataTableAll();
+                    return; // تم التنفيذ
+                }
+            }
+        }
 
         #endregion
 
@@ -193,6 +208,7 @@ namespace Program_Clinic_Management.Payments
 
             // تنفيذ حدث التحديث 
             EventRefreshData?.Invoke();
+            RefreshManagePaymentsIfOpen(); // تحديث بيانات المدفوعات
         }
 
         // إغلاق

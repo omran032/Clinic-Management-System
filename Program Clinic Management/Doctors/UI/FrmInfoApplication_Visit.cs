@@ -138,6 +138,7 @@ namespace Program_Clinic_Management
             if (AppointmentInfo == null) return;
 
             ctrl_InfoVisits_AppointmentsDoctor1.LoadDataِAppointment(AppointmentInfo);
+
         }
 
         /// <summary>

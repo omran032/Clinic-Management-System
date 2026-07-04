@@ -37,11 +37,11 @@ namespace Program_Clinic_Management.Doctors.UI
         {
             ctrl_PersonInfo1.PersonInfo = DoctorInfo.PersonInfo;
             // الاختصاص
-            lblSpecialization.Text = "Specialization : " + DoctorInfo.SprcializationName;
+            lblSpecialization.Text =  DoctorInfo.SprcializationName;
 
             // حساب فترة توظيف الطبيب
             string WorkPeriod =  MyTools.GetDateDifferenceText( Convert.ToDateTime(DoctorInfo.PersonInfo.CreatedAt) );
-            lbl_WorkPeriod.Text = "Work Period : " + WorkPeriod;
+            lbl_WorkPeriod.Text =   WorkPeriod;
             // عرض معلومات المواعيد و الزيارات لدى الطبيب
             ctrlCountVisits_AppointmentsDoctor1.LoadData(DoctorInfo.DoctorID);
         }
