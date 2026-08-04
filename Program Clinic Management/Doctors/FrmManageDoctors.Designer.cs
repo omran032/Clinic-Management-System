@@ -48,9 +48,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddDoctor = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.ctrl_FeltterDataDoctors = new Program_Clinic_Management.Ctrl_FeltterDataDoctors();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAdd = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.ctrl_FeltterDataDoctors = new Program_Clinic_Management.Ctrl_FeltterDataDoctors();
             this.MyContextMS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGV)).BeginInit();
             this.pnl_TopBar.SuspendLayout();
@@ -272,23 +272,12 @@
             this.btnUpdate.Image = global::Program_Clinic_Management.Properties.Resources.Synchronize;
             this.btnUpdate.ImageOffset = new System.Drawing.Point(-6, 0);
             this.btnUpdate.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnUpdate.Location = new System.Drawing.Point(254, 566);
+            this.btnUpdate.Location = new System.Drawing.Point(308, 561);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(212, 53);
             this.btnUpdate.TabIndex = 11;
             this.btnUpdate.Text = "تعديل";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // ctrl_FeltterDataDoctors
-            // 
-            this.ctrl_FeltterDataDoctors.BackColor = System.Drawing.Color.Transparent;
-            this.ctrl_FeltterDataDoctors.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrl_FeltterDataDoctors.Location = new System.Drawing.Point(42, 124);
-            this.ctrl_FeltterDataDoctors.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.ctrl_FeltterDataDoctors.Name = "ctrl_FeltterDataDoctors";
-            this.ctrl_FeltterDataDoctors.Size = new System.Drawing.Size(778, 55);
-            this.ctrl_FeltterDataDoctors.TabIndex = 14;
-            this.ctrl_FeltterDataDoctors.TrueSearchAll = false;
             // 
             // label2
             // 
@@ -320,13 +309,23 @@
             this.btnAdd.Image = global::Program_Clinic_Management.Properties.Resources.user;
             this.btnAdd.ImageOffset = new System.Drawing.Point(-6, 0);
             this.btnAdd.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnAdd.Location = new System.Drawing.Point(766, 566);
+            this.btnAdd.Location = new System.Drawing.Point(820, 561);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(212, 53);
             this.btnAdd.TabIndex = 16;
             this.btnAdd.Text = "إضافة";
-            this.btnAdd.Visible = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
+            // 
+            // ctrl_FeltterDataDoctors
+            // 
+            this.ctrl_FeltterDataDoctors.BackColor = System.Drawing.Color.Transparent;
+            this.ctrl_FeltterDataDoctors.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrl_FeltterDataDoctors.Location = new System.Drawing.Point(42, 124);
+            this.ctrl_FeltterDataDoctors.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.ctrl_FeltterDataDoctors.Name = "ctrl_FeltterDataDoctors";
+            this.ctrl_FeltterDataDoctors.Size = new System.Drawing.Size(778, 55);
+            this.ctrl_FeltterDataDoctors.TabIndex = 14;
+            this.ctrl_FeltterDataDoctors.TrueSearchAll = false;
             // 
             // FrmManageDoctors
             // 
@@ -345,7 +344,7 @@
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "FrmManageDoctors";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "+++++++";
+            this.Text = "Manage Doctors";
             this.MyContextMS.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGV)).EndInit();
             this.pnl_TopBar.ResumeLayout(false);
